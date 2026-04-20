@@ -1,0 +1,76 @@
+{
+  "type": "array",
+  "items": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "blobValue": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Blob"
+            },
+            {
+              "description": "A value of the BLOB data type. "
+            }
+          ]
+        },
+        "booleanValue": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BoxedBoolean"
+            },
+            {
+              "description": "A value of the Boolean data type. "
+            }
+          ]
+        },
+        "doubleValue": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BoxedDouble"
+            },
+            {
+              "description": "A value of the double data type. "
+            }
+          ]
+        },
+        "isNull": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BoxedBoolean"
+            },
+            {
+              "description": "A value that indicates whether the data is NULL. "
+            }
+          ]
+        },
+        "longValue": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/BoxedLong"
+            },
+            {
+              "description": "A value of the long data type. "
+            }
+          ]
+        },
+        "stringValue": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "A value of the string data type. "
+            }
+          ]
+        }
+      },
+      "description": "A data value in a column. "
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-redshift/refs/heads/main/json-schema/redshift-data-sql-records-schema.json",
+  "title": "SqlRecords",
+  "description": "SqlRecords schema from Amazon Redshift"
+}

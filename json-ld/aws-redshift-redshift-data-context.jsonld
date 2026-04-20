@@ -1,0 +1,355 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": {
+      "@id": "aws:schema",
+      "@type": "xsd:string"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ListSchemasResponse": "aws:ListSchemasResponse",
+    "TableMember": "aws:TableMember",
+    "DataShareAssociation": "aws:DataShareAssociation",
+    "GetStatementResultResponse": "aws:GetStatementResultResponse",
+    "DescribeTableRequest": "aws:DescribeTableRequest",
+    "ColumnMetadata": {
+      "@id": "aws:ColumnMetadata",
+      "@type": "xsd:string"
+    },
+    "DescribeTableResponse": "aws:DescribeTableResponse",
+    "DescribeStatementResponse": "aws:DescribeStatementResponse",
+    "DescribeStatementRequest": "aws:DescribeStatementRequest",
+    "SubStatementData": "aws:SubStatementData",
+    "ListSchemasRequest": "aws:ListSchemasRequest",
+    "ListTablesResponse": "aws:ListTablesResponse",
+    "ListStatementsResponse": "aws:ListStatementsResponse",
+    "ListDatabasesResponse": "aws:ListDatabasesResponse",
+    "ExecuteStatementOutput": "aws:ExecuteStatementOutput",
+    "SqlParameter": "aws:SqlParameter",
+    "GetStatementResultRequest": "aws:GetStatementResultRequest",
+    "DataTransferProgress": "aws:DataTransferProgress",
+    "ListDatabasesRequest": "aws:ListDatabasesRequest",
+    "Field": "aws:Field",
+    "StatementData": "aws:StatementData",
+    "DataShare": "aws:DataShare",
+    "BatchExecuteStatementInput": "aws:BatchExecuteStatementInput",
+    "ExecuteStatementInput": "aws:ExecuteStatementInput",
+    "CancelStatementRequest": "aws:CancelStatementRequest",
+    "BatchExecuteStatementOutput": "aws:BatchExecuteStatementOutput",
+    "ListStatementsRequest": "aws:ListStatementsRequest",
+    "CancelStatementResponse": "aws:CancelStatementResponse",
+    "ListTablesRequest": "aws:ListTablesRequest",
+    "ClusterIdentifier": {
+      "@id": "aws:ClusterIdentifier",
+      "@type": "xsd:string"
+    },
+    "CreatedAt": {
+      "@id": "aws:CreatedAt",
+      "@type": "xsd:string"
+    },
+    "Database": {
+      "@id": "aws:Database",
+      "@type": "xsd:string"
+    },
+    "DbUser": {
+      "@id": "aws:DbUser",
+      "@type": "xsd:string"
+    },
+    "Id": {
+      "@id": "aws:Id",
+      "@type": "xsd:string"
+    },
+    "SecretArn": {
+      "@id": "aws:SecretArn",
+      "@type": "xsd:string"
+    },
+    "WorkgroupName": {
+      "@id": "aws:WorkgroupName",
+      "@type": "xsd:string"
+    },
+    "Databases": {
+      "@id": "aws:Databases",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "aws:NextToken",
+      "@type": "xsd:string"
+    },
+    "IsBatchStatement": {
+      "@id": "aws:IsBatchStatement",
+      "@type": "xsd:string"
+    },
+    "QueryParameters": {
+      "@id": "aws:QueryParameters",
+      "@type": "xsd:string"
+    },
+    "QueryString": {
+      "@id": "aws:QueryString",
+      "@type": "xsd:string"
+    },
+    "QueryStrings": {
+      "@id": "aws:QueryStrings",
+      "@type": "xsd:string"
+    },
+    "StatementName": {
+      "@id": "aws:StatementName",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "aws:Status",
+      "@type": "xsd:string"
+    },
+    "UpdatedAt": {
+      "@id": "aws:UpdatedAt",
+      "@type": "xsd:string"
+    },
+    "CurrentRateInMegaBytesPerSecond": {
+      "@id": "aws:CurrentRateInMegaBytesPerSecond",
+      "@type": "xsd:string"
+    },
+    "TotalDataInMegaBytes": {
+      "@id": "aws:TotalDataInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "DataTransferredInMegaBytes": {
+      "@id": "aws:DataTransferredInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "EstimatedTimeToCompletionInSeconds": {
+      "@id": "aws:EstimatedTimeToCompletionInSeconds",
+      "@type": "xsd:string"
+    },
+    "ElapsedTimeInSeconds": {
+      "@id": "aws:ElapsedTimeInSeconds",
+      "@type": "xsd:string"
+    },
+    "Duration": {
+      "@id": "aws:Duration",
+      "@type": "xsd:string"
+    },
+    "Error": {
+      "@id": "aws:Error",
+      "@type": "xsd:string"
+    },
+    "HasResultSet": {
+      "@id": "aws:HasResultSet",
+      "@type": "xsd:string"
+    },
+    "RedshiftPid": {
+      "@id": "aws:RedshiftPid",
+      "@type": "xsd:string"
+    },
+    "RedshiftQueryId": {
+      "@id": "aws:RedshiftQueryId",
+      "@type": "xsd:string"
+    },
+    "ResultRows": {
+      "@id": "aws:ResultRows",
+      "@type": "xsd:string"
+    },
+    "ResultSize": {
+      "@id": "aws:ResultSize",
+      "@type": "xsd:string"
+    },
+    "SubStatements": {
+      "@id": "aws:SubStatements",
+      "@type": "xsd:string"
+    },
+    "ConsumerIdentifier": {
+      "@id": "aws:ConsumerIdentifier",
+      "@type": "xsd:string"
+    },
+    "ConsumerRegion": {
+      "@id": "aws:ConsumerRegion",
+      "@type": "xsd:string"
+    },
+    "CreatedDate": {
+      "@id": "aws:CreatedDate",
+      "@type": "xsd:string"
+    },
+    "StatusChangeDate": {
+      "@id": "aws:StatusChangeDate",
+      "@type": "xsd:string"
+    },
+    "Tables": {
+      "@id": "aws:Tables",
+      "@type": "xsd:string"
+    },
+    "blobValue": {
+      "@id": "aws:blobValue",
+      "@type": "xsd:string"
+    },
+    "booleanValue": {
+      "@id": "aws:booleanValue",
+      "@type": "xsd:string"
+    },
+    "doubleValue": {
+      "@id": "aws:doubleValue",
+      "@type": "xsd:string"
+    },
+    "isNull": {
+      "@id": "aws:isNull",
+      "@type": "xsd:string"
+    },
+    "longValue": {
+      "@id": "aws:longValue",
+      "@type": "xsd:string"
+    },
+    "stringValue": {
+      "@id": "aws:stringValue",
+      "@type": "xsd:string"
+    },
+    "columnDefault": {
+      "@id": "aws:columnDefault",
+      "@type": "xsd:string"
+    },
+    "isCaseSensitive": {
+      "@id": "aws:isCaseSensitive",
+      "@type": "xsd:string"
+    },
+    "isCurrency": {
+      "@id": "aws:isCurrency",
+      "@type": "xsd:string"
+    },
+    "isSigned": {
+      "@id": "aws:isSigned",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "aws:label",
+      "@type": "xsd:string"
+    },
+    "length": {
+      "@id": "aws:length",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "aws:name",
+      "@type": "xsd:string"
+    },
+    "nullable": {
+      "@id": "aws:nullable",
+      "@type": "xsd:string"
+    },
+    "precision": {
+      "@id": "aws:precision",
+      "@type": "xsd:string"
+    },
+    "scale": {
+      "@id": "aws:scale",
+      "@type": "xsd:string"
+    },
+    "schemaName": {
+      "@id": "aws:schemaName",
+      "@type": "xsd:string"
+    },
+    "tableName": {
+      "@id": "aws:tableName",
+      "@type": "xsd:string"
+    },
+    "typeName": {
+      "@id": "aws:typeName",
+      "@type": "xsd:string"
+    },
+    "ClientToken": {
+      "@id": "aws:ClientToken",
+      "@type": "xsd:string"
+    },
+    "Sqls": {
+      "@id": "aws:Sqls",
+      "@type": "xsd:string"
+    },
+    "WithEvent": {
+      "@id": "aws:WithEvent",
+      "@type": "xsd:string"
+    },
+    "Records": {
+      "@id": "aws:Records",
+      "@type": "xsd:string"
+    },
+    "TotalNumRows": {
+      "@id": "aws:TotalNumRows",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "aws:value",
+      "@type": "xsd:string"
+    },
+    "ConnectedDatabase": {
+      "@id": "aws:ConnectedDatabase",
+      "@type": "xsd:string"
+    },
+    "MaxResults": {
+      "@id": "aws:MaxResults",
+      "@type": "xsd:string"
+    },
+    "SchemaPattern": {
+      "@id": "aws:SchemaPattern",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "aws:type",
+      "@type": "xsd:string"
+    },
+    "RoleLevel": {
+      "@id": "aws:RoleLevel",
+      "@type": "xsd:string"
+    },
+    "Parameters": {
+      "@id": "aws:Parameters",
+      "@type": "xsd:string"
+    },
+    "Sql": {
+      "@id": "aws:Sql",
+      "@type": "xsd:string"
+    },
+    "Schema": {
+      "@id": "aws:Schema",
+      "@type": "xsd:string"
+    },
+    "Table": {
+      "@id": "aws:Table",
+      "@type": "xsd:string"
+    },
+    "DataShareArn": {
+      "@id": "aws:DataShareArn",
+      "@type": "xsd:string"
+    },
+    "ProducerArn": {
+      "@id": "aws:ProducerArn",
+      "@type": "xsd:string"
+    },
+    "AllowPubliclyAccessibleConsumers": {
+      "@id": "aws:AllowPubliclyAccessibleConsumers",
+      "@type": "xsd:string"
+    },
+    "DataShareAssociations": {
+      "@id": "aws:DataShareAssociations",
+      "@type": "xsd:string"
+    },
+    "ManagedBy": {
+      "@id": "aws:ManagedBy",
+      "@type": "xsd:string"
+    },
+    "ColumnList": {
+      "@id": "aws:ColumnList",
+      "@type": "xsd:string"
+    },
+    "TableName": {
+      "@id": "aws:TableName",
+      "@type": "xsd:string"
+    },
+    "Statements": {
+      "@id": "aws:Statements",
+      "@type": "xsd:string"
+    },
+    "TablePattern": {
+      "@id": "aws:TablePattern",
+      "@type": "xsd:string"
+    },
+    "Schemas": {
+      "@id": "aws:Schemas",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+rules:
+  redshift-operation-summary:
+    description: All operations must have a summary starting with "Amazon Redshift"
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: summary
+      function: pattern
+      functionOptions:
+        match: "^Amazon Redshift"
+
+  redshift-operation-id:
+    description: All operations must have an operationId
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: operationId
+      function: truthy
+
+  redshift-operation-description:
+    description: All operations should have a description
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: description
+      function: truthy
+
+  redshift-components-schemas:
+    description: Components schemas should be defined
+    severity: warn
+    given: "$.components"
+    then:
+      field: schemas
+      function: truthy
+
+  redshift-security-defined:
+    description: API security schemes should be defined
+    severity: warn
+    given: "$"
+    then:
+      field: components.securitySchemes
+      function: truthy
+
+  redshift-info-title:
+    description: Info object must have a title
+    severity: error
+    given: "$.info"
+    then:
+      field: title
+      function: truthy
+
+  redshift-info-version:
+    description: Info object must have a version
+    severity: error
+    given: "$.info"
+    then:
+      field: version
+      function: truthy
+
+  redshift-parameter-description:
+    description: All parameters should have a description
+    severity: warn
+    given: "$.paths[*][*].parameters[*]"
+    then:
+      field: description
+      function: truthy
+
+  redshift-response-description:
+    description: All response objects must have a description
+    severity: error
+    given: "$.paths[*][*].responses[*]"
+    then:
+      field: description
+      function: truthy
+
+  redshift-schema-type:
+    description: Schema properties should have a type
+    severity: warn
+    given: "$.components.schemas[*]"
+    then:
+      field: type
+      function: truthy
+
+  redshift-microcks-annotation:
+    description: Operations should have x-microcks-operation annotation
+    severity: info
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: x-microcks-operation
+      function: truthy

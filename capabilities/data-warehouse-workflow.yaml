@@ -1,0 +1,73 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: Amazon Redshift Data Warehouse Workflow
+  description: Workflow capability for managing Amazon Redshift clusters and executing SQL queries for data analytics.
+  tags:
+    - Analytics
+    - Data Warehouse
+    - SQL
+    - Cloud Database
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+capability:
+  consumes:
+    - import: redshift
+      location: ./shared/redshift.yaml
+    - import: redshift-data
+      location: ./shared/redshift-data.yaml
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: workflow-api
+      resources:
+        - label: Create Cluster
+          method: POST
+          path: /clusters
+        - label: List Clusters
+          method: GET
+          path: /clusters
+        - label: Delete Cluster
+          method: DELETE
+          path: /clusters/{id}
+        - label: Create Snapshot
+          method: POST
+          path: /snapshots
+        - label: Execute SQL
+          method: POST
+          path: /sql/execute
+        - label: Get SQL Result
+          method: GET
+          path: /sql/results/{id}
+        - label: List SQL Statements
+          method: GET
+          path: /sql/statements
+        - label: Cancel SQL Statement
+          method: DELETE
+          path: /sql/statements/{id}
+    - type: mcp
+      port: 9090
+      namespace: workflow-mcp
+      transport: http
+      tools:
+        - name: create_cluster
+          description: Create a new Amazon Redshift cluster
+        - name: list_clusters
+          description: List all Redshift clusters in the account
+        - name: delete_cluster
+          description: Delete a Redshift cluster
+        - name: create_snapshot
+          description: Create a snapshot of a Redshift cluster
+        - name: execute_sql
+          description: Execute a SQL statement against a Redshift cluster
+        - name: get_sql_result
+          description: Get the result of a SQL statement execution
+        - name: list_sql_statements
+          description: List recent SQL statement executions
+        - name: cancel_sql_statement
+          description: Cancel a running SQL statement

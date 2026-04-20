@@ -1,88 +1,66 @@
-# AWS Redshift API (aws-redshift)
+# AWS Redshift
+
 Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse service that makes it simple and cost-effective to analyze all your data using standard SQL and existing Business Intelligence tools.
-
-**URL:** [Visit APIs.json URL](https://aws.amazon.com/redshift/)
-
-## Tags:
-
- - Data Warehouse, Analytics, Big Data, SQL, Cloud Database, Petabyte Scale
-
-## Timestamps
-
-- **Created:** 2024 
-- **Modified:** 2024 
 
 ## APIs
 
 ### Amazon Redshift API
-The Amazon Redshift API provides programmatic access to create and manage Amazon Redshift clusters and their associated resources.
-
-**Human URL:** [https://aws.amazon.com/redshift/](https://aws.amazon.com/redshift/)
-
-
-#### Tags:
-
- - Clusters, Snapshots, Data Warehouse
-
-#### Properties
-
-- [Documentation](https://docs.aws.amazon.com/redshift/latest/APIReference/Welcome.html)
-- [OpenAPI](https://api.apis.guru/v2/specs/amazonaws.com/redshift/2012-12-01/openapi.json)
-- [Authentication](https://docs.aws.amazon.com/redshift/latest/APIReference/CommonParameters.html)
-- [Rate Limits](https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html)
-- [Getting Started](https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html)
-- [SDK - Python](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html)
-- [SDK - JavaScript](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Redshift.html)
-- [SDK - Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/redshift/package-summary.html)
-- [CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/redshift/index.html)
-- [Pricing](https://aws.amazon.com/redshift/pricing/)
-- [Service Health](https://health.aws.amazon.com/health/status)
+Programmatic access to create and manage Amazon Redshift clusters and their associated resources including snapshots, parameter groups, subnet groups, and reserved nodes.
+- **Documentation**: https://docs.aws.amazon.com/redshift/latest/APIReference/Welcome.html
+- **OpenAPI**: [openapi/aws-redshift-openapi.json](openapi/aws-redshift-openapi.json) (238 operations)
 
 ### Amazon Redshift Data API
-The Amazon Redshift Data API enables you to run SQL statements without managing connections. It provides a secure HTTP endpoint to run SQL statements.
-
-**Human URL:** [https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html)
-
-
-#### Tags:
-
- - SQL, Data Access, Serverless
-
-#### Properties
-
-- [Documentation](https://docs.aws.amazon.com/redshift-data/latest/APIReference/Welcome.html)
-- [OpenAPI](https://api.apis.guru/v2/specs/amazonaws.com/redshift-data/2019-12-20/openapi.json)
-- [Getting Started](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-getting-started.html)
-- [SDK - Python](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html)
-- [CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/redshift-data/index.html)
+Run SQL statements without managing connections via a secure HTTP endpoint. Supports synchronous and asynchronous SQL execution against Redshift clusters and Serverless workgroups.
+- **Documentation**: https://docs.aws.amazon.com/redshift-data/latest/APIReference/Welcome.html
+- **OpenAPI**: [openapi/aws-redshift-data-openapi.json](openapi/aws-redshift-data-openapi.json) (10 operations)
 
 ### Amazon Redshift Serverless API
-API for Amazon Redshift Serverless, which makes it easy to run analytics workloads without managing data warehouse infrastructure.
+Run analytics workloads without managing data warehouse infrastructure. Automatically provisions and scales data warehouse capacity on demand.
+- **Documentation**: https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/Welcome.html
 
-**Human URL:** [https://aws.amazon.com/redshift/redshift-serverless/](https://aws.amazon.com/redshift/redshift-serverless/)
+## Artifacts
 
+| Directory | Contents |
+|---|---|
+| [openapi/](openapi/) | 2 OpenAPI specifications |
+| [json-schema/](json-schema/) | 595 JSON Schema files |
+| [json-structure/](json-structure/) | 595 JSON Structure files |
+| [json-ld/](json-ld/) | 2 JSON-LD context files |
+| [examples/](examples/) | 595 example files |
+| [rules/](rules/) | Spectral ruleset |
+| [capabilities/](capabilities/) | Naftiko capability definitions |
+| [vocabulary/](vocabulary/) | Domain vocabulary |
 
-#### Tags:
+## Features
 
- - Serverless, Analytics, Auto-scaling
+- **Petabyte-Scale Storage** — Store and query petabytes of structured and semi-structured data with columnar storage.
+- **Standard SQL Support** — Query data using standard SQL and connect with existing BI tools via JDBC/ODBC.
+- **Massively Parallel Processing** — Distribute SQL operations across multiple nodes for high-performance query execution.
+- **Columnar Storage** — Store data in columnar format for efficient analytical query performance and compression.
+- **Automated Snapshots** — Automated and manual snapshots for point-in-time recovery of your cluster data.
+- **Data Sharing** — Share live data across Redshift clusters and accounts without copying data.
+- **ML Integration** — Run Amazon Redshift ML to create, train, and deploy machine learning models using SQL.
+- **Serverless Mode** — Run analytics workloads without managing cluster infrastructure with Redshift Serverless.
+- **Federated Query** — Query data across operational databases, data warehouses, and data lakes.
+- **AQUA** — Advanced Query Accelerator for up to 10x faster query performance.
 
-#### Properties
+## Use Cases
 
-- [Documentation](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/Welcome.html)
-- [Getting Started](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-serverless.html)
-- [SDK - Python](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-serverless.html)
+- **Business Intelligence** — Power BI dashboards and reports with fast analytical queries over large datasets.
+- **Log Analytics** — Analyze application logs and clickstream data for operational insights.
+- **Financial Analytics** — Process financial transactions and generate regulatory reports over historical data.
+- **Data Lake Analytics** — Query data in Amazon S3 data lakes using Redshift Spectrum without loading.
+- **Machine Learning** — Build and deploy ML models directly within the warehouse using SQL with Redshift ML.
 
-## Common Properties
+## Links
 
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
-- [Support](https://aws.amazon.com/premiumsupport/)
-- [Blog](https://aws.amazon.com/blogs/big-data/category/database/amazon-redshift/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Change Log](https://aws.amazon.com/releasenotes/Amazon-Redshift/)
+- **Website**: https://aws.amazon.com/redshift/
+- **Getting Started**: https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html
+- **Pricing**: https://aws.amazon.com/redshift/pricing/
+- **Blog**: https://aws.amazon.com/blogs/big-data/category/database/amazon-redshift/
+- **Change Log**: https://aws.amazon.com/releasenotes/Amazon-Redshift/
+- **Status**: https://health.aws.amazon.com/health/status
 
 ## Maintainers
 
-**FN:** AWS Support
-
-**Email:** aws-support@amazon.com
+- **Kin Lane** — kin@apievangelist.com

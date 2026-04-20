@@ -1,0 +1,1764 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "RevokeClusterSecurityGroupIngressMessage": "aws:RevokeClusterSecurityGroupIngressMessage",
+    "DeleteUsageLimitMessage": "aws:DeleteUsageLimitMessage",
+    "ReservedNodeOffering": "aws:ReservedNodeOffering",
+    "BatchDeleteClusterSnapshotsResult": "aws:BatchDeleteClusterSnapshotsResult",
+    "RevokeClusterSecurityGroupIngressResult": "aws:RevokeClusterSecurityGroupIngressResult",
+    "RevokeEndpointAccessMessage": "aws:RevokeEndpointAccessMessage",
+    "CreateClusterResult": "aws:CreateClusterResult",
+    "DeleteClusterResult": "aws:DeleteClusterResult",
+    "ModifyClusterSnapshotScheduleMessage": "aws:ModifyClusterSnapshotScheduleMessage",
+    "DescribeClusterParametersMessage": "aws:DescribeClusterParametersMessage",
+    "PartnerIntegrationOutputMessage": "aws:PartnerIntegrationOutputMessage",
+    "ScheduledActionType": "aws:ScheduledActionType",
+    "DescribeDataSharesResult": "aws:DescribeDataSharesResult",
+    "ModifyClusterSnapshotResult": "aws:ModifyClusterSnapshotResult",
+    "Event": "aws:Event",
+    "DescribeClusterDbRevisionsMessage": "aws:DescribeClusterDbRevisionsMessage",
+    "DeleteEndpointAccessMessage": "aws:DeleteEndpointAccessMessage",
+    "ClusterAssociatedToSchedule": "aws:ClusterAssociatedToSchedule",
+    "ModifyClusterSubnetGroupMessage": "aws:ModifyClusterSubnetGroupMessage",
+    "ModifyClusterResult": "aws:ModifyClusterResult",
+    "EventCategoriesMap": "aws:EventCategoriesMap",
+    "DescribeEventCategoriesMessage": "aws:DescribeEventCategoriesMessage",
+    "Subnet": "aws:Subnet",
+    "RejectDataShareMessage": "aws:RejectDataShareMessage",
+    "CreateClusterSecurityGroupMessage": "aws:CreateClusterSecurityGroupMessage",
+    "ModifyEventSubscriptionResult": "aws:ModifyEventSubscriptionResult",
+    "RotateEncryptionKeyMessage": "aws:RotateEncryptionKeyMessage",
+    "EC2SecurityGroup": "aws:EC2SecurityGroup",
+    "ModifyAquaOutputMessage": "aws:ModifyAquaOutputMessage",
+    "AssociateDataShareConsumerMessage": "aws:AssociateDataShareConsumerMessage",
+    "HsmConfiguration": {
+      "@id": "aws:HsmConfiguration",
+      "@type": "@id"
+    },
+    "AccountAttribute": "aws:AccountAttribute",
+    "DeleteEventSubscriptionMessage": "aws:DeleteEventSubscriptionMessage",
+    "NodeConfigurationOptionsMessage": "aws:NodeConfigurationOptionsMessage",
+    "AuthorizeSnapshotAccessMessage": "aws:AuthorizeSnapshotAccessMessage",
+    "RevokeSnapshotAccessMessage": "aws:RevokeSnapshotAccessMessage",
+    "DescribeSnapshotSchedulesMessage": "aws:DescribeSnapshotSchedulesMessage",
+    "ModifyEndpointAccessMessage": "aws:ModifyEndpointAccessMessage",
+    "TaggedResource": "aws:TaggedResource",
+    "Endpoint": {
+      "@id": "aws:Endpoint",
+      "@type": "xsd:string"
+    },
+    "SupportedOperation": "aws:SupportedOperation",
+    "DeauthorizeDataShareMessage": "aws:DeauthorizeDataShareMessage",
+    "NodeConfigurationOption": "aws:NodeConfigurationOption",
+    "ClusterSubnetGroup": {
+      "@id": "aws:ClusterSubnetGroup",
+      "@type": "@id"
+    },
+    "DescribeClusterVersionsMessage": "aws:DescribeClusterVersionsMessage",
+    "DeleteClusterSnapshotMessage": "aws:DeleteClusterSnapshotMessage",
+    "AuthorizeClusterSecurityGroupIngressResult": "aws:AuthorizeClusterSecurityGroupIngressResult",
+    "ModifySnapshotCopyRetentionPeriodMessage": "aws:ModifySnapshotCopyRetentionPeriodMessage",
+    "ClusterParameterGroupsMessage": "aws:ClusterParameterGroupsMessage",
+    "ResizeClusterMessage": "aws:ResizeClusterMessage",
+    "SnapshotSortingEntity": "aws:SnapshotSortingEntity",
+    "PauseClusterResult": "aws:PauseClusterResult",
+    "SupportedPlatform": "aws:SupportedPlatform",
+    "TableRestoreStatus": {
+      "@id": "aws:TableRestoreStatus",
+      "@type": "@id"
+    },
+    "EventCategoriesMessage": "aws:EventCategoriesMessage",
+    "CreateClusterSubnetGroupMessage": "aws:CreateClusterSubnetGroupMessage",
+    "CopyClusterSnapshotMessage": "aws:CopyClusterSnapshotMessage",
+    "ModifyClusterParameterGroupMessage": "aws:ModifyClusterParameterGroupMessage",
+    "GetReservedNodeExchangeConfigurationOptionsOutputMessage": "aws:GetReservedNodeExchangeConfigurationOptionsOutputMessage",
+    "EventSubscription": {
+      "@id": "aws:EventSubscription",
+      "@type": "@id"
+    },
+    "ModifySnapshotScheduleMessage": "aws:ModifySnapshotScheduleMessage",
+    "ClusterIamRole": "aws:ClusterIamRole",
+    "AcceptReservedNodeExchangeInputMessage": "aws:AcceptReservedNodeExchangeInputMessage",
+    "CreateClusterSubnetGroupResult": "aws:CreateClusterSubnetGroupResult",
+    "ClusterSnapshotCopyStatus": {
+      "@id": "aws:ClusterSnapshotCopyStatus",
+      "@type": "xsd:string"
+    },
+    "TrackListMessage": "aws:TrackListMessage",
+    "PurchaseReservedNodeOfferingResult": "aws:PurchaseReservedNodeOfferingResult",
+    "AquaConfiguration": {
+      "@id": "aws:AquaConfiguration",
+      "@type": "xsd:string"
+    },
+    "CustomerStorageMessage": "aws:CustomerStorageMessage",
+    "ModifyScheduledActionMessage": "aws:ModifyScheduledActionMessage",
+    "DeleteClusterSecurityGroupMessage": "aws:DeleteClusterSecurityGroupMessage",
+    "DescribeReservedNodeExchangeStatusOutputMessage": "aws:DescribeReservedNodeExchangeStatusOutputMessage",
+    "CreateClusterSnapshotResult": "aws:CreateClusterSnapshotResult",
+    "SnapshotCopyGrant": {
+      "@id": "aws:SnapshotCopyGrant",
+      "@type": "@id"
+    },
+    "CopyClusterSnapshotResult": "aws:CopyClusterSnapshotResult",
+    "PendingModifiedValues": {
+      "@id": "aws:PendingModifiedValues",
+      "@type": "xsd:string"
+    },
+    "ResizeClusterResult": "aws:ResizeClusterResult",
+    "RebootClusterMessage": "aws:RebootClusterMessage",
+    "DescribeClusterTracksMessage": "aws:DescribeClusterTracksMessage",
+    "CreateClusterSnapshotMessage": "aws:CreateClusterSnapshotMessage",
+    "DescribeUsageLimitsMessage": "aws:DescribeUsageLimitsMessage",
+    "ModifyClusterMaintenanceResult": "aws:ModifyClusterMaintenanceResult",
+    "UpdateTarget": "aws:UpdateTarget",
+    "DescribeDataSharesMessage": "aws:DescribeDataSharesMessage",
+    "EventSubscriptionsMessage": "aws:EventSubscriptionsMessage",
+    "ElasticIpStatus": {
+      "@id": "aws:ElasticIpStatus",
+      "@type": "xsd:string"
+    },
+    "ModifyClusterMessage": "aws:ModifyClusterMessage",
+    "ModifyClusterIamRolesMessage": "aws:ModifyClusterIamRolesMessage",
+    "HsmConfigurationMessage": "aws:HsmConfigurationMessage",
+    "ClusterSubnetGroupMessage": "aws:ClusterSubnetGroupMessage",
+    "DescribeAuthenticationProfilesMessage": "aws:DescribeAuthenticationProfilesMessage",
+    "GetClusterCredentialsMessage": "aws:GetClusterCredentialsMessage",
+    "DescribeSnapshotCopyGrantsMessage": "aws:DescribeSnapshotCopyGrantsMessage",
+    "AcceptReservedNodeExchangeOutputMessage": "aws:AcceptReservedNodeExchangeOutputMessage",
+    "RestoreFromClusterSnapshotMessage": "aws:RestoreFromClusterSnapshotMessage",
+    "AuthorizeDataShareMessage": "aws:AuthorizeDataShareMessage",
+    "OrderableClusterOption": "aws:OrderableClusterOption",
+    "ScheduledActionsMessage": "aws:ScheduledActionsMessage",
+    "CreateClusterSecurityGroupResult": "aws:CreateClusterSecurityGroupResult",
+    "ResizeInfo": {
+      "@id": "aws:ResizeInfo",
+      "@type": "xsd:string"
+    },
+    "DescribePartnersOutputMessage": "aws:DescribePartnersOutputMessage",
+    "ModifyEventSubscriptionMessage": "aws:ModifyEventSubscriptionMessage",
+    "ModifyAuthenticationProfileResult": "aws:ModifyAuthenticationProfileResult",
+    "DeleteSnapshotScheduleMessage": "aws:DeleteSnapshotScheduleMessage",
+    "ClusterCredentials": "aws:ClusterCredentials",
+    "ClustersMessage": "aws:ClustersMessage",
+    "PauseClusterMessage": "aws:PauseClusterMessage",
+    "EnableLoggingMessage": "aws:EnableLoggingMessage",
+    "CreateHsmConfigurationResult": "aws:CreateHsmConfigurationResult",
+    "DescribeClusterSecurityGroupsMessage": "aws:DescribeClusterSecurityGroupsMessage",
+    "AttributeValueTarget": "aws:AttributeValueTarget",
+    "DescribeOrderableClusterOptionsMessage": "aws:DescribeOrderableClusterOptionsMessage",
+    "DescribeAccountAttributesMessage": "aws:DescribeAccountAttributesMessage",
+    "EndpointAccess": "aws:EndpointAccess",
+    "EndpointAuthorization": "aws:EndpointAuthorization",
+    "EndpointAuthorizationList": {
+      "@id": "aws:EndpointAuthorizationList",
+      "@type": "xsd:string"
+    },
+    "PartnerIntegrationInputMessage": "aws:PartnerIntegrationInputMessage",
+    "ClusterDbRevision": "aws:ClusterDbRevision",
+    "OrderableClusterOptionsMessage": "aws:OrderableClusterOptionsMessage",
+    "ModifyAuthenticationProfileMessage": "aws:ModifyAuthenticationProfileMessage",
+    "AccountAttributeList": "aws:AccountAttributeList",
+    "DisableSnapshotCopyMessage": "aws:DisableSnapshotCopyMessage",
+    "ClusterSecurityGroupMessage": "aws:ClusterSecurityGroupMessage",
+    "ReservedNodeOfferingsMessage": "aws:ReservedNodeOfferingsMessage",
+    "SnapshotCopyGrantMessage": "aws:SnapshotCopyGrantMessage",
+    "DescribeResizeMessage": "aws:DescribeResizeMessage",
+    "ResumeClusterMessage": "aws:ResumeClusterMessage",
+    "AuthenticationProfile": "aws:AuthenticationProfile",
+    "DescribeEventSubscriptionsMessage": "aws:DescribeEventSubscriptionsMessage",
+    "ReservedNodesMessage": "aws:ReservedNodesMessage",
+    "AuthorizeClusterSecurityGroupIngressMessage": "aws:AuthorizeClusterSecurityGroupIngressMessage",
+    "BatchDeleteClusterSnapshotsRequest": "aws:BatchDeleteClusterSnapshotsRequest",
+    "RebootClusterResult": "aws:RebootClusterResult",
+    "NodeConfigurationOptionsFilter": "aws:NodeConfigurationOptionsFilter",
+    "DeleteClusterSubnetGroupMessage": "aws:DeleteClusterSubnetGroupMessage",
+    "EventInfoMap": "aws:EventInfoMap",
+    "DescribeHsmClientCertificatesMessage": "aws:DescribeHsmClientCertificatesMessage",
+    "Parameter": "aws:Parameter",
+    "CreateHsmConfigurationMessage": "aws:CreateHsmConfigurationMessage",
+    "DescribePartnersInputMessage": "aws:DescribePartnersInputMessage",
+    "ScheduledActionFilter": "aws:ScheduledActionFilter",
+    "ModifyClusterDbRevisionResult": "aws:ModifyClusterDbRevisionResult",
+    "ReservedNodeConfigurationOption": "aws:ReservedNodeConfigurationOption",
+    "RevisionTarget": {
+      "@id": "aws:RevisionTarget",
+      "@type": "xsd:string"
+    },
+    "RestoreStatus": {
+      "@id": "aws:RestoreStatus",
+      "@type": "xsd:string"
+    },
+    "DeleteHsmConfigurationMessage": "aws:DeleteHsmConfigurationMessage",
+    "LoggingStatus": "aws:LoggingStatus",
+    "DeleteTagsMessage": "aws:DeleteTagsMessage",
+    "DescribeClustersMessage": "aws:DescribeClustersMessage",
+    "RestoreTableFromClusterSnapshotMessage": "aws:RestoreTableFromClusterSnapshotMessage",
+    "GetReservedNodeExchangeConfigurationOptionsInputMessage": "aws:GetReservedNodeExchangeConfigurationOptionsInputMessage",
+    "RevokeSnapshotAccessResult": "aws:RevokeSnapshotAccessResult",
+    "DescribeReservedNodeExchangeStatusInputMessage": "aws:DescribeReservedNodeExchangeStatusInputMessage",
+    "GetClusterCredentialsWithIAMMessage": "aws:GetClusterCredentialsWithIAMMessage",
+    "SnapshotErrorMessage": "aws:SnapshotErrorMessage",
+    "CreateClusterParameterGroupResult": "aws:CreateClusterParameterGroupResult",
+    "TaggedResourceListMessage": "aws:TaggedResourceListMessage",
+    "ResumeClusterResult": "aws:ResumeClusterResult",
+    "IPRange": "aws:IPRange",
+    "CreateClusterParameterGroupMessage": "aws:CreateClusterParameterGroupMessage",
+    "ModifyClusterMaintenanceMessage": "aws:ModifyClusterMaintenanceMessage",
+    "CancelResizeMessage": "aws:CancelResizeMessage",
+    "DescribeDefaultClusterParametersResult": "aws:DescribeDefaultClusterParametersResult",
+    "DescribeAuthenticationProfilesResult": "aws:DescribeAuthenticationProfilesResult",
+    "CreateUsageLimitMessage": "aws:CreateUsageLimitMessage",
+    "CreateSnapshotScheduleMessage": "aws:CreateSnapshotScheduleMessage",
+    "AvailabilityZone": {
+      "@id": "aws:AvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "CreateEventSubscriptionMessage": "aws:CreateEventSubscriptionMessage",
+    "DeleteClusterParameterGroupMessage": "aws:DeleteClusterParameterGroupMessage",
+    "DescribeScheduledActionsMessage": "aws:DescribeScheduledActionsMessage",
+    "DescribeHsmConfigurationsMessage": "aws:DescribeHsmConfigurationsMessage",
+    "ModifyAquaInputMessage": "aws:ModifyAquaInputMessage",
+    "DescribeEndpointAuthorizationMessage": "aws:DescribeEndpointAuthorizationMessage",
+    "HsmStatus": {
+      "@id": "aws:HsmStatus",
+      "@type": "xsd:string"
+    },
+    "DeleteScheduledActionMessage": "aws:DeleteScheduledActionMessage",
+    "RecurringCharge": "aws:RecurringCharge",
+    "ModifyClusterSubnetGroupResult": "aws:ModifyClusterSubnetGroupResult",
+    "Cluster": {
+      "@id": "aws:Cluster",
+      "@type": "@id"
+    },
+    "ClusterNode": "aws:ClusterNode",
+    "DescribeReservedNodeOfferingsMessage": "aws:DescribeReservedNodeOfferingsMessage",
+    "ClusterVersion": {
+      "@id": "aws:ClusterVersion",
+      "@type": "xsd:string"
+    },
+    "EndpointAccessList": {
+      "@id": "aws:EndpointAccessList",
+      "@type": "xsd:string"
+    },
+    "DescribeClusterParameterGroupsMessage": "aws:DescribeClusterParameterGroupsMessage",
+    "DescribeTagsMessage": "aws:DescribeTagsMessage",
+    "DisableLoggingMessage": "aws:DisableLoggingMessage",
+    "UsageLimitList": "aws:UsageLimitList",
+    "RestoreTableFromClusterSnapshotResult": "aws:RestoreTableFromClusterSnapshotResult",
+    "DisassociateDataShareConsumerMessage": "aws:DisassociateDataShareConsumerMessage",
+    "TableRestoreStatusMessage": "aws:TableRestoreStatusMessage",
+    "CreateEventSubscriptionResult": "aws:CreateEventSubscriptionResult",
+    "DeleteHsmClientCertificateMessage": "aws:DeleteHsmClientCertificateMessage",
+    "ModifyUsageLimitMessage": "aws:ModifyUsageLimitMessage",
+    "ModifyClusterSnapshotMessage": "aws:ModifyClusterSnapshotMessage",
+    "BatchModifyClusterSnapshotsOutputMessage": "aws:BatchModifyClusterSnapshotsOutputMessage",
+    "DescribeDataSharesForProducerMessage": "aws:DescribeDataSharesForProducerMessage",
+    "ResizeProgressMessage": "aws:ResizeProgressMessage",
+    "CreateHsmClientCertificateResult": "aws:CreateHsmClientCertificateResult",
+    "MaintenanceTrack": "aws:MaintenanceTrack",
+    "ClusterParameterGroupDetails": "aws:ClusterParameterGroupDetails",
+    "CreateSnapshotCopyGrantMessage": "aws:CreateSnapshotCopyGrantMessage",
+    "DeleteClusterSnapshotResult": "aws:DeleteClusterSnapshotResult",
+    "DisableSnapshotCopyResult": "aws:DisableSnapshotCopyResult",
+    "BatchModifyClusterSnapshotsMessage": "aws:BatchModifyClusterSnapshotsMessage",
+    "ModifySnapshotCopyRetentionPeriodResult": "aws:ModifySnapshotCopyRetentionPeriodResult",
+    "ClusterParameterGroup": {
+      "@id": "aws:ClusterParameterGroup",
+      "@type": "@id"
+    },
+    "DescribeDataSharesForProducerResult": "aws:DescribeDataSharesForProducerResult",
+    "PurchaseReservedNodeOfferingMessage": "aws:PurchaseReservedNodeOfferingMessage",
+    "DescribeSnapshotSchedulesOutputMessage": "aws:DescribeSnapshotSchedulesOutputMessage",
+    "ResetClusterParameterGroupMessage": "aws:ResetClusterParameterGroupMessage",
+    "SnapshotSchedule": "aws:SnapshotSchedule",
+    "AuthorizeSnapshotAccessResult": "aws:AuthorizeSnapshotAccessResult",
+    "EnableSnapshotCopyMessage": "aws:EnableSnapshotCopyMessage",
+    "DescribeEventsMessage": "aws:DescribeEventsMessage",
+    "CreateClusterMessage": "aws:CreateClusterMessage",
+    "ModifyClusterIamRolesResult": "aws:ModifyClusterIamRolesResult",
+    "DescribeLoggingStatusMessage": "aws:DescribeLoggingStatusMessage",
+    "ReservedNodeExchangeStatus": {
+      "@id": "aws:ReservedNodeExchangeStatus",
+      "@type": "xsd:string"
+    },
+    "Tag": {
+      "@id": "aws:Tag",
+      "@type": "xsd:string"
+    },
+    "AccountWithRestoreAccess": {
+      "@id": "aws:AccountWithRestoreAccess",
+      "@type": "xsd:string"
+    },
+    "ClusterExtendedCredentials": "aws:ClusterExtendedCredentials",
+    "CreateSnapshotCopyGrantResult": "aws:CreateSnapshotCopyGrantResult",
+    "ClusterSecurityGroupMembership": "aws:ClusterSecurityGroupMembership",
+    "ClusterVersionsMessage": "aws:ClusterVersionsMessage",
+    "PartnerIntegrationInfo": "aws:PartnerIntegrationInfo",
+    "EventsMessage": "aws:EventsMessage",
+    "DeleteClusterMessage": "aws:DeleteClusterMessage",
+    "SnapshotMessage": "aws:SnapshotMessage",
+    "ClusterParameterGroupNameMessage": "aws:ClusterParameterGroupNameMessage",
+    "RotateEncryptionKeyResult": "aws:RotateEncryptionKeyResult",
+    "GetReservedNodeExchangeOfferingsOutputMessage": "aws:GetReservedNodeExchangeOfferingsOutputMessage",
+    "ClusterSecurityGroup": {
+      "@id": "aws:ClusterSecurityGroup",
+      "@type": "@id"
+    },
+    "DescribeNodeConfigurationOptionsMessage": "aws:DescribeNodeConfigurationOptionsMessage",
+    "ModifyClusterDbRevisionMessage": "aws:ModifyClusterDbRevisionMessage",
+    "CreateAuthenticationProfileResult": "aws:CreateAuthenticationProfileResult",
+    "CreateHsmClientCertificateMessage": "aws:CreateHsmClientCertificateMessage",
+    "HsmClientCertificateMessage": "aws:HsmClientCertificateMessage",
+    "ClusterParameterGroupStatus": "aws:ClusterParameterGroupStatus",
+    "GetReservedNodeExchangeOfferingsInputMessage": "aws:GetReservedNodeExchangeOfferingsInputMessage",
+    "DefaultClusterParameters": {
+      "@id": "aws:DefaultClusterParameters",
+      "@type": "@id"
+    },
+    "HsmClientCertificate": {
+      "@id": "aws:HsmClientCertificate",
+      "@type": "@id"
+    },
+    "ScheduledAction": "aws:ScheduledAction",
+    "DescribeClusterSubnetGroupsMessage": "aws:DescribeClusterSubnetGroupsMessage",
+    "UpdatePartnerStatusInputMessage": "aws:UpdatePartnerStatusInputMessage",
+    "ClusterDbRevisionsMessage": "aws:ClusterDbRevisionsMessage",
+    "DescribeReservedNodesMessage": "aws:DescribeReservedNodesMessage",
+    "ReservedNode": {
+      "@id": "aws:ReservedNode",
+      "@type": "@id"
+    },
+    "AuthorizeEndpointAccessMessage": "aws:AuthorizeEndpointAccessMessage",
+    "DeleteAuthenticationProfileMessage": "aws:DeleteAuthenticationProfileMessage",
+    "DescribeClusterSnapshotsMessage": "aws:DescribeClusterSnapshotsMessage",
+    "VpcSecurityGroupMembership": "aws:VpcSecurityGroupMembership",
+    "DescribeTableRestoreStatusMessage": "aws:DescribeTableRestoreStatusMessage",
+    "ClusterParameterStatus": "aws:ClusterParameterStatus",
+    "DescribeDataSharesForConsumerMessage": "aws:DescribeDataSharesForConsumerMessage",
+    "VpcEndpoint": {
+      "@id": "aws:VpcEndpoint",
+      "@type": "@id"
+    },
+    "Snapshot": {
+      "@id": "aws:Snapshot",
+      "@type": "@id"
+    },
+    "EnableSnapshotCopyResult": "aws:EnableSnapshotCopyResult",
+    "CreateTagsMessage": "aws:CreateTagsMessage",
+    "UsageLimit": "aws:UsageLimit",
+    "DescribeDefaultClusterParametersMessage": "aws:DescribeDefaultClusterParametersMessage",
+    "DeleteSnapshotCopyGrantMessage": "aws:DeleteSnapshotCopyGrantMessage",
+    "DeferredMaintenanceWindow": "aws:DeferredMaintenanceWindow",
+    "NetworkInterface": "aws:NetworkInterface",
+    "CreateEndpointAccessMessage": "aws:CreateEndpointAccessMessage",
+    "DescribeDataSharesForConsumerResult": "aws:DescribeDataSharesForConsumerResult",
+    "CreateAuthenticationProfileMessage": "aws:CreateAuthenticationProfileMessage",
+    "DeleteAuthenticationProfileResult": "aws:DeleteAuthenticationProfileResult",
+    "RestoreFromClusterSnapshotResult": "aws:RestoreFromClusterSnapshotResult",
+    "DescribeEndpointAccessMessage": "aws:DescribeEndpointAccessMessage",
+    "CreateScheduledActionMessage": "aws:CreateScheduledActionMessage",
+    "DataShares": {
+      "@id": "aws:DataShares",
+      "@type": "xsd:string"
+    },
+    "Marker": {
+      "@id": "aws:Marker",
+      "@type": "xsd:string"
+    },
+    "ClusterIdentifier": {
+      "@id": "aws:ClusterIdentifier",
+      "@type": "xsd:string"
+    },
+    "ClusterType": {
+      "@id": "aws:ClusterType",
+      "@type": "xsd:string"
+    },
+    "NodeType": {
+      "@id": "aws:NodeType",
+      "@type": "xsd:string"
+    },
+    "NumberOfNodes": {
+      "@id": "aws:NumberOfNodes",
+      "@type": "xsd:string"
+    },
+    "Classic": {
+      "@id": "aws:Classic",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeId": {
+      "@id": "aws:ReservedNodeId",
+      "@type": "xsd:string"
+    },
+    "TargetReservedNodeOfferingId": {
+      "@id": "aws:TargetReservedNodeOfferingId",
+      "@type": "xsd:string"
+    },
+    "ParameterGroupName": {
+      "@id": "aws:ParameterGroupName",
+      "@type": "xsd:string"
+    },
+    "ParameterGroupFamily": {
+      "@id": "aws:ParameterGroupFamily",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "aws:Description",
+      "@type": "xsd:string"
+    },
+    "Tags": {
+      "@id": "aws:Tags",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZones": {
+      "@id": "aws:AvailabilityZones",
+      "@type": "xsd:string"
+    },
+    "ClusterParameterGroupFamily": {
+      "@id": "aws:ClusterParameterGroupFamily",
+      "@type": "xsd:string"
+    },
+    "MaxRecords": {
+      "@id": "aws:MaxRecords",
+      "@type": "xsd:string"
+    },
+    "SnapshotIdentifier": {
+      "@id": "aws:SnapshotIdentifier",
+      "@type": "xsd:string"
+    },
+    "ManualSnapshotRetentionPeriod": {
+      "@id": "aws:ManualSnapshotRetentionPeriod",
+      "@type": "xsd:string"
+    },
+    "DestinationRegion": {
+      "@id": "aws:DestinationRegion",
+      "@type": "xsd:string"
+    },
+    "RetentionPeriod": {
+      "@id": "aws:RetentionPeriod",
+      "@type": "xsd:string"
+    },
+    "SnapshotCopyGrantName": {
+      "@id": "aws:SnapshotCopyGrantName",
+      "@type": "xsd:string"
+    },
+    "MaintenanceTrackName": {
+      "@id": "aws:MaintenanceTrackName",
+      "@type": "xsd:string"
+    },
+    "ResizeCluster": {
+      "@id": "aws:ResizeCluster",
+      "@type": "xsd:string"
+    },
+    "PauseCluster": {
+      "@id": "aws:PauseCluster",
+      "@type": "xsd:string"
+    },
+    "ResumeCluster": {
+      "@id": "aws:ResumeCluster",
+      "@type": "xsd:string"
+    },
+    "AquaStatus": {
+      "@id": "aws:AquaStatus",
+      "@type": "xsd:string"
+    },
+    "AquaConfigurationStatus": {
+      "@id": "aws:AquaConfigurationStatus",
+      "@type": "xsd:string"
+    },
+    "SourceType": {
+      "@id": "aws:SourceType",
+      "@type": "xsd:string"
+    },
+    "ParameterName": {
+      "@id": "aws:ParameterName",
+      "@type": "xsd:string"
+    },
+    "ParameterValue": {
+      "@id": "aws:ParameterValue",
+      "@type": "xsd:string"
+    },
+    "Source": {
+      "@id": "aws:Source",
+      "@type": "xsd:string"
+    },
+    "DataType": {
+      "@id": "aws:DataType",
+      "@type": "xsd:string"
+    },
+    "AllowedValues": {
+      "@id": "aws:AllowedValues",
+      "@type": "xsd:string"
+    },
+    "ApplyType": {
+      "@id": "aws:ApplyType",
+      "@type": "xsd:string"
+    },
+    "IsModifiable": {
+      "@id": "aws:IsModifiable",
+      "@type": "xsd:string"
+    },
+    "MinimumEngineVersion": {
+      "@id": "aws:MinimumEngineVersion",
+      "@type": "xsd:string"
+    },
+    "DBName": {
+      "@id": "aws:DBName",
+      "@type": "xsd:string"
+    },
+    "MasterUsername": {
+      "@id": "aws:MasterUsername",
+      "@type": "xsd:string"
+    },
+    "MasterUserPassword": {
+      "@id": "aws:MasterUserPassword",
+      "@type": "xsd:string"
+    },
+    "ClusterSecurityGroups": {
+      "@id": "aws:ClusterSecurityGroups",
+      "@type": "xsd:string"
+    },
+    "VpcSecurityGroupIds": {
+      "@id": "aws:VpcSecurityGroupIds",
+      "@type": "xsd:string"
+    },
+    "ClusterSubnetGroupName": {
+      "@id": "aws:ClusterSubnetGroupName",
+      "@type": "xsd:string"
+    },
+    "PreferredMaintenanceWindow": {
+      "@id": "aws:PreferredMaintenanceWindow",
+      "@type": "xsd:string"
+    },
+    "ClusterParameterGroupName": {
+      "@id": "aws:ClusterParameterGroupName",
+      "@type": "xsd:string"
+    },
+    "AutomatedSnapshotRetentionPeriod": {
+      "@id": "aws:AutomatedSnapshotRetentionPeriod",
+      "@type": "xsd:string"
+    },
+    "Port": {
+      "@id": "aws:Port",
+      "@type": "xsd:string"
+    },
+    "AllowVersionUpgrade": {
+      "@id": "aws:AllowVersionUpgrade",
+      "@type": "xsd:string"
+    },
+    "PubliclyAccessible": {
+      "@id": "aws:PubliclyAccessible",
+      "@type": "xsd:string"
+    },
+    "Encrypted": {
+      "@id": "aws:Encrypted",
+      "@type": "xsd:string"
+    },
+    "HsmClientCertificateIdentifier": {
+      "@id": "aws:HsmClientCertificateIdentifier",
+      "@type": "xsd:string"
+    },
+    "HsmConfigurationIdentifier": {
+      "@id": "aws:HsmConfigurationIdentifier",
+      "@type": "xsd:string"
+    },
+    "ElasticIp": {
+      "@id": "aws:ElasticIp",
+      "@type": "xsd:string"
+    },
+    "KmsKeyId": {
+      "@id": "aws:KmsKeyId",
+      "@type": "xsd:string"
+    },
+    "EnhancedVpcRouting": {
+      "@id": "aws:EnhancedVpcRouting",
+      "@type": "xsd:string"
+    },
+    "AdditionalInfo": {
+      "@id": "aws:AdditionalInfo",
+      "@type": "xsd:string"
+    },
+    "IamRoles": {
+      "@id": "aws:IamRoles",
+      "@type": "xsd:string"
+    },
+    "SnapshotScheduleIdentifier": {
+      "@id": "aws:SnapshotScheduleIdentifier",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZoneRelocation": {
+      "@id": "aws:AvailabilityZoneRelocation",
+      "@type": "xsd:string"
+    },
+    "DefaultIamRoleArn": {
+      "@id": "aws:DefaultIamRoleArn",
+      "@type": "xsd:string"
+    },
+    "LoadSampleData": {
+      "@id": "aws:LoadSampleData",
+      "@type": "xsd:string"
+    },
+    "Resources": {
+      "@id": "aws:Resources",
+      "@type": "xsd:string"
+    },
+    "Errors": {
+      "@id": "aws:Errors",
+      "@type": "xsd:string"
+    },
+    "TagKeys": {
+      "@id": "aws:TagKeys",
+      "@type": "xsd:string"
+    },
+    "TagValues": {
+      "@id": "aws:TagValues",
+      "@type": "xsd:string"
+    },
+    "Account": {
+      "@id": "aws:Account",
+      "@type": "xsd:string"
+    },
+    "VpcIds": {
+      "@id": "aws:VpcIds",
+      "@type": "xsd:string"
+    },
+    "Force": {
+      "@id": "aws:Force",
+      "@type": "xsd:string"
+    },
+    "DeferMaintenance": {
+      "@id": "aws:DeferMaintenance",
+      "@type": "xsd:string"
+    },
+    "DeferMaintenanceIdentifier": {
+      "@id": "aws:DeferMaintenanceIdentifier",
+      "@type": "xsd:string"
+    },
+    "DeferMaintenanceStartTime": {
+      "@id": "aws:DeferMaintenanceStartTime",
+      "@type": "xsd:string"
+    },
+    "DeferMaintenanceEndTime": {
+      "@id": "aws:DeferMaintenanceEndTime",
+      "@type": "xsd:string"
+    },
+    "DeferMaintenanceDuration": {
+      "@id": "aws:DeferMaintenanceDuration",
+      "@type": "xsd:string"
+    },
+    "SnapshotClusterIdentifier": {
+      "@id": "aws:SnapshotClusterIdentifier",
+      "@type": "xsd:string"
+    },
+    "SubnetIds": {
+      "@id": "aws:SubnetIds",
+      "@type": "xsd:string"
+    },
+    "PartnerIntegrationInfoList": {
+      "@id": "aws:PartnerIntegrationInfoList",
+      "@type": "xsd:string"
+    },
+    "ResourceOwner": {
+      "@id": "aws:ResourceOwner",
+      "@type": "xsd:string"
+    },
+    "EndpointName": {
+      "@id": "aws:EndpointName",
+      "@type": "xsd:string"
+    },
+    "VpcId": {
+      "@id": "aws:VpcId",
+      "@type": "xsd:string"
+    },
+    "DatabaseName": {
+      "@id": "aws:DatabaseName",
+      "@type": "xsd:string"
+    },
+    "PartnerName": {
+      "@id": "aws:PartnerName",
+      "@type": "xsd:string"
+    },
+    "Status": {
+      "@id": "aws:Status",
+      "@type": "xsd:string"
+    },
+    "StatusMessage": {
+      "@id": "aws:StatusMessage",
+      "@type": "xsd:string"
+    },
+    "CreatedAt": {
+      "@id": "aws:CreatedAt",
+      "@type": "xsd:string"
+    },
+    "UpdatedAt": {
+      "@id": "aws:UpdatedAt",
+      "@type": "xsd:string"
+    },
+    "SubnetGroupName": {
+      "@id": "aws:SubnetGroupName",
+      "@type": "xsd:string"
+    },
+    "EndpointStatus": {
+      "@id": "aws:EndpointStatus",
+      "@type": "xsd:string"
+    },
+    "EndpointCreateTime": {
+      "@id": "aws:EndpointCreateTime",
+      "@type": "xsd:string"
+    },
+    "Address": {
+      "@id": "aws:Address",
+      "@type": "xsd:string"
+    },
+    "VpcSecurityGroups": {
+      "@id": "aws:VpcSecurityGroups",
+      "@type": "xsd:string"
+    },
+    "ScheduledActions": {
+      "@id": "aws:ScheduledActions",
+      "@type": "xsd:string"
+    },
+    "TableRestoreRequestId": {
+      "@id": "aws:TableRestoreRequestId",
+      "@type": "xsd:string"
+    },
+    "Message": {
+      "@id": "aws:Message",
+      "@type": "xsd:string"
+    },
+    "RequestTime": {
+      "@id": "aws:RequestTime",
+      "@type": "xsd:string"
+    },
+    "ProgressInMegaBytes": {
+      "@id": "aws:ProgressInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "TotalDataInMegaBytes": {
+      "@id": "aws:TotalDataInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "SourceDatabaseName": {
+      "@id": "aws:SourceDatabaseName",
+      "@type": "xsd:string"
+    },
+    "SourceSchemaName": {
+      "@id": "aws:SourceSchemaName",
+      "@type": "xsd:string"
+    },
+    "SourceTableName": {
+      "@id": "aws:SourceTableName",
+      "@type": "xsd:string"
+    },
+    "TargetDatabaseName": {
+      "@id": "aws:TargetDatabaseName",
+      "@type": "xsd:string"
+    },
+    "TargetSchemaName": {
+      "@id": "aws:TargetSchemaName",
+      "@type": "xsd:string"
+    },
+    "NewTableName": {
+      "@id": "aws:NewTableName",
+      "@type": "xsd:string"
+    },
+    "AuthenticationProfiles": {
+      "@id": "aws:AuthenticationProfiles",
+      "@type": "xsd:string"
+    },
+    "AccountId": {
+      "@id": "aws:AccountId",
+      "@type": "xsd:string"
+    },
+    "AccountAlias": {
+      "@id": "aws:AccountAlias",
+      "@type": "xsd:string"
+    },
+    "DataShareArn": {
+      "@id": "aws:DataShareArn",
+      "@type": "xsd:string"
+    },
+    "DisassociateEntireAccount": {
+      "@id": "aws:DisassociateEntireAccount",
+      "@type": "xsd:string"
+    },
+    "ConsumerArn": {
+      "@id": "aws:ConsumerArn",
+      "@type": "xsd:string"
+    },
+    "ConsumerRegion": {
+      "@id": "aws:ConsumerRegion",
+      "@type": "xsd:string"
+    },
+    "EstimatedDiskUtilizationPercent": {
+      "@id": "aws:EstimatedDiskUtilizationPercent",
+      "@type": "xsd:string"
+    },
+    "Mode": {
+      "@id": "aws:Mode",
+      "@type": "xsd:string"
+    },
+    "AuthenticationProfileName": {
+      "@id": "aws:AuthenticationProfileName",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeOfferings": {
+      "@id": "aws:ReservedNodeOfferings",
+      "@type": "xsd:string"
+    },
+    "AssociateEntireAccount": {
+      "@id": "aws:AssociateEntireAccount",
+      "@type": "xsd:string"
+    },
+    "Attribute": {
+      "@id": "aws:Attribute",
+      "@type": "xsd:string"
+    },
+    "SortOrder": {
+      "@id": "aws:SortOrder",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeExchangeRequestId": {
+      "@id": "aws:ReservedNodeExchangeRequestId",
+      "@type": "xsd:string"
+    },
+    "ScheduleIdentifier": {
+      "@id": "aws:ScheduleIdentifier",
+      "@type": "xsd:string"
+    },
+    "DisassociateSchedule": {
+      "@id": "aws:DisassociateSchedule",
+      "@type": "xsd:string"
+    },
+    "Parameters": {
+      "@id": "aws:Parameters",
+      "@type": "xsd:string"
+    },
+    "ReservedNodes": {
+      "@id": "aws:ReservedNodes",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeOfferingId": {
+      "@id": "aws:ReservedNodeOfferingId",
+      "@type": "xsd:string"
+    },
+    "StartTime": {
+      "@id": "aws:StartTime",
+      "@type": "xsd:string"
+    },
+    "Duration": {
+      "@id": "aws:Duration",
+      "@type": "xsd:string"
+    },
+    "FixedPrice": {
+      "@id": "aws:FixedPrice",
+      "@type": "xsd:string"
+    },
+    "UsagePrice": {
+      "@id": "aws:UsagePrice",
+      "@type": "xsd:string"
+    },
+    "CurrencyCode": {
+      "@id": "aws:CurrencyCode",
+      "@type": "xsd:string"
+    },
+    "NodeCount": {
+      "@id": "aws:NodeCount",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "aws:State",
+      "@type": "xsd:string"
+    },
+    "OfferingType": {
+      "@id": "aws:OfferingType",
+      "@type": "xsd:string"
+    },
+    "RecurringCharges": {
+      "@id": "aws:RecurringCharges",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeOfferingType": {
+      "@id": "aws:ReservedNodeOfferingType",
+      "@type": "xsd:string"
+    },
+    "IamRoleArn": {
+      "@id": "aws:IamRoleArn",
+      "@type": "xsd:string"
+    },
+    "ApplyStatus": {
+      "@id": "aws:ApplyStatus",
+      "@type": "xsd:string"
+    },
+    "ScheduleDefinitions": {
+      "@id": "aws:ScheduleDefinitions",
+      "@type": "xsd:string"
+    },
+    "ScheduleDescription": {
+      "@id": "aws:ScheduleDescription",
+      "@type": "xsd:string"
+    },
+    "NextInvocations": {
+      "@id": "aws:NextInvocations",
+      "@type": "xsd:string"
+    },
+    "AssociatedClusterCount": {
+      "@id": "aws:AssociatedClusterCount",
+      "@type": "xsd:string"
+    },
+    "AssociatedClusters": {
+      "@id": "aws:AssociatedClusters",
+      "@type": "xsd:string"
+    },
+    "MaintenanceTracks": {
+      "@id": "aws:MaintenanceTracks",
+      "@type": "xsd:string"
+    },
+    "TableRestoreStatusDetails": {
+      "@id": "aws:TableRestoreStatusDetails",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "aws:Name",
+      "@type": "xsd:string"
+    },
+    "UsageLimits": {
+      "@id": "aws:UsageLimits",
+      "@type": "xsd:string"
+    },
+    "ResetAllParameters": {
+      "@id": "aws:ResetAllParameters",
+      "@type": "xsd:string"
+    },
+    "EncryptionType": {
+      "@id": "aws:EncryptionType",
+      "@type": "xsd:string"
+    },
+    "ParameterGroupStatus": {
+      "@id": "aws:ParameterGroupStatus",
+      "@type": "xsd:string"
+    },
+    "SnapshotArn": {
+      "@id": "aws:SnapshotArn",
+      "@type": "xsd:string"
+    },
+    "ClusterSecurityGroupName": {
+      "@id": "aws:ClusterSecurityGroupName",
+      "@type": "xsd:string"
+    },
+    "Values": {
+      "@id": "aws:Values",
+      "@type": "xsd:string"
+    },
+    "NetworkInterfaceId": {
+      "@id": "aws:NetworkInterfaceId",
+      "@type": "xsd:string"
+    },
+    "SubnetId": {
+      "@id": "aws:SubnetId",
+      "@type": "xsd:string"
+    },
+    "PrivateIpAddress": {
+      "@id": "aws:PrivateIpAddress",
+      "@type": "xsd:string"
+    },
+    "AddIamRoles": {
+      "@id": "aws:AddIamRoles",
+      "@type": "xsd:string"
+    },
+    "RemoveIamRoles": {
+      "@id": "aws:RemoveIamRoles",
+      "@type": "xsd:string"
+    },
+    "VpcSecurityGroupId": {
+      "@id": "aws:VpcSecurityGroupId",
+      "@type": "xsd:string"
+    },
+    "CurrentRestoreRateInMegaBytesPerSecond": {
+      "@id": "aws:CurrentRestoreRateInMegaBytesPerSecond",
+      "@type": "xsd:string"
+    },
+    "SnapshotSizeInMegaBytes": {
+      "@id": "aws:SnapshotSizeInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "ElapsedTimeInSeconds": {
+      "@id": "aws:ElapsedTimeInSeconds",
+      "@type": "xsd:string"
+    },
+    "EstimatedTimeToCompletionInSeconds": {
+      "@id": "aws:EstimatedTimeToCompletionInSeconds",
+      "@type": "xsd:string"
+    },
+    "ScheduledActionName": {
+      "@id": "aws:ScheduledActionName",
+      "@type": "xsd:string"
+    },
+    "TargetActionType": {
+      "@id": "aws:TargetActionType",
+      "@type": "xsd:string"
+    },
+    "EndTime": {
+      "@id": "aws:EndTime",
+      "@type": "xsd:string"
+    },
+    "Active": {
+      "@id": "aws:Active",
+      "@type": "xsd:string"
+    },
+    "Filters": {
+      "@id": "aws:Filters",
+      "@type": "xsd:string"
+    },
+    "Events": {
+      "@id": "aws:Events",
+      "@type": "xsd:string"
+    },
+    "SourceReservedNodeId": {
+      "@id": "aws:SourceReservedNodeId",
+      "@type": "xsd:string"
+    },
+    "SourceReservedNodeType": {
+      "@id": "aws:SourceReservedNodeType",
+      "@type": "xsd:string"
+    },
+    "SourceReservedNodeCount": {
+      "@id": "aws:SourceReservedNodeCount",
+      "@type": "xsd:string"
+    },
+    "TargetReservedNodeType": {
+      "@id": "aws:TargetReservedNodeType",
+      "@type": "xsd:string"
+    },
+    "TargetReservedNodeCount": {
+      "@id": "aws:TargetReservedNodeCount",
+      "@type": "xsd:string"
+    },
+    "DbUser": {
+      "@id": "aws:DbUser",
+      "@type": "xsd:string"
+    },
+    "DbPassword": {
+      "@id": "aws:DbPassword",
+      "@type": "xsd:string"
+    },
+    "Expiration": {
+      "@id": "aws:Expiration",
+      "@type": "xsd:string"
+    },
+    "NextRefreshTime": {
+      "@id": "aws:NextRefreshTime",
+      "@type": "xsd:string"
+    },
+    "SnapshotType": {
+      "@id": "aws:SnapshotType",
+      "@type": "xsd:string"
+    },
+    "OwnerAccount": {
+      "@id": "aws:OwnerAccount",
+      "@type": "xsd:string"
+    },
+    "ClusterExists": {
+      "@id": "aws:ClusterExists",
+      "@type": "xsd:string"
+    },
+    "SortingEntities": {
+      "@id": "aws:SortingEntities",
+      "@type": "xsd:string"
+    },
+    "DatabaseVersion": {
+      "@id": "aws:DatabaseVersion",
+      "@type": "xsd:string"
+    },
+    "UpdateTargets": {
+      "@id": "aws:UpdateTargets",
+      "@type": "xsd:string"
+    },
+    "ResourceName": {
+      "@id": "aws:ResourceName",
+      "@type": "xsd:string"
+    },
+    "ResourceType": {
+      "@id": "aws:ResourceType",
+      "@type": "xsd:string"
+    },
+    "SubscriptionName": {
+      "@id": "aws:SubscriptionName",
+      "@type": "xsd:string"
+    },
+    "SnsTopicArn": {
+      "@id": "aws:SnsTopicArn",
+      "@type": "xsd:string"
+    },
+    "SourceIds": {
+      "@id": "aws:SourceIds",
+      "@type": "xsd:string"
+    },
+    "EventCategories": {
+      "@id": "aws:EventCategories",
+      "@type": "xsd:string"
+    },
+    "Severity": {
+      "@id": "aws:Severity",
+      "@type": "xsd:string"
+    },
+    "Enabled": {
+      "@id": "aws:Enabled",
+      "@type": "xsd:string"
+    },
+    "OrderableClusterOptions": {
+      "@id": "aws:OrderableClusterOptions",
+      "@type": "xsd:string"
+    },
+    "Identifiers": {
+      "@id": "aws:Identifiers",
+      "@type": "xsd:string"
+    },
+    "TargetAction": {
+      "@id": "aws:TargetAction",
+      "@type": "xsd:string"
+    },
+    "Schedule": {
+      "@id": "aws:Schedule",
+      "@type": "xsd:string"
+    },
+    "IamRole": {
+      "@id": "aws:IamRole",
+      "@type": "xsd:string"
+    },
+    "ScheduledActionDescription": {
+      "@id": "aws:ScheduledActionDescription",
+      "@type": "xsd:string"
+    },
+    "Operator": {
+      "@id": "aws:Operator",
+      "@type": "xsd:string"
+    },
+    "ParameterApplyStatus": {
+      "@id": "aws:ParameterApplyStatus",
+      "@type": "xsd:string"
+    },
+    "ParameterApplyErrorDescription": {
+      "@id": "aws:ParameterApplyErrorDescription",
+      "@type": "xsd:string"
+    },
+    "ClusterDbRevisions": {
+      "@id": "aws:ClusterDbRevisions",
+      "@type": "xsd:string"
+    },
+    "AttributeValue": {
+      "@id": "aws:AttributeValue",
+      "@type": "xsd:string"
+    },
+    "Manual": {
+      "@id": "aws:Manual",
+      "@type": "xsd:string"
+    },
+    "Key": {
+      "@id": "aws:Key",
+      "@type": "xsd:string"
+    },
+    "Value": {
+      "@id": "aws:Value",
+      "@type": "xsd:string"
+    },
+    "CIDRIP": {
+      "@id": "aws:CIDRIP",
+      "@type": "xsd:string"
+    },
+    "EC2SecurityGroupName": {
+      "@id": "aws:EC2SecurityGroupName",
+      "@type": "xsd:string"
+    },
+    "EC2SecurityGroupOwnerId": {
+      "@id": "aws:EC2SecurityGroupOwnerId",
+      "@type": "xsd:string"
+    },
+    "ActionType": {
+      "@id": "aws:ActionType",
+      "@type": "xsd:string"
+    },
+    "RecurringChargeAmount": {
+      "@id": "aws:RecurringChargeAmount",
+      "@type": "xsd:string"
+    },
+    "RecurringChargeFrequency": {
+      "@id": "aws:RecurringChargeFrequency",
+      "@type": "xsd:string"
+    },
+    "SourceReservedNode": {
+      "@id": "aws:SourceReservedNode",
+      "@type": "@id"
+    },
+    "TargetReservedNodeOffering": {
+      "@id": "aws:TargetReservedNodeOffering",
+      "@type": "@id"
+    },
+    "SourceSnapshotIdentifier": {
+      "@id": "aws:SourceSnapshotIdentifier",
+      "@type": "xsd:string"
+    },
+    "SourceSnapshotClusterIdentifier": {
+      "@id": "aws:SourceSnapshotClusterIdentifier",
+      "@type": "xsd:string"
+    },
+    "TargetSnapshotIdentifier": {
+      "@id": "aws:TargetSnapshotIdentifier",
+      "@type": "xsd:string"
+    },
+    "ParameterGroups": {
+      "@id": "aws:ParameterGroups",
+      "@type": "xsd:string"
+    },
+    "SnapshotCreateTime": {
+      "@id": "aws:SnapshotCreateTime",
+      "@type": "xsd:string"
+    },
+    "ClusterCreateTime": {
+      "@id": "aws:ClusterCreateTime",
+      "@type": "xsd:string"
+    },
+    "EngineFullVersion": {
+      "@id": "aws:EngineFullVersion",
+      "@type": "xsd:string"
+    },
+    "EncryptedWithHSM": {
+      "@id": "aws:EncryptedWithHSM",
+      "@type": "xsd:string"
+    },
+    "AccountsWithRestoreAccess": {
+      "@id": "aws:AccountsWithRestoreAccess",
+      "@type": "xsd:string"
+    },
+    "TotalBackupSizeInMegaBytes": {
+      "@id": "aws:TotalBackupSizeInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "ActualIncrementalBackupSizeInMegaBytes": {
+      "@id": "aws:ActualIncrementalBackupSizeInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "BackupProgressInMegaBytes": {
+      "@id": "aws:BackupProgressInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "CurrentBackupRateInMegaBytesPerSecond": {
+      "@id": "aws:CurrentBackupRateInMegaBytesPerSecond",
+      "@type": "xsd:string"
+    },
+    "EstimatedSecondsToCompletion": {
+      "@id": "aws:EstimatedSecondsToCompletion",
+      "@type": "xsd:string"
+    },
+    "SourceRegion": {
+      "@id": "aws:SourceRegion",
+      "@type": "xsd:string"
+    },
+    "RestorableNodeTypes": {
+      "@id": "aws:RestorableNodeTypes",
+      "@type": "xsd:string"
+    },
+    "ManualSnapshotRemainingDays": {
+      "@id": "aws:ManualSnapshotRemainingDays",
+      "@type": "xsd:string"
+    },
+    "SnapshotRetentionStartTime": {
+      "@id": "aws:SnapshotRetentionStartTime",
+      "@type": "xsd:string"
+    },
+    "HsmIpAddress": {
+      "@id": "aws:HsmIpAddress",
+      "@type": "xsd:string"
+    },
+    "HsmPartitionName": {
+      "@id": "aws:HsmPartitionName",
+      "@type": "xsd:string"
+    },
+    "HsmPartitionPassword": {
+      "@id": "aws:HsmPartitionPassword",
+      "@type": "xsd:string"
+    },
+    "HsmServerPublicCertificate": {
+      "@id": "aws:HsmServerPublicCertificate",
+      "@type": "xsd:string"
+    },
+    "ProducerArn": {
+      "@id": "aws:ProducerArn",
+      "@type": "xsd:string"
+    },
+    "SubnetIdentifier": {
+      "@id": "aws:SubnetIdentifier",
+      "@type": "xsd:string"
+    },
+    "SubnetAvailabilityZone": {
+      "@id": "aws:SubnetAvailabilityZone",
+      "@type": "xsd:string"
+    },
+    "SubnetStatus": {
+      "@id": "aws:SubnetStatus",
+      "@type": "xsd:string"
+    },
+    "AuthenticationProfileContent": {
+      "@id": "aws:AuthenticationProfileContent",
+      "@type": "xsd:string"
+    },
+    "OperationName": {
+      "@id": "aws:OperationName",
+      "@type": "xsd:string"
+    },
+    "SnapshotCopyGrants": {
+      "@id": "aws:SnapshotCopyGrants",
+      "@type": "xsd:string"
+    },
+    "HsmClientCertificatePublicKey": {
+      "@id": "aws:HsmClientCertificatePublicKey",
+      "@type": "xsd:string"
+    },
+    "TaggedResources": {
+      "@id": "aws:TaggedResources",
+      "@type": "xsd:string"
+    },
+    "TotalProvisionedStorageInMegaBytes": {
+      "@id": "aws:TotalProvisionedStorageInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "HsmClientCertificates": {
+      "@id": "aws:HsmClientCertificates",
+      "@type": "xsd:string"
+    },
+    "EventCategoriesMapList": {
+      "@id": "aws:EventCategoriesMapList",
+      "@type": "xsd:string"
+    },
+    "ClusterVersions": {
+      "@id": "aws:ClusterVersions",
+      "@type": "xsd:string"
+    },
+    "FailureCode": {
+      "@id": "aws:FailureCode",
+      "@type": "xsd:string"
+    },
+    "FailureReason": {
+      "@id": "aws:FailureReason",
+      "@type": "xsd:string"
+    },
+    "NodeConfigurationOptionList": {
+      "@id": "aws:NodeConfigurationOptionList",
+      "@type": "xsd:string"
+    },
+    "UsageLimitId": {
+      "@id": "aws:UsageLimitId",
+      "@type": "xsd:string"
+    },
+    "Amount": {
+      "@id": "aws:Amount",
+      "@type": "xsd:string"
+    },
+    "BreachAction": {
+      "@id": "aws:BreachAction",
+      "@type": "xsd:string"
+    },
+    "EC2SecurityGroups": {
+      "@id": "aws:EC2SecurityGroups",
+      "@type": "xsd:string"
+    },
+    "IPRanges": {
+      "@id": "aws:IPRanges",
+      "@type": "xsd:string"
+    },
+    "CustomerAwsId": {
+      "@id": "aws:CustomerAwsId",
+      "@type": "xsd:string"
+    },
+    "CustSubscriptionId": {
+      "@id": "aws:CustSubscriptionId",
+      "@type": "xsd:string"
+    },
+    "SubscriptionCreationTime": {
+      "@id": "aws:SubscriptionCreationTime",
+      "@type": "xsd:string"
+    },
+    "SourceIdsList": {
+      "@id": "aws:SourceIdsList",
+      "@type": "xsd:string"
+    },
+    "EventCategoriesList": {
+      "@id": "aws:EventCategoriesList",
+      "@type": "xsd:string"
+    },
+    "SkipFinalClusterSnapshot": {
+      "@id": "aws:SkipFinalClusterSnapshot",
+      "@type": "xsd:string"
+    },
+    "FinalClusterSnapshotIdentifier": {
+      "@id": "aws:FinalClusterSnapshotIdentifier",
+      "@type": "xsd:string"
+    },
+    "FinalClusterSnapshotRetentionPeriod": {
+      "@id": "aws:FinalClusterSnapshotRetentionPeriod",
+      "@type": "xsd:string"
+    },
+    "AccountAttributes": {
+      "@id": "aws:AccountAttributes",
+      "@type": "xsd:string"
+    },
+    "SupportedOperations": {
+      "@id": "aws:SupportedOperations",
+      "@type": "xsd:string"
+    },
+    "Enable": {
+      "@id": "aws:Enable",
+      "@type": "xsd:string"
+    },
+    "SourceIdentifier": {
+      "@id": "aws:SourceIdentifier",
+      "@type": "xsd:string"
+    },
+    "Date": {
+      "@id": "aws:Date",
+      "@type": "xsd:string"
+    },
+    "EventId": {
+      "@id": "aws:EventId",
+      "@type": "xsd:string"
+    },
+    "ConsumerIdentifier": {
+      "@id": "aws:ConsumerIdentifier",
+      "@type": "xsd:string"
+    },
+    "NewClusterIdentifier": {
+      "@id": "aws:NewClusterIdentifier",
+      "@type": "xsd:string"
+    },
+    "DatabaseRevision": {
+      "@id": "aws:DatabaseRevision",
+      "@type": "xsd:string"
+    },
+    "DatabaseRevisionReleaseDate": {
+      "@id": "aws:DatabaseRevisionReleaseDate",
+      "@type": "xsd:string"
+    },
+    "FeatureType": {
+      "@id": "aws:FeatureType",
+      "@type": "xsd:string"
+    },
+    "LimitType": {
+      "@id": "aws:LimitType",
+      "@type": "xsd:string"
+    },
+    "Period": {
+      "@id": "aws:Period",
+      "@type": "xsd:string"
+    },
+    "SnapshotIdentifierList": {
+      "@id": "aws:SnapshotIdentifierList",
+      "@type": "xsd:string"
+    },
+    "ScheduleAssociationState": {
+      "@id": "aws:ScheduleAssociationState",
+      "@type": "xsd:string"
+    },
+    "DbName": {
+      "@id": "aws:DbName",
+      "@type": "xsd:string"
+    },
+    "DurationSeconds": {
+      "@id": "aws:DurationSeconds",
+      "@type": "xsd:string"
+    },
+    "AutoCreate": {
+      "@id": "aws:AutoCreate",
+      "@type": "xsd:string"
+    },
+    "DbGroups": {
+      "@id": "aws:DbGroups",
+      "@type": "xsd:string"
+    },
+    "Snapshots": {
+      "@id": "aws:Snapshots",
+      "@type": "xsd:string"
+    },
+    "ClusterStatus": {
+      "@id": "aws:ClusterStatus",
+      "@type": "xsd:string"
+    },
+    "ClusterAvailabilityStatus": {
+      "@id": "aws:ClusterAvailabilityStatus",
+      "@type": "xsd:string"
+    },
+    "ModifyStatus": {
+      "@id": "aws:ModifyStatus",
+      "@type": "xsd:string"
+    },
+    "ClusterParameterGroups": {
+      "@id": "aws:ClusterParameterGroups",
+      "@type": "xsd:string"
+    },
+    "DataTransferProgress": {
+      "@id": "aws:DataTransferProgress",
+      "@type": "xsd:string"
+    },
+    "ClusterPublicKey": {
+      "@id": "aws:ClusterPublicKey",
+      "@type": "xsd:string"
+    },
+    "ClusterNodes": {
+      "@id": "aws:ClusterNodes",
+      "@type": "xsd:string"
+    },
+    "ClusterRevisionNumber": {
+      "@id": "aws:ClusterRevisionNumber",
+      "@type": "xsd:string"
+    },
+    "PendingActions": {
+      "@id": "aws:PendingActions",
+      "@type": "xsd:string"
+    },
+    "ElasticResizeNumberOfNodeOptions": {
+      "@id": "aws:ElasticResizeNumberOfNodeOptions",
+      "@type": "xsd:string"
+    },
+    "DeferredMaintenanceWindows": {
+      "@id": "aws:DeferredMaintenanceWindows",
+      "@type": "xsd:string"
+    },
+    "SnapshotScheduleState": {
+      "@id": "aws:SnapshotScheduleState",
+      "@type": "xsd:string"
+    },
+    "ExpectedNextSnapshotScheduleTime": {
+      "@id": "aws:ExpectedNextSnapshotScheduleTime",
+      "@type": "xsd:string"
+    },
+    "ExpectedNextSnapshotScheduleTimeStatus": {
+      "@id": "aws:ExpectedNextSnapshotScheduleTimeStatus",
+      "@type": "xsd:string"
+    },
+    "NextMaintenanceWindowStartTime": {
+      "@id": "aws:NextMaintenanceWindowStartTime",
+      "@type": "xsd:string"
+    },
+    "AvailabilityZoneRelocationStatus": {
+      "@id": "aws:AvailabilityZoneRelocationStatus",
+      "@type": "xsd:string"
+    },
+    "ClusterNamespaceArn": {
+      "@id": "aws:ClusterNamespaceArn",
+      "@type": "xsd:string"
+    },
+    "TotalStorageCapacityInMegaBytes": {
+      "@id": "aws:TotalStorageCapacityInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "EventSubscriptionsList": {
+      "@id": "aws:EventSubscriptionsList",
+      "@type": "xsd:string"
+    },
+    "Clusters": {
+      "@id": "aws:Clusters",
+      "@type": "xsd:string"
+    },
+    "ClusterParameterStatusList": {
+      "@id": "aws:ClusterParameterStatusList",
+      "@type": "xsd:string"
+    },
+    "SnapshotSchedules": {
+      "@id": "aws:SnapshotSchedules",
+      "@type": "xsd:string"
+    },
+    "DryRun": {
+      "@id": "aws:DryRun",
+      "@type": "xsd:string"
+    },
+    "VpcEndpoints": {
+      "@id": "aws:VpcEndpoints",
+      "@type": "xsd:string"
+    },
+    "EventDescription": {
+      "@id": "aws:EventDescription",
+      "@type": "xsd:string"
+    },
+    "CurrentDatabaseRevision": {
+      "@id": "aws:CurrentDatabaseRevision",
+      "@type": "xsd:string"
+    },
+    "RevisionTargets": {
+      "@id": "aws:RevisionTargets",
+      "@type": "xsd:string"
+    },
+    "ExchangedReservedNode": {
+      "@id": "aws:ExchangedReservedNode",
+      "@type": "xsd:string"
+    },
+    "NodeRole": {
+      "@id": "aws:NodeRole",
+      "@type": "xsd:string"
+    },
+    "PrivateIPAddress": {
+      "@id": "aws:PrivateIPAddress",
+      "@type": "xsd:string"
+    },
+    "PublicIPAddress": {
+      "@id": "aws:PublicIPAddress",
+      "@type": "xsd:string"
+    },
+    "BucketName": {
+      "@id": "aws:BucketName",
+      "@type": "xsd:string"
+    },
+    "S3KeyPrefix": {
+      "@id": "aws:S3KeyPrefix",
+      "@type": "xsd:string"
+    },
+    "LogDestinationType": {
+      "@id": "aws:LogDestinationType",
+      "@type": "xsd:string"
+    },
+    "LogExports": {
+      "@id": "aws:LogExports",
+      "@type": "xsd:string"
+    },
+    "VpcEndpointId": {
+      "@id": "aws:VpcEndpointId",
+      "@type": "xsd:string"
+    },
+    "NetworkInterfaces": {
+      "@id": "aws:NetworkInterfaces",
+      "@type": "xsd:string"
+    },
+    "HsmConfigurations": {
+      "@id": "aws:HsmConfigurations",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeExchangeStatusDetails": {
+      "@id": "aws:ReservedNodeExchangeStatusDetails",
+      "@type": "xsd:string"
+    },
+    "SupportedPlatforms": {
+      "@id": "aws:SupportedPlatforms",
+      "@type": "xsd:string"
+    },
+    "Grantor": {
+      "@id": "aws:Grantor",
+      "@type": "xsd:string"
+    },
+    "Grantee": {
+      "@id": "aws:Grantee",
+      "@type": "xsd:string"
+    },
+    "AuthorizeTime": {
+      "@id": "aws:AuthorizeTime",
+      "@type": "xsd:string"
+    },
+    "AllowedAllVPCs": {
+      "@id": "aws:AllowedAllVPCs",
+      "@type": "xsd:string"
+    },
+    "AllowedVPCs": {
+      "@id": "aws:AllowedVPCs",
+      "@type": "xsd:string"
+    },
+    "EndpointCount": {
+      "@id": "aws:EndpointCount",
+      "@type": "xsd:string"
+    },
+    "AttributeNames": {
+      "@id": "aws:AttributeNames",
+      "@type": "xsd:string"
+    },
+    "SubnetGroupStatus": {
+      "@id": "aws:SubnetGroupStatus",
+      "@type": "xsd:string"
+    },
+    "Subnets": {
+      "@id": "aws:Subnets",
+      "@type": "xsd:string"
+    },
+    "ClusterSubnetGroups": {
+      "@id": "aws:ClusterSubnetGroups",
+      "@type": "xsd:string"
+    },
+    "ReservedNodeConfigurationOptionList": {
+      "@id": "aws:ReservedNodeConfigurationOptionList",
+      "@type": "xsd:string"
+    },
+    "ResizeType": {
+      "@id": "aws:ResizeType",
+      "@type": "xsd:string"
+    },
+    "AllowCancelResize": {
+      "@id": "aws:AllowCancelResize",
+      "@type": "xsd:string"
+    },
+    "EnableCaseSensitiveIdentifier": {
+      "@id": "aws:EnableCaseSensitiveIdentifier",
+      "@type": "xsd:string"
+    },
+    "LoggingEnabled": {
+      "@id": "aws:LoggingEnabled",
+      "@type": "xsd:string"
+    },
+    "LastSuccessfulDeliveryTime": {
+      "@id": "aws:LastSuccessfulDeliveryTime",
+      "@type": "xsd:string"
+    },
+    "LastFailureTime": {
+      "@id": "aws:LastFailureTime",
+      "@type": "xsd:string"
+    },
+    "LastFailureMessage": {
+      "@id": "aws:LastFailureMessage",
+      "@type": "xsd:string"
+    },
+    "TargetNodeType": {
+      "@id": "aws:TargetNodeType",
+      "@type": "xsd:string"
+    },
+    "TargetNumberOfNodes": {
+      "@id": "aws:TargetNumberOfNodes",
+      "@type": "xsd:string"
+    },
+    "TargetClusterType": {
+      "@id": "aws:TargetClusterType",
+      "@type": "xsd:string"
+    },
+    "ImportTablesCompleted": {
+      "@id": "aws:ImportTablesCompleted",
+      "@type": "xsd:string"
+    },
+    "ImportTablesInProgress": {
+      "@id": "aws:ImportTablesInProgress",
+      "@type": "xsd:string"
+    },
+    "ImportTablesNotStarted": {
+      "@id": "aws:ImportTablesNotStarted",
+      "@type": "xsd:string"
+    },
+    "AvgResizeRateInMegaBytesPerSecond": {
+      "@id": "aws:AvgResizeRateInMegaBytesPerSecond",
+      "@type": "xsd:string"
+    },
+    "TotalResizeDataInMegaBytes": {
+      "@id": "aws:TotalResizeDataInMegaBytes",
+      "@type": "xsd:string"
+    },
+    "TargetEncryptionType": {
+      "@id": "aws:TargetEncryptionType",
+      "@type": "xsd:string"
+    },
+    "DataTransferProgressPercent": {
+      "@id": "aws:DataTransferProgressPercent",
+      "@type": "xsd:string"
+    },
+    "AttributeName": {
+      "@id": "aws:AttributeName",
+      "@type": "xsd:string"
+    },
+    "AttributeValues": {
+      "@id": "aws:AttributeValues",
+      "@type": "xsd:string"
+    }
+  }
+}

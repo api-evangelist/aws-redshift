@@ -1,0 +1,48 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: Amazon Redshift
+  description: Shared capability definitions for the Amazon Redshift API providing cluster management, snapshot, and data warehouse operations.
+  tags:
+    - Analytics
+    - Data Warehouse
+    - Cloud Database
+  created: "2026-04-19"
+  modified: "2026-04-19"
+capability:
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: redshift-api
+      resources:
+        - label: Create Cluster
+          method: POST
+          path: /clusters
+          operationId: CreateCluster
+        - label: Describe Clusters
+          method: GET
+          path: /clusters
+          operationId: DescribeClusters
+        - label: Delete Cluster
+          method: DELETE
+          path: /clusters/{ClusterIdentifier}
+          operationId: DeleteCluster
+        - label: Modify Cluster
+          method: PUT
+          path: /clusters/{ClusterIdentifier}
+          operationId: ModifyCluster
+        - label: Create Snapshot
+          method: POST
+          path: /snapshots
+          operationId: CreateClusterSnapshot
+        - label: Describe Snapshots
+          method: GET
+          path: /snapshots
+          operationId: DescribeClusterSnapshots
+        - label: Restore From Snapshot
+          method: POST
+          path: /clusters/restore
+          operationId: RestoreFromClusterSnapshot
+        - label: Create Cluster Subnet Group
+          method: POST
+          path: /subnetgroups
+          operationId: CreateClusterSubnetGroup
