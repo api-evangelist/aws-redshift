@@ -1,0 +1,84 @@
+---
+title: "How Open Universities Australia modernized their data platform and significantly reduced their ETL costs with AWS Cloud Development Kit and AWS Step Functions"
+url: "https://aws.amazon.com/blogs/big-data/how-open-universities-australia-modernized-their-data-platform-and-significantly-reduced-their-etl-costs-with-aws-cloud-development-kit-and-aws-step-functions/"
+date: "Thu, 30 Jan 2025 13:14:16 +0000"
+author: "Michael Davies"
+feed_url: "https://aws.amazon.com/blogs/big-data/category/database/amazon-redshift/feed/"
+---
+<p><em>This is a guest post co-authored by Michael Davies from Open Universities Australia.</em></p> 
+<p>At <a href="https://www.open.edu.au/" rel="noopener" target="_blank">Open Universities Australia (OUA)</a>, we empower students to explore a vast array of degrees from renowned Australian universities, all delivered through online learning. We offer students alternative pathways to achieve their educational aspirations, providing them with the flexibility and accessibility to reach their academic goals. Since our founding in 1993, we have supported over 500,000 students to achieve their goals by providing pathways to over 2,600 subjects at 25 universities across Australia.</p> 
+<p>As a not-for-profit organization, cost is a crucial consideration for OUA. While reviewing our contract for the third-party tool we had been using for our extract, transform, and load (ETL) pipelines, we realized that we could replicate much of the same functionality using <a href="https://aws.amazon.com/" rel="noopener" target="_blank">Amazon Web Services (AWS)</a> services such as <a href="https://aws.amazon.com/glue/" rel="noopener" target="_blank">AWS Glue</a>, <a href="https://aws.amazon.com/appflow/" rel="noopener" target="_blank">Amazon AppFlow</a>, and <a href="https://aws.amazon.com/step-functions/" rel="noopener" target="_blank">AWS Step Functions</a>. We also recognized that we could consolidate our source code (much of which was stored in the ETL tool itself) into a code repository that could be deployed using the <a href="https://aws.amazon.com/cdk" rel="noopener" target="_blank">AWS Cloud Development Kit (AWS CDK)</a>. By doing so, we had an opportunity to not only reduce costs but also to enhance the visibility and maintainability of our data pipelines.</p> 
+<p>In this post, we show you how we used AWS services to replace our existing third-party ETL tool, improving the team’s productivity and producing a significant reduction in our ETL operational costs.</p> 
+<h2>Our approach</h2> 
+<p>The migration initiative consisted of two main parts: building the new architecture and migrating data pipelines from the existing tool to the new architecture. Often, we would work on both in parallel, testing one component of the architecture while developing another at the same time.</p> 
+<p>From early in our migration journey, we began to define a few guiding principles that we would apply throughout the development process. These were:</p> 
+<ul> 
+ <li><strong>Simple and modular</strong> – Use simple, reusable design patterns with as few moving parts as possible. Structure the code base to prioritize ease of use for developers.</li> 
+ <li><strong>Cost-effective</strong> – Use resources in an efficient, cost-effective way. Aim to minimize situations where resources are running idly while waiting for other processes to be completed.</li> 
+ <li><strong>Business continuity</strong> – As much as possible, make use of existing code rather than reinventing the wheel. Roll out updates in stages to minimize potential disruption to existing business processes.</li> 
+</ul> 
+<h2>Architecture overview</h2> 
+<p>The following Diagram 1 is the high-level architecture for the solution.</p> 
+<div class="wp-caption alignnone" id="attachment_74488" style="width: 1443px;">
+ <img alt="" class="wp-image-74488 size-full" height="818" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/18/OUA1.png" width="1433" />
+ <p class="wp-caption-text" id="caption-attachment-74488">Diagram 1: Overall architecture of the solution, using AWS Step Functions, Amazon Redshift and Amazon S3</p>
+</div> 
+<p>The following AWS services were used to shape our new ETL architecture:</p> 
+<ul> 
+ <li><a href="https://aws.amazon.com/redshift/">Amazon Redshift</a> – A fully managed, petabyte-scale data warehouse service in the cloud. Amazon Redshift served as our central data repository, where we would store data, apply transformations, and make data available for use in analytics and business intelligence (BI). Note: The provisioned cluster itself was deployed separately from the ETL architecture and remained unchanged throughout the migration process.</li> 
+ <li><a href="https://aws.amazon.com/cdk">AWS Cloud Development Kit (AWS CDK)</a> – The AWS Cloud Development Kit (AWS CDK) is an open-source software development framework for defining cloud infrastructure in code and provisioning it through AWS CloudFormation. Our infrastructure was defined as code using the AWS CDK. As a result, we simplified the way we defined the resources we wanted to deploy while using our preferred coding language for development.</li> 
+ <li><a href="https://aws.amazon.com/step-functions/" rel="noopener" target="_blank">AWS Step Functions</a> – With AWS Step Functions, you can create workflows, also called State machines, to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning pipelines. AWS Step Functions can call over 200 AWS services including AWS Glue, AWS Lambda, and Amazon Redshift. We used the AWS Step Function state machines to define, orchestrate, and execute our data pipelines.</li> 
+ <li><a href="https://aws.amazon.com/eventbridge" rel="noopener" target="_blank">Amazon EventBridge</a> – We used Amazon EventBridge, the serverless event bus service, to define the event-based rules and schedules that would trigger our AWS Step Functions state machines.</li> 
+ <li><a href="https://aws.amazon.com/glue/" rel="noopener" target="_blank">AWS Glue</a> – A data integration service, AWS Glue&nbsp;consolidates major data integration capabilities into a single service. These include data discovery, modern ETL, cleansing, transforming, and centralized cataloging. It’s also serverless, which means there’s no infrastructure to manage. includes the ability to run Python scripts. We used it for executing long-running scripts, such as for ingesting data from an external API.</li> 
+ <li><a href="https://aws.amazon.com/lambda/" rel="noopener" target="_blank">AWS Lambda</a> – AWS Lambda is a highly scalable, serverless compute service. We used it for executing simple scripts, such as for parsing a single text file.</li> 
+ <li><a href="https://aws.amazon.com/appflow/" rel="noopener" target="_blank">Amazon AppFlow</a> – Amazon AppFlow enables simple integration with software as a service (SaaS) applications. We used it to define flows that would periodically load data from selected operational systems into our data warehouse.</li> 
+ <li><a href="https://aws.amazon.com/s3" rel="noopener" target="_blank">Amazon Simple Storage Service (Amazon S3)</a> – An object storage service offering industry-leading scalability, data availability, security, and performance. Amazon S3 served as our staging area, where we would store raw data prior to loading it into other services such as Amazon Redshift. We also used it as a repository for storing code that could be retrieved and used by other services.</li> 
+</ul> 
+<p>Where practical, we made use of the file structure of our code base for defining resources. We set up our AWS CDK to refer to the contents of a specific directory and define a resource (for example, an AWS Step Functions state machine or an AWS Glue job) for each file it found in that directory. We also made use of configuration files so we could customize the attributes of specific resources as required.</p> 
+<h2>Details on specific patterns</h2> 
+<p>In the above architecture Diagram 1, we showed multiple flows by which data could be ingested or unloaded from our Amazon Redshift data warehouse. In this section, we highlight four specific patterns in more detail which were utilized in the final solution.</p> 
+<h3>Pattern 1: Data transformation, load, and unload</h3> 
+<p>Several of our data pipelines included significant data transformation steps, which were primarily performed through SQL statements executed by Amazon Redshift. Others required ingestion or unloading of data from the data warehouse, which could be performed efficiently using COPY or UNLOAD statements executed by Amazon Redshift.</p> 
+<p>In keeping with our aim of using resources efficiently, we sought to avoid running these statements from within the context of an AWS Glue job or AWS Lambda function because these processes would remain idle while waiting for the SQL statement to be completed. Instead, we opted for an approach where SQL execution tasks would be orchestrated by an AWS Step Functions state machine, which would send the statements to Amazon Redshift and periodically check their progress before marking them as either successful or failed. The following Diagram 2 shows this workflow.</p> 
+<div class="wp-caption alignnone" id="attachment_74491" style="width: 2814px;">
+ <img alt="Data transformation, load, and unload" class="wp-image-74491 size-full" height="557" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/18/OUA2.png" width="2804" />
+ <p class="wp-caption-text" id="caption-attachment-74491">Diagram 2: Data transformation, load, and unload pattern using Amazon Lambda and Amazon Redshift within an AWS Step Function</p>
+</div> 
+<h3>Pattern 2: Data replication using AWS Glue</h3> 
+<p>In cases where we needed to replicate data from a third-party source, we used AWS Glue to run a script that would query the relevant API, parse the response, and store the relevant data in Amazon S3. From here, we used Amazon Redshift to ingest the data using a COPY statement. The following Diagram 3 shows this workflow.</p> 
+<div class="wp-caption alignnone" id="attachment_74493" style="width: 2452px;">
+ <img alt="Image 3: Copying from external API to Redshift with AWS Glue" class="wp-image-74493 size-full" height="639" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/18/OUA3.png" width="2442" />
+ <p class="wp-caption-text" id="caption-attachment-74493">Diagram 3: Copying from external API to Redshift with AWS Glue</p>
+</div> 
+<p>Note: Another option for this step would be to use <a href="https://docs.aws.amazon.com/redshift/latest/dg/loading-data-copy-job.html">Amazon Redshift auto-copy</a>, but this wasn’t available at time of development.</p> 
+<h3>Pattern 3: Data replication using Amazon AppFlow</h3> 
+<p>For certain applications, we were able to use Amazon AppFlow flows in place of AWS Glue jobs. As a result, we could abstract some of the complexity of querying external APIs directly. We configured our Amazon AppFlow flows to store the output data in Amazon S3, then used an EventBridge rule based on an <a href="https://docs.aws.amazon.com/appflow/latest/userguide/flow-notifications.html">End Flow Run Report event</a> (which is an event which is published when a flow run is complete) to trigger a load into Amazon Redshift using a COPY statement. The following Diagram 4 shows this workflow.</p> 
+<p>By using Amazon S3 as an intermediate data store, we gave ourselves greater control over how the data was processed when it was loaded into Amazon Redshift, when compared with loading the data directly to the data warehouse using Amazon AppFlow.</p> 
+<div class="wp-caption alignnone" id="attachment_74494" style="width: 2492px;">
+ <img alt="Image 4: Using Amazon AppFlow to integrate external data" class="wp-image-74494 size-full" height="629" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/18/OUA4.png" width="2482" />
+ <p class="wp-caption-text" id="caption-attachment-74494">Diagram 4: Using Amazon AppFlow to integrate external data to Amazon S3 and copy to Amazon Redshift</p>
+</div> 
+<h3>Pattern 4: Reverse ETL</h3> 
+<p>Although most of our workflows involve data being brought into the data warehouse from external sources, in some cases we needed the data to be exported to external systems instead. This way, we could run SQL queries with complex logic drawing on multiple data sources and use this logic to support operational requirements, such as identifying which groups of students should receive specific communications.</p> 
+<p>In this flow, shown in the following Diagram 5, we start by running an UNLOAD statement in Amazon Redshift to unload the relevant data to files in Amazon S3. From here, each file is processed by an AWS Lambda function, which performs any necessary transformations and sends the data to the external application through one or more API calls.</p> 
+<div class="wp-caption alignnone" id="attachment_74495" style="width: 2492px;">
+ <img alt="Image 5: Reverse ETL workflow, sending data back out to external data sources" class="wp-image-74495 size-full" height="629" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/18/OUA5.png" width="2482" />
+ <p class="wp-caption-text" id="caption-attachment-74495">Diagram 5: Reverse ETL workflow, sending data back out to external data sources</p>
+</div> 
+<h2>Outcomes</h2> 
+<p>The re-architecture and migration process took 5 months to complete, from the initial concept to the successful decommissioning of the previous third-party tool. Most of the architectural effort was completed by a single full-time employee, with others on the team primarily assisting with the migration of pipelines to the new architecture.</p> 
+<p>We achieved significant cost reductions, with final expenses on AWS native services representing only a small percentage of projected costs compared to continuing with the third-party ETL tool. Moving to a code-based approach also gave us greater visibility of our pipelines and made the process of maintaining them quicker and easier. Overall, the transition was seamless for our end users, who were able to view the same data and dashboards both during and after the migration, with minimal disruption along the way.</p> 
+<h2>Conclusion</h2> 
+<p>By using the scalability and cost-effectiveness of AWS services, we were able to optimize our data pipelines, reduce our operational costs, and improve our agility.</p> 
+<p>Pete Allen, an analytics engineer from Open Universities Australia, says, “Modernizing our data architecture with AWS has been transformative. Transitioning from an external platform to an in-house, code-based analytics stack has vastly improved our scalability, flexibility, and performance. With AWS, we can now process and analyze data with much faster turnaround, lower costs, and higher availability, enabling rapid development and deployment of data solutions, leading to deeper insights and better business decisions.”</p> 
+<h3>Additional resources</h3> 
+<ul> 
+ <li><a href="https://aws.amazon.com/blogs/big-data/orchestrate-amazon-redshift-based-etl-workflows-with-aws-step-functions-and-aws-glue/" rel="noopener" target="_blank">Orchestrate Amazon Redshift based ETL workflows with AWS Step Functions and AWS Glue</a></li> 
+ <li><a href="https://docs.aws.amazon.com/cdk/v2/guide/best-practices.html" rel="noopener" target="_blank">Best practices for developing and deploying cloud infrastructure with the AWS CDK</a></li> 
+ <li><a href="https://github.com/aws-samples/redshift-data-api-with-step-functions-sample" rel="noopener" target="_blank">redshift-data-api-with-step-functions-sample</a></li> 
+</ul> 
+<p style="clear: both;"></p> 
+<hr /> 
+<h3>About the Authors</h3> 
+<p style="clear: both;"><img alt="" class="wp-image-74525 size-full alignleft" height="100" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2024/12/20/MichaelDavies-1.jpg" width="100" /><strong>Michael Davies</strong> is a Data Engineer at OUA. He has extensive experience within the education industry, with a particular focus on building robust and efficient data architecture and pipelines.</p> 
+<p style="clear: both;"><img alt="" class="wp-image-74652 size-full alignleft" height="126" src="https://d2908q01vomqb2.cloudfront.net/b6692ea5df920cad691c20319a6fffd7a4a766b8/2025/01/06/emma-1.jpg" width="100" /><strong>Emma Arrigo</strong> is a Solutions Architect at AWS, focusing on education customers across Australia. She specializes in leveraging cloud technology and machine learning to address complex business challenges in the education sector. Emma’s passion for data extends beyond her professional life, as evidenced by her dog named Data.</p>
