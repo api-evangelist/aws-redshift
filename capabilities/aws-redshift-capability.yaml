@@ -1,0 +1,501 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Redshift Data API Service
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements,
+    which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI
+    usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift
+    Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  tags:
+  - Aws
+  - Redshift
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: aws-redshift
+    baseUri: http://redshift-data.us-east-1.amazonaws.com
+    description: Redshift Data API Service HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: Authorization
+      value: '{{AWS_REDSHIFT_TOKEN}}'
+    resources:
+    - name: x-amz-target-redshiftdata-batchexecutestatement
+      path: /#X-Amz-Target=RedshiftData.BatchExecuteStatement
+      operations:
+      - name: batchexecutestatement
+        method: POST
+        description: Amazon Redshift Data - Batch Execute Statement
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-cancelstatement
+      path: /#X-Amz-Target=RedshiftData.CancelStatement
+      operations:
+      - name: cancelstatement
+        method: POST
+        description: Amazon Redshift Data - Cancel Statement
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-describestatement
+      path: /#X-Amz-Target=RedshiftData.DescribeStatement
+      operations:
+      - name: describestatement
+        method: POST
+        description: Amazon Redshift Data - Describe Statement
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-describetable
+      path: /#X-Amz-Target=RedshiftData.DescribeTable
+      operations:
+      - name: describetable
+        method: POST
+        description: Amazon Redshift Data - Describe Table
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-executestatement
+      path: /#X-Amz-Target=RedshiftData.ExecuteStatement
+      operations:
+      - name: executestatement
+        method: POST
+        description: Amazon Redshift Data - Execute Statement
+        inputParameters:
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-getstatementresult
+      path: /#X-Amz-Target=RedshiftData.GetStatementResult
+      operations:
+      - name: getstatementresult
+        method: POST
+        description: Amazon Redshift Data - Get Statement Result
+        inputParameters:
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-listdatabases
+      path: /#X-Amz-Target=RedshiftData.ListDatabases
+      operations:
+      - name: listdatabases
+        method: POST
+        description: Amazon Redshift Data - List Databases
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-listschemas
+      path: /#X-Amz-Target=RedshiftData.ListSchemas
+      operations:
+      - name: listschemas
+        method: POST
+        description: Amazon Redshift Data - List Schemas
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-liststatements
+      path: /#X-Amz-Target=RedshiftData.ListStatements
+      operations:
+      - name: liststatements
+        method: POST
+        description: Amazon Redshift Data - List Statements
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: x-amz-target-redshiftdata-listtables
+      path: /#X-Amz-Target=RedshiftData.ListTables
+      operations:
+      - name: listtables
+        method: POST
+        description: Amazon Redshift Data - List Tables
+        inputParameters:
+        - name: MaxResults
+          in: query
+          type: string
+          description: Pagination limit
+        - name: NextToken
+          in: query
+          type: string
+          description: Pagination token
+        - name: X-Amz-Target
+          in: header
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: aws-redshift-rest
+    description: REST adapter for Redshift Data API Service.
+    resources:
+    - path: /#X-Amz-Target=RedshiftData.BatchExecuteStatement
+      name: batchexecutestatement
+      operations:
+      - method: POST
+        name: batchexecutestatement
+        description: Amazon Redshift Data - Batch Execute Statement
+        call: aws-redshift.batchexecutestatement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.CancelStatement
+      name: cancelstatement
+      operations:
+      - method: POST
+        name: cancelstatement
+        description: Amazon Redshift Data - Cancel Statement
+        call: aws-redshift.cancelstatement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.DescribeStatement
+      name: describestatement
+      operations:
+      - method: POST
+        name: describestatement
+        description: Amazon Redshift Data - Describe Statement
+        call: aws-redshift.describestatement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.DescribeTable
+      name: describetable
+      operations:
+      - method: POST
+        name: describetable
+        description: Amazon Redshift Data - Describe Table
+        call: aws-redshift.describetable
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.ExecuteStatement
+      name: executestatement
+      operations:
+      - method: POST
+        name: executestatement
+        description: Amazon Redshift Data - Execute Statement
+        call: aws-redshift.executestatement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.GetStatementResult
+      name: getstatementresult
+      operations:
+      - method: POST
+        name: getstatementresult
+        description: Amazon Redshift Data - Get Statement Result
+        call: aws-redshift.getstatementresult
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.ListDatabases
+      name: listdatabases
+      operations:
+      - method: POST
+        name: listdatabases
+        description: Amazon Redshift Data - List Databases
+        call: aws-redshift.listdatabases
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.ListSchemas
+      name: listschemas
+      operations:
+      - method: POST
+        name: listschemas
+        description: Amazon Redshift Data - List Schemas
+        call: aws-redshift.listschemas
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.ListStatements
+      name: liststatements
+      operations:
+      - method: POST
+        name: liststatements
+        description: Amazon Redshift Data - List Statements
+        call: aws-redshift.liststatements
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /#X-Amz-Target=RedshiftData.ListTables
+      name: listtables
+      operations:
+      - method: POST
+        name: listtables
+        description: Amazon Redshift Data - List Tables
+        call: aws-redshift.listtables
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: aws-redshift-mcp
+    transport: http
+    description: MCP adapter for Redshift Data API Service for AI agent use.
+    tools:
+    - name: batchexecutestatement
+      description: Amazon Redshift Data - Batch Execute Statement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.batchexecutestatement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: cancelstatement
+      description: Amazon Redshift Data - Cancel Statement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.cancelstatement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describestatement
+      description: Amazon Redshift Data - Describe Statement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.describestatement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describetable
+      description: Amazon Redshift Data - Describe Table
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.describetable
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: MaxResults
+        type: string
+        description: Pagination limit
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: executestatement
+      description: Amazon Redshift Data - Execute Statement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.executestatement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getstatementresult
+      description: Amazon Redshift Data - Get Statement Result
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.getstatementresult
+      with:
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdatabases
+      description: Amazon Redshift Data - List Databases
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.listdatabases
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: MaxResults
+        type: string
+        description: Pagination limit
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listschemas
+      description: Amazon Redshift Data - List Schemas
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.listschemas
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: MaxResults
+        type: string
+        description: Pagination limit
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: liststatements
+      description: Amazon Redshift Data - List Statements
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.liststatements
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: MaxResults
+        type: string
+        description: Pagination limit
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listtables
+      description: Amazon Redshift Data - List Tables
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: aws-redshift.listtables
+      with:
+        MaxResults: tools.MaxResults
+        NextToken: tools.NextToken
+      inputParameters:
+      - name: MaxResults
+        type: string
+        description: Pagination limit
+      - name: NextToken
+        type: string
+        description: Pagination token
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    AWS_REDSHIFT_TOKEN: AWS_REDSHIFT_TOKEN
