@@ -4,165 +4,192 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: AWS Redshift
 providerId: aws-redshift
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
-  - Analytics
-  - Big Data
-  - Cloud Database
   - Data Warehouse
+  - Analytics
   - SQL
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+  - Cloud Database
+  - AWS
+description: Amazon Redshift offers two deployment shapes — Serverless (per-RPU-hour) and
+  Provisioned (per-node-hour for RA3 / DC2 / DS2). Both bill compute separately from Redshift Managed
+  Storage (RMS), Spectrum scans, concurrency scaling beyond the 1-hour-per-day free credit, and
+  cross-region data transfer. Reserved Instances offer up to ~75% discount over on-demand for
+  provisioned clusters.
+sources:
+  - https://aws.amazon.com/redshift/pricing/
+  - https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html
 plans:
-  - id: aws-redshift-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the AWS Redshift API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+  - id: aws-redshift-serverless
+    name: Redshift Serverless
+    type: usage-based
+    description: On-demand data warehouse charged per Redshift Processing Unit-hour (RPU-hour) with
+      60-second minimum. Auto-scales; no node management. Storage billed separately as RMS.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Amazon Redshift API
-      - name: Amazon Redshift Data API
-      - name: Amazon Redshift Serverless API
-  - id: aws-redshift-pro
-    name: Professional
-    type: paid
-    description: Production tier for AWS Redshift. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: RPU-hour (on-demand, US East 1)
+        name: serverless_rpu_hour
         type: metered
-        metric: requests
+        metric: RPU-hour
+        limit: -1
+        timeFrame: usage
+        geo: US-East-1
+        unit: 1
+        price: '$0.375 per RPU-hour'
+        userMultiplied: false
+      - label: Minimum charge
+        name: serverless_minimum
+        type: flat
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: US-East-1
+        unit: 1
+        price: 60-second minimum per query, billed per second
+        userMultiplied: false
+    elements:
+      - name: Auto-scaling RPUs
+      - name: 60-second minimum charge
+      - name: Pay only when running queries
+      - name: Serverless namespaces (up to 25 default)
+      - name: Up to 32 TB RMS for 4-RPU; 128 TB for 8/16/24-RPU workloads
+  - id: aws-redshift-provisioned-ra3
+    name: Provisioned (RA3 nodes)
+    type: usage-based
+    description: Provisioned cluster on RA3 nodes (recommended current generation). Compute and storage
+      separated — RMS billed per GB-month independently of node hours.
+    entries:
+      - label: ra3.xlplus on-demand
+        name: ra3_xlplus_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: US-East-1
+        unit: 1
+        price: '$3.26 per hour per node'
+        userMultiplied: false
+      - label: ra3.4xlarge on-demand
+        name: ra3_4xlarge_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: US-West-1
+        unit: 1
+        price: '$36.06 per hour per node'
+        userMultiplied: false
+      - label: Redshift Managed Storage (RMS)
+        name: rms_storage
+        type: metered
+        metric: GB-month
+        limit: -1
+        timeFrame: month
+        geo: US-East-1
+        unit: 1
+        price: '$0.024 per GB-month'
+        userMultiplied: false
+    elements:
+      - name: Separate compute and storage scaling
+      - name: Up to 128 RA3 nodes per cluster
+      - name: AQUA, Concurrency Scaling, Data Sharing
+      - name: Reserved instances available
+  - id: aws-redshift-provisioned-dc2
+    name: Provisioned (DC2 / previous gen)
+    type: usage-based
+    description: DC2 / DS2 dense storage / dense compute previous-generation nodes. Still available
+      but RA3 + RMS is recommended.
+    entries:
+      - label: DC2 node hour
+        name: dc2_node_hour
+        type: metered
+        metric: hour
+        limit: -1
+        timeFrame: usage
+        geo: US-East-1
+        unit: 1
+        price: see DC2 row on https://aws.amazon.com/redshift/pricing/
+        userMultiplied: false
+    elements:
+      - name: Up to 128 DC2 nodes per cluster
+      - name: Local SSD storage included
+  - id: aws-redshift-reserved
+    name: Reserved Instances
+    type: subscription
+    description: 1- or 3-year commitment for provisioned clusters. Three payment options (No Upfront,
+      Partial, All Upfront).
+    entries:
+      - label: Reserved 1yr / 3yr
+        name: reserved_node
+        type: subscription
+        metric: month
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: significant discount over on-demand (varies by node type, term, payment)
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Amazon Redshift API
-      - name: Amazon Redshift Data API
-      - name: Amazon Redshift Serverless API
-  - id: aws-redshift-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for AWS Redshift. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
+      - name: 1-year or 3-year terms
+      - name: No Upfront / Partial Upfront / All Upfront
+      - name: Up to 200 reserved nodes per region
+  - id: aws-redshift-concurrency-scaling
+    name: Concurrency Scaling
+    type: usage-based
+    description: Burst capacity for high-concurrency workloads. 1 hour of free concurrency-scaling
+      credits per cluster per day; per-second on-demand pricing thereafter (1-minute minimum).
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Concurrency scaling
+        name: concurrency_scaling
+        type: metered
+        metric: second
         limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
+        timeFrame: usage
+        geo: US-East-1
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://redshift.{region}.amazonaws.com
-          - https://redshift-data.{region}.amazonaws.com
-          - https://redshift-serverless.{region}.amazonaws.com
-        unit: 1
-        price: custom
+        price: per-second on-demand rate; first 1 hour/day free per cluster
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Amazon Redshift API
-      - name: Amazon Redshift Data API
-      - name: Amazon Redshift Serverless API
+      - name: 1 hour/day free credit per cluster
+      - name: 1-minute minimum charge once activated
+  - id: aws-redshift-spectrum
+    name: Redshift Spectrum
+    type: usage-based
+    description: Query S3 data directly via Redshift. Charged per TB of data scanned with 10 MB minimum
+      per query.
+    entries:
+      - label: Spectrum data scanned
+        name: spectrum_scan
+        type: metered
+        metric: TB
+        limit: -1
+        timeFrame: usage
+        geo: US-East-1
+        unit: 1
+        price: '$5.00 per TB scanned'
+        userMultiplied: false
+    elements:
+      - name: 10 MB minimum per query
+      - name: Reads from S3 (compatible with Glue Data Catalog)
+  - id: aws-redshift-data-sharing
+    name: Data Sharing & Cross-Region Transfer
+    type: usage-based
+    description: In-region transfer between Redshift and S3 for backup/restore/load is free; cross-region
+      transfers follow standard AWS data-transfer rates.
+    entries:
+      - label: Cross-region data transfer
+        name: cross_region_transfer
+        type: metered
+        metric: gb
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: see standard AWS data transfer rates on https://aws.amazon.com/ec2/pricing/on-demand/
+        userMultiplied: false
+    elements:
+      - name: Free in-region transfer with S3
+      - name: Cross-region transfers billed at AWS data-transfer rates
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -4,96 +4,161 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: AWS Redshift
 providerId: aws-redshift
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
-  - Analytics
-  - Big Data
-  - Cloud Database
   - Data Warehouse
-  - SQL
+  - Analytics
   - Rate Limiting
-  - Quotas
   - Throttling
-description: Machine-readable rate limit definitions for the AWS Redshift API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  - AWS
+description: Amazon Redshift enforces account- and cluster-level quotas per AWS Region. Database
+  throughput is bounded by node count, RPU sizing, and WLM configuration. The Redshift Data API
+  enforces fixed per-second throttles per AWS account per Region (e.g. ExecuteStatement 30 TPS,
+  DescribeStatement 100 TPS, ListTables 3 TPS). Provisioned cluster connection ceilings are 2,000 for
+  RA3 nodes and 500–2,000 for DC2 by node size.
+sources:
+  - https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html
+  - https://aws.amazon.com/redshift/pricing/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
+  - name: Nodes per region (provisioned)
+    scope: account/region
+    metric: nodes
+    limit: 200
+    notes: Across all clusters. Increasable.
+  - name: RA3 nodes in a cluster
+    scope: cluster
+    metric: nodes
+    limit: 128
+    notes: Increasable.
+  - name: DC2 nodes in a cluster
+    scope: cluster
+    metric: nodes
+    limit: 128
+    notes: Increasable.
+  - name: Concurrency scaling clusters
+    scope: account/region
+    metric: clusters
     limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Amazon Redshift API
-      - Amazon Redshift Data API
-      - Amazon Redshift Serverless API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Amazon Redshift API
-      - Amazon Redshift Data API
-      - Amazon Redshift Serverless API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
+    notes: Increasable.
+  - name: Reserved nodes
+    scope: account/region
+    metric: nodes
+    limit: 200
+    notes: Increasable.
+  - name: Snapshots
+    scope: account/region
+    metric: snapshots
+    limit: 700
+    notes: Increasable.
+  - name: WLM concurrency (manual queues)
+    scope: cluster
+    metric: query_slots
+    limit: 50
+    notes: Across all user-defined manual WLM queues. Not increasable.
+  - name: Connections per RA3 cluster
+    scope: cluster
+    metric: connections
+    limit: 2000
+  - name: Connections per DC2 cluster
+    scope: cluster
+    metric: connections
+    limit: 2000
+    notes: dc2.large = 500; dc2.8xlarge = 2,000.
+  - name: Serverless base RPU per account
+    scope: account
+    metric: RPUs
+    limit: 3200
+    notes: 'Quota is the greater of 3,200 RPUs or 1.5x your max aggregate base RPUs over the prior six
+      months. Increasable.'
+  - name: Serverless workgroups
+    scope: account/region
+    metric: workgroups
+    limit: 25
+    notes: Increasable.
+  - name: Serverless namespaces
+    scope: account/region
+    metric: namespaces
+    limit: 25
+    notes: Increasable.
+  - name: Data API ExecuteStatement
+    scope: account/region
+    metric: requests_per_second
+    limit: 30
+    timeFrame: second
+    notes: Not increasable.
+  - name: Data API BatchExecuteStatement
+    scope: account/region
+    metric: requests_per_second
+    limit: 20
+    timeFrame: second
+    notes: Not increasable.
+  - name: Data API GetStatementResult
+    scope: account/region
+    metric: requests_per_second
+    limit: 20
+    timeFrame: second
+    notes: Not increasable.
+  - name: Data API DescribeStatement
+    scope: account/region
+    metric: requests_per_second
     limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Amazon Redshift API
-      - Amazon Redshift Data API
-      - Amazon Redshift Serverless API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Amazon Redshift API
-      - Amazon Redshift Data API
-      - Amazon Redshift Serverless API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Amazon Redshift API
-      - Amazon Redshift Data API
-      - Amazon Redshift Serverless API
+    timeFrame: second
+    notes: Not increasable.
+  - name: Data API CancelStatement
+    scope: account/region
+    metric: requests_per_second
+    limit: 3
+    timeFrame: second
+    notes: Not increasable.
+  - name: Data API DescribeTable / ListDatabases / ListSchemas / ListStatements / ListTables
+    scope: account/region
+    metric: requests_per_second
+    limit: 3
+    timeFrame: second
+    notes: Each individual List/Describe API in this group is capped at 3 TPS. Not increasable.
+  - name: Idle session timeout (Provisioned)
+    scope: cluster
+    metric: hours
+    limit: 4
+    notes: User setting can override.
+  - name: Idle session timeout (Serverless)
+    scope: workgroup
+    metric: hours
+    limit: 1
+  - name: Idle transaction timeout
+    scope: cluster
+    metric: hours
+    limit: 6
+  - name: Serverless query timeout
+    scope: workgroup
+    metric: seconds
+    limit: 86399
+    notes: 24 hours maximum running query.
+  - name: Spectrum single COPY row size
+    scope: query
+    metric: MB
+    limit: 4
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: WLM (Workload Management)
+    description: Throttling and queueing of concurrent SQL is managed via WLM (manual or auto). Tune
+      queues, query priorities, and short-query acceleration to balance interactive vs ETL.
+  - name: Concurrency Scaling
+    description: When the main cluster's queues fill, Redshift can transparently dispatch read queries
+      to concurrency-scaling clusters. First 1 hour/day free per main cluster.
+  - name: Backoff for Data API
+    description: AWS SDKs retry Data API throttles automatically; raw clients should implement
+      exponential backoff with jitter on ThrottlingException / 429.
+  - name: Service Quotas Increases
+    description: Most cluster-level quotas (nodes, RPUs, snapshots, concurrency-scaling clusters) are
+      adjustable via Service Quotas. WLM concurrency, connection caps, and Data API per-API TPS are
+      not adjustable.
+  - name: Datashare Discipline
+    description: Cross-account / cross-region datashares avoid cross-cluster ETL and are preferable to
+      transferring data via S3 in many analytics use cases.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
