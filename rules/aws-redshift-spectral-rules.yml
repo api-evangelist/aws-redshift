@@ -1,90 +1,151 @@
+# aws-redshift — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - query-params-casing: pascal @ 100% (n=1056)
+#   - schema-names-casing: pascal @ 100% (n=595)
+#   - schema-properties-casing: pascal @ 98% (n=1195)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - error-schema-defined: BatchSnapshotOperationErrorList
+#   - merge: kept 11 existing, added 7 measured, upgraded 0
+#   - added: servers-https-only, query-params-casing, schema-names-casing, schema-properties-casing, security-schemes-defined, error-schema-defined, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   redshift-operation-summary:
     description: All operations must have a summary starting with "Amazon Redshift"
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: summary
       function: pattern
       functionOptions:
-        match: "^Amazon Redshift"
-
+        match: ^Amazon Redshift
   redshift-operation-id:
     description: All operations must have an operationId
     severity: error
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: operationId
       function: truthy
-
   redshift-operation-description:
     description: All operations should have a description
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: description
       function: truthy
-
   redshift-components-schemas:
     description: Components schemas should be defined
     severity: warn
-    given: "$.components"
+    given: $.components
     then:
       field: schemas
       function: truthy
-
   redshift-security-defined:
     description: API security schemes should be defined
     severity: warn
-    given: "$"
+    given: $
     then:
       field: components.securitySchemes
       function: truthy
-
   redshift-info-title:
     description: Info object must have a title
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: title
       function: truthy
-
   redshift-info-version:
     description: Info object must have a version
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
   redshift-parameter-description:
     description: All parameters should have a description
     severity: warn
-    given: "$.paths[*][*].parameters[*]"
+    given: $.paths[*][*].parameters[*]
     then:
       field: description
       function: truthy
-
   redshift-response-description:
     description: All response objects must have a description
     severity: error
-    given: "$.paths[*][*].responses[*]"
+    given: $.paths[*][*].responses[*]
     then:
       field: description
       function: truthy
-
   redshift-schema-type:
     description: Schema properties should have a type
     severity: warn
-    given: "$.components.schemas[*]"
+    given: $.components.schemas[*]
     then:
       field: type
       function: truthy
-
   redshift-microcks-annotation:
     description: Operations should have x-microcks-operation annotation
     severity: info
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: x-microcks-operation
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  query-params-casing:
+    description: Query parameters should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  schema-properties-casing:
+    description: Schema properties should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: pattern
+      functionOptions:
+        match: ^[A-Z][A-Za-z0-9]*$
+  security-schemes-defined:
+    description: Security schemes should be defined in components.
+    severity: warn
+    given: $.components
+    then:
+      field: securitySchemes
+      function: truthy
+  error-schema-defined:
+    description: A shared error schema (BatchSnapshotOperationErrorList) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: BatchSnapshotOperationErrorList
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy
