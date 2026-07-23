@@ -1,0 +1,597 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateEventSubscription API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=CreateEventSubscription'
+paths:
+  /#Action=CreateEventSubscription:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: CreateEventSubscription
+      operationId: GET_CreateEventSubscription
+      description: <p>Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the source type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories = Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and Backup categories for the specified clusters.</p> <p>If you specify both the source type and source IDs, such as source type = cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/CreateEventSubscriptionResult'
+        '480':
+          description: EventSubscriptionQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/EventSubscriptionQuotaExceededFault'
+        '481':
+          description: SubscriptionAlreadyExistFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionAlreadyExistFault'
+        '482':
+          description: SNSInvalidTopicFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSInvalidTopicFault'
+        '483':
+          description: SNSNoAuthorizationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSNoAuthorizationFault'
+        '484':
+          description: SNSTopicArnNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSTopicArnNotFoundFault'
+        '485':
+          description: SubscriptionEventIdNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionEventIdNotFoundFault'
+        '486':
+          description: SubscriptionCategoryNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionCategoryNotFoundFault'
+        '487':
+          description: SubscriptionSeverityNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionSeverityNotFoundFault'
+        '488':
+          description: SourceNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SourceNotFoundFault'
+        '489':
+          description: TagLimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TagLimitExceededFault'
+        '490':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+      parameters:
+      - name: SubscriptionName
+        in: query
+        required: true
+        description: <p>The name of the event subscription to be created.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnsTopicArn
+        in: query
+        required: true
+        description: The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SourceType
+        in: query
+        required: false
+        description: '<p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p> <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>'
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SourceIds
+        in: query
+        required: false
+        description: '<p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p> <p>Example: my-cluster-1, my-cluster-2</p> <p>Example: my-snapshot-20131010</p>'
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: SourceId
+      - name: EventCategories
+        in: query
+        required: false
+        description: '<p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p> <p>Values: configuration, management, monitoring, security, pending</p>'
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: EventCategory
+      - name: Severity
+        in: query
+        required: false
+        description: '<p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p> <p>Values: ERROR, INFO</p>'
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Enabled
+        in: query
+        required: false
+        description: 'A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create the subscription but not activate it. '
+        schema:
+          type: boolean
+      - name: Tags
+        in: query
+        required: false
+        description: A list of tag instances.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/Tag'
+            - xml:
+                name: Tag
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateEventSubscription
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Create Event Subscription
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateEventSubscription'
+    post:
+      x-aws-operation-name: CreateEventSubscription
+      operationId: POST_CreateEventSubscription
+      description: <p>Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You can specify the source type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories = Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and Backup categories for the specified clusters.</p> <p>If you specify both the source type and source IDs, such as source type = cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your Amazon Web Services account. If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift sources belonging to your Amazon Web Services account. You must specify a source type if you specify a source ID.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/CreateEventSubscriptionResult'
+        '480':
+          description: EventSubscriptionQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/EventSubscriptionQuotaExceededFault'
+        '481':
+          description: SubscriptionAlreadyExistFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionAlreadyExistFault'
+        '482':
+          description: SNSInvalidTopicFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSInvalidTopicFault'
+        '483':
+          description: SNSNoAuthorizationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSNoAuthorizationFault'
+        '484':
+          description: SNSTopicArnNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SNSTopicArnNotFoundFault'
+        '485':
+          description: SubscriptionEventIdNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionEventIdNotFoundFault'
+        '486':
+          description: SubscriptionCategoryNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionCategoryNotFoundFault'
+        '487':
+          description: SubscriptionSeverityNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SubscriptionSeverityNotFoundFault'
+        '488':
+          description: SourceNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/SourceNotFoundFault'
+        '489':
+          description: TagLimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TagLimitExceededFault'
+        '490':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/CreateEventSubscriptionMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateEventSubscription
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Create Event Subscription
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateEventSubscription'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    SubscriptionCategoryNotFoundFault: {}
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
+    BooleanOptional:
+      type: boolean
+    TStamp:
+      type: string
+      format: date-time
+    InvalidTagFault: {}
+    SubscriptionAlreadyExistFault: {}
+    SubscriptionEventIdNotFoundFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    SubscriptionSeverityNotFoundFault: {}
+    SNSInvalidTopicFault: {}
+    EventCategoriesList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: EventCategory
+    EventSubscriptionQuotaExceededFault: {}
+    CreateEventSubscriptionResult:
+      type: object
+      properties:
+        EventSubscription:
+          $ref: '#/components/schemas/EventSubscription'
+    SNSTopicArnNotFoundFault: {}
+    SourceIdsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: SourceId
+    CreateEventSubscriptionMessage:
+      type: object
+      required:
+      - SubscriptionName
+      - SnsTopicArn
+      title: CreateEventSubscriptionMessage
+      properties:
+        SubscriptionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The name of the event subscription to be created.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The type of source that will be generating the events. For example, if you want to be notified of events generated by a cluster, you would set this parameter to cluster. If this value is not specified, events are returned for all Amazon Redshift objects in your Amazon Web Services account. You must specify a source type in order to specify source IDs.</p> <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>'
+        SourceIds:
+          allOf:
+          - $ref: '#/components/schemas/SourceIdsList'
+          - description: '<p>A list of one or more identifiers of Amazon Redshift source objects. All of the objects must be of the same type as was specified in the source type parameter. The event subscription will return only events generated by the specified objects. If not specified, then events are returned for all objects within the source type specified.</p> <p>Example: my-cluster-1, my-cluster-2</p> <p>Example: my-snapshot-20131010</p>'
+        EventCategories:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: '<p>Specifies the Amazon Redshift event categories to be published by the event notification subscription.</p> <p>Values: configuration, management, monitoring, security, pending</p>'
+        Severity:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>Specifies the Amazon Redshift event severity to be published by the event notification subscription.</p> <p>Values: ERROR, INFO</p>'
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: 'A boolean value; set to <code>true</code> to activate the subscription, and set to <code>false</code> to create the subscription but not activate it. '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: A list of tag instances.
+      description: <p/>
+    SourceNotFoundFault: {}
+    Boolean:
+      type: boolean
+    TagLimitExceededFault: {}
+    EventSubscription:
+      type: object
+      properties:
+        CustomerAwsId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account associated with the Amazon Redshift event notification subscription.
+        CustSubscriptionId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon Redshift event notification subscription.
+        SnsTopicArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the Amazon SNS topic used by the event notification subscription.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The status of the Amazon Redshift event notification subscription.</p> <p>Constraints:</p> <ul> <li> <p>Can be one of the following: active | no-permission | topic-not-exist</p> </li> <li> <p>The status "no-permission" indicates that Amazon Redshift no longer has permission to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p> </li> </ul>'
+        SubscriptionCreationTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date and time the Amazon Redshift event notification subscription was created.
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The source type of the events returned by the Amazon Redshift event notification, such as cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, or scheduled-action. '
+        SourceIdsList:
+          allOf:
+          - $ref: '#/components/schemas/SourceIdsList'
+          - description: A list of the sources that publish events to the Amazon Redshift event notification subscription.
+        EventCategoriesList:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: '<p>The list of Amazon Redshift event categories specified in the event notification subscription.</p> <p>Values: Configuration, Management, Monitoring, Security, Pending</p>'
+        Severity:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The event severity specified in the Amazon Redshift event notification subscription.</p> <p>Values: ERROR, INFO</p>'
+        Enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A boolean value indicating whether the subscription is enabled; <code>true</code> indicates that the subscription is enabled.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags for the event subscription.
+      description: Describes event subscriptions.
+    SNSNoAuthorizationFault: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

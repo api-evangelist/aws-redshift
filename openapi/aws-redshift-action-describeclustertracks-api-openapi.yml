@@ -1,0 +1,402 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterTracks API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeClusterTracks'
+paths:
+  /#Action=DescribeClusterTracks:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeClusterTracks
+      operationId: GET_DescribeClusterTracks
+      description: Returns a list of all the available maintenance tracks.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TrackListMessage'
+        '480':
+          description: InvalidClusterTrackFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterTrackFault'
+        '481':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+      parameters:
+      - name: MaintenanceTrackName
+        in: query
+        required: false
+        description: 'The name of the maintenance track. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: An integer value for the maximum number of maintenance tracks to return.
+        schema:
+          type: integer
+      - name: Marker
+        in: query
+        required: false
+        description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeClusterTracks
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Cluster Tracks
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeClusterTracks'
+    post:
+      x-aws-operation-name: DescribeClusterTracks
+      operationId: POST_DescribeClusterTracks
+      description: Returns a list of all the available maintenance tracks.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TrackListMessage'
+        '480':
+          description: InvalidClusterTrackFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterTrackFault'
+        '481':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeClusterTracksMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeClusterTracks
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Cluster Tracks
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeClusterTracks'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    SupportedOperation:
+      type: object
+      properties:
+        OperationName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A list of the supported operations.
+      description: Describes the operations that are allowed on a maintenance track.
+    UpdateTarget:
+      type: object
+      properties:
+        MaintenanceTrackName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the new maintenance track.
+        DatabaseVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The cluster version for the new maintenance track.
+        SupportedOperations:
+          allOf:
+          - $ref: '#/components/schemas/SupportedOperationList'
+          - description: A list of operations supported by the maintenance track.
+      description: A maintenance track that you can switch the current track to.
+    String:
+      type: string
+      maxLength: 2147483647
+    UnauthorizedOperation: {}
+    DescribeClusterTracksMessage:
+      type: object
+      title: DescribeClusterTracksMessage
+      properties:
+        MaintenanceTrackName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the maintenance track. '
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: An integer value for the maximum number of maintenance tracks to return.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+    TrackListMessage:
+      type: object
+      properties:
+        MaintenanceTracks:
+          allOf:
+          - $ref: '#/components/schemas/TrackList'
+          - description: 'A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation. '
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+    EligibleTracksToUpdateList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/UpdateTarget'
+        - xml:
+            name: UpdateTarget
+    InvalidClusterTrackFault: {}
+    TrackList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/MaintenanceTrack'
+        - xml:
+            name: MaintenanceTrack
+    SupportedOperationList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SupportedOperation'
+        - xml:
+            name: SupportedOperation
+    IntegerOptional:
+      type: integer
+    MaintenanceTrack:
+      type: object
+      properties:
+        MaintenanceTrackName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.
+        DatabaseVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version number for the cluster release.
+        UpdateTargets:
+          allOf:
+          - $ref: '#/components/schemas/EligibleTracksToUpdateList'
+          - description: 'An array of <a>UpdateTarget</a> objects to update with the maintenance track. '
+      description: 'Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. '
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

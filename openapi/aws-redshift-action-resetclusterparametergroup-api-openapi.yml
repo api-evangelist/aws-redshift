@@ -1,0 +1,389 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ResetClusterParameterGroup API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=ResetClusterParameterGroup'
+paths:
+  /#Action=ResetClusterParameterGroup:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: ResetClusterParameterGroup
+      operationId: GET_ResetClusterParameterGroup
+      description: 'Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterParameterGroupNameMessage'
+        '480':
+          description: InvalidClusterParameterGroupStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterParameterGroupStateFault'
+        '481':
+          description: ClusterParameterGroupNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterParameterGroupNotFoundFault'
+      parameters:
+      - name: ParameterGroupName
+        in: query
+        required: true
+        description: The name of the cluster parameter group to be reset.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: ResetAllParameters
+        in: query
+        required: false
+        description: '<p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code> </p>'
+        schema:
+          type: boolean
+      - name: Parameters
+        in: query
+        required: false
+        description: '<p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>'
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/Parameter'
+            - xml:
+                name: Parameter
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - ResetClusterParameterGroup
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Reset Cluster Parameter Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=ResetClusterParameterGroup'
+    post:
+      x-aws-operation-name: ResetClusterParameterGroup
+      operationId: POST_ResetClusterParameterGroup
+      description: 'Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterParameterGroupNameMessage'
+        '480':
+          description: InvalidClusterParameterGroupStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterParameterGroupStateFault'
+        '481':
+          description: ClusterParameterGroupNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterParameterGroupNotFoundFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/ResetClusterParameterGroupMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - ResetClusterParameterGroup
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Reset Cluster Parameter Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=ResetClusterParameterGroup'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Boolean:
+      type: boolean
+    ResetClusterParameterGroupMessage:
+      type: object
+      required:
+      - ParameterGroupName
+      title: ResetClusterParameterGroupMessage
+      properties:
+        ParameterGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the cluster parameter group to be reset.
+        ResetAllParameters:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: '<p>If <code>true</code>, all parameters in the specified parameter group will be reset to their default values. </p> <p>Default: <code>true</code> </p>'
+        Parameters:
+          allOf:
+          - $ref: '#/components/schemas/ParametersList'
+          - description: '<p>An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is not used, then at least one parameter name must be supplied. </p> <p>Constraints: A maximum of 20 parameters can be reset in a single request.</p>'
+      description: <p/>
+    ClusterParameterGroupNotFoundFault: {}
+    ClusterParameterGroupNameMessage:
+      type: object
+      properties:
+        ParameterGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the cluster parameter group.
+        ParameterGroupStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.
+      description: <p/>
+    InvalidClusterParameterGroupStateFault: {}
+    ParametersList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Parameter'
+        - xml:
+            name: Parameter
+    Parameter:
+      type: object
+      properties:
+        ParameterName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the parameter.
+        ParameterValue:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A description of the parameter.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The source of the parameter value, such as "engine-default" or "user".
+        DataType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The data type of the parameter.
+        AllowedValues:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The valid range of values for the parameter.
+        ApplyType:
+          allOf:
+          - $ref: '#/components/schemas/ParameterApplyType'
+          - description: Specifies how to apply the WLM configuration parameter. Some properties can be applied dynamically, while other properties require that any associated clusters be rebooted for the configuration changes to be applied. For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        IsModifiable:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: 'If <code>true</code>, the parameter can be modified. Some parameters have security or operational implications that prevent them from being changed. '
+        MinimumEngineVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The earliest engine version to which the parameter can apply.
+      description: Describes a parameter in a cluster parameter group.
+    String:
+      type: string
+      maxLength: 2147483647
+    ParameterApplyType:
+      type: string
+      enum:
+      - static
+      - dynamic
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

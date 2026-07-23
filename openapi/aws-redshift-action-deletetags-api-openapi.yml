@@ -1,0 +1,313 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DeleteTags API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DeleteTags'
+paths:
+  /#Action=DeleteTags:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DeleteTags
+      operationId: GET_DeleteTags
+      description: Deletes tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags.
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ResourceNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundFault'
+        '481':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+      parameters:
+      - name: ResourceName
+        in: query
+        required: true
+        description: 'The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TagKeys
+        in: query
+        required: true
+        description: The tag key that you want to delete.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: TagKey
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DeleteTags
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Delete Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DeleteTags'
+    post:
+      x-aws-operation-name: DeleteTags
+      operationId: POST_DeleteTags
+      description: Deletes tags from a resource. You must provide the ARN of the resource from which you want to delete the tag or tags.
+      responses:
+        '200':
+          description: Success
+        '480':
+          description: ResourceNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundFault'
+        '481':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DeleteTagsMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DeleteTags
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Delete Tags
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DeleteTags'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    TagKeyList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: TagKey
+    InvalidTagFault: {}
+    DeleteTagsMessage:
+      type: object
+      required:
+      - ResourceName
+      - TagKeys
+      title: DeleteTagsMessage
+      properties:
+        ResourceName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. '
+        TagKeys:
+          allOf:
+          - $ref: '#/components/schemas/TagKeyList'
+          - description: The tag key that you want to delete.
+      description: 'Contains the output from the <code>DeleteTags</code> action. '
+    ResourceNotFoundFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

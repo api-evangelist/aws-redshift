@@ -1,0 +1,434 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeTableRestoreStatus API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeTableRestoreStatus'
+paths:
+  /#Action=DescribeTableRestoreStatus:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeTableRestoreStatus
+      operationId: GET_DescribeTableRestoreStatus
+      description: Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TableRestoreStatusMessage'
+        '480':
+          description: TableRestoreNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TableRestoreNotFoundFault'
+        '481':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+      parameters:
+      - name: ClusterIdentifier
+        in: query
+        required: false
+        description: The Amazon Redshift cluster that the table is being restored to.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TableRestoreRequestId
+        in: query
+        required: false
+        description: The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+        schema:
+          type: integer
+      - name: Marker
+        in: query
+        required: false
+        description: An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeTableRestoreStatus
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Table Restore Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeTableRestoreStatus'
+    post:
+      x-aws-operation-name: DescribeTableRestoreStatus
+      operationId: POST_DescribeTableRestoreStatus
+      description: Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TableRestoreStatusMessage'
+        '480':
+          description: TableRestoreNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TableRestoreNotFoundFault'
+        '481':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeTableRestoreStatusMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeTableRestoreStatus
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Table Restore Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeTableRestoreStatus'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    TableRestoreStatusList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/TableRestoreStatus'
+        - xml:
+            name: TableRestoreStatus
+    TableRestoreNotFoundFault: {}
+    TableRestoreStatusMessage:
+      type: object
+      properties:
+        TableRestoreStatusDetails:
+          allOf:
+          - $ref: '#/components/schemas/TableRestoreStatusList'
+          - description: A list of status details for one or more table restore requests.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A pagination token that can be used in a subsequent <a>DescribeTableRestoreStatus</a> request.
+      description: <p/>
+    TableRestoreStatusType:
+      type: string
+      enum:
+      - PENDING
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      - CANCELED
+    TableRestoreStatus:
+      type: object
+      properties:
+        TableRestoreRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for the table restore request.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/TableRestoreStatusType'
+          - description: '<p>A value that describes the current state of the table restore request.</p> <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>'
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+        RequestTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The time that the table restore request was made, in Universal Coordinated Time (UTC).
+        ProgressInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/LongOptional'
+          - description: The amount of data restored to the new table so far, in megabytes (MB).
+        TotalDataInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/LongOptional'
+          - description: The total amount of data to restore to the new table, in megabytes (MB).
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the Amazon Redshift cluster that the table is being restored to.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot that the table is being restored from.
+        SourceDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source database that contains the table being restored.
+        SourceSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source schema that contains the table being restored.
+        SourceTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source table being restored.
+        TargetDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the database to restore the table to.
+        TargetSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the schema to restore the table to.
+        NewTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the table to create as a result of the table restore request.
+      description: Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
+    IntegerOptional:
+      type: integer
+    TStamp:
+      type: string
+      format: date-time
+    LongOptional:
+      type: integer
+    ClusterNotFoundFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    DescribeTableRestoreStatusMessage:
+      type: object
+      title: DescribeTableRestoreStatusMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Redshift cluster that the table is being restored to.
+        TableRestoreRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+      description: <p/>
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

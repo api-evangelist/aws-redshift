@@ -1,0 +1,597 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=GetReservedNodeExchangeConfigurationOptions API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=GetReservedNodeExchangeConfigurationOptions'
+paths:
+  /#Action=GetReservedNodeExchangeConfigurationOptions:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: GetReservedNodeExchangeConfigurationOptions
+      operationId: GET_GetReservedNodeExchangeConfigurationOptions
+      description: Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GetReservedNodeExchangeConfigurationOptionsOutputMessage'
+        '480':
+          description: ReservedNodeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeNotFoundFault'
+        '481':
+          description: InvalidReservedNodeStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidReservedNodeStateFault'
+        '482':
+          description: ReservedNodeAlreadyMigratedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeAlreadyMigratedFault'
+        '483':
+          description: ReservedNodeOfferingNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeOfferingNotFoundFault'
+        '484':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+        '485':
+          description: DependentServiceUnavailableFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceUnavailableFault'
+        '486':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '487':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+      parameters:
+      - name: ActionType
+        in: query
+        required: true
+        description: The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.
+        schema:
+          type: string
+          enum:
+          - restore-cluster
+          - resize-cluster
+      - name: ClusterIdentifier
+        in: query
+        required: false
+        description: The identifier for the cluster that is the source for a reserved-node exchange.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotIdentifier
+        in: query
+        required: false
+        description: The identifier for the snapshot that is the source for the reserved-node exchange.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+        schema:
+          type: integer
+      - name: Marker
+        in: query
+        required: false
+        description: An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - GetReservedNodeExchangeConfigurationOptions
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Get Reserved Node Exchange Configuration Options
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=GetReservedNodeExchangeConfigurationOptions'
+    post:
+      x-aws-operation-name: GetReservedNodeExchangeConfigurationOptions
+      operationId: POST_GetReservedNodeExchangeConfigurationOptions
+      description: Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/GetReservedNodeExchangeConfigurationOptionsOutputMessage'
+        '480':
+          description: ReservedNodeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeNotFoundFault'
+        '481':
+          description: InvalidReservedNodeStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidReservedNodeStateFault'
+        '482':
+          description: ReservedNodeAlreadyMigratedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeAlreadyMigratedFault'
+        '483':
+          description: ReservedNodeOfferingNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeOfferingNotFoundFault'
+        '484':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+        '485':
+          description: DependentServiceUnavailableFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceUnavailableFault'
+        '486':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '487':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/GetReservedNodeExchangeConfigurationOptionsInputMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - GetReservedNodeExchangeConfigurationOptions
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Get Reserved Node Exchange Configuration Options
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=GetReservedNodeExchangeConfigurationOptions'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ClusterSnapshotNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
+    ReservedNodeOffering:
+      type: object
+      properties:
+        ReservedNodeOfferingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The offering identifier.
+        NodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type offered by the reserved node offering.
+        Duration:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The duration, in seconds, for which the offering will reserve the node.
+        FixedPrice:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The upfront fixed charge you will pay to purchase the specific reserved node offering.
+        UsagePrice:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The rate you are charged for each hour the cluster that is using the offering is running.
+        CurrencyCode:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The currency code for the compute nodes offering.
+        OfferingType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The anticipated utilization of the reserved node, as defined in the reserved node offering.
+        RecurringCharges:
+          allOf:
+          - $ref: '#/components/schemas/RecurringChargeList'
+          - description: The charge to your account regardless of whether you are creating any clusters using the node offering. Recurring charges are only in effect for heavy-utilization reserved nodes.
+        ReservedNodeOfferingType:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeOfferingType'
+          - description: <p/>
+      description: Describes a reserved node offering.
+    Double:
+      type: number
+      format: double
+    RecurringCharge:
+      type: object
+      properties:
+        RecurringChargeAmount:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The amount charged per the period of time specified by the recurring charge frequency.
+        RecurringChargeFrequency:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The frequency at which the recurring charge amount is applied.
+      description: Describes a recurring charge.
+    ReservedNodeConfigurationOptionList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ReservedNodeConfigurationOption'
+        - xml:
+            name: ReservedNodeConfigurationOption
+    ReservedNodeOfferingType:
+      type: string
+      enum:
+      - Regular
+      - Upgradable
+    Integer:
+      type: integer
+    String:
+      type: string
+      maxLength: 2147483647
+    ReservedNodeExchangeActionType:
+      type: string
+      enum:
+      - restore-cluster
+      - resize-cluster
+    ReservedNodeOfferingNotFoundFault: {}
+    DependentServiceUnavailableFault: {}
+    RecurringChargeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/RecurringCharge'
+        - xml:
+            name: RecurringCharge
+    ReservedNodeAlreadyMigratedFault: {}
+    GetReservedNodeExchangeConfigurationOptionsOutputMessage:
+      type: object
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request.
+        ReservedNodeConfigurationOptionList:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeConfigurationOptionList'
+          - description: the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node. Details include the node type, the price, the node count, and the offering type.
+    GetReservedNodeExchangeConfigurationOptionsInputMessage:
+      type: object
+      required:
+      - ActionType
+      title: GetReservedNodeExchangeConfigurationOptionsInputMessage
+      properties:
+        ActionType:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeExchangeActionType'
+          - description: The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the cluster that is the source for a reserved-node exchange.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the snapshot that is the source for the reserved-node exchange.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+    ReservedNode:
+      type: object
+      properties:
+        ReservedNodeId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for the reservation.
+        ReservedNodeOfferingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the reserved node offering.
+        NodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type of the reserved node.
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.
+        Duration:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The duration of the node reservation in seconds.
+        FixedPrice:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The fixed cost Amazon Redshift charges you for this reserved node.
+        UsagePrice:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The hourly rate Amazon Redshift charges you for this reserved node.
+        CurrencyCode:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The currency code for the reserved cluster.
+        NodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of reserved compute nodes.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The state of the reserved compute node.</p> <p>Possible Values:</p> <ul> <li> <p>pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed.</p> </li> <li> <p>active-This reserved node is owned by the caller and is available for use.</p> </li> <li> <p>payment-failed-Payment failed for the purchase attempt.</p> </li> <li> <p>retired-The reserved node is no longer available. </p> </li> <li> <p>exchanging-The owner is exchanging the reserved node for another reserved node.</p> </li> </ul>
+        OfferingType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The anticipated utilization of the reserved node, as defined in the reserved node offering.
+        RecurringCharges:
+          allOf:
+          - $ref: '#/components/schemas/RecurringChargeList'
+          - description: The recurring charges for the reserved node.
+        ReservedNodeOfferingType:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeOfferingType'
+          - description: <p/>
+      description: 'Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. '
+    ReservedNodeNotFoundFault: {}
+    IntegerOptional:
+      type: integer
+    UnsupportedOperationFault: {}
+    InvalidReservedNodeStateFault: {}
+    ClusterNotFoundFault: {}
+    ReservedNodeConfigurationOption:
+      type: object
+      properties:
+        SourceReservedNode:
+          $ref: '#/components/schemas/ReservedNode'
+        TargetReservedNodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The target reserved-node count.
+        TargetReservedNodeOffering:
+          $ref: '#/components/schemas/ReservedNodeOffering'
+      description: Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

@@ -1,0 +1,534 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RestoreTableFromClusterSnapshot API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=RestoreTableFromClusterSnapshot'
+paths:
+  /#Action=RestoreTableFromClusterSnapshot:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: RestoreTableFromClusterSnapshot
+      operationId: GET_RestoreTableFromClusterSnapshot
+      description: <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/RestoreTableFromClusterSnapshotResult'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: InProgressTableRestoreQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InProgressTableRestoreQuotaExceededFault'
+        '482':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '483':
+          description: InvalidTableRestoreArgumentFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTableRestoreArgumentFault'
+        '484':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '485':
+          description: InvalidClusterStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterStateFault'
+        '486':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      parameters:
+      - name: ClusterIdentifier
+        in: query
+        required: true
+        description: The identifier of the Amazon Redshift cluster to restore the table to.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotIdentifier
+        in: query
+        required: true
+        description: The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SourceDatabaseName
+        in: query
+        required: true
+        description: The name of the source database that contains the table to restore from.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SourceSchemaName
+        in: query
+        required: false
+        description: The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SourceTableName
+        in: query
+        required: true
+        description: The name of the source table to restore from.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TargetDatabaseName
+        in: query
+        required: false
+        description: The name of the database to restore the table to.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TargetSchemaName
+        in: query
+        required: false
+        description: The name of the schema to restore the table to.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: NewTableName
+        in: query
+        required: true
+        description: The name of the table to create as a result of the current request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: EnableCaseSensitiveIdentifier
+        in: query
+        required: false
+        description: Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+        schema:
+          type: boolean
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - RestoreTableFromClusterSnapshot
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Restore Table from Cluster Snapshot
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=RestoreTableFromClusterSnapshot'
+    post:
+      x-aws-operation-name: RestoreTableFromClusterSnapshot
+      operationId: POST_RestoreTableFromClusterSnapshot
+      description: <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/RestoreTableFromClusterSnapshotResult'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: InProgressTableRestoreQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InProgressTableRestoreQuotaExceededFault'
+        '482':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '483':
+          description: InvalidTableRestoreArgumentFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTableRestoreArgumentFault'
+        '484':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '485':
+          description: InvalidClusterStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterStateFault'
+        '486':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/RestoreTableFromClusterSnapshotMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - RestoreTableFromClusterSnapshot
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Restore Table from Cluster Snapshot
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=RestoreTableFromClusterSnapshot'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ClusterSnapshotNotFoundFault: {}
+    RestoreTableFromClusterSnapshotMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      - SnapshotIdentifier
+      - SourceDatabaseName
+      - SourceTableName
+      - NewTableName
+      title: RestoreTableFromClusterSnapshotMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the Amazon Redshift cluster to restore the table to.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.
+        SourceDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source database that contains the table to restore from.
+        SourceSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
+        SourceTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source table to restore from.
+        TargetDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the database to restore the table to.
+        TargetSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the schema to restore the table to.
+        NewTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the table to create as a result of the current request.
+        EnableCaseSensitiveIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+      description: <p/>
+    TableRestoreStatusType:
+      type: string
+      enum:
+      - PENDING
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      - CANCELED
+    TStamp:
+      type: string
+      format: date-time
+    BooleanOptional:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
+    RestoreTableFromClusterSnapshotResult:
+      type: object
+      properties:
+        TableRestoreStatus:
+          $ref: '#/components/schemas/TableRestoreStatus'
+    TableRestoreStatus:
+      type: object
+      properties:
+        TableRestoreRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for the table restore request.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/TableRestoreStatusType'
+          - description: '<p>A value that describes the current state of the table restore request.</p> <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>'
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+        RequestTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The time that the table restore request was made, in Universal Coordinated Time (UTC).
+        ProgressInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/LongOptional'
+          - description: The amount of data restored to the new table so far, in megabytes (MB).
+        TotalDataInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/LongOptional'
+          - description: The total amount of data to restore to the new table, in megabytes (MB).
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the Amazon Redshift cluster that the table is being restored to.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot that the table is being restored from.
+        SourceDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source database that contains the table being restored.
+        SourceSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source schema that contains the table being restored.
+        SourceTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source table being restored.
+        TargetDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the database to restore the table to.
+        TargetSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the schema to restore the table to.
+        NewTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the table to create as a result of the table restore request.
+      description: Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
+    InvalidClusterSnapshotStateFault: {}
+    InvalidClusterStateFault: {}
+    InvalidTableRestoreArgumentFault: {}
+    InProgressTableRestoreQuotaExceededFault: {}
+    UnsupportedOperationFault: {}
+    LongOptional:
+      type: integer
+    ClusterNotFoundFault: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

@@ -1,0 +1,470 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeSnapshotSchedules API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeSnapshotSchedules'
+paths:
+  /#Action=DescribeSnapshotSchedules:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeSnapshotSchedules
+      operationId: GET_DescribeSnapshotSchedules
+      description: 'Returns a list of snapshot schedules. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeSnapshotSchedulesOutputMessage'
+      parameters:
+      - name: ClusterIdentifier
+        in: query
+        required: false
+        description: The unique identifier for the cluster whose snapshot schedules you want to view.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: ScheduleIdentifier
+        in: query
+        required: false
+        description: A unique identifier for a snapshot schedule.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TagKeys
+        in: query
+        required: false
+        description: The key value for a snapshot schedule tag.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: TagKey
+      - name: TagValues
+        in: query
+        required: false
+        description: The value corresponding to the key of the snapshot schedule tag.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: TagValue
+      - name: Marker
+        in: query
+        required: false
+        description: A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.
+        schema:
+          type: integer
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeSnapshotSchedules
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Snapshot Schedules
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeSnapshotSchedules'
+    post:
+      x-aws-operation-name: DescribeSnapshotSchedules
+      operationId: POST_DescribeSnapshotSchedules
+      description: 'Returns a list of snapshot schedules. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeSnapshotSchedulesOutputMessage'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeSnapshotSchedulesMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeSnapshotSchedules
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Snapshot Schedules
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeSnapshotSchedules'
+components:
+  schemas:
+    ScheduleState:
+      type: string
+      enum:
+      - MODIFYING
+      - ACTIVE
+      - FAILED
+    SnapshotSchedule:
+      type: object
+      properties:
+        ScheduleDefinitions:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleDefinitionList'
+          - description: A list of ScheduleDefinitions.
+        ScheduleIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A unique identifier for the schedule.
+        ScheduleDescription:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The description of the schedule.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: An optional set of tags describing the schedule.
+        NextInvocations:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledSnapshotTimeList'
+          - description: <p/>
+        AssociatedClusterCount:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of clusters associated with the schedule.
+        AssociatedClusters:
+          allOf:
+          - $ref: '#/components/schemas/AssociatedClusterList'
+          - description: A list of clusters associated with the schedule. A maximum of 100 clusters is returned.
+      description: 'Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates. '
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
+    TagValueList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: TagValue
+    TStamp:
+      type: string
+      format: date-time
+    ScheduleDefinitionList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: ScheduleDefinition
+    DescribeSnapshotSchedulesMessage:
+      type: object
+      title: DescribeSnapshotSchedulesMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for the cluster whose snapshot schedules you want to view.
+        ScheduleIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A unique identifier for a snapshot schedule.
+        TagKeys:
+          allOf:
+          - $ref: '#/components/schemas/TagKeyList'
+          - description: The key value for a snapshot schedule tag.
+        TagValues:
+          allOf:
+          - $ref: '#/components/schemas/TagValueList'
+          - description: The value corresponding to the key of the snapshot schedule tag.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.
+    String:
+      type: string
+      maxLength: 2147483647
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    ClusterAssociatedToSchedule:
+      type: object
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p/>
+        ScheduleAssociationState:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleState'
+          - description: <p/>
+      description: <p/>
+    AssociatedClusterList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ClusterAssociatedToSchedule'
+        - xml:
+            name: ClusterAssociatedToSchedule
+    SnapshotScheduleList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SnapshotSchedule'
+        - xml:
+            name: SnapshotSchedule
+    DescribeSnapshotSchedulesOutputMessage:
+      type: object
+      properties:
+        SnapshotSchedules:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotScheduleList'
+          - description: A list of SnapshotSchedules.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
+    IntegerOptional:
+      type: integer
+    ScheduledSnapshotTimeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/TStamp'
+        - xml:
+            name: SnapshotTime
+    TagKeyList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: TagKey
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

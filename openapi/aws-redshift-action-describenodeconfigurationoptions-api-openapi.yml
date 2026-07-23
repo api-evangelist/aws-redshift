@@ -1,0 +1,538 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeNodeConfigurationOptions API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeNodeConfigurationOptions'
+paths:
+  /#Action=DescribeNodeConfigurationOptions:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeNodeConfigurationOptions
+      operationId: GET_DescribeNodeConfigurationOptions
+      description: Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/NodeConfigurationOptionsMessage'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '482':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '483':
+          description: AccessToSnapshotDeniedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AccessToSnapshotDeniedFault'
+        '484':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      parameters:
+      - name: ActionType
+        in: query
+        required: true
+        description: 'The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. '
+        schema:
+          type: string
+          enum:
+          - restore-cluster
+          - recommend-node-config
+          - resize-cluster
+      - name: ClusterIdentifier
+        in: query
+        required: false
+        description: The identifier of the cluster to evaluate for possible node configurations.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotIdentifier
+        in: query
+        required: false
+        description: The identifier of the snapshot to evaluate for possible node configurations.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotArn
+        in: query
+        required: false
+        description: The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: OwnerAccount
+        in: query
+        required: false
+        description: The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Filter
+        in: query
+        required: false
+        description: A set of name, operator, and value items to filter the results.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/NodeConfigurationOptionsFilter'
+            - xml:
+                name: NodeConfigurationOptionsFilter
+      - name: Marker
+        in: query
+        required: false
+        description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>'
+        schema:
+          type: integer
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeNodeConfigurationOptions
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Node Configuration Options
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeNodeConfigurationOptions'
+    post:
+      x-aws-operation-name: DescribeNodeConfigurationOptions
+      operationId: POST_DescribeNodeConfigurationOptions
+      description: Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/NodeConfigurationOptionsMessage'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '482':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '483':
+          description: AccessToSnapshotDeniedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AccessToSnapshotDeniedFault'
+        '484':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeNodeConfigurationOptionsMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeNodeConfigurationOptions
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Node Configuration Options
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeNodeConfigurationOptions'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Mode:
+      type: string
+      enum:
+      - standard
+      - high-performance
+    ClusterSnapshotNotFoundFault: {}
+    NodeConfigurationOptionsFilterList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/NodeConfigurationOptionsFilter'
+        - xml:
+            name: NodeConfigurationOptionsFilter
+    Integer:
+      type: integer
+    DescribeNodeConfigurationOptionsMessage:
+      type: object
+      required:
+      - ActionType
+      title: DescribeNodeConfigurationOptionsMessage
+      properties:
+        ActionType:
+          allOf:
+          - $ref: '#/components/schemas/ActionType'
+          - description: 'The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. '
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to evaluate for possible node configurations.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot to evaluate for possible node configurations.
+        SnapshotArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.
+        OwnerAccount:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.
+        Filters:
+          allOf:
+          - $ref: '#/components/schemas/NodeConfigurationOptionsFilterList'
+          - xml:
+              name: Filter
+            description: A set of name, operator, and value items to filter the results.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>'
+    String:
+      type: string
+      maxLength: 2147483647
+    NodeConfigurationOptionsFilterName:
+      type: string
+      enum:
+      - NodeType
+      - NumberOfNodes
+      - EstimatedDiskUtilizationPercent
+      - Mode
+    NodeConfigurationOptionList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/NodeConfigurationOption'
+        - xml:
+            name: NodeConfigurationOption
+    NodeConfigurationOptionsMessage:
+      type: object
+      properties:
+        NodeConfigurationOptionList:
+          allOf:
+          - $ref: '#/components/schemas/NodeConfigurationOptionList'
+          - description: A list of valid node configurations.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
+    DoubleOptional:
+      type: number
+      format: double
+    ValueStringList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: item
+    NodeConfigurationOptionsFilter:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/NodeConfigurationOptionsFilterName'
+          - description: The name of the element to filter.
+        Operator:
+          allOf:
+          - $ref: '#/components/schemas/OperatorType'
+          - description: The filter operator. If filter Name is NodeType only the 'in' operator is supported. Provide one value to evaluate for 'eq', 'lt', 'le', 'gt', and 'ge'. Provide two values to evaluate for 'between'. Provide a list of values for 'in'.
+        Values:
+          allOf:
+          - $ref: '#/components/schemas/ValueStringList'
+          - xml:
+              name: Value
+            description: List of values. Compare Name using Operator to Values. If filter Name is NumberOfNodes, then values can range from 0 to 200. If filter Name is EstimatedDiskUtilizationPercent, then values can range from 0 to 100. For example, filter NumberOfNodes (name) GT (operator) 3 (values).
+      description: A set of elements to filter the returned node configurations.
+    InvalidClusterSnapshotStateFault: {}
+    NodeConfigurationOption:
+      type: object
+      properties:
+        NodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type, such as, "ds2.8xlarge".
+        NumberOfNodes:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of nodes.
+        EstimatedDiskUtilizationPercent:
+          allOf:
+          - $ref: '#/components/schemas/DoubleOptional'
+          - description: The estimated disk utilizaton percentage.
+        Mode:
+          allOf:
+          - $ref: '#/components/schemas/Mode'
+          - description: The category of the node configuration recommendation.
+      description: A list of node configurations.
+    OperatorType:
+      type: string
+      enum:
+      - eq
+      - lt
+      - gt
+      - le
+      - ge
+      - in
+      - between
+    AccessToSnapshotDeniedFault: {}
+    IntegerOptional:
+      type: integer
+    UnsupportedOperationFault: {}
+    ClusterNotFoundFault: {}
+    ActionType:
+      type: string
+      enum:
+      - restore-cluster
+      - recommend-node-config
+      - resize-cluster
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

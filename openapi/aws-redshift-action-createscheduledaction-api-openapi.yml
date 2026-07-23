@@ -1,0 +1,573 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateScheduledAction API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=CreateScheduledAction'
+paths:
+  /#Action=CreateScheduledAction:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: CreateScheduledAction
+      operationId: GET_CreateScheduledAction
+      description: 'Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledAction'
+        '480':
+          description: ScheduledActionAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionAlreadyExistsFault'
+        '481':
+          description: ScheduledActionQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionQuotaExceededFault'
+        '482':
+          description: ScheduledActionTypeUnsupportedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionTypeUnsupportedFault'
+        '483':
+          description: InvalidScheduleFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidScheduleFault'
+        '484':
+          description: InvalidScheduledActionFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidScheduledActionFault'
+        '485':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+      parameters:
+      - name: ScheduledActionName
+        in: query
+        required: true
+        description: 'The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: TargetAction
+        in: query
+        required: true
+        description: 'A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. '
+        schema:
+          type: object
+          properties:
+            ResizeCluster:
+              allOf:
+              - $ref: '#/components/schemas/ResizeClusterMessage'
+              - description: 'An action that runs a <code>ResizeCluster</code> API operation. '
+            PauseCluster:
+              allOf:
+              - $ref: '#/components/schemas/PauseClusterMessage'
+              - description: 'An action that runs a <code>PauseCluster</code> API operation. '
+            ResumeCluster:
+              allOf:
+              - $ref: '#/components/schemas/ResumeClusterMessage'
+              - description: 'An action that runs a <code>ResumeCluster</code> API operation. '
+          description: 'The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. '
+      - name: Schedule
+        in: query
+        required: true
+        description: The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: IamRole
+        in: query
+        required: true
+        description: 'The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: ScheduledActionDescription
+        in: query
+        required: false
+        description: 'The description of the scheduled action. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: StartTime
+        in: query
+        required: false
+        description: The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.
+        schema:
+          type: string
+          format: date-time
+      - name: EndTime
+        in: query
+        required: false
+        description: 'The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. '
+        schema:
+          type: string
+          format: date-time
+      - name: Enable
+        in: query
+        required: false
+        description: 'If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. '
+        schema:
+          type: boolean
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateScheduledAction
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Create Scheduled Action
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateScheduledAction'
+    post:
+      x-aws-operation-name: CreateScheduledAction
+      operationId: POST_CreateScheduledAction
+      description: 'Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. '
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledAction'
+        '480':
+          description: ScheduledActionAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionAlreadyExistsFault'
+        '481':
+          description: ScheduledActionQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionQuotaExceededFault'
+        '482':
+          description: ScheduledActionTypeUnsupportedFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ScheduledActionTypeUnsupportedFault'
+        '483':
+          description: InvalidScheduleFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidScheduleFault'
+        '484':
+          description: InvalidScheduledActionFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidScheduledActionFault'
+        '485':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/CreateScheduledActionMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateScheduledAction
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Create Scheduled Action
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateScheduledAction'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    BooleanOptional:
+      type: boolean
+    TStamp:
+      type: string
+      format: date-time
+    String:
+      type: string
+      maxLength: 2147483647
+    UnauthorizedOperation: {}
+    CreateScheduledActionMessage:
+      type: object
+      required:
+      - ScheduledActionName
+      - TargetAction
+      - Schedule
+      - IamRole
+      title: CreateScheduledActionMessage
+      properties:
+        ScheduledActionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. '
+        TargetAction:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledActionType'
+          - description: 'A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. '
+        Schedule:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
+        IamRole:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. '
+        ScheduledActionDescription:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The description of the scheduled action. '
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: 'The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. '
+        Enable:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: 'If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. '
+    ResumeClusterMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: ResumeClusterMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to be resumed.
+      description: 'Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. '
+    ScheduledActionAlreadyExistsFault: {}
+    ScheduledAction:
+      type: object
+      properties:
+        ScheduledActionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the scheduled action. '
+        TargetAction:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledActionType'
+          - description: <p>A JSON format string of the Amazon Redshift API operation with input parameters. </p> <p>"<code>{\"ResizeCluster\":{\"NodeType\":\"ds2.8xlarge\",\"ClusterIdentifier\":\"my-test-cluster\",\"NumberOfNodes\":3}}</code>". </p>
+        Schedule:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The schedule for a one-time (at format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour.</p> <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+        IamRole:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using Identity-Based Policies for Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. '
+        ScheduledActionDescription:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The description of the scheduled action. '
+        State:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledActionState'
+          - description: 'The state of the scheduled action. For example, <code>DISABLED</code>. '
+        NextInvocations:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledActionTimeList'
+          - description: 'List of times when the scheduled action will run. '
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: 'The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger. '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: 'The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. '
+      description: 'Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>. '
+    ScheduledActionState:
+      type: string
+      enum:
+      - ACTIVE
+      - DISABLED
+    PauseClusterMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: PauseClusterMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to be paused.
+      description: 'Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. '
+    ResizeClusterMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: ResizeClusterMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The unique identifier for the cluster to resize.
+        ClusterType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The new cluster type for the specified cluster.
+        NodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.
+        NumberOfNodes:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
+        Classic:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: 'A boolean value indicating whether the resize operation is using the classic resize process. If you don''t provide this parameter or set the value to <code>false</code>, the resize type is elastic. '
+        ReservedNodeId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the reserved node.
+        TargetReservedNodeOfferingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the target reserved node offering.
+      description: 'Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. '
+    ScheduledActionType:
+      type: object
+      properties:
+        ResizeCluster:
+          allOf:
+          - $ref: '#/components/schemas/ResizeClusterMessage'
+          - description: 'An action that runs a <code>ResizeCluster</code> API operation. '
+        PauseCluster:
+          allOf:
+          - $ref: '#/components/schemas/PauseClusterMessage'
+          - description: 'An action that runs a <code>PauseCluster</code> API operation. '
+        ResumeCluster:
+          allOf:
+          - $ref: '#/components/schemas/ResumeClusterMessage'
+          - description: 'An action that runs a <code>ResumeCluster</code> API operation. '
+      description: 'The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. '
+    InvalidScheduledActionFault: {}
+    InvalidScheduleFault: {}
+    ScheduledActionTypeUnsupportedFault: {}
+    IntegerOptional:
+      type: integer
+    ScheduledActionTimeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/TStamp'
+        - xml:
+            name: ScheduledActionTime
+    ScheduledActionQuotaExceededFault: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

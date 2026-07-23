@@ -1,0 +1,426 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeReservedNodeExchangeStatus API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeReservedNodeExchangeStatus'
+paths:
+  /#Action=DescribeReservedNodeExchangeStatus:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeReservedNodeExchangeStatus
+      operationId: GET_DescribeReservedNodeExchangeStatus
+      description: Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeReservedNodeExchangeStatusOutputMessage'
+        '480':
+          description: ReservedNodeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeNotFoundFault'
+        '481':
+          description: ReservedNodeExchangeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeExchangeNotFoundFault'
+        '482':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      parameters:
+      - name: ReservedNodeId
+        in: query
+        required: false
+        description: The identifier of the source reserved node in a reserved-node exchange request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: ReservedNodeExchangeRequestId
+        in: query
+        required: false
+        description: The identifier of the reserved-node exchange request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: MaxRecords
+        in: query
+        required: false
+        description: The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+        schema:
+          type: integer
+      - name: Marker
+        in: query
+        required: false
+        description: An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeReservedNodeExchangeStatus
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Reserved Node Exchange Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeReservedNodeExchangeStatus'
+    post:
+      x-aws-operation-name: DescribeReservedNodeExchangeStatus
+      operationId: POST_DescribeReservedNodeExchangeStatus
+      description: Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeReservedNodeExchangeStatusOutputMessage'
+        '480':
+          description: ReservedNodeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeNotFoundFault'
+        '481':
+          description: ReservedNodeExchangeNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ReservedNodeExchangeNotFoundFault'
+        '482':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeReservedNodeExchangeStatusInputMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeReservedNodeExchangeStatus
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Reserved Node Exchange Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeReservedNodeExchangeStatus'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    TStamp:
+      type: string
+      format: date-time
+    ReservedNodeExchangeStatusType:
+      type: string
+      enum:
+      - REQUESTED
+      - PENDING
+      - IN_PROGRESS
+      - RETRYING
+      - SUCCEEDED
+      - FAILED
+    Integer:
+      type: integer
+    ReservedNodeExchangeStatusList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ReservedNodeExchangeStatus'
+        - xml:
+            name: ReservedNodeExchangeStatus
+    String:
+      type: string
+      maxLength: 2147483647
+    ReservedNodeExchangeStatus:
+      type: object
+      properties:
+        ReservedNodeExchangeRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the reserved-node exchange request.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeExchangeStatusType'
+          - description: The status of the reserved-node exchange request. Statuses include in-progress and requested.
+        RequestTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: A date and time that indicate when the reserved-node exchange was requested.
+        SourceReservedNodeId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the source reserved node.
+        SourceReservedNodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The source reserved-node type, for example ds2.xlarge.
+        SourceReservedNodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The source reserved-node count in the cluster.
+        TargetReservedNodeOfferingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the target reserved node offering.
+        TargetReservedNodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type of the target reserved node, for example ra3.4xlarge.
+        TargetReservedNodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The count of target reserved nodes in the cluster.
+      description: Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
+    ReservedNodeExchangeNotFoundFault: {}
+    DescribeReservedNodeExchangeStatusOutputMessage:
+      type: object
+      properties:
+        ReservedNodeExchangeStatusDetails:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeExchangeStatusList'
+          - description: The details of the reserved-node exchange request, including the status, request time, source reserved-node identifier, and additional details.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.
+    DescribeReservedNodeExchangeStatusInputMessage:
+      type: object
+      title: DescribeReservedNodeExchangeStatusInputMessage
+      properties:
+        ReservedNodeId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the source reserved node in a reserved-node exchange request.
+        ReservedNodeExchangeRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the reserved-node exchange request.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
+    ReservedNodeNotFoundFault: {}
+    IntegerOptional:
+      type: integer
+    UnsupportedOperationFault: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

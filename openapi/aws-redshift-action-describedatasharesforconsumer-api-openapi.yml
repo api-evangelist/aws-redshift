@@ -1,0 +1,415 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeDataSharesForConsumer API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DescribeDataSharesForConsumer'
+paths:
+  /#Action=DescribeDataSharesForConsumer:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DescribeDataSharesForConsumer
+      operationId: GET_DescribeDataSharesForConsumer
+      description: Returns a list of datashares where the account identifier being called is a consumer account identifier.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeDataSharesForConsumerResult'
+        '480':
+          description: InvalidNamespaceFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidNamespaceFault'
+      parameters:
+      - name: ConsumerArn
+        in: query
+        required: false
+        description: The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Status
+        in: query
+        required: false
+        description: An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
+        schema:
+          type: string
+          enum:
+          - ACTIVE
+          - AVAILABLE
+      - name: MaxRecords
+        in: query
+        required: false
+        description: 'The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. '
+        schema:
+          type: integer
+      - name: Marker
+        in: query
+        required: false
+        description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeDataSharesForConsumer
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Describe Data Shares for Consumer
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeDataSharesForConsumer'
+    post:
+      x-aws-operation-name: DescribeDataSharesForConsumer
+      operationId: POST_DescribeDataSharesForConsumer
+      description: Returns a list of datashares where the account identifier being called is a consumer account identifier.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DescribeDataSharesForConsumerResult'
+        '480':
+          description: InvalidNamespaceFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidNamespaceFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/DescribeDataSharesForConsumerMessage'
+      parameters:
+      - name: MaxRecords
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: Marker
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DescribeDataSharesForConsumer
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Describe Data Shares for Consumer
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DescribeDataSharesForConsumer'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    DataShareStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - PENDING_AUTHORIZATION
+      - AUTHORIZED
+      - DEAUTHORIZED
+      - REJECTED
+      - AVAILABLE
+    TStamp:
+      type: string
+      format: date-time
+    DataShareAssociationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataShareAssociation'
+    DataShare:
+      type: object
+      properties:
+        DataShareArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.
+        ProducerArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the producer.
+        AllowPubliclyAccessibleConsumers:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A value that specifies whether the datashare can be shared to a publicly accessible cluster.
+        DataShareAssociations:
+          allOf:
+          - $ref: '#/components/schemas/DataShareAssociationList'
+          - description: A value that specifies when the datashare has an association between producer and data consumers.
+        ManagedBy:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of a datashare to show its managing entity.
+    String:
+      type: string
+      maxLength: 2147483647
+    DescribeDataSharesForConsumerMessage:
+      type: object
+      title: DescribeDataSharesForConsumerMessage
+      properties:
+        ConsumerArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/DataShareStatusForConsumer'
+          - description: An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: 'The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. '
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+    DataShareList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataShare'
+    InvalidNamespaceFault: {}
+    Boolean:
+      type: boolean
+    DataShareStatusForConsumer:
+      type: string
+      enum:
+      - ACTIVE
+      - AVAILABLE
+    IntegerOptional:
+      type: integer
+    DataShareAssociation:
+      type: object
+      properties:
+        ConsumerIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the consumer accounts that have an association with a producer datashare.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/DataShareStatus'
+          - description: The status of the datashare that is associated.
+        ConsumerRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The creation date of the datashare that is associated.
+        StatusChangeDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The status change data of the datashare that is associated.
+      description: 'The association of a datashare from a producer account with a data consumer. '
+    DescribeDataSharesForConsumerResult:
+      type: object
+      properties:
+        DataShares:
+          allOf:
+          - $ref: '#/components/schemas/DataShareList'
+          - description: Shows the results of datashares available for consumers.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

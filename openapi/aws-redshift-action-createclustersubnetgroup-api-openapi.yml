@@ -1,0 +1,528 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateClusterSubnetGroup API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=CreateClusterSubnetGroup'
+paths:
+  /#Action=CreateClusterSubnetGroup:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: CreateClusterSubnetGroup
+      operationId: GET_CreateClusterSubnetGroup
+      description: <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/CreateClusterSubnetGroupResult'
+        '480':
+          description: ClusterSubnetGroupAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetGroupAlreadyExistsFault'
+        '481':
+          description: ClusterSubnetGroupQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetGroupQuotaExceededFault'
+        '482':
+          description: ClusterSubnetQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetQuotaExceededFault'
+        '483':
+          description: InvalidSubnet
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidSubnet'
+        '484':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+        '485':
+          description: TagLimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TagLimitExceededFault'
+        '486':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+        '487':
+          description: DependentServiceRequestThrottlingFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceRequestThrottlingFault'
+      parameters:
+      - name: ClusterSubnetGroupName
+        in: query
+        required: true
+        description: '<p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesubnetgroup</code> </p>'
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Description
+        in: query
+        required: true
+        description: A description for the subnet group.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SubnetIds
+        in: query
+        required: true
+        description: An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/String'
+            - xml:
+                name: SubnetIdentifier
+      - name: Tags
+        in: query
+        required: false
+        description: A list of tag instances.
+        schema:
+          type: array
+          items:
+            allOf:
+            - $ref: '#/components/schemas/Tag'
+            - xml:
+                name: Tag
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateClusterSubnetGroup
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Create Cluster Subnet Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateClusterSubnetGroup'
+    post:
+      x-aws-operation-name: CreateClusterSubnetGroup
+      operationId: POST_CreateClusterSubnetGroup
+      description: <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/CreateClusterSubnetGroupResult'
+        '480':
+          description: ClusterSubnetGroupAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetGroupAlreadyExistsFault'
+        '481':
+          description: ClusterSubnetGroupQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetGroupQuotaExceededFault'
+        '482':
+          description: ClusterSubnetQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSubnetQuotaExceededFault'
+        '483':
+          description: InvalidSubnet
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidSubnet'
+        '484':
+          description: UnauthorizedOperation
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedOperation'
+        '485':
+          description: TagLimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/TagLimitExceededFault'
+        '486':
+          description: InvalidTagFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidTagFault'
+        '487':
+          description: DependentServiceRequestThrottlingFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceRequestThrottlingFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/CreateClusterSubnetGroupMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - CreateClusterSubnetGroup
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Create Cluster Subnet Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=CreateClusterSubnetGroup'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
+    SubnetIdentifierList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: SubnetIdentifier
+    ClusterSubnetGroupAlreadyExistsFault: {}
+    InvalidTagFault: {}
+    CreateClusterSubnetGroupResult:
+      type: object
+      properties:
+        ClusterSubnetGroup:
+          $ref: '#/components/schemas/ClusterSubnetGroup'
+    AvailabilityZone:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the availability zone.
+        SupportedPlatforms:
+          allOf:
+          - $ref: '#/components/schemas/SupportedPlatformsList'
+          - description: <p/>
+      description: Describes an availability zone.
+    String:
+      type: string
+      maxLength: 2147483647
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    UnauthorizedOperation: {}
+    CreateClusterSubnetGroupMessage:
+      type: object
+      required:
+      - ClusterSubnetGroupName
+      - Description
+      - SubnetIds
+      title: CreateClusterSubnetGroupMessage
+      properties:
+        ClusterSubnetGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesubnetgroup</code> </p>'
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A description for the subnet group.
+        SubnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetIdentifierList'
+          - description: An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: A list of tag instances.
+      description: <p/>
+    ClusterSubnetGroupQuotaExceededFault: {}
+    Subnet:
+      type: object
+      properties:
+        SubnetIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the subnet.
+        SubnetAvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/AvailabilityZone'
+          - description: <p/>
+        SubnetStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the subnet.
+      description: Describes a subnet.
+    SubnetList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Subnet'
+        - xml:
+            name: Subnet
+    ClusterSubnetGroup:
+      type: object
+      properties:
+        ClusterSubnetGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the cluster subnet group.
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The description of the cluster subnet group.
+        VpcId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The VPC ID of the cluster subnet group.
+        SubnetGroupStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The status of the cluster subnet group. Possible values are <code>Complete</code>, <code>Incomplete</code> and <code>Invalid</code>. '
+        Subnets:
+          allOf:
+          - $ref: '#/components/schemas/SubnetList'
+          - description: 'A list of the VPC <a>Subnet</a> elements. '
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags for the cluster subnet group.
+      description: Describes a subnet group.
+    InvalidSubnet: {}
+    SupportedPlatformsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SupportedPlatform'
+        - xml:
+            name: SupportedPlatform
+    DependentServiceRequestThrottlingFault: {}
+    TagLimitExceededFault: {}
+    ClusterSubnetQuotaExceededFault: {}
+    SupportedPlatform:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p/>
+      description: A list of supported platforms for orderable clusters.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

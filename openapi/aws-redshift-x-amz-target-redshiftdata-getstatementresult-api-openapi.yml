@@ -1,0 +1,390 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #X Amz Target=RedshiftData.GetStatementResult API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=RedshiftData.GetStatementResult'
+paths:
+  /#X-Amz-Target=RedshiftData.GetStatementResult:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetStatementResult
+      description: <p>Fetches the temporarily cached result of an SQL statement. A token is returned to page through the statement results. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStatementResultResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetStatementResultRequest'
+      parameters:
+      - name: NextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - RedshiftData.GetStatementResult
+      summary: Amazon Redshift Data - Get Statement Result
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=RedshiftData.GetStatementResult'
+components:
+  schemas:
+    ColumnMetadata:
+      type: object
+      properties:
+        columnDefault:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The default value of the column. '
+        isCaseSensitive:
+          allOf:
+          - $ref: '#/components/schemas/bool'
+          - description: 'A value that indicates whether the column is case-sensitive. '
+        isCurrency:
+          allOf:
+          - $ref: '#/components/schemas/bool'
+          - description: A value that indicates whether the column contains currency values.
+        isSigned:
+          allOf:
+          - $ref: '#/components/schemas/bool'
+          - description: A value that indicates whether an integer column is signed.
+        label:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The label for the column. '
+        length:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The length of the column.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the column. '
+        nullable:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: 'A value that indicates whether the column is nullable. '
+        precision:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: 'The precision value of a decimal number column. '
+        scale:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: 'The scale value of a decimal number column. '
+        schemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the schema that contains the table that includes the column.
+        tableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the table that includes the column. '
+        typeName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The database-specific data type of the column. '
+      description: 'The properties (metadata) of a column. '
+    GetStatementResultRequest:
+      type: object
+      required:
+      - Id
+      title: GetStatementResultRequest
+      properties:
+        Id:
+          allOf:
+          - $ref: '#/components/schemas/StatementId'
+          - description: 'The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code> has a suffix of <code>:2</code> that indicates the second SQL statement of a batch query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. '
+    Field:
+      type: object
+      properties:
+        blobValue:
+          allOf:
+          - $ref: '#/components/schemas/Blob'
+          - description: 'A value of the BLOB data type. '
+        booleanValue:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: 'A value of the Boolean data type. '
+        doubleValue:
+          allOf:
+          - $ref: '#/components/schemas/BoxedDouble'
+          - description: 'A value of the double data type. '
+        isNull:
+          allOf:
+          - $ref: '#/components/schemas/BoxedBoolean'
+          - description: 'A value that indicates whether the data is NULL. '
+        longValue:
+          allOf:
+          - $ref: '#/components/schemas/BoxedLong'
+          - description: 'A value of the long data type. '
+        stringValue:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value of the string data type. '
+      description: 'A data value in a column. '
+    FieldList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Field'
+    Integer:
+      type: integer
+    String:
+      type: string
+    InternalServerException: {}
+    Blob:
+      type: string
+    StatementId:
+      type: string
+      pattern: ^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$
+    ResourceNotFoundException: {}
+    BoxedBoolean:
+      type: boolean
+    BoxedDouble:
+      type: number
+      format: double
+    BoxedLong:
+      type: integer
+    GetStatementResultResponse:
+      type: object
+      required:
+      - Records
+      properties:
+        ColumnMetadata:
+          allOf:
+          - $ref: '#/components/schemas/ColumnMetadataList'
+          - description: 'The properties (metadata) of a column. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. '
+        Records:
+          allOf:
+          - $ref: '#/components/schemas/SqlRecords'
+          - description: The results of the SQL statement.
+        TotalNumRows:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. '
+    ValidationException: {}
+    bool:
+      type: boolean
+    Long:
+      type: integer
+    SqlRecords:
+      type: array
+      items:
+        $ref: '#/components/schemas/FieldList'
+    ColumnMetadataList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ColumnMetadata'
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

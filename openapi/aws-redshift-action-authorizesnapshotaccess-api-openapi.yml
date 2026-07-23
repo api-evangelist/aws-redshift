@@ -1,0 +1,600 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=AuthorizeSnapshotAccess API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=AuthorizeSnapshotAccess'
+paths:
+  /#Action=AuthorizeSnapshotAccess:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: AuthorizeSnapshotAccess
+      operationId: GET_AuthorizeSnapshotAccess
+      description: <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizeSnapshotAccessResult'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: AuthorizationAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizationAlreadyExistsFault'
+        '482':
+          description: AuthorizationQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizationQuotaExceededFault'
+        '483':
+          description: DependentServiceRequestThrottlingFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceRequestThrottlingFault'
+        '484':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '485':
+          description: LimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/LimitExceededFault'
+        '486':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      parameters:
+      - name: SnapshotIdentifier
+        in: query
+        required: false
+        description: The identifier of the snapshot the account is authorized to restore.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotArn
+        in: query
+        required: false
+        description: The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: SnapshotClusterIdentifier
+        in: query
+        required: false
+        description: The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: AccountWithRestoreAccess
+        in: query
+        required: true
+        description: <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+        schema:
+          type: string
+          maxLength: 2147483647
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - AuthorizeSnapshotAccess
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Authorize Snapshot Access
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=AuthorizeSnapshotAccess'
+    post:
+      x-aws-operation-name: AuthorizeSnapshotAccess
+      operationId: POST_AuthorizeSnapshotAccess
+      description: <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p> <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizeSnapshotAccessResult'
+        '480':
+          description: ClusterSnapshotNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterSnapshotNotFoundFault'
+        '481':
+          description: AuthorizationAlreadyExistsFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizationAlreadyExistsFault'
+        '482':
+          description: AuthorizationQuotaExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/AuthorizationQuotaExceededFault'
+        '483':
+          description: DependentServiceRequestThrottlingFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/DependentServiceRequestThrottlingFault'
+        '484':
+          description: InvalidClusterSnapshotStateFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/InvalidClusterSnapshotStateFault'
+        '485':
+          description: LimitExceededFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/LimitExceededFault'
+        '486':
+          description: UnsupportedOperationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnsupportedOperationFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/AuthorizeSnapshotAccessMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - AuthorizeSnapshotAccess
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Authorize Snapshot Access
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=AuthorizeSnapshotAccess'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    ClusterSnapshotNotFoundFault: {}
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
+    TStamp:
+      type: string
+      format: date-time
+    Double:
+      type: number
+      format: double
+    AuthorizeSnapshotAccessMessage:
+      type: object
+      required:
+      - AccountWithRestoreAccess
+      title: AuthorizeSnapshotAccessMessage
+      properties:
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot the account is authorized to restore.
+        SnapshotArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the snapshot to authorize access to.
+        SnapshotClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+        AccountWithRestoreAccess:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The identifier of the Amazon Web Services account authorized to restore the specified snapshot.</p> <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
+      description: <p/>
+    Integer:
+      type: integer
+    String:
+      type: string
+      maxLength: 2147483647
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    RestorableNodeTypeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: NodeType
+    AuthorizationAlreadyExistsFault: {}
+    Snapshot:
+      type: object
+      properties:
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The snapshot identifier that is provided in the request.
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster for which the snapshot was taken.
+        SnapshotCreateTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The snapshot status. The value of the status depends on the API operation used: </p> <ul> <li> <p> <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as "creating". </p> </li> <li> <p> <a>DescribeClusterSnapshots</a> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> <li> <p> <a>DeleteClusterSnapshot</a> returns status as "deleted".</p> </li> </ul>'
+        Port:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The port that the cluster is listening on.
+        AvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Availability Zone in which the cluster was created.
+        ClusterCreateTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The time (UTC) when the cluster was originally created.
+        MasterUsername:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The admin user name for the cluster.
+        ClusterVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The version ID of the Amazon Redshift engine that is running on the cluster.
+        EngineFullVersion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. '
+        SnapshotType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> are of type "manual". '
+        NodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type of the nodes in the cluster.
+        NumberOfNodes:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The number of nodes in the cluster.
+        DBName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the database that was created when the cluster was created.
+        VpcId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.
+        Encrypted:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: If <code>true</code>, the data in the snapshot is encrypted at rest.
+        KmsKeyId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.
+        EncryptedWithHSM:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.
+        AccountsWithRestoreAccess:
+          allOf:
+          - $ref: '#/components/schemas/AccountsWithRestoreAccessList'
+          - description: 'A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. '
+        OwnerAccount:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.
+        TotalBackupSizeInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The size of the complete set of backup data that would be used to restore the cluster.
+        ActualIncrementalBackupSizeInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The size of the incremental backup.
+        BackupProgressInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The number of megabytes that have been transferred to the snapshot backup.
+        CurrentBackupRateInMegaBytesPerSecond:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: 'The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. '
+        EstimatedSecondsToCompletion:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. '
+        ElapsedTimeInSeconds:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.
+        SourceRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The source region from which the snapshot was copied.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags for the cluster snapshot.
+        RestorableNodeTypes:
+          allOf:
+          - $ref: '#/components/schemas/RestorableNodeTypeList'
+          - description: The list of node types that this cluster snapshot is able to restore into.
+        EnhancedVpcRouting:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: '<p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> <p>Default: false</p>'
+        MaintenanceTrackName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the maintenance track for the snapshot.
+        ManualSnapshotRetentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+        ManualSnapshotRemainingDays:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The number of days until a manual snapshot will pass its retention period.
+        SnapshotRetentionStartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: A timestamp representing the start of the retention period for the snapshot.
+      description: Describes a snapshot.
+    AuthorizationQuotaExceededFault: {}
+    InvalidClusterSnapshotStateFault: {}
+    AccountWithRestoreAccess:
+      type: object
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of an Amazon Web Services account authorized to restore a snapshot.
+        AccountAlias:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. '
+      description: Describes an Amazon Web Services account authorized to restore a snapshot.
+    AuthorizeSnapshotAccessResult:
+      type: object
+      properties:
+        Snapshot:
+          $ref: '#/components/schemas/Snapshot'
+    DependentServiceRequestThrottlingFault: {}
+    AccountsWithRestoreAccessList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/AccountWithRestoreAccess'
+        - xml:
+            name: AccountWithRestoreAccess
+    Boolean:
+      type: boolean
+    IntegerOptional:
+      type: integer
+    UnsupportedOperationFault: {}
+    Long:
+      type: integer
+    LimitExceededFault: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true

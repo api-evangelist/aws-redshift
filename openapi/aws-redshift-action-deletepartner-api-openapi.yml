@@ -1,0 +1,376 @@
+openapi: 3.0.0
+info:
+  version: '2019-12-20'
+  x-release: v4
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DeletePartner API'
+  description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
+  x-logo:
+    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: redshift-data
+  x-aws-signingName: redshift-data
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/redshift-data-2019-12-20.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: https://redshift-data.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Redshift Data API Service multi-region endpoint
+- url: http://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+- url: https://redshift-data.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Redshift Data API Service endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#Action=DeletePartner'
+paths:
+  /#Action=DeletePartner:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      x-aws-operation-name: DeletePartner
+      operationId: GET_DeletePartner
+      description: Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/PartnerIntegrationOutputMessage'
+        '480':
+          description: PartnerNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/PartnerNotFoundFault'
+        '481':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '482':
+          description: UnauthorizedPartnerIntegrationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedPartnerIntegrationFault'
+      parameters:
+      - name: AccountId
+        in: query
+        required: true
+        description: The Amazon Web Services account ID that owns the cluster.
+        schema:
+          type: string
+          pattern: ^[0-9]+$
+          minLength: 12
+          maxLength: 12
+      - name: ClusterIdentifier
+        in: query
+        required: true
+        description: The cluster identifier of the cluster that receives data from the partner.
+        schema:
+          type: string
+          pattern: ^[a-zA-Z0-9\-]+$
+          maxLength: 63
+      - name: DatabaseName
+        in: query
+        required: true
+        description: The name of the database that receives data from the partner.
+        schema:
+          type: string
+          pattern: ^[\p{L}_][\p{L}\p{N}@$#_]+$
+          maxLength: 127
+      - name: PartnerName
+        in: query
+        required: true
+        description: The name of the partner that is authorized to send data.
+        schema:
+          type: string
+          pattern: ^[a-zA-Z0-9\-_]+$
+          maxLength: 255
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DeletePartner
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - G E T_ Delete Partner
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DeletePartner'
+    post:
+      x-aws-operation-name: DeletePartner
+      operationId: POST_DeletePartner
+      description: Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.
+      responses:
+        '200':
+          description: Success
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/PartnerIntegrationOutputMessage'
+        '480':
+          description: PartnerNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/PartnerNotFoundFault'
+        '481':
+          description: ClusterNotFoundFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/ClusterNotFoundFault'
+        '482':
+          description: UnauthorizedPartnerIntegrationFault
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedPartnerIntegrationFault'
+      requestBody:
+        content:
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/PartnerIntegrationInputMessage'
+      parameters:
+      - name: Action
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - DeletePartner
+      - name: Version
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - '2012-12-01'
+      summary: Amazon Redshift - P O S T_ Delete Partner
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#Action=DeletePartner'
+components:
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    PartnerIntegrationOutputMessage:
+      type: object
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationDatabaseName'
+          - description: The name of the database that receives data from the partner.
+        PartnerName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationPartnerName'
+          - description: The name of the partner that is authorized to send data.
+    PartnerIntegrationClusterIdentifier:
+      type: string
+      pattern: ^[a-zA-Z0-9\-]+$
+      maxLength: 63
+    PartnerIntegrationDatabaseName:
+      type: string
+      pattern: ^[\p{L}_][\p{L}\p{N}@$#_]+$
+      maxLength: 127
+    PartnerNotFoundFault: {}
+    PartnerIntegrationAccountId:
+      type: string
+      pattern: ^[0-9]+$
+      minLength: 12
+      maxLength: 12
+    UnauthorizedPartnerIntegrationFault: {}
+    PartnerIntegrationPartnerName:
+      type: string
+      pattern: ^[a-zA-Z0-9\-_]+$
+      maxLength: 255
+    ClusterNotFoundFault: {}
+    PartnerIntegrationInputMessage:
+      type: object
+      required:
+      - AccountId
+      - ClusterIdentifier
+      - DatabaseName
+      - PartnerName
+      title: PartnerIntegrationInputMessage
+      properties:
+        AccountId:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationAccountId'
+          - description: The Amazon Web Services account ID that owns the cluster.
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationClusterIdentifier'
+          - description: The cluster identifier of the cluster that receives data from the partner.
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationDatabaseName'
+          - description: The name of the database that receives data from the partner.
+        PartnerName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationPartnerName'
+          - description: The name of the partner that is authorized to send data.
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/redshift-data/
+x-hasEquivalentPaths: true
