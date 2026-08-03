@@ -1,0 +1,893 @@
+{
+  "info": {
+    "_postman_id": "d3199bd6-2345-48a2-9ace-cd55caf796b4",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeHsmConfigurations API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:21.000Z",
+    "updatedAt": "2026-07-28T10:57:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d3199bd6-2345-48a2-9ace-cd55caf796b4"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeHsmConfigurations",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Hsm Configurations",
+          "id": "78814ee5-5952-48e8-ac4f-c62c90409c9c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagKeys=<string>&TagValues=<string>&TagValues=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.",
+                  "key": "HsmConfigurationIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeHsmConfigurations"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeHsmConfigurations"
+            },
+            "description": "<p>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all HSM connections that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "8ca93a5d-f546-4acb-8fe3-1df0da961539",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n</element>",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-8ca93a5d-f546-4acb-8fe3-1df0da961539"
+            },
+            {
+              "id": "402886d3-6250-44cf-89fe-e4f59c616a34",
+              "name": "HsmConfigurationNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-402886d3-6250-44cf-89fe-e4f59c616a34"
+            },
+            {
+              "id": "e47db8ff-4455-41d6-9fc5-99eb7a5dabbf",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeHsmConfigurations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching HSM configurations that are associated with the specified key or keys. For example, suppose that you have HSM configurations that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching HSM configurations that are associated with the specified tag value or values. For example, suppose that you have HSM configurations that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM configurations that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-e47db8ff-4455-41d6-9fc5-99eb7a5dabbf"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:22.000Z",
+          "updatedAt": "2026-07-28T10:57:22.000Z",
+          "uid": "35240-78814ee5-5952-48e8-ac4f-c62c90409c9c"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Hsm Configurations",
+          "id": "0a29b3da-e29b-4237-bbb2-ad059135f513",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeHsmConfigurations"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeHsmConfigurations"
+            },
+            "description": "<p>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all HSM connections that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "1d78f5b6-bbb8-496a-a384-9cc79f90a49b",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n</element>",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-1d78f5b6-bbb8-496a-a384-9cc79f90a49b"
+            },
+            {
+              "id": "678c8e6f-cd90-458a-9b42-4a5917366549",
+              "name": "HsmConfigurationNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-678c8e6f-cd90-458a-9b42-4a5917366549"
+            },
+            {
+              "id": "f53225db-b84c-4d9c-9e1c-cf50f5b044c6",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeHsmConfigurations&Version=2012-12-01#Action=DescribeHsmConfigurations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeHsmConfigurations"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeHsmConfigurations"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:22.000Z",
+              "updatedAt": "2026-07-28T10:57:22.000Z",
+              "uid": "35240-f53225db-b84c-4d9c-9e1c-cf50f5b044c6"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:22.000Z",
+          "updatedAt": "2026-07-28T10:57:22.000Z",
+          "uid": "35240-0a29b3da-e29b-4237-bbb2-ad059135f513"
+        }
+      ],
+      "id": "6c550601-629b-4cf2-807a-5de3869cdb4a",
+      "createdAt": "2026-07-28T10:57:22.000Z",
+      "updatedAt": "2026-07-28T10:57:22.000Z",
+      "uid": "35240-6c550601-629b-4cf2-807a-5de3869cdb4a"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

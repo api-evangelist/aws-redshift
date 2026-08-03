@@ -1,0 +1,1215 @@
+{
+  "info": {
+    "_postman_id": "7a2c74fa-85c0-4aba-acde-ca85db6fc53a",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RevokeSnapshotAccess API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:56.000Z",
+    "updatedAt": "2026-07-28T10:59:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7a2c74fa-85c0-4aba-acde-ca85db6fc53a"
+  },
+  "item": [
+    {
+      "name": "#Action=RevokeSnapshotAccess",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Revoke Snapshot Access",
+          "id": "2bac8b50-aaa9-49c3-a2b5-3fe834f61f83",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The identifier of the snapshot that the account can no longer access.",
+                  "key": "SnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                  "key": "SnapshotArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                  "key": "SnapshotClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                  "key": "AccountWithRestoreAccess",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RevokeSnapshotAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RevokeSnapshotAccess"
+            },
+            "description": "<p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "2c02c9df-9ece-4c15-b88c-c54a03eed208",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the snapshot that the account can no longer access.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                      "key": "SnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                      "key": "AccountWithRestoreAccess",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-2c02c9df-9ece-4c15-b88c-c54a03eed208"
+            },
+            {
+              "id": "9a02ac39-28f2-40f6-bb8e-4a38b629bae2",
+              "name": "AccessToSnapshotDeniedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the snapshot that the account can no longer access.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                      "key": "SnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                      "key": "AccountWithRestoreAccess",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-9a02ac39-28f2-40f6-bb8e-4a38b629bae2"
+            },
+            {
+              "id": "f9dfb1e1-4aaa-4ac1-85e7-b580766824e0",
+              "name": "AuthorizationNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the snapshot that the account can no longer access.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                      "key": "SnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                      "key": "AccountWithRestoreAccess",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-f9dfb1e1-4aaa-4ac1-85e7-b580766824e0"
+            },
+            {
+              "id": "2dd39470-2bd1-4545-80fe-e9c70d43af7b",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the snapshot that the account can no longer access.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                      "key": "SnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                      "key": "AccountWithRestoreAccess",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-2dd39470-2bd1-4545-80fe-e9c70d43af7b"
+            },
+            {
+              "id": "cf3c9399-b4a7-4a23-bb04-4e699d2f8306",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotClusterIdentifier=<string>&AccountWithRestoreAccess=<string>&Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the snapshot that the account can no longer access.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.",
+                      "key": "SnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.",
+                      "key": "AccountWithRestoreAccess",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-cf3c9399-b4a7-4a23-bb04-4e699d2f8306"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:57.000Z",
+          "updatedAt": "2026-07-28T10:59:57.000Z",
+          "uid": "35240-2bac8b50-aaa9-49c3-a2b5-3fe834f61f83"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Revoke Snapshot Access",
+          "id": "09a3572c-c903-416c-b524-8a211c63a4cf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RevokeSnapshotAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RevokeSnapshotAccess"
+            },
+            "description": "<p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "30ade514-ea65-46d1-95f0-74d0f23a6fb3",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-30ade514-ea65-46d1-95f0-74d0f23a6fb3"
+            },
+            {
+              "id": "0863dae2-4c2e-485b-8b3e-04798e4bef9d",
+              "name": "AccessToSnapshotDeniedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-0863dae2-4c2e-485b-8b3e-04798e4bef9d"
+            },
+            {
+              "id": "48cb656a-f666-47cc-bdcf-bbd686ff0fb4",
+              "name": "AuthorizationNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-48cb656a-f666-47cc-bdcf-bbd686ff0fb4"
+            },
+            {
+              "id": "9980fe6f-4f5b-4ed5-a54d-ef7d993cd8fc",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-9980fe6f-4f5b-4ed5-a54d-ef7d993cd8fc"
+            },
+            {
+              "id": "1e130015-684a-4d4f-9f78-6c549d13f9fd",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotClusterIdentifier>(string)</SnapshotClusterIdentifier>\n  <AccountWithRestoreAccess>(string)</AccountWithRestoreAccess>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeSnapshotAccess&Version=2012-12-01#Action=RevokeSnapshotAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeSnapshotAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeSnapshotAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:57.000Z",
+              "updatedAt": "2026-07-28T10:59:57.000Z",
+              "uid": "35240-1e130015-684a-4d4f-9f78-6c549d13f9fd"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:57.000Z",
+          "updatedAt": "2026-07-28T10:59:57.000Z",
+          "uid": "35240-09a3572c-c903-416c-b524-8a211c63a4cf"
+        }
+      ],
+      "id": "062aa8bc-e319-44f4-93b6-ac6ee39c2b16",
+      "createdAt": "2026-07-28T10:59:57.000Z",
+      "updatedAt": "2026-07-28T10:59:57.000Z",
+      "uid": "35240-062aa8bc-e319-44f4-93b6-ac6ee39c2b16"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

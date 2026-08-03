@@ -1,0 +1,843 @@
+{
+  "info": {
+    "_postman_id": "6783bf92-c80a-48b3-a574-cacd064bd760",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterDbRevisions API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:01.000Z",
+    "updatedAt": "2026-07-28T10:57:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6783bf92-c80a-48b3-a574-cacd064bd760"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeClusterDbRevisions",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Cluster Db Revisions",
+          "id": "77fc824d-409f-40fc-93bf-7fbb5ad40c00",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "<p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterDbRevisions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterDbRevisions"
+            },
+            "description": "Returns an array of <code>ClusterDbRevision</code> objects."
+          },
+          "response": [
+            {
+              "id": "0d10c32e-36ab-4abf-86a1-e948eec65136",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterDbRevision>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <CurrentDatabaseRevision>(string)</CurrentDatabaseRevision>\n    <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n  </ClusterDbRevision>\n  <ClusterDbRevision>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <CurrentDatabaseRevision>(string)</CurrentDatabaseRevision>\n    <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n  </ClusterDbRevision>\n</element>",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-0d10c32e-36ab-4abf-86a1-e948eec65136"
+            },
+            {
+              "id": "05cd0ec6-088a-4e37-ac4b-d50d07f136a9",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-05cd0ec6-088a-4e37-ac4b-d50d07f136a9"
+            },
+            {
+              "id": "e88aa4ef-94e6-486e-9acb-31934a6e9e77",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Default: 100</p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point for returning a set of response records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>marker</code> field of the response. You can retrieve the next set of response records by providing the returned <code>marker</code> value in the <code>marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or the <code>marker</code> parameter, but not both.</p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-e88aa4ef-94e6-486e-9acb-31934a6e9e77"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:01.000Z",
+          "updatedAt": "2026-07-28T10:57:01.000Z",
+          "uid": "35240-77fc824d-409f-40fc-93bf-7fbb5ad40c00"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Cluster Db Revisions",
+          "id": "7356f571-a991-4bb3-9eba-b84a66ae8bc0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterDbRevisions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterDbRevisions"
+            },
+            "description": "Returns an array of <code>ClusterDbRevision</code> objects."
+          },
+          "response": [
+            {
+              "id": "69fe86dd-73b4-4a29-858b-cae6fa6c37e7",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterDbRevision>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <CurrentDatabaseRevision>(string)</CurrentDatabaseRevision>\n    <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n  </ClusterDbRevision>\n  <ClusterDbRevision>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <CurrentDatabaseRevision>(string)</CurrentDatabaseRevision>\n    <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n    <RevisionTarget>\n      <DatabaseRevision>(string)</DatabaseRevision>\n      <Description>(string)</Description>\n      <DatabaseRevisionReleaseDate>(string)</DatabaseRevisionReleaseDate>\n    </RevisionTarget>\n  </ClusterDbRevision>\n</element>",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-69fe86dd-73b4-4a29-858b-cae6fa6c37e7"
+            },
+            {
+              "id": "2721e24d-c510-49dd-beb7-a431afadd012",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-2721e24d-c510-49dd-beb7-a431afadd012"
+            },
+            {
+              "id": "5cca69ea-068f-4306-907e-4c011c444e66",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterDbRevisions&Version=2012-12-01#Action=DescribeClusterDbRevisions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterDbRevisions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterDbRevisions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:02.000Z",
+              "updatedAt": "2026-07-28T10:57:02.000Z",
+              "uid": "35240-5cca69ea-068f-4306-907e-4c011c444e66"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:01.000Z",
+          "updatedAt": "2026-07-28T10:57:01.000Z",
+          "uid": "35240-7356f571-a991-4bb3-9eba-b84a66ae8bc0"
+        }
+      ],
+      "id": "d2fd4157-29a3-4b60-96ce-936fd4f3fd17",
+      "createdAt": "2026-07-28T10:57:01.000Z",
+      "updatedAt": "2026-07-28T10:57:01.000Z",
+      "uid": "35240-d2fd4157-29a3-4b60-96ce-936fd4f3fd17"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

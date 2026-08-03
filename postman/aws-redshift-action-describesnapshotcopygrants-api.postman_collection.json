@@ -1,0 +1,893 @@
+{
+  "info": {
+    "_postman_id": "e598af47-2ae1-4938-961c-ce585dbf2374",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeSnapshotCopyGrants API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:58:21.000Z",
+    "updatedAt": "2026-07-28T10:58:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e598af47-2ae1-4938-961c-ce585dbf2374"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeSnapshotCopyGrants",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Snapshot Copy Grants",
+          "id": "9ac3ff5e-84d8-4dbb-89e9-bc199503586b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?SnapshotCopyGrantName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagKeys=<string>&TagValues=<string>&TagValues=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The name of the snapshot copy grant.",
+                  "key": "SnapshotCopyGrantName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeSnapshotCopyGrants"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeSnapshotCopyGrants"
+            },
+            "description": "<p>Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
+          },
+          "response": [
+            {
+              "id": "0c565089-5787-4ff6-8c08-74374f3b6efa",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotCopyGrantName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the snapshot copy grant.",
+                      "key": "SnapshotCopyGrantName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <SnapshotCopyGrant>\n    <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    <KmsKeyId>(string)</KmsKeyId>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </SnapshotCopyGrant>\n  <SnapshotCopyGrant>\n    <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    <KmsKeyId>(string)</KmsKeyId>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </SnapshotCopyGrant>\n</element>",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-0c565089-5787-4ff6-8c08-74374f3b6efa"
+            },
+            {
+              "id": "3de21b91-2070-41de-884f-0fba2da6fa94",
+              "name": "SnapshotCopyGrantNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotCopyGrantName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the snapshot copy grant.",
+                      "key": "SnapshotCopyGrantName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-3de21b91-2070-41de-884f-0fba2da6fa94"
+            },
+            {
+              "id": "3280e8ce-222c-47ce-8b0c-36a704012b07",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SnapshotCopyGrantName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the snapshot copy grant.",
+                      "key": "SnapshotCopyGrantName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching resources that are associated with the specified key or keys. For example, suppose that you have resources tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with all resources that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching resources that are associated with the specified value or values. For example, suppose that you have resources tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with all resources that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-3280e8ce-222c-47ce-8b0c-36a704012b07"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:22.000Z",
+          "updatedAt": "2026-07-28T10:58:22.000Z",
+          "uid": "35240-9ac3ff5e-84d8-4dbb-89e9-bc199503586b"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Snapshot Copy Grants",
+          "id": "29538f33-caa3-4ed8-b4ac-86c69e6dac71",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeSnapshotCopyGrants"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeSnapshotCopyGrants"
+            },
+            "description": "<p>Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html\">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
+          },
+          "response": [
+            {
+              "id": "09ed6b5f-dfbd-47b3-ae40-aa16ef06a65f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <SnapshotCopyGrant>\n    <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    <KmsKeyId>(string)</KmsKeyId>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </SnapshotCopyGrant>\n  <SnapshotCopyGrant>\n    <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    <KmsKeyId>(string)</KmsKeyId>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </SnapshotCopyGrant>\n</element>",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-09ed6b5f-dfbd-47b3-ae40-aa16ef06a65f"
+            },
+            {
+              "id": "65087b49-409a-4592-9e5b-ffd763cddbe9",
+              "name": "SnapshotCopyGrantNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-65087b49-409a-4592-9e5b-ffd763cddbe9"
+            },
+            {
+              "id": "af8dac80-e742-4128-a8a9-18bfc7e82b00",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeSnapshotCopyGrants&Version=2012-12-01#Action=DescribeSnapshotCopyGrants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeSnapshotCopyGrants"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeSnapshotCopyGrants"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:22.000Z",
+              "updatedAt": "2026-07-28T10:58:22.000Z",
+              "uid": "35240-af8dac80-e742-4128-a8a9-18bfc7e82b00"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:22.000Z",
+          "updatedAt": "2026-07-28T10:58:22.000Z",
+          "uid": "35240-29538f33-caa3-4ed8-b4ac-86c69e6dac71"
+        }
+      ],
+      "id": "fbebbb0f-eb07-419f-9940-4450a5fbd8d7",
+      "createdAt": "2026-07-28T10:58:22.000Z",
+      "updatedAt": "2026-07-28T10:58:22.000Z",
+      "uid": "35240-fbebbb0f-eb07-419f-9940-4450a5fbd8d7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

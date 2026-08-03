@@ -1,0 +1,863 @@
+{
+  "info": {
+    "_postman_id": "8fe23e36-0d20-4a0d-a584-a126193e8ce3",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeTableRestoreStatus API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:58:26.000Z",
+    "updatedAt": "2026-07-28T10:58:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8fe23e36-0d20-4a0d-a584-a126193e8ce3"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeTableRestoreStatus",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Table Restore Status",
+          "id": "9cf0b5c7-de88-44b3-b0b1-1cddecbbeb0f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&TableRestoreRequestId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The Amazon Redshift cluster that the table is being restored to.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.",
+                  "key": "TableRestoreRequestId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeTableRestoreStatus"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeTableRestoreStatus"
+            },
+            "description": "Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>."
+          },
+          "response": [
+            {
+              "id": "d24b10ca-1453-468f-94bd-a3d3fb745da7",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&TableRestoreRequestId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Redshift cluster that the table is being restored to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.",
+                      "key": "TableRestoreRequestId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-d24b10ca-1453-468f-94bd-a3d3fb745da7"
+            },
+            {
+              "id": "f8b2c1cf-2b5c-406d-8c96-5d154522cf96",
+              "name": "TableRestoreNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&TableRestoreRequestId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Redshift cluster that the table is being restored to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.",
+                      "key": "TableRestoreRequestId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-f8b2c1cf-2b5c-406d-8c96-5d154522cf96"
+            },
+            {
+              "id": "2c39cf66-b5b8-40c7-85b2-20f16daac30a",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&TableRestoreRequestId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Redshift cluster that the table is being restored to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.",
+                      "key": "TableRestoreRequestId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-2c39cf66-b5b8-40c7-85b2-20f16daac30a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:27.000Z",
+          "updatedAt": "2026-07-28T10:58:27.000Z",
+          "uid": "35240-9cf0b5c7-de88-44b3-b0b1-1cddecbbeb0f"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Table Restore Status",
+          "id": "f9dbae69-58f9-44d3-803b-3aec4a83b18c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <TableRestoreRequestId>(string)</TableRestoreRequestId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeTableRestoreStatus"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeTableRestoreStatus"
+            },
+            "description": "Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>."
+          },
+          "response": [
+            {
+              "id": "69b71086-db1b-41ac-a8eb-1c24a94e1f70",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <TableRestoreRequestId>(string)</TableRestoreRequestId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-69b71086-db1b-41ac-a8eb-1c24a94e1f70"
+            },
+            {
+              "id": "7e78c842-1855-494f-8e9a-b18862c85d0b",
+              "name": "TableRestoreNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <TableRestoreRequestId>(string)</TableRestoreRequestId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-7e78c842-1855-494f-8e9a-b18862c85d0b"
+            },
+            {
+              "id": "35926ca3-3adc-4ed4-a0d4-84a4b7d95909",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <TableRestoreRequestId>(string)</TableRestoreRequestId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeTableRestoreStatus&Version=2012-12-01#Action=DescribeTableRestoreStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeTableRestoreStatus"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeTableRestoreStatus"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:27.000Z",
+              "updatedAt": "2026-07-28T10:58:27.000Z",
+              "uid": "35240-35926ca3-3adc-4ed4-a0d4-84a4b7d95909"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:27.000Z",
+          "updatedAt": "2026-07-28T10:58:27.000Z",
+          "uid": "35240-f9dbae69-58f9-44d3-803b-3aec4a83b18c"
+        }
+      ],
+      "id": "b95b6f22-bc4b-4264-b667-554a89a70ae5",
+      "createdAt": "2026-07-28T10:58:27.000Z",
+      "updatedAt": "2026-07-28T10:58:27.000Z",
+      "uid": "35240-b95b6f22-bc4b-4264-b667-554a89a70ae5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,1652 @@
+{
+  "info": {
+    "_postman_id": "1b551922-c9be-4155-89bc-2adb48104692",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=EnableLogging API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:58:34.000Z",
+    "updatedAt": "2026-07-28T10:58:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1b551922-c9be-4155-89bc-2adb48104692"
+  },
+  "item": [
+    {
+      "name": "#Action=EnableLogging",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Enable Logging",
+          "id": "ebf2338d-5c0f-4276-a9ba-de74887b753b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                  "key": "BucketName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                  "key": "S3KeyPrefix",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                  "key": "LogDestinationType",
+                  "value": "s3"
+                },
+                {
+                  "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                  "key": "LogExports",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                  "key": "LogExports",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "EnableLogging"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=EnableLogging"
+            },
+            "description": "Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster."
+          },
+          "response": [
+            {
+              "id": "3f981bd0-fd15-464d-9ec2-298ec09571f5",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <LoggingEnabled>(boolean)</LoggingEnabled>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LastSuccessfulDeliveryTime>(string)</LastSuccessfulDeliveryTime>\n  <LastFailureTime>(string)</LastFailureTime>\n  <LastFailureMessage>(string)</LastFailureMessage>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-3f981bd0-fd15-464d-9ec2-298ec09571f5"
+            },
+            {
+              "id": "9459151a-33dd-4668-8161-7db5ac10f6a4",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-9459151a-33dd-4668-8161-7db5ac10f6a4"
+            },
+            {
+              "id": "b7dd92dd-bf9e-46ef-ae68-8954adaba170",
+              "name": "BucketNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-b7dd92dd-bf9e-46ef-ae68-8954adaba170"
+            },
+            {
+              "id": "5e14db5d-ba35-4130-9e0a-abeb9f5ac1d2",
+              "name": "InsufficientS3BucketPolicyFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-5e14db5d-ba35-4130-9e0a-abeb9f5ac1d2"
+            },
+            {
+              "id": "97f5504e-ce5e-42e5-b2fe-834011dcc9ac",
+              "name": "InvalidS3KeyPrefixFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-97f5504e-ce5e-42e5-b2fe-834011dcc9ac"
+            },
+            {
+              "id": "77c73683-f892-43f7-9c83-8b5e7b7bdd35",
+              "name": "InvalidS3BucketNameFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-77c73683-f892-43f7-9c83-8b5e7b7bdd35"
+            },
+            {
+              "id": "04a7ea28-08f3-4178-b87c-90e8ceab495b",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&BucketName=<string>&S3KeyPrefix=<string>&LogDestinationType=s3&LogExports=<string>&Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster on which logging is to be started.</p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The name of an existing S3 bucket where the log files are to be stored.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the same region as the cluster</p> </li> <li> <p>The cluster must have read bucket and put object permissions</p> </li> </ul>",
+                      "key": "BucketName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The prefix applied to the log file names.</p> <p>Constraints:</p> <ul> <li> <p>Cannot exceed 512 characters</p> </li> <li> <p>Cannot contain spaces( ), double quotes (\"), single quotes ('), a backslash (\\), or control characters. The hexadecimal codes for invalid characters are: </p> <ul> <li> <p>x00 to x20</p> </li> <li> <p>x22</p> </li> <li> <p>x27</p> </li> <li> <p>x5c</p> </li> <li> <p>x7f or larger</p> </li> </ul> </li> </ul>",
+                      "key": "S3KeyPrefix",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.",
+                      "key": "LogDestinationType",
+                      "value": "s3"
+                    },
+                    {
+                      "description": "The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.",
+                      "key": "LogExports",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-04a7ea28-08f3-4178-b87c-90e8ceab495b"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:35.000Z",
+          "updatedAt": "2026-07-28T10:58:35.000Z",
+          "uid": "35240-ebf2338d-5c0f-4276-a9ba-de74887b753b"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Enable Logging",
+          "id": "950392c5-7981-4588-ba47-9fb9b40210e2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "EnableLogging"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=EnableLogging"
+            },
+            "description": "Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster."
+          },
+          "response": [
+            {
+              "id": "af33accf-8a4b-44d9-b281-8bf3c375bafe",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <LoggingEnabled>(boolean)</LoggingEnabled>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LastSuccessfulDeliveryTime>(string)</LastSuccessfulDeliveryTime>\n  <LastFailureTime>(string)</LastFailureTime>\n  <LastFailureMessage>(string)</LastFailureMessage>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-af33accf-8a4b-44d9-b281-8bf3c375bafe"
+            },
+            {
+              "id": "7e440e72-5dd0-4c39-950e-c27d8653294d",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-7e440e72-5dd0-4c39-950e-c27d8653294d"
+            },
+            {
+              "id": "bc01b336-c2ff-4fd3-b443-bc842db3fd65",
+              "name": "BucketNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-bc01b336-c2ff-4fd3-b443-bc842db3fd65"
+            },
+            {
+              "id": "4d8ceabc-e14e-40e2-be3c-c8bfc3be4de9",
+              "name": "InsufficientS3BucketPolicyFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-4d8ceabc-e14e-40e2-be3c-c8bfc3be4de9"
+            },
+            {
+              "id": "af8f575d-a0a9-4f57-b0ef-7a4bb1f7f7a5",
+              "name": "InvalidS3KeyPrefixFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-af8f575d-a0a9-4f57-b0ef-7a4bb1f7f7a5"
+            },
+            {
+              "id": "e9f2e698-cb07-4473-a6c6-e01641c1fe06",
+              "name": "InvalidS3BucketNameFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-e9f2e698-cb07-4473-a6c6-e01641c1fe06"
+            },
+            {
+              "id": "11ef1e83-7b3b-4b95-b6c0-bd287619cc73",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <BucketName>(string)</BucketName>\n  <S3KeyPrefix>(string)</S3KeyPrefix>\n  <LogDestinationType>(string)</LogDestinationType>\n  <LogExports>(string)</LogExports>\n  <LogExports>(string)</LogExports>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=EnableLogging&Version=2012-12-01#Action=EnableLogging",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "EnableLogging"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=EnableLogging"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:35.000Z",
+              "updatedAt": "2026-07-28T10:58:35.000Z",
+              "uid": "35240-11ef1e83-7b3b-4b95-b6c0-bd287619cc73"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:35.000Z",
+          "updatedAt": "2026-07-28T10:58:35.000Z",
+          "uid": "35240-950392c5-7981-4588-ba47-9fb9b40210e2"
+        }
+      ],
+      "id": "9bcb4257-23e7-401e-bb6c-eb5e1181d0a1",
+      "createdAt": "2026-07-28T10:58:35.000Z",
+      "updatedAt": "2026-07-28T10:58:35.000Z",
+      "uid": "35240-9bcb4257-23e7-401e-bb6c-eb5e1181d0a1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

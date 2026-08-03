@@ -1,0 +1,1411 @@
+{
+  "info": {
+    "_postman_id": "bd9d6051-6a51-4cc0-896f-1f71220ee076",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DeleteCluster API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:56:05.000Z",
+    "updatedAt": "2026-07-28T10:56:05.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bd9d6051-6a51-4cc0-896f-1f71220ee076"
+  },
+  "item": [
+    {
+      "name": "#Action=DeleteCluster",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Delete Cluster",
+          "id": "1b8e81fa-f969-4da8-9366-2f044a065447",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                  "key": "SkipFinalClusterSnapshot",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                  "key": "FinalClusterSnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                  "key": "FinalClusterSnapshotRetentionPeriod",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DeleteCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DeleteCluster"
+            },
+            "description": "<p>Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>. You can later restore this snapshot to resume using the cluster. If a final cluster snapshot is requested, the status of the cluster will be \"final-snapshot\" while the snapshot is being taken, then it's \"deleting\" once Amazon Redshift begins deleting the cluster. </p> <p> For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "3d64b5f3-169e-4600-8d73-fee0c336c6ab",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-3d64b5f3-169e-4600-8d73-fee0c336c6ab"
+            },
+            {
+              "id": "3206c999-742b-472c-a359-680101282c76",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-3206c999-742b-472c-a359-680101282c76"
+            },
+            {
+              "id": "be200bd1-3e46-412f-bd6a-6576b989c529",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-be200bd1-3e46-412f-bd6a-6576b989c529"
+            },
+            {
+              "id": "cb4e8c62-09d3-4e9d-b721-68746154c32b",
+              "name": "ClusterSnapshotAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-cb4e8c62-09d3-4e9d-b721-68746154c32b"
+            },
+            {
+              "id": "59981d15-b4e2-4e4e-bac3-4b25991c1783",
+              "name": "ClusterSnapshotQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-59981d15-b4e2-4e4e-bac3-4b25991c1783"
+            },
+            {
+              "id": "9f0ac24c-df6c-46c8-b27a-f794a6f95453",
+              "name": "InvalidRetentionPeriodFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SkipFinalClusterSnapshot=<boolean>&FinalClusterSnapshotIdentifier=<string>&FinalClusterSnapshotRetentionPeriod=<integer>&Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul> <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is not created. If <code>false</code>, a final cluster snapshot is created before the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>",
+                      "key": "SkipFinalClusterSnapshot",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p>The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>",
+                      "key": "FinalClusterSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "FinalClusterSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-9f0ac24c-df6c-46c8-b27a-f794a6f95453"
+            }
+          ],
+          "createdAt": "2026-07-28T10:56:06.000Z",
+          "updatedAt": "2026-07-28T10:56:06.000Z",
+          "uid": "35240-1b8e81fa-f969-4da8-9366-2f044a065447"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Delete Cluster",
+          "id": "f871c782-3052-4279-96c3-03a4f4ba37f6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DeleteCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DeleteCluster"
+            },
+            "description": "<p>Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use <a>DescribeClusters</a> to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>. You can later restore this snapshot to resume using the cluster. If a final cluster snapshot is requested, the status of the cluster will be \"final-snapshot\" while the snapshot is being taken, then it's \"deleting\" once Amazon Redshift begins deleting the cluster. </p> <p> For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "30304224-456b-4700-b8dd-c10b3fdc22d6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-30304224-456b-4700-b8dd-c10b3fdc22d6"
+            },
+            {
+              "id": "3bdd02f1-e824-494b-aede-998671a3eab8",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-3bdd02f1-e824-494b-aede-998671a3eab8"
+            },
+            {
+              "id": "21c3ac31-0313-4157-b193-d67efa5090a8",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-21c3ac31-0313-4157-b193-d67efa5090a8"
+            },
+            {
+              "id": "38a1a79b-c84d-458e-a48d-32f247deb54b",
+              "name": "ClusterSnapshotAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-38a1a79b-c84d-458e-a48d-32f247deb54b"
+            },
+            {
+              "id": "8d8f2141-5713-46f9-8c3c-435839c75a8d",
+              "name": "ClusterSnapshotQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-8d8f2141-5713-46f9-8c3c-435839c75a8d"
+            },
+            {
+              "id": "2c1a8348-f3de-44e1-80bc-bbc5a77e8400",
+              "name": "InvalidRetentionPeriodFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SkipFinalClusterSnapshot>(boolean)</SkipFinalClusterSnapshot>\n  <FinalClusterSnapshotIdentifier>(string)</FinalClusterSnapshotIdentifier>\n  <FinalClusterSnapshotRetentionPeriod>(integer)</FinalClusterSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=DeleteCluster&Version=2012-12-01#Action=DeleteCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DeleteCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DeleteCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:56:06.000Z",
+              "updatedAt": "2026-07-28T10:56:06.000Z",
+              "uid": "35240-2c1a8348-f3de-44e1-80bc-bbc5a77e8400"
+            }
+          ],
+          "createdAt": "2026-07-28T10:56:06.000Z",
+          "updatedAt": "2026-07-28T10:56:06.000Z",
+          "uid": "35240-f871c782-3052-4279-96c3-03a4f4ba37f6"
+        }
+      ],
+      "id": "5829597c-a775-4f46-8013-8d27fc7eaeaf",
+      "createdAt": "2026-07-28T10:56:06.000Z",
+      "updatedAt": "2026-07-28T10:56:06.000Z",
+      "uid": "35240-5829597c-a775-4f46-8013-8d27fc7eaeaf"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

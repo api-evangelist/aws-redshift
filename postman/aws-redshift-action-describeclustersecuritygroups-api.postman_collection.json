@@ -1,0 +1,893 @@
+{
+  "info": {
+    "_postman_id": "8a5b9d3c-b4ee-4ddd-8846-a53f5b552cf9",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterSecurityGroups API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:06.000Z",
+    "updatedAt": "2026-07-28T10:57:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8a5b9d3c-b4ee-4ddd-8846-a53f5b552cf9"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeClusterSecurityGroups",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Cluster Security Groups",
+          "id": "ad0a69db-9b8c-46bd-889c-e0ec7561a4cc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagKeys=<string>&TagValues=<string>&TagValues=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>",
+                  "key": "ClusterSecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSecurityGroups"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSecurityGroups"
+            },
+            "description": "<p>Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain only information about only that security group.</p> <p> For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all security groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all security groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, security groups are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "7e97372c-7c4b-4784-9752-1b92836cccb5",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-7e97372c-7c4b-4784-9752-1b92836cccb5"
+            },
+            {
+              "id": "50545b78-a4db-44f2-80a7-5560c02306db",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-50545b78-a4db-44f2-80a7-5560c02306db"
+            },
+            {
+              "id": "13ac0662-10ab-4976-b29c-222a00a71738",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster security groups that are associated with the specified key or keys. For example, suppose that you have security groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster security groups that are associated with the specified tag value or values. For example, suppose that you have security groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the security groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-13ac0662-10ab-4976-b29c-222a00a71738"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:07.000Z",
+          "updatedAt": "2026-07-28T10:57:07.000Z",
+          "uid": "35240-ad0a69db-9b8c-46bd-889c-e0ec7561a4cc"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Cluster Security Groups",
+          "id": "0205ea9f-3ba1-4e3f-8e94-4c18eb644b0b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSecurityGroups"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSecurityGroups"
+            },
+            "description": "<p>Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain only information about only that security group.</p> <p> For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all security groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all security groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, security groups are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "32020981-a840-48c5-8f51-7ff143c21aff",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-32020981-a840-48c5-8f51-7ff143c21aff"
+            },
+            {
+              "id": "9df94301-d2e1-4035-ba79-ee986bf208e6",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-9df94301-d2e1-4035-ba79-ee986bf208e6"
+            },
+            {
+              "id": "f6b11503-4ea0-46d4-892c-ab9baa6527d3",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSecurityGroups&Version=2012-12-01#Action=DescribeClusterSecurityGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSecurityGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSecurityGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:07.000Z",
+              "updatedAt": "2026-07-28T10:57:07.000Z",
+              "uid": "35240-f6b11503-4ea0-46d4-892c-ab9baa6527d3"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:07.000Z",
+          "updatedAt": "2026-07-28T10:57:07.000Z",
+          "uid": "35240-0205ea9f-3ba1-4e3f-8e94-4c18eb644b0b"
+        }
+      ],
+      "id": "78c75b4f-7aae-498c-8195-a98c65905a54",
+      "createdAt": "2026-07-28T10:57:07.000Z",
+      "updatedAt": "2026-07-28T10:57:07.000Z",
+      "uid": "35240-78c75b4f-7aae-498c-8195-a98c65905a54"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

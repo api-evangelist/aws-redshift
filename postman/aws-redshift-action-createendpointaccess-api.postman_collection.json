@@ -1,0 +1,2456 @@
+{
+  "info": {
+    "_postman_id": "c0631300-d137-47ba-8910-56c202be06fa",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateEndpointAccess API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:55:24.000Z",
+    "updatedAt": "2026-07-28T10:55:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c0631300-d137-47ba-8910-56c202be06fa"
+  },
+  "item": [
+    {
+      "name": "#Action=CreateEndpointAccess",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Create Endpoint Access",
+          "id": "f4989444-7ba3-43d3-858b-f73b7efb484a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The cluster identifier of the cluster to access.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                  "key": "ResourceOwner",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                  "key": "EndpointName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                  "key": "SubnetGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                  "key": "VpcSecurityGroupIds",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                  "key": "VpcSecurityGroupIds",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateEndpointAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateEndpointAccess"
+            },
+            "description": "Creates a Redshift-managed VPC endpoint."
+          },
+          "response": [
+            {
+              "id": "3443113d-4538-4d01-bdf5-e9bf957a3764",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <EndpointStatus>(string)</EndpointStatus>\n  <EndpointName>(string)</EndpointName>\n  <EndpointCreateTime>(string)</EndpointCreateTime>\n  <Port>(integer)</Port>\n  <Address>(string)</Address>\n  <VpcSecurityGroup>\n    <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n    <Status>(string)</Status>\n  </VpcSecurityGroup>\n  <VpcSecurityGroup>\n    <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n    <Status>(string)</Status>\n  </VpcSecurityGroup>\n  <VpcEndpoint>\n    <VpcEndpointId>(string)</VpcEndpointId>\n    <VpcId>(string)</VpcId>\n    <NetworkInterface>\n      <NetworkInterfaceId>(string)</NetworkInterfaceId>\n      <SubnetId>(string)</SubnetId>\n      <PrivateIpAddress>(string)</PrivateIpAddress>\n      <AvailabilityZone>(string)</AvailabilityZone>\n    </NetworkInterface>\n    <NetworkInterface>\n      <NetworkInterfaceId>(string)</NetworkInterfaceId>\n      <SubnetId>(string)</SubnetId>\n      <PrivateIpAddress>(string)</PrivateIpAddress>\n      <AvailabilityZone>(string)</AvailabilityZone>\n    </NetworkInterface>\n  </VpcEndpoint>\n</element>",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-3443113d-4538-4d01-bdf5-e9bf957a3764"
+            },
+            {
+              "id": "2ffa6f9f-026a-42b3-9b1d-2f5195ba606a",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-2ffa6f9f-026a-42b3-9b1d-2f5195ba606a"
+            },
+            {
+              "id": "3d788012-bec5-4e13-99cb-41f351d9711e",
+              "name": "AccessToClusterDeniedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-3d788012-bec5-4e13-99cb-41f351d9711e"
+            },
+            {
+              "id": "cfb8e2f2-889d-42a5-92a8-9e5f68c962e4",
+              "name": "EndpointsPerClusterLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-cfb8e2f2-889d-42a5-92a8-9e5f68c962e4"
+            },
+            {
+              "id": "a3dea7fe-0797-4c31-a61a-1e3339968eb9",
+              "name": "EndpointsPerAuthorizationLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-a3dea7fe-0797-4c31-a61a-1e3339968eb9"
+            },
+            {
+              "id": "60a332de-5950-4f20-8927-7ce0f03caba2",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-60a332de-5950-4f20-8927-7ce0f03caba2"
+            },
+            {
+              "id": "ed189fdd-788a-43d9-addd-6c7cac4dea1d",
+              "name": "ClusterSubnetGroupNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-ed189fdd-788a-43d9-addd-6c7cac4dea1d"
+            },
+            {
+              "id": "c6bb63a0-50f6-46f7-9b83-8ae4a31d1e27",
+              "name": "EndpointAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-c6bb63a0-50f6-46f7-9b83-8ae4a31d1e27"
+            },
+            {
+              "id": "a4c04225-fa77-4f61-8c67-b761ed3caadd",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-a4c04225-fa77-4f61-8c67-b761ed3caadd"
+            },
+            {
+              "id": "4a9d90e0-5229-4751-b317-f4048d1a5a5d",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-4a9d90e0-5229-4751-b317-f4048d1a5a5d"
+            },
+            {
+              "id": "5490a73c-2e16-4841-b8f1-591f6f672061",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&SubnetGroupName=<string>&VpcSecurityGroupIds=<string>&Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier of the cluster to access.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.",
+                      "key": "SubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.",
+                      "key": "VpcSecurityGroupIds",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-5490a73c-2e16-4841-b8f1-591f6f672061"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:25.000Z",
+          "updatedAt": "2026-07-28T10:55:25.000Z",
+          "uid": "35240-f4989444-7ba3-43d3-858b-f73b7efb484a"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Create Endpoint Access",
+          "id": "c828e761-5c36-43ec-83d3-e3a680559b8b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateEndpointAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateEndpointAccess"
+            },
+            "description": "Creates a Redshift-managed VPC endpoint."
+          },
+          "response": [
+            {
+              "id": "e10cee4b-f3ae-4441-9370-a6b9f14e731d",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <EndpointStatus>(string)</EndpointStatus>\n  <EndpointName>(string)</EndpointName>\n  <EndpointCreateTime>(string)</EndpointCreateTime>\n  <Port>(integer)</Port>\n  <Address>(string)</Address>\n  <VpcSecurityGroup>\n    <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n    <Status>(string)</Status>\n  </VpcSecurityGroup>\n  <VpcSecurityGroup>\n    <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n    <Status>(string)</Status>\n  </VpcSecurityGroup>\n  <VpcEndpoint>\n    <VpcEndpointId>(string)</VpcEndpointId>\n    <VpcId>(string)</VpcId>\n    <NetworkInterface>\n      <NetworkInterfaceId>(string)</NetworkInterfaceId>\n      <SubnetId>(string)</SubnetId>\n      <PrivateIpAddress>(string)</PrivateIpAddress>\n      <AvailabilityZone>(string)</AvailabilityZone>\n    </NetworkInterface>\n    <NetworkInterface>\n      <NetworkInterfaceId>(string)</NetworkInterfaceId>\n      <SubnetId>(string)</SubnetId>\n      <PrivateIpAddress>(string)</PrivateIpAddress>\n      <AvailabilityZone>(string)</AvailabilityZone>\n    </NetworkInterface>\n  </VpcEndpoint>\n</element>",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-e10cee4b-f3ae-4441-9370-a6b9f14e731d"
+            },
+            {
+              "id": "8d433a37-2d16-4242-a710-38b0b0fded9e",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-8d433a37-2d16-4242-a710-38b0b0fded9e"
+            },
+            {
+              "id": "085e1b90-69ee-492a-833d-f68cb523aca3",
+              "name": "AccessToClusterDeniedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-085e1b90-69ee-492a-833d-f68cb523aca3"
+            },
+            {
+              "id": "058fb165-f8e2-4a8c-9e5b-abb959f373c4",
+              "name": "EndpointsPerClusterLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-058fb165-f8e2-4a8c-9e5b-abb959f373c4"
+            },
+            {
+              "id": "cc99407f-c802-4024-a419-3cba8c750025",
+              "name": "EndpointsPerAuthorizationLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-cc99407f-c802-4024-a419-3cba8c750025"
+            },
+            {
+              "id": "5f3db8e1-1230-4352-9b03-bea949024215",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-5f3db8e1-1230-4352-9b03-bea949024215"
+            },
+            {
+              "id": "8097d18e-305b-4749-8043-ea2f4d2909bd",
+              "name": "ClusterSubnetGroupNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-8097d18e-305b-4749-8043-ea2f4d2909bd"
+            },
+            {
+              "id": "78acd981-1f67-40e1-baa6-3b57e72c4143",
+              "name": "EndpointAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-78acd981-1f67-40e1-baa6-3b57e72c4143"
+            },
+            {
+              "id": "690afeea-da55-42ca-abcd-5fd2ba6f16d3",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-690afeea-da55-42ca-abcd-5fd2ba6f16d3"
+            },
+            {
+              "id": "f2059395-dd97-4ceb-ad42-04094ad702ae",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-f2059395-dd97-4ceb-ad42-04094ad702ae"
+            },
+            {
+              "id": "5d1d1209-db07-4335-b7ab-66e3b370bd1c",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <SubnetGroupName>(string)</SubnetGroupName>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n  <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateEndpointAccess&Version=2012-12-01#Action=CreateEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:25.000Z",
+              "updatedAt": "2026-07-28T10:55:25.000Z",
+              "uid": "35240-5d1d1209-db07-4335-b7ab-66e3b370bd1c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:25.000Z",
+          "updatedAt": "2026-07-28T10:55:25.000Z",
+          "uid": "35240-c828e761-5c36-43ec-83d3-e3a680559b8b"
+        }
+      ],
+      "id": "f7be96d5-ef76-437d-b363-17c729cf9b56",
+      "createdAt": "2026-07-28T10:55:25.000Z",
+      "updatedAt": "2026-07-28T10:55:25.000Z",
+      "uid": "35240-f7be96d5-ef76-437d-b363-17c729cf9b56"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,833 @@
+{
+  "info": {
+    "_postman_id": "22c316bb-e362-44e4-a7db-aaa8eb1146a6",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyClusterIamRoles API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:17.000Z",
+    "updatedAt": "2026-07-28T10:59:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-22c316bb-e362-44e4-a7db-aaa8eb1146a6"
+  },
+  "item": [
+    {
+      "name": "#Action=ModifyClusterIamRoles",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Modify Cluster Iam Roles",
+          "id": "940cf782-f109-4233-a53e-7989ba32c826",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&AddIamRoles=<string>&AddIamRoles=<string>&RemoveIamRoles=<string>&RemoveIamRoles=<string>&DefaultIamRoleArn=<string>&Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The unique identifier of the cluster for which you want to associate or disassociate IAM roles.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. ",
+                  "key": "AddIamRoles",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. ",
+                  "key": "AddIamRoles",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Zero or more IAM roles in ARN format to disassociate from the cluster. ",
+                  "key": "RemoveIamRoles",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Zero or more IAM roles in ARN format to disassociate from the cluster. ",
+                  "key": "RemoveIamRoles",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.",
+                  "key": "DefaultIamRoleArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyClusterIamRoles"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyClusterIamRoles"
+            },
+            "description": "<p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "819d5a9c-248f-42ef-898f-47569064f2b3",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&AddIamRoles=<string>&RemoveIamRoles=<string>&DefaultIamRoleArn=<string>&Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier of the cluster for which you want to associate or disassociate IAM roles.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. ",
+                      "key": "AddIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles in ARN format to disassociate from the cluster. ",
+                      "key": "RemoveIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.",
+                      "key": "DefaultIamRoleArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-819d5a9c-248f-42ef-898f-47569064f2b3"
+            },
+            {
+              "id": "3ca2325c-be6e-4884-9d3e-f5c47abb66a3",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&AddIamRoles=<string>&RemoveIamRoles=<string>&DefaultIamRoleArn=<string>&Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier of the cluster for which you want to associate or disassociate IAM roles.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. ",
+                      "key": "AddIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles in ARN format to disassociate from the cluster. ",
+                      "key": "RemoveIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.",
+                      "key": "DefaultIamRoleArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-3ca2325c-be6e-4884-9d3e-f5c47abb66a3"
+            },
+            {
+              "id": "24d5409d-5d55-49e7-be41-5719179f8c64",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&AddIamRoles=<string>&RemoveIamRoles=<string>&DefaultIamRoleArn=<string>&Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier of the cluster for which you want to associate or disassociate IAM roles.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format. ",
+                      "key": "AddIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Zero or more IAM roles in ARN format to disassociate from the cluster. ",
+                      "key": "RemoveIamRoles",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.",
+                      "key": "DefaultIamRoleArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-24d5409d-5d55-49e7-be41-5719179f8c64"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:18.000Z",
+          "updatedAt": "2026-07-28T10:59:18.000Z",
+          "uid": "35240-940cf782-f109-4233-a53e-7989ba32c826"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Modify Cluster Iam Roles",
+          "id": "20b7179c-0fdb-4902-b543-f19958b95f8b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyClusterIamRoles"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyClusterIamRoles"
+            },
+            "description": "<p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p> <p>The maximum number of IAM roles that you can associate is subject to a quota. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html\">Quotas and limits</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "f018a2b4-58df-474f-b938-d69b80dfe3da",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-f018a2b4-58df-474f-b938-d69b80dfe3da"
+            },
+            {
+              "id": "671befcc-1bbd-4a5d-aca9-83dc6e5c779f",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-671befcc-1bbd-4a5d-aca9-83dc6e5c779f"
+            },
+            {
+              "id": "5f3b65ec-0431-413b-9936-47450b95563b",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <IamRoleArn>(string)</IamRoleArn>\n  <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterIamRoles&Version=2012-12-01#Action=ModifyClusterIamRoles",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterIamRoles"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterIamRoles"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:18.000Z",
+              "updatedAt": "2026-07-28T10:59:18.000Z",
+              "uid": "35240-5f3b65ec-0431-413b-9936-47450b95563b"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:18.000Z",
+          "updatedAt": "2026-07-28T10:59:18.000Z",
+          "uid": "35240-20b7179c-0fdb-4902-b543-f19958b95f8b"
+        }
+      ],
+      "id": "7128babc-44b4-422d-8522-a2d78f21e277",
+      "createdAt": "2026-07-28T10:59:18.000Z",
+      "updatedAt": "2026-07-28T10:59:18.000Z",
+      "uid": "35240-7128babc-44b4-422d-8522-a2d78f21e277"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

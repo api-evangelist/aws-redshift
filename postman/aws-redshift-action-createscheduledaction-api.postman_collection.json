@@ -1,0 +1,1847 @@
+{
+  "info": {
+    "_postman_id": "aa30131d-bb3c-49be-b260-4c2c20192b56",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateScheduledAction API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:55:35.000Z",
+    "updatedAt": "2026-07-28T10:55:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-aa30131d-bb3c-49be-b260-4c2c20192b56"
+  },
+  "item": [
+    {
+      "name": "#Action=CreateScheduledAction",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Create Scheduled Action",
+          "id": "b45668cf-0c62-4a28-ad42-34e3716a0b83",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "ScheduledActionName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "ResizeCluster",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "PauseCluster",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "ResumeCluster",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                  "key": "Schedule",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "IamRole",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The description of the scheduled action. ",
+                  "key": "ScheduledActionDescription",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                  "key": "StartTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                  "key": "EndTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                  "key": "Enable",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateScheduledAction"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateScheduledAction"
+            },
+            "description": "Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. "
+          },
+          "response": [
+            {
+              "id": "ec43f887-4a71-463c-af02-da2e18a506e8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <State>(string)</State>\n  <ScheduledActionTime>(string)</ScheduledActionTime>\n  <ScheduledActionTime>(string)</ScheduledActionTime>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n</element>",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-ec43f887-4a71-463c-af02-da2e18a506e8"
+            },
+            {
+              "id": "a7eb02b5-6526-4007-a471-a067dd563bfa",
+              "name": "ScheduledActionAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-a7eb02b5-6526-4007-a471-a067dd563bfa"
+            },
+            {
+              "id": "4a674b4e-bc4f-4e1b-91ea-bd07c3093c4c",
+              "name": "ScheduledActionQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-4a674b4e-bc4f-4e1b-91ea-bd07c3093c4c"
+            },
+            {
+              "id": "2dbe0c05-ca5e-4f5d-94d4-6bed3dd8aa05",
+              "name": "ScheduledActionTypeUnsupportedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-2dbe0c05-ca5e-4f5d-94d4-6bed3dd8aa05"
+            },
+            {
+              "id": "78ddcaa6-537a-4b17-9920-50c5d1fc5afb",
+              "name": "InvalidScheduleFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-78ddcaa6-537a-4b17-9920-50c5d1fc5afb"
+            },
+            {
+              "id": "11799be6-7c9e-4af9-b82e-c146dcf20bcc",
+              "name": "InvalidScheduledActionFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-11799be6-7c9e-4af9-b82e-c146dcf20bcc"
+            },
+            {
+              "id": "2cfbcf09-dbd5-491d-9648-362e5b1c92a5",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduledActionName=<string>&ResizeCluster=[object Object]&PauseCluster=[object Object]&ResumeCluster=[object Object]&Schedule=<string>&IamRole=<string>&ScheduledActionDescription=<string>&StartTime=<dateTime>&EndTime=<dateTime>&Enable=<boolean>&Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ScheduledActionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResizeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "PauseCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "ResumeCluster",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "Schedule",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "IamRole",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the scheduled action. ",
+                      "key": "ScheduledActionDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>.",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see <a>ScheduledAction</a>. ",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. ",
+                      "key": "Enable",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-2cfbcf09-dbd5-491d-9648-362e5b1c92a5"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:36.000Z",
+          "updatedAt": "2026-07-28T10:55:36.000Z",
+          "uid": "35240-b45668cf-0c62-4a28-ad42-34e3716a0b83"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Create Scheduled Action",
+          "id": "7d595878-52b6-4daf-bbab-40ae6a00c20d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateScheduledAction"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateScheduledAction"
+            },
+            "description": "Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. "
+          },
+          "response": [
+            {
+              "id": "2602c0ab-7aa8-4a8c-9164-d2da2ea13480",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <State>(string)</State>\n  <ScheduledActionTime>(string)</ScheduledActionTime>\n  <ScheduledActionTime>(string)</ScheduledActionTime>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n</element>",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-2602c0ab-7aa8-4a8c-9164-d2da2ea13480"
+            },
+            {
+              "id": "69d5b51c-4946-43ce-9b79-f7b9ba4316d7",
+              "name": "ScheduledActionAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-69d5b51c-4946-43ce-9b79-f7b9ba4316d7"
+            },
+            {
+              "id": "dad74bfc-520f-4c72-a232-4312009836e4",
+              "name": "ScheduledActionQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-dad74bfc-520f-4c72-a232-4312009836e4"
+            },
+            {
+              "id": "adf13a94-8904-4000-99e0-2759da931427",
+              "name": "ScheduledActionTypeUnsupportedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-adf13a94-8904-4000-99e0-2759da931427"
+            },
+            {
+              "id": "14b6e396-5767-4e80-ae41-66c607d03185",
+              "name": "InvalidScheduleFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-14b6e396-5767-4e80-ae41-66c607d03185"
+            },
+            {
+              "id": "675d8028-3136-4631-943b-1aa3983b77dc",
+              "name": "InvalidScheduledActionFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-675d8028-3136-4631-943b-1aa3983b77dc"
+            },
+            {
+              "id": "74d0f1cc-9930-4c01-b68c-68c8aebd632a",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduledActionName>(string)</ScheduledActionName>\n  <TargetAction>\n    <ResizeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <ClusterType>(string)</ClusterType>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <Classic>(boolean)</Classic>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n    </ResizeCluster>\n    <PauseCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </PauseCluster>\n    <ResumeCluster>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n    </ResumeCluster>\n  </TargetAction>\n  <Schedule>(string)</Schedule>\n  <IamRole>(string)</IamRole>\n  <ScheduledActionDescription>(string)</ScheduledActionDescription>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <Enable>(boolean)</Enable>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateScheduledAction&Version=2012-12-01#Action=CreateScheduledAction",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateScheduledAction"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateScheduledAction"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:36.000Z",
+              "updatedAt": "2026-07-28T10:55:36.000Z",
+              "uid": "35240-74d0f1cc-9930-4c01-b68c-68c8aebd632a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:36.000Z",
+          "updatedAt": "2026-07-28T10:55:36.000Z",
+          "uid": "35240-7d595878-52b6-4daf-bbab-40ae6a00c20d"
+        }
+      ],
+      "id": "99fbfaa6-6750-436e-855c-b8de149a6a06",
+      "createdAt": "2026-07-28T10:55:36.000Z",
+      "updatedAt": "2026-07-28T10:55:36.000Z",
+      "uid": "35240-99fbfaa6-6750-436e-855c-b8de149a6a06"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

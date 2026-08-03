@@ -1,0 +1,893 @@
+{
+  "info": {
+    "_postman_id": "02ea6874-dcd5-4528-a6e8-1b54c53bec43",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterSubnetGroups API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:08.000Z",
+    "updatedAt": "2026-07-28T10:57:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-02ea6874-dcd5-4528-a6e8-1b54c53bec43"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeClusterSubnetGroups",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Cluster Subnet Groups",
+          "id": "c2b56c0a-eff2-40c8-add5-dab300e6166a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterSubnetGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagKeys=<string>&TagValues=<string>&TagValues=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The name of the cluster subnet group for which information is requested.",
+                  "key": "ClusterSubnetGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSubnetGroups"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSubnetGroups"
+            },
+            "description": "<p>Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this operation returns information about all cluster subnet groups that are defined in your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all subnet groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all subnet groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, subnet groups are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "3a0b9f6e-e878-47df-9cb8-30ec4220f25f",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSubnetGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the cluster subnet group for which information is requested.",
+                      "key": "ClusterSubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterSubnetGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <Description>(string)</Description>\n    <VpcId>(string)</VpcId>\n    <SubnetGroupStatus>(string)</SubnetGroupStatus>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSubnetGroup>\n  <ClusterSubnetGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <Description>(string)</Description>\n    <VpcId>(string)</VpcId>\n    <SubnetGroupStatus>(string)</SubnetGroupStatus>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSubnetGroup>\n</element>",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-3a0b9f6e-e878-47df-9cb8-30ec4220f25f"
+            },
+            {
+              "id": "4b535411-a7d5-42fa-a101-acc9ef5c73b1",
+              "name": "ClusterSubnetGroupNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSubnetGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the cluster subnet group for which information is requested.",
+                      "key": "ClusterSubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-4b535411-a7d5-42fa-a101-acc9ef5c73b1"
+            },
+            {
+              "id": "b383e400-14e2-4124-aaeb-ec0a34ce4f68",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSubnetGroupName=<string>&MaxRecords=<integer>&Marker=<string>&TagKeys=<string>&TagValues=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the cluster subnet group for which information is requested.",
+                      "key": "ClusterSubnetGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSubnetGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster subnet groups that are associated with the specified key or keys. For example, suppose that you have subnet groups that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster subnet groups that are associated with the specified tag value or values. For example, suppose that you have subnet groups that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the subnet groups that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-b383e400-14e2-4124-aaeb-ec0a34ce4f68"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:09.000Z",
+          "updatedAt": "2026-07-28T10:57:09.000Z",
+          "uid": "35240-c2b56c0a-eff2-40c8-add5-dab300e6166a"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Cluster Subnet Groups",
+          "id": "eb672980-c10d-45f5-ad25-bee73d6a0dda",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSubnetGroups"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSubnetGroups"
+            },
+            "description": "<p>Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this operation returns information about all cluster subnet groups that are defined in your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all subnet groups that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all subnet groups that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, subnet groups are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "0b3361cb-5265-43f8-8758-c304fab5f432",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ClusterSubnetGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <Description>(string)</Description>\n    <VpcId>(string)</VpcId>\n    <SubnetGroupStatus>(string)</SubnetGroupStatus>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSubnetGroup>\n  <ClusterSubnetGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <Description>(string)</Description>\n    <VpcId>(string)</VpcId>\n    <SubnetGroupStatus>(string)</SubnetGroupStatus>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Subnet>\n      <SubnetIdentifier>(string)</SubnetIdentifier>\n      <SubnetAvailabilityZone>\n        <Name>(string)</Name>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n        <SupportedPlatform>\n          <Name>(string)</Name>\n        </SupportedPlatform>\n      </SubnetAvailabilityZone>\n      <SubnetStatus>(string)</SubnetStatus>\n    </Subnet>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSubnetGroup>\n</element>",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-0b3361cb-5265-43f8-8758-c304fab5f432"
+            },
+            {
+              "id": "12026dad-cecc-4579-b0bc-ea7dc6d56acc",
+              "name": "ClusterSubnetGroupNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-12026dad-cecc-4579-b0bc-ea7dc6d56acc"
+            },
+            {
+              "id": "f11c61c9-9b42-4deb-917d-0f79813967d4",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSubnetGroups&Version=2012-12-01#Action=DescribeClusterSubnetGroups",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSubnetGroups"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSubnetGroups"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:09.000Z",
+              "updatedAt": "2026-07-28T10:57:09.000Z",
+              "uid": "35240-f11c61c9-9b42-4deb-917d-0f79813967d4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:09.000Z",
+          "updatedAt": "2026-07-28T10:57:09.000Z",
+          "uid": "35240-eb672980-c10d-45f5-ad25-bee73d6a0dda"
+        }
+      ],
+      "id": "aecfa30e-0011-4a2f-bb92-b40c9d335bf6",
+      "createdAt": "2026-07-28T10:57:09.000Z",
+      "updatedAt": "2026-07-28T10:57:09.000Z",
+      "uid": "35240-aecfa30e-0011-4a2f-bb92-b40c9d335bf6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

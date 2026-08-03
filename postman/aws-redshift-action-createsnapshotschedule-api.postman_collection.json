@@ -1,0 +1,1697 @@
+{
+  "info": {
+    "_postman_id": "7d910afe-c3ff-472e-a8bc-e95cb163d753",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateSnapshotSchedule API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:55:43.000Z",
+    "updatedAt": "2026-07-28T10:55:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7d910afe-c3ff-472e-a8bc-e95cb163d753"
+  },
+  "item": [
+    {
+      "name": "#Action=CreateSnapshotSchedule",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Create Snapshot Schedule",
+          "id": "a07ed2b2-2723-44e6-ba02-2694daec40d0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                  "key": "ScheduleDefinitions",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                  "key": "ScheduleDefinitions",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                  "key": "ScheduleIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The description of the snapshot schedule.",
+                  "key": "ScheduleDescription",
+                  "value": "<string>"
+                },
+                {
+                  "description": "An optional set of tags you can use to search for the schedule.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "An optional set of tags you can use to search for the schedule.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "<p/>",
+                  "key": "DryRun",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "<p/>",
+                  "key": "NextInvocations",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateSnapshotSchedule"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateSnapshotSchedule"
+            },
+            "description": "Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. "
+          },
+          "response": [
+            {
+              "id": "a456bdf2-df2f-4d87-8f4e-64f73593abce",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <SnapshotTime>(string)</SnapshotTime>\n  <SnapshotTime>(string)</SnapshotTime>\n  <AssociatedClusterCount>(integer)</AssociatedClusterCount>\n  <ClusterAssociatedToSchedule>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ScheduleAssociationState>(string)</ScheduleAssociationState>\n  </ClusterAssociatedToSchedule>\n  <ClusterAssociatedToSchedule>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ScheduleAssociationState>(string)</ScheduleAssociationState>\n  </ClusterAssociatedToSchedule>\n</element>",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-a456bdf2-df2f-4d87-8f4e-64f73593abce"
+            },
+            {
+              "id": "5ce14706-a02f-46e3-a5a9-495d74002f30",
+              "name": "SnapshotScheduleAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-5ce14706-a02f-46e3-a5a9-495d74002f30"
+            },
+            {
+              "id": "afcfb0be-4487-4e8a-9f02-5aa7836f752c",
+              "name": "InvalidScheduleFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-afcfb0be-4487-4e8a-9f02-5aa7836f752c"
+            },
+            {
+              "id": "c0c342c9-3955-445a-80b2-f87476aae285",
+              "name": "SnapshotScheduleQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-c0c342c9-3955-445a-80b2-f87476aae285"
+            },
+            {
+              "id": "3d5fd31c-b033-4435-aed0-f6e6c1a52405",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-3d5fd31c-b033-4435-aed0-f6e6c1a52405"
+            },
+            {
+              "id": "bd9219e7-c039-4f6d-b24b-80311aa7ee6f",
+              "name": "ScheduleDefinitionTypeUnsupportedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-bd9219e7-c039-4f6d-b24b-80311aa7ee6f"
+            },
+            {
+              "id": "700be7d1-4dd7-4625-b5e0-90872eb92c8a",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ScheduleDefinitions=<string>&ScheduleIdentifier=<string>&ScheduleDescription=<string>&Tags=[object Object]&DryRun=<boolean>&NextInvocations=<integer>&Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". ",
+                      "key": "ScheduleDefinitions",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.",
+                      "key": "ScheduleIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The description of the snapshot schedule.",
+                      "key": "ScheduleDescription",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An optional set of tags you can use to search for the schedule.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "DryRun",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "NextInvocations",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-700be7d1-4dd7-4625-b5e0-90872eb92c8a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:43.000Z",
+          "updatedAt": "2026-07-28T10:55:43.000Z",
+          "uid": "35240-a07ed2b2-2723-44e6-ba02-2694daec40d0"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Create Snapshot Schedule",
+          "id": "8e2a9f93-5495-463e-993d-eeb7909821a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateSnapshotSchedule"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateSnapshotSchedule"
+            },
+            "description": "Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. "
+          },
+          "response": [
+            {
+              "id": "3a73f35d-e45f-4a7c-aafa-224f361e8014",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <SnapshotTime>(string)</SnapshotTime>\n  <SnapshotTime>(string)</SnapshotTime>\n  <AssociatedClusterCount>(integer)</AssociatedClusterCount>\n  <ClusterAssociatedToSchedule>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ScheduleAssociationState>(string)</ScheduleAssociationState>\n  </ClusterAssociatedToSchedule>\n  <ClusterAssociatedToSchedule>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ScheduleAssociationState>(string)</ScheduleAssociationState>\n  </ClusterAssociatedToSchedule>\n</element>",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-3a73f35d-e45f-4a7c-aafa-224f361e8014"
+            },
+            {
+              "id": "eda583a7-8aec-4cae-a914-479aa94f1d09",
+              "name": "SnapshotScheduleAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-eda583a7-8aec-4cae-a914-479aa94f1d09"
+            },
+            {
+              "id": "310aabbf-f04e-4274-a8d3-13fb48fecbe9",
+              "name": "InvalidScheduleFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-310aabbf-f04e-4274-a8d3-13fb48fecbe9"
+            },
+            {
+              "id": "2534f859-221d-48fe-b1d3-bb2bd9380f9a",
+              "name": "SnapshotScheduleQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-2534f859-221d-48fe-b1d3-bb2bd9380f9a"
+            },
+            {
+              "id": "2fcb4c7f-9652-40ae-af1a-10904983c07a",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-2fcb4c7f-9652-40ae-af1a-10904983c07a"
+            },
+            {
+              "id": "bcc02dfc-fb13-47c3-b892-3aa469473d76",
+              "name": "ScheduleDefinitionTypeUnsupportedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-bcc02dfc-fb13-47c3-b892-3aa469473d76"
+            },
+            {
+              "id": "4af3b1fc-ef70-427c-8be3-033aa624777c",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleDefinition>(string)</ScheduleDefinition>\n  <ScheduleIdentifier>(string)</ScheduleIdentifier>\n  <ScheduleDescription>(string)</ScheduleDescription>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <DryRun>(boolean)</DryRun>\n  <NextInvocations>(integer)</NextInvocations>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateSnapshotSchedule&Version=2012-12-01#Action=CreateSnapshotSchedule",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateSnapshotSchedule"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateSnapshotSchedule"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:43.000Z",
+              "updatedAt": "2026-07-28T10:55:43.000Z",
+              "uid": "35240-4af3b1fc-ef70-427c-8be3-033aa624777c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:43.000Z",
+          "updatedAt": "2026-07-28T10:55:43.000Z",
+          "uid": "35240-8e2a9f93-5495-463e-993d-eeb7909821a4"
+        }
+      ],
+      "id": "01255da2-03dd-4bea-b102-10550be6428c",
+      "createdAt": "2026-07-28T10:55:43.000Z",
+      "updatedAt": "2026-07-28T10:55:43.000Z",
+      "uid": "35240-01255da2-03dd-4bea-b102-10550be6428c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

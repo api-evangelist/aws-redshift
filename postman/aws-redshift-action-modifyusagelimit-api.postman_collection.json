@@ -1,0 +1,994 @@
+{
+  "info": {
+    "_postman_id": "2bd9f024-e1a0-47bf-a02f-80036831501b",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyUsageLimit API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:36.000Z",
+    "updatedAt": "2026-07-28T10:59:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2bd9f024-e1a0-47bf-a02f-80036831501b"
+  },
+  "item": [
+    {
+      "name": "#Action=ModifyUsageLimit",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Modify Usage Limit",
+          "id": "b8b3f8d1-f47c-4948-a72d-f0f646fb131c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?UsageLimitId=<string>&Amount=<integer>&BreachAction=log&Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The identifier of the usage limit to modify.",
+                  "key": "UsageLimitId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. ",
+                  "key": "Amount",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. ",
+                  "key": "BreachAction",
+                  "value": "log"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyUsageLimit"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyUsageLimit"
+            },
+            "description": "Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit."
+          },
+          "response": [
+            {
+              "id": "c2d944a4-efd6-498d-8b7a-36132b118ac9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?UsageLimitId=<string>&Amount=<integer>&BreachAction=log&Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the usage limit to modify.",
+                      "key": "UsageLimitId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "Amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "BreachAction",
+                      "value": "log"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <FeatureType>(string)</FeatureType>\n  <LimitType>(string)</LimitType>\n  <Amount>(integer)</Amount>\n  <Period>(string)</Period>\n  <BreachAction>(string)</BreachAction>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-c2d944a4-efd6-498d-8b7a-36132b118ac9"
+            },
+            {
+              "id": "5a93c2de-3b58-4b8e-9c63-941c937e1549",
+              "name": "InvalidUsageLimitFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?UsageLimitId=<string>&Amount=<integer>&BreachAction=log&Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the usage limit to modify.",
+                      "key": "UsageLimitId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "Amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "BreachAction",
+                      "value": "log"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-5a93c2de-3b58-4b8e-9c63-941c937e1549"
+            },
+            {
+              "id": "6ef55e8a-edf5-4fd5-a603-bf6ead74052e",
+              "name": "UsageLimitNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?UsageLimitId=<string>&Amount=<integer>&BreachAction=log&Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the usage limit to modify.",
+                      "key": "UsageLimitId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "Amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "BreachAction",
+                      "value": "log"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-6ef55e8a-edf5-4fd5-a603-bf6ead74052e"
+            },
+            {
+              "id": "8d495b17-74e2-48fa-b07e-e16e76e9ce5a",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?UsageLimitId=<string>&Amount=<integer>&BreachAction=log&Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the usage limit to modify.",
+                      "key": "UsageLimitId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new limit amount. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "Amount",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. ",
+                      "key": "BreachAction",
+                      "value": "log"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-8d495b17-74e2-48fa-b07e-e16e76e9ce5a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:37.000Z",
+          "updatedAt": "2026-07-28T10:59:37.000Z",
+          "uid": "35240-b8b3f8d1-f47c-4948-a72d-f0f646fb131c"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Modify Usage Limit",
+          "id": "deb9629a-647a-4ee6-8a78-df33a265bc31",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <Amount>(integer)</Amount>\n  <BreachAction>(string)</BreachAction>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyUsageLimit"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyUsageLimit"
+            },
+            "description": "Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit."
+          },
+          "response": [
+            {
+              "id": "0c520175-1435-48a7-a28b-141791f98c80",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <Amount>(integer)</Amount>\n  <BreachAction>(string)</BreachAction>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <FeatureType>(string)</FeatureType>\n  <LimitType>(string)</LimitType>\n  <Amount>(integer)</Amount>\n  <Period>(string)</Period>\n  <BreachAction>(string)</BreachAction>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-0c520175-1435-48a7-a28b-141791f98c80"
+            },
+            {
+              "id": "4091719d-70c0-4296-a023-705ce4906617",
+              "name": "InvalidUsageLimitFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <Amount>(integer)</Amount>\n  <BreachAction>(string)</BreachAction>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-4091719d-70c0-4296-a023-705ce4906617"
+            },
+            {
+              "id": "002f40d2-ca6b-4885-bfb3-14cec3443f46",
+              "name": "UsageLimitNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <Amount>(integer)</Amount>\n  <BreachAction>(string)</BreachAction>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-002f40d2-ca6b-4885-bfb3-14cec3443f46"
+            },
+            {
+              "id": "d5be5ed3-201b-4bdc-8bf1-490eb272f4e2",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <UsageLimitId>(string)</UsageLimitId>\n  <Amount>(integer)</Amount>\n  <BreachAction>(string)</BreachAction>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyUsageLimit&Version=2012-12-01#Action=ModifyUsageLimit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyUsageLimit"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyUsageLimit"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:37.000Z",
+              "updatedAt": "2026-07-28T10:59:37.000Z",
+              "uid": "35240-d5be5ed3-201b-4bdc-8bf1-490eb272f4e2"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:37.000Z",
+          "updatedAt": "2026-07-28T10:59:37.000Z",
+          "uid": "35240-deb9629a-647a-4ee6-8a78-df33a265bc31"
+        }
+      ],
+      "id": "b112bdda-03ea-4085-9fad-929782d7f6fe",
+      "createdAt": "2026-07-28T10:59:37.000Z",
+      "updatedAt": "2026-07-28T10:59:37.000Z",
+      "uid": "35240-b112bdda-03ea-4085-9fad-929782d7f6fe"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

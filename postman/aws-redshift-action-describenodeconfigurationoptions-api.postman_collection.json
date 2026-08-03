@@ -1,0 +1,1626 @@
+{
+  "info": {
+    "_postman_id": "93a64642-a48b-4f8c-bf82-975cff13c2e3",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeNodeConfigurationOptions API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:25.000Z",
+    "updatedAt": "2026-07-28T10:57:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-93a64642-a48b-4f8c-bf82-975cff13c2e3"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeNodeConfigurationOptions",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Node Configuration Options",
+          "id": "c223f8d1-342f-40b7-91e8-90701b4b73ef",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                  "key": "ActionType",
+                  "value": "recommend-node-config"
+                },
+                {
+                  "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                  "key": "SnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                  "key": "SnapshotArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                  "key": "OwnerAccount",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A set of name, operator, and value items to filter the results.",
+                  "key": "Filter",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "A set of name, operator, and value items to filter the results.",
+                  "key": "Filter",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeNodeConfigurationOptions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeNodeConfigurationOptions"
+            },
+            "description": "Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type."
+          },
+          "response": [
+            {
+              "id": "cff13f37-8e80-4113-9630-0bda2bc75f0e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <NodeConfigurationOption>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <EstimatedDiskUtilizationPercent>(number)</EstimatedDiskUtilizationPercent>\n    <Mode>(string)</Mode>\n  </NodeConfigurationOption>\n  <NodeConfigurationOption>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <EstimatedDiskUtilizationPercent>(number)</EstimatedDiskUtilizationPercent>\n    <Mode>(string)</Mode>\n  </NodeConfigurationOption>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-cff13f37-8e80-4113-9630-0bda2bc75f0e"
+            },
+            {
+              "id": "938b4215-4084-4335-bc5f-a3d1c652e73d",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-938b4215-4084-4335-bc5f-a3d1c652e73d"
+            },
+            {
+              "id": "609eab51-0022-43de-bfe0-90aa3a8af565",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-609eab51-0022-43de-bfe0-90aa3a8af565"
+            },
+            {
+              "id": "c7bdf06e-1144-4432-9e6a-30cde4ee9568",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-c7bdf06e-1144-4432-9e6a-30cde4ee9568"
+            },
+            {
+              "id": "0b589123-aab1-4ee6-a447-d029bf35bb64",
+              "name": "AccessToSnapshotDeniedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-0b589123-aab1-4ee6-a447-d029bf35bb64"
+            },
+            {
+              "id": "a22cd7b0-ad57-474f-ba53-7ea198f45793",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=recommend-node-config&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&OwnerAccount=<string>&Filter=[object Object]&Marker=<string>&MaxRecords=<integer>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type to evaluate for possible node configurations. Specify \"restore-cluster\" to get configuration combinations based on an existing snapshot. Specify \"recommend-node-config\" to get configuration recommendations based on an existing cluster or snapshot. Specify \"resize-cluster\" to get configuration combinations for elastic resize based on an existing cluster. ",
+                      "key": "ActionType",
+                      "value": "recommend-node-config"
+                    },
+                    {
+                      "description": "The identifier of the cluster to evaluate for possible node configurations.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the snapshot to evaluate for possible node configurations.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe node configuration.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A set of name, operator, and value items to filter the results.",
+                      "key": "Filter",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeNodeConfigurationOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>500</code> </p> <p>Constraints: minimum 100, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-a22cd7b0-ad57-474f-ba53-7ea198f45793"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:25.000Z",
+          "updatedAt": "2026-07-28T10:57:25.000Z",
+          "uid": "35240-c223f8d1-342f-40b7-91e8-90701b4b73ef"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Node Configuration Options",
+          "id": "6123d7dd-a649-4a8b-8d48-19fb67997835",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeNodeConfigurationOptions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeNodeConfigurationOptions"
+            },
+            "description": "Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type."
+          },
+          "response": [
+            {
+              "id": "689544c7-90f1-4158-bc49-fae04bacc4e9",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <NodeConfigurationOption>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <EstimatedDiskUtilizationPercent>(number)</EstimatedDiskUtilizationPercent>\n    <Mode>(string)</Mode>\n  </NodeConfigurationOption>\n  <NodeConfigurationOption>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <EstimatedDiskUtilizationPercent>(number)</EstimatedDiskUtilizationPercent>\n    <Mode>(string)</Mode>\n  </NodeConfigurationOption>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-689544c7-90f1-4158-bc49-fae04bacc4e9"
+            },
+            {
+              "id": "15ddec89-a525-4863-a21e-bbd773515dd1",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-15ddec89-a525-4863-a21e-bbd773515dd1"
+            },
+            {
+              "id": "10765df1-33c8-4e77-899e-21bd470510e0",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-10765df1-33c8-4e77-899e-21bd470510e0"
+            },
+            {
+              "id": "e4e12ee8-327f-4516-8fce-be576dd53a83",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-e4e12ee8-327f-4516-8fce-be576dd53a83"
+            },
+            {
+              "id": "5fbd7289-8254-4ad8-9215-ecab6d5e4ec3",
+              "name": "AccessToSnapshotDeniedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-5fbd7289-8254-4ad8-9215-ecab6d5e4ec3"
+            },
+            {
+              "id": "99c247af-6099-4a80-a56c-8caa145ee50f",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <OwnerAccount>(string)</OwnerAccount>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Filter>\n    <Name>(string)</Name>\n    <Operator>(string)</Operator>\n    <Value>(string)</Value>\n    <Value>(string)</Value>\n  </Filter>\n  <Marker>(string)</Marker>\n  <MaxRecords>(integer)</MaxRecords>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeNodeConfigurationOptions&Version=2012-12-01#Action=DescribeNodeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeNodeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeNodeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:25.000Z",
+              "updatedAt": "2026-07-28T10:57:25.000Z",
+              "uid": "35240-99c247af-6099-4a80-a56c-8caa145ee50f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:25.000Z",
+          "updatedAt": "2026-07-28T10:57:25.000Z",
+          "uid": "35240-6123d7dd-a649-4a8b-8d48-19fb67997835"
+        }
+      ],
+      "id": "cc0311b9-f119-4e62-aedf-d1ec6ed3a805",
+      "createdAt": "2026-07-28T10:57:25.000Z",
+      "updatedAt": "2026-07-28T10:57:25.000Z",
+      "uid": "35240-cc0311b9-f119-4e62-aedf-d1ec6ed3a805"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

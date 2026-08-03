@@ -1,0 +1,1310 @@
+{
+  "info": {
+    "_postman_id": "4f206099-60d9-442c-ba7a-6ecceb58d4e3",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateHsmConfiguration API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:55:34.000Z",
+    "updatedAt": "2026-07-28T10:55:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4f206099-60d9-442c-ba7a-6ecceb58d4e3"
+  },
+  "item": [
+    {
+      "name": "#Action=CreateHsmConfiguration",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Create Hsm Configuration",
+          "id": "757a7aaa-c1b1-4f8b-9746-6f86f7d2b84f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                  "key": "HsmConfigurationIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) A text description of the HSM configuration to be created.",
+                  "key": "Description",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                  "key": "HsmIpAddress",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                  "key": "HsmPartitionName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The password required to access the HSM partition.",
+                  "key": "HsmPartitionPassword",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                  "key": "HsmServerPublicCertificate",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A list of tag instances.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "A list of tag instances.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateHsmConfiguration"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateHsmConfiguration"
+            },
+            "description": "<p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html\">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>"
+          },
+          "response": [
+            {
+              "id": "6d8f2fd7-9eb1-4c77-a3fc-307dedfabe81",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A text description of the HSM configuration to be created.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                      "key": "HsmIpAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                      "key": "HsmPartitionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The password required to access the HSM partition.",
+                      "key": "HsmPartitionPassword",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                      "key": "HsmServerPublicCertificate",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n</element>",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-6d8f2fd7-9eb1-4c77-a3fc-307dedfabe81"
+            },
+            {
+              "id": "e4dc13bf-d77d-4a1f-b6d7-cdafa595c6b6",
+              "name": "HsmConfigurationAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A text description of the HSM configuration to be created.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                      "key": "HsmIpAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                      "key": "HsmPartitionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The password required to access the HSM partition.",
+                      "key": "HsmPartitionPassword",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                      "key": "HsmServerPublicCertificate",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-e4dc13bf-d77d-4a1f-b6d7-cdafa595c6b6"
+            },
+            {
+              "id": "0dd8fb9c-9257-4a65-acd9-8182cee33eb4",
+              "name": "HsmConfigurationQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A text description of the HSM configuration to be created.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                      "key": "HsmIpAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                      "key": "HsmPartitionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The password required to access the HSM partition.",
+                      "key": "HsmPartitionPassword",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                      "key": "HsmServerPublicCertificate",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-0dd8fb9c-9257-4a65-acd9-8182cee33eb4"
+            },
+            {
+              "id": "e5ce26db-19bc-4c97-b403-ae90be89722f",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A text description of the HSM configuration to be created.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                      "key": "HsmIpAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                      "key": "HsmPartitionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The password required to access the HSM partition.",
+                      "key": "HsmPartitionPassword",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                      "key": "HsmServerPublicCertificate",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-e5ce26db-19bc-4c97-b403-ae90be89722f"
+            },
+            {
+              "id": "a5790b48-8918-4519-b59d-d1ff2242285c",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?HsmConfigurationIdentifier=<string>&Description=<string>&HsmIpAddress=<string>&HsmPartitionName=<string>&HsmPartitionPassword=<string>&HsmServerPublicCertificate=<string>&Tags=[object Object]&Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier to be assigned to the new Amazon Redshift HSM configuration.",
+                      "key": "HsmConfigurationIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A text description of the HSM configuration to be created.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The IP address that the Amazon Redshift cluster must use to access the HSM.",
+                      "key": "HsmIpAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.",
+                      "key": "HsmPartitionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The password required to access the HSM partition.",
+                      "key": "HsmPartitionPassword",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.",
+                      "key": "HsmServerPublicCertificate",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-a5790b48-8918-4519-b59d-d1ff2242285c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:35.000Z",
+          "updatedAt": "2026-07-28T10:55:35.000Z",
+          "uid": "35240-757a7aaa-c1b1-4f8b-9746-6f86f7d2b84f"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Create Hsm Configuration",
+          "id": "51d36d2d-b25b-433c-b166-6cb3a5dfc777",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateHsmConfiguration"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateHsmConfiguration"
+            },
+            "description": "<p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html\">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>"
+          },
+          "response": [
+            {
+              "id": "7b14d9c7-ee56-4ede-bf8e-c537a7ad9118",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfiguration>\n    <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n    <Description>(string)</Description>\n    <HsmIpAddress>(string)</HsmIpAddress>\n    <HsmPartitionName>(string)</HsmPartitionName>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </HsmConfiguration>\n</element>",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-7b14d9c7-ee56-4ede-bf8e-c537a7ad9118"
+            },
+            {
+              "id": "8e6d25a7-aa71-4e96-97c2-dc6c5cde3e58",
+              "name": "HsmConfigurationAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-8e6d25a7-aa71-4e96-97c2-dc6c5cde3e58"
+            },
+            {
+              "id": "b1a0d129-c03a-49b3-8e47-4377fdfdb93e",
+              "name": "HsmConfigurationQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-b1a0d129-c03a-49b3-8e47-4377fdfdb93e"
+            },
+            {
+              "id": "65b01f36-ca4f-4f79-9bca-496c9b708806",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-65b01f36-ca4f-4f79-9bca-496c9b708806"
+            },
+            {
+              "id": "c47b6898-af29-4cd7-9fc0-5e6ffac02051",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n  <Description>(string)</Description>\n  <HsmIpAddress>(string)</HsmIpAddress>\n  <HsmPartitionName>(string)</HsmPartitionName>\n  <HsmPartitionPassword>(string)</HsmPartitionPassword>\n  <HsmServerPublicCertificate>(string)</HsmServerPublicCertificate>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateHsmConfiguration&Version=2012-12-01#Action=CreateHsmConfiguration",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateHsmConfiguration"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateHsmConfiguration"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:35.000Z",
+              "updatedAt": "2026-07-28T10:55:35.000Z",
+              "uid": "35240-c47b6898-af29-4cd7-9fc0-5e6ffac02051"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:35.000Z",
+          "updatedAt": "2026-07-28T10:55:35.000Z",
+          "uid": "35240-51d36d2d-b25b-433c-b166-6cb3a5dfc777"
+        }
+      ],
+      "id": "8b067cea-a542-44df-997d-28e4e6a835e6",
+      "createdAt": "2026-07-28T10:55:35.000Z",
+      "updatedAt": "2026-07-28T10:55:35.000Z",
+      "uid": "35240-8b067cea-a542-44df-997d-28e4e6a835e6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

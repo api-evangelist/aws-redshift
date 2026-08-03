@@ -1,0 +1,843 @@
+{
+  "info": {
+    "_postman_id": "f50bcbd0-5da3-42c6-8ce4-0b72a95c6f87",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterTracks API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:09.000Z",
+    "updatedAt": "2026-07-28T10:57:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f50bcbd0-5da3-42c6-8ce4-0b72a95c6f87"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeClusterTracks",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Cluster Tracks",
+          "id": "4ed6fc12-46b0-4bb8-bbd2-c741af810017",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?MaintenanceTrackName=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The name of the maintenance track. ",
+                  "key": "MaintenanceTrackName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "An integer value for the maximum number of maintenance tracks to return.",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterTracks"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterTracks"
+            },
+            "description": "Returns a list of all the available maintenance tracks."
+          },
+          "response": [
+            {
+              "id": "7e31be59-1582-4ef6-8b49-9078243cb4f6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?MaintenanceTrackName=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the maintenance track. ",
+                      "key": "MaintenanceTrackName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An integer value for the maximum number of maintenance tracks to return.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrack>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <DatabaseVersion>(string)</DatabaseVersion>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n  </MaintenanceTrack>\n  <MaintenanceTrack>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <DatabaseVersion>(string)</DatabaseVersion>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n  </MaintenanceTrack>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-7e31be59-1582-4ef6-8b49-9078243cb4f6"
+            },
+            {
+              "id": "25529072-89df-4f91-9857-45d9dde9d5e8",
+              "name": "InvalidClusterTrackFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?MaintenanceTrackName=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the maintenance track. ",
+                      "key": "MaintenanceTrackName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An integer value for the maximum number of maintenance tracks to return.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-25529072-89df-4f91-9857-45d9dde9d5e8"
+            },
+            {
+              "id": "19f666e8-1987-4db2-81e6-8b519ec6ddb6",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?MaintenanceTrackName=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The name of the maintenance track. ",
+                      "key": "MaintenanceTrackName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An integer value for the maximum number of maintenance tracks to return.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeClusterTracks</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-19f666e8-1987-4db2-81e6-8b519ec6ddb6"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:10.000Z",
+          "updatedAt": "2026-07-28T10:57:10.000Z",
+          "uid": "35240-4ed6fc12-46b0-4bb8-bbd2-c741af810017"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Cluster Tracks",
+          "id": "5cefcb26-7b3d-4e1c-8c97-d3122364fe8f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrackName>(string)</MaintenanceTrackName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterTracks"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterTracks"
+            },
+            "description": "Returns a list of all the available maintenance tracks."
+          },
+          "response": [
+            {
+              "id": "3e1f76aa-5d2f-4077-9ac3-29e7a8c9a735",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrackName>(string)</MaintenanceTrackName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrack>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <DatabaseVersion>(string)</DatabaseVersion>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n  </MaintenanceTrack>\n  <MaintenanceTrack>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <DatabaseVersion>(string)</DatabaseVersion>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n    <UpdateTarget>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <DatabaseVersion>(string)</DatabaseVersion>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n      <SupportedOperation>\n        <OperationName>(string)</OperationName>\n      </SupportedOperation>\n    </UpdateTarget>\n  </MaintenanceTrack>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-3e1f76aa-5d2f-4077-9ac3-29e7a8c9a735"
+            },
+            {
+              "id": "b76231b7-7b13-4275-9a14-e955cb817af1",
+              "name": "InvalidClusterTrackFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrackName>(string)</MaintenanceTrackName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-b76231b7-7b13-4275-9a14-e955cb817af1"
+            },
+            {
+              "id": "628b76db-cd5e-4163-ad12-73c444dd6966",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <MaintenanceTrackName>(string)</MaintenanceTrackName>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterTracks&Version=2012-12-01#Action=DescribeClusterTracks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterTracks"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterTracks"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:10.000Z",
+              "updatedAt": "2026-07-28T10:57:10.000Z",
+              "uid": "35240-628b76db-cd5e-4163-ad12-73c444dd6966"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:10.000Z",
+          "updatedAt": "2026-07-28T10:57:10.000Z",
+          "uid": "35240-5cefcb26-7b3d-4e1c-8c97-d3122364fe8f"
+        }
+      ],
+      "id": "41cb7604-15ef-43bf-ad18-cb5f7a2236e0",
+      "createdAt": "2026-07-28T10:57:10.000Z",
+      "updatedAt": "2026-07-28T10:57:10.000Z",
+      "uid": "35240-41cb7604-15ef-43bf-ad18-cb5f7a2236e0"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

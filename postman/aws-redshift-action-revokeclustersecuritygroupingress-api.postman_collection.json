@@ -1,0 +1,1019 @@
+{
+  "info": {
+    "_postman_id": "0b08879b-9012-4871-9bdd-604d181e11af",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RevokeClusterSecurityGroupIngress API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:51.000Z",
+    "updatedAt": "2026-07-28T10:59:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0b08879b-9012-4871-9bdd-604d181e11af"
+  },
+  "item": [
+    {
+      "name": "#Action=RevokeClusterSecurityGroupIngress",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Revoke Cluster Security Group Ingress",
+          "id": "82d808f6-3b9d-457d-9fe2-c76a02b3f392",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The name of the security Group from which to revoke the ingress rule.",
+                  "key": "ClusterSecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. ",
+                  "key": "CIDRIP",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. ",
+                  "key": "EC2SecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>",
+                  "key": "EC2SecurityGroupOwnerId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RevokeClusterSecurityGroupIngress"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RevokeClusterSecurityGroupIngress"
+            },
+            "description": "Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>. "
+          },
+          "response": [
+            {
+              "id": "331d4936-0d74-404e-8e58-1968b86349ba",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security Group from which to revoke the ingress rule.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. ",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. ",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-331d4936-0d74-404e-8e58-1968b86349ba"
+            },
+            {
+              "id": "b3dbbdc9-fb78-4270-ae7c-6830398d5f70",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security Group from which to revoke the ingress rule.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. ",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. ",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-b3dbbdc9-fb78-4270-ae7c-6830398d5f70"
+            },
+            {
+              "id": "40b9894d-90ee-4592-907d-3bc0f32c05db",
+              "name": "AuthorizationNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security Group from which to revoke the ingress rule.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. ",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. ",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-40b9894d-90ee-4592-907d-3bc0f32c05db"
+            },
+            {
+              "id": "87f004a5-f378-4636-a5da-537bcd7355b4",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security Group from which to revoke the ingress rule.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range for which to revoke access. This range must be a valid Classless Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be provided. ",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code> cannot be provided. ",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot be provided. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-87f004a5-f378-4636-a5da-537bcd7355b4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:52.000Z",
+          "updatedAt": "2026-07-28T10:59:52.000Z",
+          "uid": "35240-82d808f6-3b9d-457d-9fe2-c76a02b3f392"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Revoke Cluster Security Group Ingress",
+          "id": "c8d8fb2f-4996-4361-810b-544be6227e61",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RevokeClusterSecurityGroupIngress"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RevokeClusterSecurityGroupIngress"
+            },
+            "description": "Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>. "
+          },
+          "response": [
+            {
+              "id": "ff602785-6d7e-4f72-899e-3f8132a429d8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-ff602785-6d7e-4f72-899e-3f8132a429d8"
+            },
+            {
+              "id": "ff3f142c-1f38-4b3e-ae13-6ef8582b225b",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-ff3f142c-1f38-4b3e-ae13-6ef8582b225b"
+            },
+            {
+              "id": "4885f6ce-ef18-4364-b8af-3ab1694da312",
+              "name": "AuthorizationNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-4885f6ce-ef18-4364-b8af-3ab1694da312"
+            },
+            {
+              "id": "8e800ae7-241b-406c-bc67-37dc39cafbe1",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RevokeClusterSecurityGroupIngress&Version=2012-12-01#Action=RevokeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RevokeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RevokeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:52.000Z",
+              "updatedAt": "2026-07-28T10:59:52.000Z",
+              "uid": "35240-8e800ae7-241b-406c-bc67-37dc39cafbe1"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:52.000Z",
+          "updatedAt": "2026-07-28T10:59:52.000Z",
+          "uid": "35240-c8d8fb2f-4996-4361-810b-544be6227e61"
+        }
+      ],
+      "id": "f04ddf4f-27af-4be9-9f9f-f9c97d2336fa",
+      "createdAt": "2026-07-28T10:59:52.000Z",
+      "updatedAt": "2026-07-28T10:59:52.000Z",
+      "uid": "35240-f04ddf4f-27af-4be9-9f9f-f9c97d2336fa"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

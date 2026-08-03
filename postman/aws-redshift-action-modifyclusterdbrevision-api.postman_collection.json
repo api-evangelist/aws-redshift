@@ -1,0 +1,969 @@
+{
+  "info": {
+    "_postman_id": "4adc4406-9228-409d-abb1-7e59f39653ea",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyClusterDbRevision API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:04.000Z",
+    "updatedAt": "2026-07-28T10:59:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4adc4406-9228-409d-abb1-7e59f39653ea"
+  },
+  "item": [
+    {
+      "name": "#Action=ModifyClusterDbRevision",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Modify Cluster Db Revision",
+          "id": "c655453d-15ac-4b5c-ba94-ebc82ab831a7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&RevisionTarget=<string>&Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.",
+                  "key": "RevisionTarget",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyClusterDbRevision"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyClusterDbRevision"
+            },
+            "description": "Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster."
+          },
+          "response": [
+            {
+              "id": "203f2c90-069b-4473-b79b-6948d2b71121",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&RevisionTarget=<string>&Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.",
+                      "key": "RevisionTarget",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-203f2c90-069b-4473-b79b-6948d2b71121"
+            },
+            {
+              "id": "b123accf-ec2c-4a00-b4b7-268dcb2dcd4a",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&RevisionTarget=<string>&Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.",
+                      "key": "RevisionTarget",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-b123accf-ec2c-4a00-b4b7-268dcb2dcd4a"
+            },
+            {
+              "id": "b79ff4d8-f14e-4c58-85d7-63fde3587c90",
+              "name": "ClusterOnLatestRevisionFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&RevisionTarget=<string>&Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.",
+                      "key": "RevisionTarget",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-b79ff4d8-f14e-4c58-85d7-63fde3587c90"
+            },
+            {
+              "id": "19580bf2-a658-4a09-bb28-1186bf9847a5",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&RevisionTarget=<string>&Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The unique identifier of a cluster whose database revision you want to modify. </p> <p>Example: <code>examplecluster</code> </p>",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the database revision. You can retrieve this value from the response to the <a>DescribeClusterDbRevisions</a> request.",
+                      "key": "RevisionTarget",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-19580bf2-a658-4a09-bb28-1186bf9847a5"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:05.000Z",
+          "updatedAt": "2026-07-28T10:59:05.000Z",
+          "uid": "35240-c655453d-15ac-4b5c-ba94-ebc82ab831a7"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Modify Cluster Db Revision",
+          "id": "1b22d411-343d-4207-894c-2a8f6357910a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <RevisionTarget>(string)</RevisionTarget>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ModifyClusterDbRevision"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ModifyClusterDbRevision"
+            },
+            "description": "Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster."
+          },
+          "response": [
+            {
+              "id": "aa4811c4-f24d-4fc8-bc78-899539f1b06d",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <RevisionTarget>(string)</RevisionTarget>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-aa4811c4-f24d-4fc8-bc78-899539f1b06d"
+            },
+            {
+              "id": "8d022890-ba30-4947-bc59-16aca00c71de",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <RevisionTarget>(string)</RevisionTarget>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-8d022890-ba30-4947-bc59-16aca00c71de"
+            },
+            {
+              "id": "3bc99576-69a7-4d95-a534-5c92f4b6a204",
+              "name": "ClusterOnLatestRevisionFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <RevisionTarget>(string)</RevisionTarget>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-3bc99576-69a7-4d95-a534-5c92f4b6a204"
+            },
+            {
+              "id": "a5f1865a-f8eb-4ec8-baab-c073e4615511",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <RevisionTarget>(string)</RevisionTarget>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ModifyClusterDbRevision&Version=2012-12-01#Action=ModifyClusterDbRevision",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ModifyClusterDbRevision"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ModifyClusterDbRevision"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:05.000Z",
+              "updatedAt": "2026-07-28T10:59:05.000Z",
+              "uid": "35240-a5f1865a-f8eb-4ec8-baab-c073e4615511"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:05.000Z",
+          "updatedAt": "2026-07-28T10:59:05.000Z",
+          "uid": "35240-1b22d411-343d-4207-894c-2a8f6357910a"
+        }
+      ],
+      "id": "342473d7-97a8-4c2b-81d7-95b52d4c50b2",
+      "createdAt": "2026-07-28T10:59:04.000Z",
+      "updatedAt": "2026-07-28T10:59:04.000Z",
+      "uid": "35240-342473d7-97a8-4c2b-81d7-95b52d4c50b2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

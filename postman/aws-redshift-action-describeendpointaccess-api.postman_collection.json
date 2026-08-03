@@ -1,0 +1,1119 @@
+{
+  "info": {
+    "_postman_id": "2965a754-6466-407a-a286-f979ce55e1dc",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeEndpointAccess API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:15.000Z",
+    "updatedAt": "2026-07-28T10:57:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2965a754-6466-407a-a286-f979ce55e1dc"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeEndpointAccess",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Endpoint Access",
+          "id": "313e5ffd-7c07-4530-a0b5-1f77f20f77ab",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&VpcId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The cluster identifier associated with the described endpoint.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Web Services account ID of the owner of the cluster.",
+                  "key": "ResourceOwner",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The name of the endpoint to be described.",
+                  "key": "EndpointName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The virtual private cloud (VPC) identifier with access to the cluster.",
+                  "key": "VpcId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeEndpointAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeEndpointAccess"
+            },
+            "description": "Describes a Redshift-managed VPC endpoint."
+          },
+          "response": [
+            {
+              "id": "696269fe-103d-422b-ac6b-ac517ab1d323",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&VpcId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier associated with the described endpoint.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the endpoint to be described.",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The virtual private cloud (VPC) identifier with access to the cluster.",
+                      "key": "VpcId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <EndpointAccessList>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ResourceOwner>(string)</ResourceOwner>\n    <SubnetGroupName>(string)</SubnetGroupName>\n    <EndpointStatus>(string)</EndpointStatus>\n    <EndpointName>(string)</EndpointName>\n    <EndpointCreateTime>(string)</EndpointCreateTime>\n    <Port>(integer)</Port>\n    <Address>(string)</Address>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcEndpoint>\n      <VpcEndpointId>(string)</VpcEndpointId>\n      <VpcId>(string)</VpcId>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n    </VpcEndpoint>\n  </EndpointAccessList>\n  <EndpointAccessList>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ResourceOwner>(string)</ResourceOwner>\n    <SubnetGroupName>(string)</SubnetGroupName>\n    <EndpointStatus>(string)</EndpointStatus>\n    <EndpointName>(string)</EndpointName>\n    <EndpointCreateTime>(string)</EndpointCreateTime>\n    <Port>(integer)</Port>\n    <Address>(string)</Address>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcEndpoint>\n      <VpcEndpointId>(string)</VpcEndpointId>\n      <VpcId>(string)</VpcId>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n    </VpcEndpoint>\n  </EndpointAccessList>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-696269fe-103d-422b-ac6b-ac517ab1d323"
+            },
+            {
+              "id": "af146331-9a72-4302-9b6f-e566a32e5beb",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&VpcId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier associated with the described endpoint.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the endpoint to be described.",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The virtual private cloud (VPC) identifier with access to the cluster.",
+                      "key": "VpcId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-af146331-9a72-4302-9b6f-e566a32e5beb"
+            },
+            {
+              "id": "b9194c1d-d780-4d5c-85dd-e63cdc51f9f8",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&VpcId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier associated with the described endpoint.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the endpoint to be described.",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The virtual private cloud (VPC) identifier with access to the cluster.",
+                      "key": "VpcId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-b9194c1d-d780-4d5c-85dd-e63cdc51f9f8"
+            },
+            {
+              "id": "185f98d9-e08e-4507-83bb-5ce167aec81d",
+              "name": "EndpointNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ResourceOwner=<string>&EndpointName=<string>&VpcId=<string>&MaxRecords=<integer>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The cluster identifier associated with the described endpoint.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account ID of the owner of the cluster.",
+                      "key": "ResourceOwner",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the endpoint to be described.",
+                      "key": "EndpointName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The virtual private cloud (VPC) identifier with access to the cluster.",
+                      "key": "VpcId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-185f98d9-e08e-4507-83bb-5ce167aec81d"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:16.000Z",
+          "updatedAt": "2026-07-28T10:57:16.000Z",
+          "uid": "35240-313e5ffd-7c07-4530-a0b5-1f77f20f77ab"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Endpoint Access",
+          "id": "00c8e1e8-6bcb-4873-a7ad-064969757c90",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <VpcId>(string)</VpcId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeEndpointAccess"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeEndpointAccess"
+            },
+            "description": "Describes a Redshift-managed VPC endpoint."
+          },
+          "response": [
+            {
+              "id": "6e8d4fbd-fdf8-49ef-9653-80fd09ead5fa",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <VpcId>(string)</VpcId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <EndpointAccessList>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ResourceOwner>(string)</ResourceOwner>\n    <SubnetGroupName>(string)</SubnetGroupName>\n    <EndpointStatus>(string)</EndpointStatus>\n    <EndpointName>(string)</EndpointName>\n    <EndpointCreateTime>(string)</EndpointCreateTime>\n    <Port>(integer)</Port>\n    <Address>(string)</Address>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcEndpoint>\n      <VpcEndpointId>(string)</VpcEndpointId>\n      <VpcId>(string)</VpcId>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n    </VpcEndpoint>\n  </EndpointAccessList>\n  <EndpointAccessList>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <ResourceOwner>(string)</ResourceOwner>\n    <SubnetGroupName>(string)</SubnetGroupName>\n    <EndpointStatus>(string)</EndpointStatus>\n    <EndpointName>(string)</EndpointName>\n    <EndpointCreateTime>(string)</EndpointCreateTime>\n    <Port>(integer)</Port>\n    <Address>(string)</Address>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcEndpoint>\n      <VpcEndpointId>(string)</VpcEndpointId>\n      <VpcId>(string)</VpcId>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n      <NetworkInterface>\n        <NetworkInterfaceId>(string)</NetworkInterfaceId>\n        <SubnetId>(string)</SubnetId>\n        <PrivateIpAddress>(string)</PrivateIpAddress>\n        <AvailabilityZone>(string)</AvailabilityZone>\n      </NetworkInterface>\n    </VpcEndpoint>\n  </EndpointAccessList>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-6e8d4fbd-fdf8-49ef-9653-80fd09ead5fa"
+            },
+            {
+              "id": "ec3aa71c-fe06-45eb-ab01-0459f8c83a39",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <VpcId>(string)</VpcId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-ec3aa71c-fe06-45eb-ab01-0459f8c83a39"
+            },
+            {
+              "id": "d382d5f0-0796-4d87-bd06-1db424d0b50f",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <VpcId>(string)</VpcId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-d382d5f0-0796-4d87-bd06-1db424d0b50f"
+            },
+            {
+              "id": "14a32ca5-c217-4ae1-b5a8-9c789f1de4e3",
+              "name": "EndpointNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ResourceOwner>(string)</ResourceOwner>\n  <EndpointName>(string)</EndpointName>\n  <VpcId>(string)</VpcId>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeEndpointAccess&Version=2012-12-01#Action=DescribeEndpointAccess",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeEndpointAccess"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeEndpointAccess"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:16.000Z",
+              "updatedAt": "2026-07-28T10:57:16.000Z",
+              "uid": "35240-14a32ca5-c217-4ae1-b5a8-9c789f1de4e3"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:16.000Z",
+          "updatedAt": "2026-07-28T10:57:16.000Z",
+          "uid": "35240-00c8e1e8-6bcb-4873-a7ad-064969757c90"
+        }
+      ],
+      "id": "4e5a77d8-d0ff-4678-96de-7631d9882fe7",
+      "createdAt": "2026-07-28T10:57:16.000Z",
+      "updatedAt": "2026-07-28T10:57:16.000Z",
+      "uid": "35240-4e5a77d8-d0ff-4678-96de-7631d9882fe7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,1411 @@
+{
+  "info": {
+    "_postman_id": "23436bc2-5ec6-4d50-9b36-ec8586bfb2cc",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CopyClusterSnapshot API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:54:32.000Z",
+    "updatedAt": "2026-07-28T10:54:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-23436bc2-5ec6-4d50-9b36-ec8586bfb2cc"
+  },
+  "item": [
+    {
+      "name": "#Action=CopyClusterSnapshot",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Copy Cluster Snapshot",
+          "id": "275dfdb6-4aee-4e38-a5bf-aeca13007ae6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                  "key": "SourceSnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                  "key": "SourceSnapshotClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                  "key": "TargetSnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                  "key": "ManualSnapshotRetentionPeriod",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CopyClusterSnapshot"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CopyClusterSnapshot"
+            },
+            "description": "<p>Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it must be in the available state.</p> <p>When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster. Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "039eaf6d-5a12-46c7-8c7a-e60e56809ee0",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-039eaf6d-5a12-46c7-8c7a-e60e56809ee0"
+            },
+            {
+              "id": "78b19b91-3220-4706-9436-9ca2adb948e0",
+              "name": "ClusterSnapshotAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-78b19b91-3220-4706-9436-9ca2adb948e0"
+            },
+            {
+              "id": "49a59038-608c-4692-a1d0-5780cdf36fb4",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-49a59038-608c-4692-a1d0-5780cdf36fb4"
+            },
+            {
+              "id": "b354b083-bb4b-4d10-af99-3e28b3860d47",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-b354b083-bb4b-4d10-af99-3e28b3860d47"
+            },
+            {
+              "id": "aa1bea45-b3d9-48f5-8a28-8ffd5794cfbd",
+              "name": "ClusterSnapshotQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-aa1bea45-b3d9-48f5-8a28-8ffd5794cfbd"
+            },
+            {
+              "id": "92fac59f-940f-407e-9af0-320eb47eedda",
+              "name": "InvalidRetentionPeriodFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?SourceSnapshotIdentifier=<string>&SourceSnapshotClusterIdentifier=<string>&TargetSnapshotIdentifier=<string>&ManualSnapshotRetentionPeriod=<integer>&Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>",
+                      "key": "SourceSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>",
+                      "key": "SourceSnapshotClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>",
+                      "key": "TargetSnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>",
+                      "key": "ManualSnapshotRetentionPeriod",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-92fac59f-940f-407e-9af0-320eb47eedda"
+            }
+          ],
+          "createdAt": "2026-07-28T10:54:33.000Z",
+          "updatedAt": "2026-07-28T10:54:33.000Z",
+          "uid": "35240-275dfdb6-4aee-4e38-a5bf-aeca13007ae6"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Copy Cluster Snapshot",
+          "id": "3e9249a8-5c03-4d08-8300-cf86f64f8852",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CopyClusterSnapshot"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CopyClusterSnapshot"
+            },
+            "description": "<p>Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it must be in the available state.</p> <p>When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster. Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "9a42ed43-dc3a-41cd-ac68-190e9a1ee9f6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-9a42ed43-dc3a-41cd-ac68-190e9a1ee9f6"
+            },
+            {
+              "id": "ff9e2ad8-182c-411b-9792-3ef6c7a9e9e0",
+              "name": "ClusterSnapshotAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-ff9e2ad8-182c-411b-9792-3ef6c7a9e9e0"
+            },
+            {
+              "id": "e254c6a6-5a93-44c2-9588-078e5601b617",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-e254c6a6-5a93-44c2-9588-078e5601b617"
+            },
+            {
+              "id": "5a6c3ce0-e10a-4aca-9e25-4d1893934a48",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-5a6c3ce0-e10a-4aca-9e25-4d1893934a48"
+            },
+            {
+              "id": "95ff4f5f-58e2-411d-946a-bd0daa1e27cf",
+              "name": "ClusterSnapshotQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-95ff4f5f-58e2-411d-946a-bd0daa1e27cf"
+            },
+            {
+              "id": "c5288ec4-5858-4915-8a4a-995dde97e727",
+              "name": "InvalidRetentionPeriodFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <SourceSnapshotIdentifier>(string)</SourceSnapshotIdentifier>\n  <SourceSnapshotClusterIdentifier>(string)</SourceSnapshotClusterIdentifier>\n  <TargetSnapshotIdentifier>(string)</TargetSnapshotIdentifier>\n  <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CopyClusterSnapshot&Version=2012-12-01#Action=CopyClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CopyClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CopyClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:33.000Z",
+              "updatedAt": "2026-07-28T10:54:33.000Z",
+              "uid": "35240-c5288ec4-5858-4915-8a4a-995dde97e727"
+            }
+          ],
+          "createdAt": "2026-07-28T10:54:33.000Z",
+          "updatedAt": "2026-07-28T10:54:33.000Z",
+          "uid": "35240-3e9249a8-5c03-4d08-8300-cf86f64f8852"
+        }
+      ],
+      "id": "f8b800a9-0836-4c5d-a242-c6b95cc278a7",
+      "createdAt": "2026-07-28T10:54:33.000Z",
+      "updatedAt": "2026-07-28T10:54:33.000Z",
+      "uid": "35240-f8b800a9-0836-4c5d-a242-c6b95cc278a7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

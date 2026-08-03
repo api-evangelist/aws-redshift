@@ -1,0 +1,1560 @@
+{
+  "info": {
+    "_postman_id": "d1b0ca89-cf98-4f09-bde4-0a9ef37fae0b",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterSnapshots API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:07.000Z",
+    "updatedAt": "2026-07-28T10:57:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d1b0ca89-cf98-4f09-bde4-0a9ef37fae0b"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeClusterSnapshots",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Cluster Snapshots",
+          "id": "7fc37afa-654f-4e18-83a6-747d15d0d38e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagKeys=<string>&TagValues=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The identifier of the cluster which generated the requested snapshots.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The snapshot identifier of the snapshot about which to return information.",
+                  "key": "SnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                  "key": "SnapshotArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                  "key": "SnapshotType",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                  "key": "StartTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                  "key": "EndTime",
+                  "value": "<dateTime>"
+                },
+                {
+                  "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                  "key": "OwnerAccount",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                  "key": "TagKeys",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                  "key": "TagValues",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                  "key": "ClusterExists",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "<p/>",
+                  "key": "SortingEntities",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "<p/>",
+                  "key": "SortingEntities",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSnapshots"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSnapshots"
+            },
+            "description": "<p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters.</p> <p>If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "eccc848b-a1eb-4b25-a982-7c056e6d6f00",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the cluster which generated the requested snapshots.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The snapshot identifier of the snapshot about which to return information.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                      "key": "SnapshotType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                      "key": "ClusterExists",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "SortingEntities",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-eccc848b-a1eb-4b25-a982-7c056e6d6f00"
+            },
+            {
+              "id": "e1394b68-4f2b-4990-a289-2cace9fd74b0",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the cluster which generated the requested snapshots.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The snapshot identifier of the snapshot about which to return information.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                      "key": "SnapshotType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                      "key": "ClusterExists",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "SortingEntities",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-e1394b68-4f2b-4990-a289-2cace9fd74b0"
+            },
+            {
+              "id": "45c27a1d-32b0-4cc8-b508-ca665bd81617",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the cluster which generated the requested snapshots.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The snapshot identifier of the snapshot about which to return information.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                      "key": "SnapshotType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                      "key": "ClusterExists",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "SortingEntities",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-45c27a1d-32b0-4cc8-b508-ca665bd81617"
+            },
+            {
+              "id": "7ddedf02-a345-45a4-b5f8-c24fe7a3fe01",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the cluster which generated the requested snapshots.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The snapshot identifier of the snapshot about which to return information.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                      "key": "SnapshotType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                      "key": "ClusterExists",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "SortingEntities",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-7ddedf02-a345-45a4-b5f8-c24fe7a3fe01"
+            },
+            {
+              "id": "a80b52f0-811c-439b-b48b-78c41e8b2124",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SnapshotArn=<string>&SnapshotType=<string>&StartTime=<dateTime>&EndTime=<dateTime>&MaxRecords=<integer>&Marker=<string>&OwnerAccount=<string>&TagKeys=<string>&TagValues=<string>&ClusterExists=<boolean>&SortingEntities=[object Object]&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The identifier of the cluster which generated the requested snapshots.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The snapshot identifier of the snapshot about which to return information.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.",
+                      "key": "SnapshotArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>",
+                      "key": "SnapshotType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "StartTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>",
+                      "key": "EndTime",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "description": "<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.",
+                      "key": "OwnerAccount",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.",
+                      "key": "TagKeys",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.",
+                      "key": "TagValues",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>",
+                      "key": "ClusterExists",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "<p/>",
+                      "key": "SortingEntities",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-a80b52f0-811c-439b-b48b-78c41e8b2124"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:08.000Z",
+          "updatedAt": "2026-07-28T10:57:08.000Z",
+          "uid": "35240-7fc37afa-654f-4e18-83a6-747d15d0d38e"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Cluster Snapshots",
+          "id": "a21666d1-a5da-496e-b8eb-bc0e9714ad00",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeClusterSnapshots"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeClusterSnapshots"
+            },
+            "description": "<p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all snapshots that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all snapshots that have any combination of those values are returned. Only snapshots that you own are returned in the response; shared snapshots are not returned with the tag key and tag value request parameters.</p> <p>If both tag keys and values are omitted from the request, snapshots are returned regardless of whether they have tag keys or values associated with them.</p>"
+          },
+          "response": [
+            {
+              "id": "699133b8-b112-40c4-8b39-1ee2ace8b9d6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n  <Snapshot>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotCreateTime>(string)</SnapshotCreateTime>\n    <Status>(string)</Status>\n    <Port>(integer)</Port>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <MasterUsername>(string)</MasterUsername>\n    <ClusterVersion>(string)</ClusterVersion>\n    <EngineFullVersion>(string)</EngineFullVersion>\n    <SnapshotType>(string)</SnapshotType>\n    <NodeType>(string)</NodeType>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <DBName>(string)</DBName>\n    <VpcId>(string)</VpcId>\n    <Encrypted>(boolean)</Encrypted>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EncryptedWithHSM>(boolean)</EncryptedWithHSM>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <AccountWithRestoreAccess>\n      <AccountId>(string)</AccountId>\n      <AccountAlias>(string)</AccountAlias>\n    </AccountWithRestoreAccess>\n    <OwnerAccount>(string)</OwnerAccount>\n    <TotalBackupSizeInMegaBytes>(number)</TotalBackupSizeInMegaBytes>\n    <ActualIncrementalBackupSizeInMegaBytes>(number)</ActualIncrementalBackupSizeInMegaBytes>\n    <BackupProgressInMegaBytes>(number)</BackupProgressInMegaBytes>\n    <CurrentBackupRateInMegaBytesPerSecond>(number)</CurrentBackupRateInMegaBytesPerSecond>\n    <EstimatedSecondsToCompletion>(integer)</EstimatedSecondsToCompletion>\n    <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    <SourceRegion>(string)</SourceRegion>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <NodeType>(string)</NodeType>\n    <NodeType>(string)</NodeType>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ManualSnapshotRemainingDays>(integer)</ManualSnapshotRemainingDays>\n    <SnapshotRetentionStartTime>(string)</SnapshotRetentionStartTime>\n  </Snapshot>\n</element>",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-699133b8-b112-40c4-8b39-1ee2ace8b9d6"
+            },
+            {
+              "id": "2701cb4b-be0b-4dce-b2dc-be14f8ad19df",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-2701cb4b-be0b-4dce-b2dc-be14f8ad19df"
+            },
+            {
+              "id": "9c644ef0-d18d-43e0-9b0b-50836e31b531",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-9c644ef0-d18d-43e0-9b0b-50836e31b531"
+            },
+            {
+              "id": "63017e8c-8c27-4ccf-b0ba-e0e6d6bbf440",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-63017e8c-8c27-4ccf-b0ba-e0e6d6bbf440"
+            },
+            {
+              "id": "805ce89d-7680-4d20-9967-104b84c67f40",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SnapshotArn>(string)</SnapshotArn>\n  <SnapshotType>(string)</SnapshotType>\n  <StartTime>(string)</StartTime>\n  <EndTime>(string)</EndTime>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n  <OwnerAccount>(string)</OwnerAccount>\n  <TagKey>(string)</TagKey>\n  <TagKey>(string)</TagKey>\n  <TagValue>(string)</TagValue>\n  <TagValue>(string)</TagValue>\n  <ClusterExists>(boolean)</ClusterExists>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n  <SnapshotSortingEntity>\n    <Attribute>(string)</Attribute>\n    <SortOrder>(string)</SortOrder>\n  </SnapshotSortingEntity>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeClusterSnapshots&Version=2012-12-01#Action=DescribeClusterSnapshots",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeClusterSnapshots"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeClusterSnapshots"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:08.000Z",
+              "updatedAt": "2026-07-28T10:57:08.000Z",
+              "uid": "35240-805ce89d-7680-4d20-9967-104b84c67f40"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:08.000Z",
+          "updatedAt": "2026-07-28T10:57:08.000Z",
+          "uid": "35240-a21666d1-a5da-496e-b8eb-bc0e9714ad00"
+        }
+      ],
+      "id": "a561d5a3-6415-4abd-8999-7b10c2ea59a5",
+      "createdAt": "2026-07-28T10:57:08.000Z",
+      "updatedAt": "2026-07-28T10:57:08.000Z",
+      "uid": "35240-a561d5a3-6415-4abd-8999-7b10c2ea59a5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

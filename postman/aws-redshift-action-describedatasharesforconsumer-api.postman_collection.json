@@ -1,0 +1,657 @@
+{
+  "info": {
+    "_postman_id": "efadc6e0-ccef-4ca5-b425-a5cf1ad412bd",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeDataSharesForConsumer API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:57:12.000Z",
+    "updatedAt": "2026-07-28T10:57:12.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-efadc6e0-ccef-4ca5-b425-a5cf1ad412bd"
+  },
+  "item": [
+    {
+      "name": "#Action=DescribeDataSharesForConsumer",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Describe Data Shares for Consumer",
+          "id": "ced10a16-c993-425a-98cd-b51ad6e5ffc7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ConsumerArn=<string>&Status=ACTIVE&MaxRecords=<integer>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.",
+                  "key": "ConsumerArn",
+                  "value": "<string>"
+                },
+                {
+                  "description": "An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.",
+                  "key": "Status",
+                  "value": "ACTIVE"
+                },
+                {
+                  "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. ",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeDataSharesForConsumer"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeDataSharesForConsumer"
+            },
+            "description": "Returns a list of datashares where the account identifier being called is a consumer account identifier."
+          },
+          "response": [
+            {
+              "id": "0890b5fe-4072-495c-b330-bd2159dfbccc",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ConsumerArn=<string>&Status=ACTIVE&MaxRecords=<integer>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.",
+                      "key": "ConsumerArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.",
+                      "key": "Status",
+                      "value": "ACTIVE"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. ",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeDataSharesForConsumer"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeDataSharesForConsumer"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <DataShares>\n    <DataShareArn>(string)</DataShareArn>\n    <ProducerArn>(string)</ProducerArn>\n    <AllowPubliclyAccessibleConsumers>(boolean)</AllowPubliclyAccessibleConsumers>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <ManagedBy>(string)</ManagedBy>\n  </DataShares>\n  <DataShares>\n    <DataShareArn>(string)</DataShareArn>\n    <ProducerArn>(string)</ProducerArn>\n    <AllowPubliclyAccessibleConsumers>(boolean)</AllowPubliclyAccessibleConsumers>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <ManagedBy>(string)</ManagedBy>\n  </DataShares>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:13.000Z",
+              "updatedAt": "2026-07-28T10:57:13.000Z",
+              "uid": "35240-0890b5fe-4072-495c-b330-bd2159dfbccc"
+            },
+            {
+              "id": "2b82766e-4e1e-42e6-8b26-bd1ed083b1ba",
+              "name": "InvalidNamespaceFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ConsumerArn=<string>&Status=ACTIVE&MaxRecords=<integer>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.",
+                      "key": "ConsumerArn",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.",
+                      "key": "Status",
+                      "value": "ACTIVE"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. ",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForConsumer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. ",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeDataSharesForConsumer"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeDataSharesForConsumer"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:13.000Z",
+              "updatedAt": "2026-07-28T10:57:13.000Z",
+              "uid": "35240-2b82766e-4e1e-42e6-8b26-bd1ed083b1ba"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:13.000Z",
+          "updatedAt": "2026-07-28T10:57:13.000Z",
+          "uid": "35240-ced10a16-c993-425a-98cd-b51ad6e5ffc7"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Describe Data Shares for Consumer",
+          "id": "5235bc6c-d0ab-4558-9937-52936c3e1ced",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ConsumerArn>(string)</ConsumerArn>\n  <Status>(string)</Status>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "DescribeDataSharesForConsumer"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=DescribeDataSharesForConsumer"
+            },
+            "description": "Returns a list of datashares where the account identifier being called is a consumer account identifier."
+          },
+          "response": [
+            {
+              "id": "0ba3f5a8-6e8d-419d-8a19-2e70433d19f1",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ConsumerArn>(string)</ConsumerArn>\n  <Status>(string)</Status>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeDataSharesForConsumer"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeDataSharesForConsumer"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <DataShares>\n    <DataShareArn>(string)</DataShareArn>\n    <ProducerArn>(string)</ProducerArn>\n    <AllowPubliclyAccessibleConsumers>(boolean)</AllowPubliclyAccessibleConsumers>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <ManagedBy>(string)</ManagedBy>\n  </DataShares>\n  <DataShares>\n    <DataShareArn>(string)</DataShareArn>\n    <ProducerArn>(string)</ProducerArn>\n    <AllowPubliclyAccessibleConsumers>(boolean)</AllowPubliclyAccessibleConsumers>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <DataShareAssociations>\n      <ConsumerIdentifier>(string)</ConsumerIdentifier>\n      <Status>(string)</Status>\n      <ConsumerRegion>(string)</ConsumerRegion>\n      <CreatedDate>(string)</CreatedDate>\n      <StatusChangeDate>(string)</StatusChangeDate>\n    </DataShareAssociations>\n    <ManagedBy>(string)</ManagedBy>\n  </DataShares>\n  <Marker>(string)</Marker>\n</element>",
+              "createdAt": "2026-07-28T10:57:13.000Z",
+              "updatedAt": "2026-07-28T10:57:13.000Z",
+              "uid": "35240-0ba3f5a8-6e8d-419d-8a19-2e70433d19f1"
+            },
+            {
+              "id": "6bfb85fd-966d-4bbe-9158-c263f1f1be11",
+              "name": "InvalidNamespaceFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ConsumerArn>(string)</ConsumerArn>\n  <Status>(string)</Status>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=DescribeDataSharesForConsumer&Version=2012-12-01#Action=DescribeDataSharesForConsumer",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "DescribeDataSharesForConsumer"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=DescribeDataSharesForConsumer"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:57:13.000Z",
+              "updatedAt": "2026-07-28T10:57:13.000Z",
+              "uid": "35240-6bfb85fd-966d-4bbe-9158-c263f1f1be11"
+            }
+          ],
+          "createdAt": "2026-07-28T10:57:13.000Z",
+          "updatedAt": "2026-07-28T10:57:13.000Z",
+          "uid": "35240-5235bc6c-d0ab-4558-9937-52936c3e1ced"
+        }
+      ],
+      "id": "99060b0c-ee10-4f4a-88d7-597c511859c2",
+      "createdAt": "2026-07-28T10:57:13.000Z",
+      "updatedAt": "2026-07-28T10:57:13.000Z",
+      "uid": "35240-99060b0c-ee10-4f4a-88d7-597c511859c2"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

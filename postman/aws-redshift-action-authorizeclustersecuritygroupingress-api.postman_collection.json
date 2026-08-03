@@ -1,0 +1,1215 @@
+{
+  "info": {
+    "_postman_id": "5566b6fb-0e8b-46db-adcb-74074a7ad1d4",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=AuthorizeClusterSecurityGroupIngress API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:54:20.000Z",
+    "updatedAt": "2026-07-28T10:54:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5566b6fb-0e8b-46db-adcb-74074a7ad1d4"
+  },
+  "item": [
+    {
+      "name": "#Action=AuthorizeClusterSecurityGroupIngress",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Authorize Cluster Security Group Ingress",
+          "id": "3e51bd37-0b58-4029-bee5-40ae5610f609",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The name of the security group to which the ingress rule is added.",
+                  "key": "ClusterSecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The IP range to be added the Amazon Redshift security group.",
+                  "key": "CIDRIP",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                  "key": "EC2SecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                  "key": "EC2SecurityGroupOwnerId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "AuthorizeClusterSecurityGroupIngress"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+            },
+            "description": "<p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p> <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>. </p> <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "70c0161e-55bf-4db1-8ab6-77f8c9f8d4ac",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security group to which the ingress rule is added.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range to be added the Amazon Redshift security group.",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-70c0161e-55bf-4db1-8ab6-77f8c9f8d4ac"
+            },
+            {
+              "id": "a752834b-2fd4-4e66-9820-a9c15a6e542c",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security group to which the ingress rule is added.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range to be added the Amazon Redshift security group.",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-a752834b-2fd4-4e66-9820-a9c15a6e542c"
+            },
+            {
+              "id": "c169e847-773b-4943-86e7-81523cd23aad",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security group to which the ingress rule is added.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range to be added the Amazon Redshift security group.",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-c169e847-773b-4943-86e7-81523cd23aad"
+            },
+            {
+              "id": "ef1f5f1c-e4a6-4af7-8500-191937ae60d8",
+              "name": "AuthorizationAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security group to which the ingress rule is added.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range to be added the Amazon Redshift security group.",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-ef1f5f1c-e4a6-4af7-8500-191937ae60d8"
+            },
+            {
+              "id": "152557b4-27dd-445d-bcf3-938467de53af",
+              "name": "AuthorizationQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&CIDRIP=<string>&EC2SecurityGroupName=<string>&EC2SecurityGroupOwnerId=<string>&Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The name of the security group to which the ingress rule is added.",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The IP range to be added the Amazon Redshift security group.",
+                      "key": "CIDRIP",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The EC2 security group to be added the Amazon Redshift security group.",
+                      "key": "EC2SecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "<p>The Amazon Web Services account number of the owner of the security group specified by the <i>EC2SecurityGroupName</i> parameter. The Amazon Web Services Access Key ID is not an acceptable value. </p> <p>Example: <code>111122223333</code> </p>",
+                      "key": "EC2SecurityGroupOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-152557b4-27dd-445d-bcf3-938467de53af"
+            }
+          ],
+          "createdAt": "2026-07-28T10:54:21.000Z",
+          "updatedAt": "2026-07-28T10:54:21.000Z",
+          "uid": "35240-3e51bd37-0b58-4029-bee5-40ae5610f609"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Authorize Cluster Security Group Ingress",
+          "id": "6fa62ad8-e15c-485c-b4f0-3502f43bc4fe",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "AuthorizeClusterSecurityGroupIngress"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+            },
+            "description": "<p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p> <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same Amazon Web Services Region. </p> <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>. </p> <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "71968f0e-12b6-468a-9745-9190d9cb2e28",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-71968f0e-12b6-468a-9745-9190d9cb2e28"
+            },
+            {
+              "id": "03c80091-3eed-473c-96e1-210e2fdfac1a",
+              "name": "ClusterSecurityGroupNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-03c80091-3eed-473c-96e1-210e2fdfac1a"
+            },
+            {
+              "id": "929309ee-79ed-449b-b97a-2dc4d51f1718",
+              "name": "InvalidClusterSecurityGroupStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-929309ee-79ed-449b-b97a-2dc4d51f1718"
+            },
+            {
+              "id": "3cc30007-9561-4eb0-a156-befd2f2e9133",
+              "name": "AuthorizationAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-3cc30007-9561-4eb0-a156-befd2f2e9133"
+            },
+            {
+              "id": "37db8aba-33ef-4f49-9014-6a513b849ffa",
+              "name": "AuthorizationQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <CIDRIP>(string)</CIDRIP>\n  <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n  <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=AuthorizeClusterSecurityGroupIngress&Version=2012-12-01#Action=AuthorizeClusterSecurityGroupIngress",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "AuthorizeClusterSecurityGroupIngress"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=AuthorizeClusterSecurityGroupIngress"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:54:21.000Z",
+              "updatedAt": "2026-07-28T10:54:21.000Z",
+              "uid": "35240-37db8aba-33ef-4f49-9014-6a513b849ffa"
+            }
+          ],
+          "createdAt": "2026-07-28T10:54:21.000Z",
+          "updatedAt": "2026-07-28T10:54:21.000Z",
+          "uid": "35240-6fa62ad8-e15c-485c-b4f0-3502f43bc4fe"
+        }
+      ],
+      "id": "bba7a26b-20b4-48c8-be1c-c72eda07b196",
+      "createdAt": "2026-07-28T10:54:21.000Z",
+      "updatedAt": "2026-07-28T10:54:21.000Z",
+      "uid": "35240-bba7a26b-20b4-48c8-be1c-c72eda07b196"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

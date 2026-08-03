@@ -1,0 +1,763 @@
+{
+  "info": {
+    "_postman_id": "93415e16-db5b-4e1a-8c96-da27e499db61",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=PauseCluster API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:37.000Z",
+    "updatedAt": "2026-07-28T10:59:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-93415e16-db5b-4e1a-8c96-da27e499db61"
+  },
+  "item": [
+    {
+      "name": "#Action=PauseCluster",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Pause Cluster",
+          "id": "817b915e-c4de-4c0d-acc4-ec41919c322d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The identifier of the cluster to be paused.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "PauseCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=PauseCluster"
+            },
+            "description": "Pauses a cluster."
+          },
+          "response": [
+            {
+              "id": "d1d49164-83e2-4d45-bb10-915285d45151",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the cluster to be paused.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-d1d49164-83e2-4d45-bb10-915285d45151"
+            },
+            {
+              "id": "7780d5d4-8d73-44b1-9eff-b1a09c6f031b",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the cluster to be paused.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-7780d5d4-8d73-44b1-9eff-b1a09c6f031b"
+            },
+            {
+              "id": "1ae1281d-c019-41d0-974f-e63647e8d48f",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the cluster to be paused.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-1ae1281d-c019-41d0-974f-e63647e8d48f"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:38.000Z",
+          "updatedAt": "2026-07-28T10:59:38.000Z",
+          "uid": "35240-817b915e-c4de-4c0d-acc4-ec41919c322d"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Pause Cluster",
+          "id": "40f0c170-b1ad-43bb-a822-4ee5ce41de19",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "PauseCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=PauseCluster"
+            },
+            "description": "Pauses a cluster."
+          },
+          "response": [
+            {
+              "id": "5dc9e38e-fe02-4a16-b2e7-e49bac601e3a",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-5dc9e38e-fe02-4a16-b2e7-e49bac601e3a"
+            },
+            {
+              "id": "1a96262c-2b4a-400e-ab34-d5a484299d16",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-1a96262c-2b4a-400e-ab34-d5a484299d16"
+            },
+            {
+              "id": "b5e198c1-dddc-4162-ad1c-43a6609bea04",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=PauseCluster&Version=2012-12-01#Action=PauseCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "PauseCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=PauseCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:38.000Z",
+              "updatedAt": "2026-07-28T10:59:38.000Z",
+              "uid": "35240-b5e198c1-dddc-4162-ad1c-43a6609bea04"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:38.000Z",
+          "updatedAt": "2026-07-28T10:59:38.000Z",
+          "uid": "35240-40f0c170-b1ad-43bb-a822-4ee5ce41de19"
+        }
+      ],
+      "id": "f74a8439-f223-4417-8ea8-cbf8b78fb52e",
+      "createdAt": "2026-07-28T10:59:38.000Z",
+      "updatedAt": "2026-07-28T10:59:38.000Z",
+      "uid": "35240-f74a8439-f223-4417-8ea8-cbf8b78fb52e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

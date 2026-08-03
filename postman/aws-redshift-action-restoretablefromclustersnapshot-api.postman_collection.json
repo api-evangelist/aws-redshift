@@ -1,0 +1,2028 @@
+{
+  "info": {
+    "_postman_id": "186546d0-eafd-4c09-bc43-2e9a306b650d",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RestoreTableFromClusterSnapshot API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:49.000Z",
+    "updatedAt": "2026-07-28T10:59:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-186546d0-eafd-4c09-bc43-2e9a306b650d"
+  },
+  "item": [
+    {
+      "name": "#Action=RestoreTableFromClusterSnapshot",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Restore Table from Cluster Snapshot",
+          "id": "23c162ea-291f-4e34-9a6f-877377c58707",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                  "key": "SnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The name of the source database that contains the table to restore from.",
+                  "key": "SourceDatabaseName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                  "key": "SourceSchemaName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The name of the source table to restore from.",
+                  "key": "SourceTableName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The name of the database to restore the table to.",
+                  "key": "TargetDatabaseName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The name of the schema to restore the table to.",
+                  "key": "TargetSchemaName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) The name of the table to create as a result of the current request.",
+                  "key": "NewTableName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                  "key": "EnableCaseSensitiveIdentifier",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RestoreTableFromClusterSnapshot"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RestoreTableFromClusterSnapshot"
+            },
+            "description": "<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved\">interleaved sort keys</a>.</p>"
+          },
+          "response": [
+            {
+              "id": "3c5d93e4-7b22-4edd-9a8c-66a72e708901",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n</element>",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-3c5d93e4-7b22-4edd-9a8c-66a72e708901"
+            },
+            {
+              "id": "ed224a4c-8e3e-4cd3-bc91-6912758844cf",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-ed224a4c-8e3e-4cd3-bc91-6912758844cf"
+            },
+            {
+              "id": "30c9c0a2-d7da-4402-8dc2-e7e2de91ec57",
+              "name": "InProgressTableRestoreQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-30c9c0a2-d7da-4402-8dc2-e7e2de91ec57"
+            },
+            {
+              "id": "bfb6d812-0d4c-482c-8c9e-5cc879edf587",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-bfb6d812-0d4c-482c-8c9e-5cc879edf587"
+            },
+            {
+              "id": "6bf634fa-9458-46f9-aec9-db448fa323e8",
+              "name": "InvalidTableRestoreArgumentFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-6bf634fa-9458-46f9-aec9-db448fa323e8"
+            },
+            {
+              "id": "2e8ab145-751e-4733-8fe1-d4704277eb3f",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-2e8ab145-751e-4733-8fe1-d4704277eb3f"
+            },
+            {
+              "id": "31877d01-5e05-4c23-9cff-bc2dbab0dd83",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-31877d01-5e05-4c23-9cff-bc2dbab0dd83"
+            },
+            {
+              "id": "6d95757c-26e0-4a19-b90b-b4b5b2c3b756",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&SnapshotIdentifier=<string>&SourceDatabaseName=<string>&SourceSchemaName=<string>&SourceTableName=<string>&TargetDatabaseName=<string>&TargetSchemaName=<string>&NewTableName=<string>&EnableCaseSensitiveIdentifier=<boolean>&Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The identifier of the Amazon Redshift cluster to restore the table to.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source database that contains the table to restore from.",
+                      "key": "SourceDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.",
+                      "key": "SourceSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the source table to restore from.",
+                      "key": "SourceTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the database to restore the table to.",
+                      "key": "TargetDatabaseName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The name of the schema to restore the table to.",
+                      "key": "TargetSchemaName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) The name of the table to create as a result of the current request.",
+                      "key": "NewTableName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.",
+                      "key": "EnableCaseSensitiveIdentifier",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-6d95757c-26e0-4a19-b90b-b4b5b2c3b756"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:50.000Z",
+          "updatedAt": "2026-07-28T10:59:50.000Z",
+          "uid": "35240-23c162ea-291f-4e34-9a6f-877377c58707"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Restore Table from Cluster Snapshot",
+          "id": "61854c9f-e4ba-4bc6-a1c0-c918f9cfef4b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "RestoreTableFromClusterSnapshot"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=RestoreTableFromClusterSnapshot"
+            },
+            "description": "<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved\">interleaved sort keys</a>.</p>"
+          },
+          "response": [
+            {
+              "id": "585a4845-f8ad-4228-9894-0997b874eeb1",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <TableRestoreStatus>\n    <TableRestoreRequestId>(string)</TableRestoreRequestId>\n    <Status>(string)</Status>\n    <Message>(string)</Message>\n    <RequestTime>(string)</RequestTime>\n    <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n    <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <SnapshotIdentifier>(string)</SnapshotIdentifier>\n    <SourceDatabaseName>(string)</SourceDatabaseName>\n    <SourceSchemaName>(string)</SourceSchemaName>\n    <SourceTableName>(string)</SourceTableName>\n    <TargetDatabaseName>(string)</TargetDatabaseName>\n    <TargetSchemaName>(string)</TargetSchemaName>\n    <NewTableName>(string)</NewTableName>\n  </TableRestoreStatus>\n</element>",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-585a4845-f8ad-4228-9894-0997b874eeb1"
+            },
+            {
+              "id": "6fec93ae-e22a-4aa2-a069-fe0a34a95854",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-6fec93ae-e22a-4aa2-a069-fe0a34a95854"
+            },
+            {
+              "id": "7cad3f3b-4ae3-451a-818d-dec8c535f653",
+              "name": "InProgressTableRestoreQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-7cad3f3b-4ae3-451a-818d-dec8c535f653"
+            },
+            {
+              "id": "6c31e6ac-c441-4283-871b-b6ec3ae29e1d",
+              "name": "InvalidClusterSnapshotStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-6c31e6ac-c441-4283-871b-b6ec3ae29e1d"
+            },
+            {
+              "id": "96141f3c-4385-4a64-abf1-ff7716749ccd",
+              "name": "InvalidTableRestoreArgumentFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-96141f3c-4385-4a64-abf1-ff7716749ccd"
+            },
+            {
+              "id": "d97231de-1e80-493a-a840-1cb9e0fe2b6d",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-d97231de-1e80-493a-a840-1cb9e0fe2b6d"
+            },
+            {
+              "id": "263390fd-c253-4abc-a5c9-1993e41a5b2a",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-263390fd-c253-4abc-a5c9-1993e41a5b2a"
+            },
+            {
+              "id": "78c8d979-948f-42e4-a151-736104ade6d4",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <SourceDatabaseName>(string)</SourceDatabaseName>\n  <SourceSchemaName>(string)</SourceSchemaName>\n  <SourceTableName>(string)</SourceTableName>\n  <TargetDatabaseName>(string)</TargetDatabaseName>\n  <TargetSchemaName>(string)</TargetSchemaName>\n  <NewTableName>(string)</NewTableName>\n  <EnableCaseSensitiveIdentifier>(boolean)</EnableCaseSensitiveIdentifier>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=RestoreTableFromClusterSnapshot&Version=2012-12-01#Action=RestoreTableFromClusterSnapshot",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "RestoreTableFromClusterSnapshot"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=RestoreTableFromClusterSnapshot"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:50.000Z",
+              "updatedAt": "2026-07-28T10:59:50.000Z",
+              "uid": "35240-78c8d979-948f-42e4-a151-736104ade6d4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:50.000Z",
+          "updatedAt": "2026-07-28T10:59:50.000Z",
+          "uid": "35240-61854c9f-e4ba-4bc6-a1c0-c918f9cfef4b"
+        }
+      ],
+      "id": "194a3ffc-0912-4e5f-a291-314aae03d8c3",
+      "createdAt": "2026-07-28T10:59:50.000Z",
+      "updatedAt": "2026-07-28T10:59:50.000Z",
+      "uid": "35240-194a3ffc-0912-4e5f-a291-314aae03d8c3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,2149 @@
+{
+  "info": {
+    "_postman_id": "b8247268-13af-4d6b-be5b-b556bc839cc2",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=GetReservedNodeExchangeConfigurationOptions API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:58:52.000Z",
+    "updatedAt": "2026-07-28T10:58:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b8247268-13af-4d6b-be5b-b556bc839cc2"
+  },
+  "item": [
+    {
+      "name": "#Action=GetReservedNodeExchangeConfigurationOptions",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Get Reserved Node Exchange Configuration Options",
+          "id": "39f3bd26-4ed2-432e-922c-1cc65af07aca",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                  "key": "ActionType",
+                  "value": "resize-cluster"
+                },
+                {
+                  "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                  "key": "SnapshotIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                  "key": "MaxRecords",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "GetReservedNodeExchangeConfigurationOptions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+            },
+            "description": "Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type."
+          },
+          "response": [
+            {
+              "id": "7d041e14-fbab-4bd4-89e6-a3e0cbec4189",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ReservedNodeConfigurationOption>\n    <SourceReservedNode>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <StartTime>(string)</StartTime>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <NodeCount>(integer)</NodeCount>\n      <State>(string)</State>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </SourceReservedNode>\n    <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    <TargetReservedNodeOffering>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </TargetReservedNodeOffering>\n  </ReservedNodeConfigurationOption>\n  <ReservedNodeConfigurationOption>\n    <SourceReservedNode>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <StartTime>(string)</StartTime>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <NodeCount>(integer)</NodeCount>\n      <State>(string)</State>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </SourceReservedNode>\n    <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    <TargetReservedNodeOffering>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </TargetReservedNodeOffering>\n  </ReservedNodeConfigurationOption>\n</element>",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-7d041e14-fbab-4bd4-89e6-a3e0cbec4189"
+            },
+            {
+              "id": "8d1b7a78-af5a-4ed7-be63-2a1568e9b39d",
+              "name": "ReservedNodeNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-8d1b7a78-af5a-4ed7-be63-2a1568e9b39d"
+            },
+            {
+              "id": "078d9a4e-4489-4efa-94a1-4c94108ac11a",
+              "name": "InvalidReservedNodeStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-078d9a4e-4489-4efa-94a1-4c94108ac11a"
+            },
+            {
+              "id": "db5e9604-67fa-4676-81fe-6a374920d48d",
+              "name": "ReservedNodeAlreadyMigratedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-db5e9604-67fa-4676-81fe-6a374920d48d"
+            },
+            {
+              "id": "51801e18-94a7-4062-979f-560076ef8535",
+              "name": "ReservedNodeOfferingNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-51801e18-94a7-4062-979f-560076ef8535"
+            },
+            {
+              "id": "e6cc72f9-c25b-450d-b1f1-bab13314fe1b",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-e6cc72f9-c25b-450d-b1f1-bab13314fe1b"
+            },
+            {
+              "id": "28c88c7c-7fc9-476f-bdf0-83fd8e1a9e11",
+              "name": "DependentServiceUnavailableFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-28c88c7c-7fc9-476f-bdf0-83fd8e1a9e11"
+            },
+            {
+              "id": "3b9e372a-b655-4835-94a7-60f580c7c440",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-3b9e372a-b655-4835-94a7-60f580c7c440"
+            },
+            {
+              "id": "a9698d67-5207-4326-8273-39511a6432d9",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ActionType=resize-cluster&ClusterIdentifier=<string>&SnapshotIdentifier=<string>&MaxRecords=<integer>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.",
+                      "key": "ActionType",
+                      "value": "resize-cluster"
+                    },
+                    {
+                      "description": "The identifier for the cluster that is the source for a reserved-node exchange.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier for the snapshot that is the source for the reserved-node exchange.",
+                      "key": "SnapshotIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>Marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.",
+                      "key": "MaxRecords",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-a9698d67-5207-4326-8273-39511a6432d9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:52.000Z",
+          "updatedAt": "2026-07-28T10:58:52.000Z",
+          "uid": "35240-39f3bd26-4ed2-432e-922c-1cc65af07aca"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Get Reserved Node Exchange Configuration Options",
+          "id": "2a1351f6-ffaa-4501-88ad-a8a8a93cee82",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxRecords",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "Marker",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "GetReservedNodeExchangeConfigurationOptions"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+            },
+            "description": "Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type."
+          },
+          "response": [
+            {
+              "id": "93e561db-22eb-4ce5-9497-9bc2900e15a3",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Marker>(string)</Marker>\n  <ReservedNodeConfigurationOption>\n    <SourceReservedNode>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <StartTime>(string)</StartTime>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <NodeCount>(integer)</NodeCount>\n      <State>(string)</State>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </SourceReservedNode>\n    <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    <TargetReservedNodeOffering>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </TargetReservedNodeOffering>\n  </ReservedNodeConfigurationOption>\n  <ReservedNodeConfigurationOption>\n    <SourceReservedNode>\n      <ReservedNodeId>(string)</ReservedNodeId>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <StartTime>(string)</StartTime>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <NodeCount>(integer)</NodeCount>\n      <State>(string)</State>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </SourceReservedNode>\n    <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    <TargetReservedNodeOffering>\n      <ReservedNodeOfferingId>(string)</ReservedNodeOfferingId>\n      <NodeType>(string)</NodeType>\n      <Duration>(integer)</Duration>\n      <FixedPrice>(number)</FixedPrice>\n      <UsagePrice>(number)</UsagePrice>\n      <CurrencyCode>(string)</CurrencyCode>\n      <OfferingType>(string)</OfferingType>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <RecurringCharge>\n        <RecurringChargeAmount>(number)</RecurringChargeAmount>\n        <RecurringChargeFrequency>(string)</RecurringChargeFrequency>\n      </RecurringCharge>\n      <ReservedNodeOfferingType>(string)</ReservedNodeOfferingType>\n    </TargetReservedNodeOffering>\n  </ReservedNodeConfigurationOption>\n</element>",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-93e561db-22eb-4ce5-9497-9bc2900e15a3"
+            },
+            {
+              "id": "3d5eaab9-660c-4e96-9970-85a52673a44b",
+              "name": "ReservedNodeNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-3d5eaab9-660c-4e96-9970-85a52673a44b"
+            },
+            {
+              "id": "41f3ae3f-7192-444b-85e4-18ee7940f77d",
+              "name": "InvalidReservedNodeStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-41f3ae3f-7192-444b-85e4-18ee7940f77d"
+            },
+            {
+              "id": "30163599-47dc-4fab-b7a9-accc43e4980a",
+              "name": "ReservedNodeAlreadyMigratedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-30163599-47dc-4fab-b7a9-accc43e4980a"
+            },
+            {
+              "id": "d498ca2c-f066-4509-9ae3-df0cf508e14f",
+              "name": "ReservedNodeOfferingNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-d498ca2c-f066-4509-9ae3-df0cf508e14f"
+            },
+            {
+              "id": "15be13d1-ccaa-41d9-b700-ec05a792a450",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-15be13d1-ccaa-41d9-b700-ec05a792a450"
+            },
+            {
+              "id": "b9c2e0ec-10de-4cb2-926a-f4858316989a",
+              "name": "DependentServiceUnavailableFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-b9c2e0ec-10de-4cb2-926a-f4858316989a"
+            },
+            {
+              "id": "c72d9667-9aaa-4991-bc71-06a2425df212",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-c72d9667-9aaa-4991-bc71-06a2425df212"
+            },
+            {
+              "id": "0d60f7fb-dec3-421f-98fd-3cca8d994fec",
+              "name": "ClusterSnapshotNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ActionType>(string)</ActionType>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <SnapshotIdentifier>(string)</SnapshotIdentifier>\n  <MaxRecords>(integer)</MaxRecords>\n  <Marker>(string)</Marker>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?MaxRecords=<string>&Marker=<string>&Action=GetReservedNodeExchangeConfigurationOptions&Version=2012-12-01#Action=GetReservedNodeExchangeConfigurationOptions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxRecords",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "Marker",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "GetReservedNodeExchangeConfigurationOptions"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=GetReservedNodeExchangeConfigurationOptions"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:58:52.000Z",
+              "updatedAt": "2026-07-28T10:58:52.000Z",
+              "uid": "35240-0d60f7fb-dec3-421f-98fd-3cca8d994fec"
+            }
+          ],
+          "createdAt": "2026-07-28T10:58:52.000Z",
+          "updatedAt": "2026-07-28T10:58:52.000Z",
+          "uid": "35240-2a1351f6-ffaa-4501-88ad-a8a8a93cee82"
+        }
+      ],
+      "id": "227b74c8-efbb-431a-998f-80c044359b1f",
+      "createdAt": "2026-07-28T10:58:52.000Z",
+      "updatedAt": "2026-07-28T10:58:52.000Z",
+      "uid": "35240-227b74c8-efbb-431a-998f-80c044359b1f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

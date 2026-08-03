@@ -1,0 +1,3626 @@
+{
+  "info": {
+    "_postman_id": "c824fcb4-3482-45d0-bc6d-1cf6a3701ca1",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ResizeCluster API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:59:46.000Z",
+    "updatedAt": "2026-07-28T10:59:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c824fcb4-3482-45d0-bc6d-1cf6a3701ca1"
+  },
+  "item": [
+    {
+      "name": "#Action=ResizeCluster",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Resize Cluster",
+          "id": "71606dc5-6668-443a-8526-91720bf089f2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) The unique identifier for the cluster to resize.",
+                  "key": "ClusterIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The new cluster type for the specified cluster.",
+                  "key": "ClusterType",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                  "key": "NodeType",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                  "key": "NumberOfNodes",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                  "key": "Classic",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "The identifier of the reserved node.",
+                  "key": "ReservedNodeId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The identifier of the target reserved node offering.",
+                  "key": "TargetReservedNodeOfferingId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ResizeCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ResizeCluster"
+            },
+            "description": "<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
+          },
+          "response": [
+            {
+              "id": "0b0bfc2c-8940-4735-b6e3-60b30ea67c53",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-0b0bfc2c-8940-4735-b6e3-60b30ea67c53"
+            },
+            {
+              "id": "5d6ac6cc-b1c3-41f5-920a-c810d9672792",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-5d6ac6cc-b1c3-41f5-920a-c810d9672792"
+            },
+            {
+              "id": "a86e6354-22b1-4249-baff-a3e96b2e8c50",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-a86e6354-22b1-4249-baff-a3e96b2e8c50"
+            },
+            {
+              "id": "94035caa-cba3-41b1-bb40-4621977e6620",
+              "name": "NumberOfNodesQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-94035caa-cba3-41b1-bb40-4621977e6620"
+            },
+            {
+              "id": "e2a9f5c7-a842-4726-930a-47b299d5675c",
+              "name": "NumberOfNodesPerClusterLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-e2a9f5c7-a842-4726-930a-47b299d5675c"
+            },
+            {
+              "id": "bf30332e-6591-445d-a1d8-ed5935dc9d99",
+              "name": "InsufficientClusterCapacityFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-bf30332e-6591-445d-a1d8-ed5935dc9d99"
+            },
+            {
+              "id": "7b2018ca-89d4-4c8a-8a35-d9732f0bc69c",
+              "name": "UnsupportedOptionFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-7b2018ca-89d4-4c8a-8a35-d9732f0bc69c"
+            },
+            {
+              "id": "41b1b562-0808-4694-8f28-59a850bd1afb",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-41b1b562-0808-4694-8f28-59a850bd1afb"
+            },
+            {
+              "id": "2c1efc32-c301-4e31-996e-7d0a5a8b1669",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-2c1efc32-c301-4e31-996e-7d0a5a8b1669"
+            },
+            {
+              "id": "72bb41f7-d927-4f13-822a-bd9a6371a223",
+              "name": "LimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-72bb41f7-d927-4f13-822a-bd9a6371a223"
+            },
+            {
+              "id": "be36c9ef-b9b3-4b63-8a46-031e5720c029",
+              "name": "ReservedNodeNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-be36c9ef-b9b3-4b63-8a46-031e5720c029"
+            },
+            {
+              "id": "b2b1abbe-b3f5-4c27-8727-556028c48423",
+              "name": "InvalidReservedNodeStateFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-b2b1abbe-b3f5-4c27-8727-556028c48423"
+            },
+            {
+              "id": "6edbd852-35ba-4031-ae5a-2b06e05485a7",
+              "name": "ReservedNodeAlreadyMigratedFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-6edbd852-35ba-4031-ae5a-2b06e05485a7"
+            },
+            {
+              "id": "60ab39b6-f0c4-4212-8e5e-eeb637e3db98",
+              "name": "ReservedNodeOfferingNotFoundFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-60ab39b6-f0c4-4212-8e5e-eeb637e3db98"
+            },
+            {
+              "id": "6d9dcf9c-efc3-44ed-8d38-faa8b1c7ca3e",
+              "name": "DependentServiceUnavailableFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-6d9dcf9c-efc3-44ed-8d38-faa8b1c7ca3e"
+            },
+            {
+              "id": "b14c6a8d-ad4e-4c54-8d5b-f8b0aa556e92",
+              "name": "ReservedNodeAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterIdentifier=<string>&ClusterType=<string>&NodeType=<string>&NumberOfNodes=<integer>&Classic=<boolean>&ReservedNodeId=<string>&TargetReservedNodeOfferingId=<string>&Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The unique identifier for the cluster to resize.",
+                      "key": "ClusterIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new cluster type for the specified cluster.",
+                      "key": "ClusterType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.",
+                      "key": "NodeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.",
+                      "key": "NumberOfNodes",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. ",
+                      "key": "Classic",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The identifier of the reserved node.",
+                      "key": "ReservedNodeId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The identifier of the target reserved node offering.",
+                      "key": "TargetReservedNodeOfferingId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-b14c6a8d-ad4e-4c54-8d5b-f8b0aa556e92"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:46.000Z",
+          "updatedAt": "2026-07-28T10:59:46.000Z",
+          "uid": "35240-71606dc5-6668-443a-8526-91720bf089f2"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Resize Cluster",
+          "id": "071c1a73-45ae-44bf-bf08-cd0938d341f4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "ResizeCluster"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=ResizeCluster"
+            },
+            "description": "<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
+          },
+          "response": [
+            {
+              "id": "87f1e473-7275-41c5-b65b-75cbf415524c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <Cluster>\n    <ClusterIdentifier>(string)</ClusterIdentifier>\n    <NodeType>(string)</NodeType>\n    <ClusterStatus>(string)</ClusterStatus>\n    <ClusterAvailabilityStatus>(string)</ClusterAvailabilityStatus>\n    <ModifyStatus>(string)</ModifyStatus>\n    <MasterUsername>(string)</MasterUsername>\n    <DBName>(string)</DBName>\n    <Endpoint>\n      <Address>(string)</Address>\n      <Port>(integer)</Port>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n      <VpcEndpoint>\n        <VpcEndpointId>(string)</VpcEndpointId>\n        <VpcId>(string)</VpcId>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n        <NetworkInterface>\n          <NetworkInterfaceId>(string)</NetworkInterfaceId>\n          <SubnetId>(string)</SubnetId>\n          <PrivateIpAddress>(string)</PrivateIpAddress>\n          <AvailabilityZone>(string)</AvailabilityZone>\n        </NetworkInterface>\n      </VpcEndpoint>\n    </Endpoint>\n    <ClusterCreateTime>(string)</ClusterCreateTime>\n    <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n    <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <ClusterSecurityGroup>\n      <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n      <Status>(string)</Status>\n    </ClusterSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <VpcSecurityGroup>\n      <VpcSecurityGroupId>(string)</VpcSecurityGroupId>\n      <Status>(string)</Status>\n    </VpcSecurityGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterParameterGroup>\n      <ParameterGroupName>(string)</ParameterGroupName>\n      <ParameterApplyStatus>(string)</ParameterApplyStatus>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n      <ClusterParameterStatusList>\n        <ParameterName>(string)</ParameterName>\n        <ParameterApplyStatus>(string)</ParameterApplyStatus>\n        <ParameterApplyErrorDescription>(string)</ParameterApplyErrorDescription>\n      </ClusterParameterStatusList>\n    </ClusterParameterGroup>\n    <ClusterSubnetGroupName>(string)</ClusterSubnetGroupName>\n    <VpcId>(string)</VpcId>\n    <AvailabilityZone>(string)</AvailabilityZone>\n    <PreferredMaintenanceWindow>(string)</PreferredMaintenanceWindow>\n    <PendingModifiedValues>\n      <MasterUserPassword>(string)</MasterUserPassword>\n      <NodeType>(string)</NodeType>\n      <NumberOfNodes>(integer)</NumberOfNodes>\n      <ClusterType>(string)</ClusterType>\n      <ClusterVersion>(string)</ClusterVersion>\n      <AutomatedSnapshotRetentionPeriod>(integer)</AutomatedSnapshotRetentionPeriod>\n      <ClusterIdentifier>(string)</ClusterIdentifier>\n      <PubliclyAccessible>(boolean)</PubliclyAccessible>\n      <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n      <MaintenanceTrackName>(string)</MaintenanceTrackName>\n      <EncryptionType>(string)</EncryptionType>\n    </PendingModifiedValues>\n    <ClusterVersion>(string)</ClusterVersion>\n    <AllowVersionUpgrade>(boolean)</AllowVersionUpgrade>\n    <NumberOfNodes>(integer)</NumberOfNodes>\n    <PubliclyAccessible>(boolean)</PubliclyAccessible>\n    <Encrypted>(boolean)</Encrypted>\n    <RestoreStatus>\n      <Status>(string)</Status>\n      <CurrentRestoreRateInMegaBytesPerSecond>(number)</CurrentRestoreRateInMegaBytesPerSecond>\n      <SnapshotSizeInMegaBytes>(integer)</SnapshotSizeInMegaBytes>\n      <ProgressInMegaBytes>(integer)</ProgressInMegaBytes>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n    </RestoreStatus>\n    <DataTransferProgress>\n      <Status>(string)</Status>\n      <CurrentRateInMegaBytesPerSecond>(number)</CurrentRateInMegaBytesPerSecond>\n      <TotalDataInMegaBytes>(integer)</TotalDataInMegaBytes>\n      <DataTransferredInMegaBytes>(integer)</DataTransferredInMegaBytes>\n      <EstimatedTimeToCompletionInSeconds>(integer)</EstimatedTimeToCompletionInSeconds>\n      <ElapsedTimeInSeconds>(integer)</ElapsedTimeInSeconds>\n    </DataTransferProgress>\n    <HsmStatus>\n      <HsmClientCertificateIdentifier>(string)</HsmClientCertificateIdentifier>\n      <HsmConfigurationIdentifier>(string)</HsmConfigurationIdentifier>\n      <Status>(string)</Status>\n    </HsmStatus>\n    <ClusterSnapshotCopyStatus>\n      <DestinationRegion>(string)</DestinationRegion>\n      <RetentionPeriod>(integer)</RetentionPeriod>\n      <ManualSnapshotRetentionPeriod>(integer)</ManualSnapshotRetentionPeriod>\n      <SnapshotCopyGrantName>(string)</SnapshotCopyGrantName>\n    </ClusterSnapshotCopyStatus>\n    <ClusterPublicKey>(string)</ClusterPublicKey>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ClusterNodes>\n      <NodeRole>(string)</NodeRole>\n      <PrivateIPAddress>(string)</PrivateIPAddress>\n      <PublicIPAddress>(string)</PublicIPAddress>\n    </ClusterNodes>\n    <ElasticIpStatus>\n      <ElasticIp>(string)</ElasticIp>\n      <Status>(string)</Status>\n    </ElasticIpStatus>\n    <ClusterRevisionNumber>(string)</ClusterRevisionNumber>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <KmsKeyId>(string)</KmsKeyId>\n    <EnhancedVpcRouting>(boolean)</EnhancedVpcRouting>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <ClusterIamRole>\n      <IamRoleArn>(string)</IamRoleArn>\n      <ApplyStatus>(string)</ApplyStatus>\n    </ClusterIamRole>\n    <PendingActions>(string)</PendingActions>\n    <PendingActions>(string)</PendingActions>\n    <MaintenanceTrackName>(string)</MaintenanceTrackName>\n    <ElasticResizeNumberOfNodeOptions>(string)</ElasticResizeNumberOfNodeOptions>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <DeferredMaintenanceWindow>\n      <DeferMaintenanceIdentifier>(string)</DeferMaintenanceIdentifier>\n      <DeferMaintenanceStartTime>(string)</DeferMaintenanceStartTime>\n      <DeferMaintenanceEndTime>(string)</DeferMaintenanceEndTime>\n    </DeferredMaintenanceWindow>\n    <SnapshotScheduleIdentifier>(string)</SnapshotScheduleIdentifier>\n    <SnapshotScheduleState>(string)</SnapshotScheduleState>\n    <ExpectedNextSnapshotScheduleTime>(string)</ExpectedNextSnapshotScheduleTime>\n    <ExpectedNextSnapshotScheduleTimeStatus>(string)</ExpectedNextSnapshotScheduleTimeStatus>\n    <NextMaintenanceWindowStartTime>(string)</NextMaintenanceWindowStartTime>\n    <ResizeInfo>\n      <ResizeType>(string)</ResizeType>\n      <AllowCancelResize>(boolean)</AllowCancelResize>\n    </ResizeInfo>\n    <AvailabilityZoneRelocationStatus>(string)</AvailabilityZoneRelocationStatus>\n    <ClusterNamespaceArn>(string)</ClusterNamespaceArn>\n    <TotalStorageCapacityInMegaBytes>(integer)</TotalStorageCapacityInMegaBytes>\n    <AquaConfiguration>\n      <AquaStatus>(string)</AquaStatus>\n      <AquaConfigurationStatus>(string)</AquaConfigurationStatus>\n    </AquaConfiguration>\n    <DefaultIamRoleArn>(string)</DefaultIamRoleArn>\n    <ReservedNodeExchangeStatus>\n      <ReservedNodeExchangeRequestId>(string)</ReservedNodeExchangeRequestId>\n      <Status>(string)</Status>\n      <RequestTime>(string)</RequestTime>\n      <SourceReservedNodeId>(string)</SourceReservedNodeId>\n      <SourceReservedNodeType>(string)</SourceReservedNodeType>\n      <SourceReservedNodeCount>(integer)</SourceReservedNodeCount>\n      <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n      <TargetReservedNodeType>(string)</TargetReservedNodeType>\n      <TargetReservedNodeCount>(integer)</TargetReservedNodeCount>\n    </ReservedNodeExchangeStatus>\n  </Cluster>\n</element>",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-87f1e473-7275-41c5-b65b-75cbf415524c"
+            },
+            {
+              "id": "8efcebb3-7cff-43b0-886b-4a1c979da3d8",
+              "name": "InvalidClusterStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-8efcebb3-7cff-43b0-886b-4a1c979da3d8"
+            },
+            {
+              "id": "5602142e-6ce3-4633-bc06-cbecb94fef78",
+              "name": "ClusterNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-5602142e-6ce3-4633-bc06-cbecb94fef78"
+            },
+            {
+              "id": "30ea7352-b82f-4375-9880-101fe9d54de1",
+              "name": "NumberOfNodesQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-30ea7352-b82f-4375-9880-101fe9d54de1"
+            },
+            {
+              "id": "688e5a04-5638-4d36-912d-6b7cbea8a1ff",
+              "name": "NumberOfNodesPerClusterLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-688e5a04-5638-4d36-912d-6b7cbea8a1ff"
+            },
+            {
+              "id": "c2ee91a5-c830-460f-9edb-87fb04d8f456",
+              "name": "InsufficientClusterCapacityFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-c2ee91a5-c830-460f-9edb-87fb04d8f456"
+            },
+            {
+              "id": "d51108e3-a5f0-4726-9783-60aade990d0c",
+              "name": "UnsupportedOptionFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-d51108e3-a5f0-4726-9783-60aade990d0c"
+            },
+            {
+              "id": "e378ae3d-0669-4f65-95aa-73d1ea216316",
+              "name": "UnsupportedOperationFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-e378ae3d-0669-4f65-95aa-73d1ea216316"
+            },
+            {
+              "id": "3335c4b5-ae81-46db-9166-c420d09e6865",
+              "name": "UnauthorizedOperation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-3335c4b5-ae81-46db-9166-c420d09e6865"
+            },
+            {
+              "id": "0e942989-c273-4ac1-8621-d461d8b166c2",
+              "name": "LimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-0e942989-c273-4ac1-8621-d461d8b166c2"
+            },
+            {
+              "id": "ceecb1f9-f4ac-4b61-bb3f-5ae3c188cb84",
+              "name": "ReservedNodeNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-ceecb1f9-f4ac-4b61-bb3f-5ae3c188cb84"
+            },
+            {
+              "id": "6a8069fc-6243-4d75-b1e8-abb70b6cacc2",
+              "name": "InvalidReservedNodeStateFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-6a8069fc-6243-4d75-b1e8-abb70b6cacc2"
+            },
+            {
+              "id": "640f7e8c-d999-4a7b-a8e0-b11632f90913",
+              "name": "ReservedNodeAlreadyMigratedFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-640f7e8c-d999-4a7b-a8e0-b11632f90913"
+            },
+            {
+              "id": "92cb0163-a17d-4549-ba5f-b87fb13d5940",
+              "name": "ReservedNodeOfferingNotFoundFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-92cb0163-a17d-4549-ba5f-b87fb13d5940"
+            },
+            {
+              "id": "c4b12c39-0e91-4003-8b4b-99e961028e81",
+              "name": "DependentServiceUnavailableFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-c4b12c39-0e91-4003-8b4b-99e961028e81"
+            },
+            {
+              "id": "904f58b2-f2a3-4776-a2a9-794a0761fcc9",
+              "name": "ReservedNodeAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterIdentifier>(string)</ClusterIdentifier>\n  <ClusterType>(string)</ClusterType>\n  <NodeType>(string)</NodeType>\n  <NumberOfNodes>(integer)</NumberOfNodes>\n  <Classic>(boolean)</Classic>\n  <ReservedNodeId>(string)</ReservedNodeId>\n  <TargetReservedNodeOfferingId>(string)</TargetReservedNodeOfferingId>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=ResizeCluster&Version=2012-12-01#Action=ResizeCluster",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "ResizeCluster"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=ResizeCluster"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:59:46.000Z",
+              "updatedAt": "2026-07-28T10:59:46.000Z",
+              "uid": "35240-904f58b2-f2a3-4776-a2a9-794a0761fcc9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:59:46.000Z",
+          "updatedAt": "2026-07-28T10:59:46.000Z",
+          "uid": "35240-071c1a73-45ae-44bf-bf08-cd0938d341f4"
+        }
+      ],
+      "id": "5669cb35-0b6a-478a-8cf9-32a01bcbdb00",
+      "createdAt": "2026-07-28T10:59:46.000Z",
+      "updatedAt": "2026-07-28T10:59:46.000Z",
+      "uid": "35240-5669cb35-0b6a-478a-8cf9-32a01bcbdb00"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}

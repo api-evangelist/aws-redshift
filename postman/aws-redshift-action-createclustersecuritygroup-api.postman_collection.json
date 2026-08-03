@@ -1,0 +1,1190 @@
+{
+  "info": {
+    "_postman_id": "52608cbd-6f1d-4fba-858f-a7acff249c08",
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateClusterSecurityGroup API",
+    "description": "<p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html\">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:55:06.000Z",
+    "updatedAt": "2026-07-28T10:55:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-52608cbd-6f1d-4fba-858f-a7acff249c08"
+  },
+  "item": [
+    {
+      "name": "#Action=CreateClusterSecurityGroup",
+      "item": [
+        {
+          "name": "Amazon Redshift - G E T_ Create Cluster Security Group",
+          "id": "c6bf1f6c-73b9-40af-81b3-56afa3823a37",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                  "key": "ClusterSecurityGroupName",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) A description for the security group.",
+                  "key": "Description",
+                  "value": "<string>"
+                },
+                {
+                  "description": "A list of tag instances.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "A list of tag instances.",
+                  "key": "Tags",
+                  "value": "[object Object]"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateClusterSecurityGroup"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateClusterSecurityGroup"
+            },
+            "description": "<p>Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.</p> <p> For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "0932dff5-8cee-4eb1-a7f2-62306e79881c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A description for the security group.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-0932dff5-8cee-4eb1-a7f2-62306e79881c"
+            },
+            {
+              "id": "49db6481-8858-4d17-a105-749751d82fe7",
+              "name": "ClusterSecurityGroupAlreadyExistsFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A description for the security group.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-49db6481-8858-4d17-a105-749751d82fe7"
+            },
+            {
+              "id": "c0edc64d-daf9-4f31-a864-1f92227d2ecd",
+              "name": "ClusterSecurityGroupQuotaExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A description for the security group.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-c0edc64d-daf9-4f31-a864-1f92227d2ecd"
+            },
+            {
+              "id": "307aac79-7e24-476e-9c8b-460e47e6d3b8",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A description for the security group.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-307aac79-7e24-476e-9c8b-460e47e6d3b8"
+            },
+            {
+              "id": "131bb1d0-97f8-4798-9aba-753a7351d11a",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/?ClusterSecurityGroupName=<string>&Description=<string>&Tags=[object Object]&Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be \"Default\".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>",
+                      "key": "ClusterSecurityGroupName",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) A description for the security group.",
+                      "key": "Description",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "A list of tag instances.",
+                      "key": "Tags",
+                      "value": "[object Object]"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-131bb1d0-97f8-4798-9aba-753a7351d11a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:06.000Z",
+          "updatedAt": "2026-07-28T10:55:06.000Z",
+          "uid": "35240-c6bf1f6c-73b9-40af-81b3-56afa3823a37"
+        },
+        {
+          "name": "Amazon Redshift - P O S T_ Create Cluster Security Group",
+          "id": "f1d985a8-b4ac-420c-a05c-2a440fede291",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "text/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+              "options": {
+                "raw": {
+                  "headerFamily": "xml",
+                  "language": "xml"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "Action",
+                  "value": "CreateClusterSecurityGroup"
+                },
+                {
+                  "description": "(Required) ",
+                  "key": "Version",
+                  "value": "2012-12-01"
+                }
+              ],
+              "hash": "Action=CreateClusterSecurityGroup"
+            },
+            "description": "<p>Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.</p> <p> For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+          },
+          "response": [
+            {
+              "id": "6b183aa4-c65d-4627-8428-58ad0a8cc2da",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroup>\n    <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n    <Description>(string)</Description>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <EC2SecurityGroup>\n      <Status>(string)</Status>\n      <EC2SecurityGroupName>(string)</EC2SecurityGroupName>\n      <EC2SecurityGroupOwnerId>(string)</EC2SecurityGroupOwnerId>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </EC2SecurityGroup>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <IPRange>\n      <Status>(string)</Status>\n      <CIDRIP>(string)</CIDRIP>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n      <Tag>\n        <Key>(string)</Key>\n        <Value>(string)</Value>\n      </Tag>\n    </IPRange>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n    <Tag>\n      <Key>(string)</Key>\n      <Value>(string)</Value>\n    </Tag>\n  </ClusterSecurityGroup>\n</element>",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-6b183aa4-c65d-4627-8428-58ad0a8cc2da"
+            },
+            {
+              "id": "a92db99d-3e3c-4b1b-b35d-3839d90f46f4",
+              "name": "ClusterSecurityGroupAlreadyExistsFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-a92db99d-3e3c-4b1b-b35d-3839d90f46f4"
+            },
+            {
+              "id": "d0edfbcd-afad-43c5-98b9-35bfd99c298a",
+              "name": "ClusterSecurityGroupQuotaExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-d0edfbcd-afad-43c5-98b9-35bfd99c298a"
+            },
+            {
+              "id": "c14363be-5228-4b65-943f-bda3398d6489",
+              "name": "TagLimitExceededFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-c14363be-5228-4b65-943f-bda3398d6489"
+            },
+            {
+              "id": "1dd6766b-796e-4a08-b2c6-d9043efbbe00",
+              "name": "InvalidTagFault",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "text/xml"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>\n  <ClusterSecurityGroupName>(string)</ClusterSecurityGroupName>\n  <Description>(string)</Description>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n  <Tag>\n    <Key>(string)</Key>\n    <Value>(string)</Value>\n  </Tag>\n</element>",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "xml",
+                      "language": "xml"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/?Action=CreateClusterSecurityGroup&Version=2012-12-01#Action=CreateClusterSecurityGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "Action",
+                      "value": "CreateClusterSecurityGroup"
+                    },
+                    {
+                      "description": "(Required) ",
+                      "key": "Version",
+                      "value": "2012-12-01"
+                    }
+                  ],
+                  "hash": "Action=CreateClusterSecurityGroup"
+                }
+              },
+              "_postman_previewlanguage": "xml",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "",
+              "createdAt": "2026-07-28T10:55:06.000Z",
+              "updatedAt": "2026-07-28T10:55:06.000Z",
+              "uid": "35240-1dd6766b-796e-4a08-b2c6-d9043efbbe00"
+            }
+          ],
+          "createdAt": "2026-07-28T10:55:06.000Z",
+          "updatedAt": "2026-07-28T10:55:06.000Z",
+          "uid": "35240-f1d985a8-b4ac-420c-a05c-2a440fede291"
+        }
+      ],
+      "id": "039dfcef-d2f5-4c44-8063-8aafc259de01",
+      "createdAt": "2026-07-28T10:55:06.000Z",
+      "updatedAt": "2026-07-28T10:55:06.000Z",
+      "uid": "35240-039dfcef-d2f5-4c44-8063-8aafc259de01"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://redshift-data.{{region}}.amazonaws.com"
+    }
+  ]
+}
