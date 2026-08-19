@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RevokeEndpointAccess API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#Action=RevokeEndpointAccess",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Redshift - G E T_ Revoke Endpoint Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://redshift-data.{region}.amazonaws.com/#Action=RevokeEndpointAccess",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ClusterIdentifier",
+                "value": "",
+                "type": "query",
+                "description": "The cluster to revoke access from."
+              },
+              {
+                "name": "Account",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services account ID whose access is to be revoked."
+              },
+              {
+                "name": "VpcIds",
+                "value": "",
+                "type": "query",
+                "description": "The virtual private cloud (VPC) identifiers for which access is to be revoked."
+              },
+              {
+                "name": "Force",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted."
+              },
+              {
+                "name": "Action",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Revokes access to a cluster."
+        },
+        {
+          "info": {
+            "name": "Amazon Redshift - P O S T_ Revoke Endpoint Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://redshift-data.{region}.amazonaws.com/#Action=RevokeEndpointAccess",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Action",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Revokes access to a cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

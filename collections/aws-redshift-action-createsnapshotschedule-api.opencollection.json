@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateSnapshotSchedule API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "#Action=CreateSnapshotSchedule",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Redshift - G E T_ Create Snapshot Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://redshift-data.{region}.amazonaws.com/#Action=CreateSnapshotSchedule",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ScheduleDefinitions",
+                "value": "",
+                "type": "query",
+                "description": "The definition of the snapshot schedule. The definition is made up of schedule expressions, for example \"cron(30 12 *)\" or \"rate(12 hours)\". "
+              },
+              {
+                "name": "ScheduleIdentifier",
+                "value": "",
+                "type": "query",
+                "description": "A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier."
+              },
+              {
+                "name": "ScheduleDescription",
+                "value": "",
+                "type": "query",
+                "description": "The description of the snapshot schedule."
+              },
+              {
+                "name": "Tags",
+                "value": "",
+                "type": "query",
+                "description": "An optional set of tags you can use to search for the schedule."
+              },
+              {
+                "name": "DryRun",
+                "value": "",
+                "type": "query",
+                "description": "<p/>"
+              },
+              {
+                "name": "NextInvocations",
+                "value": "",
+                "type": "query",
+                "description": "<p/>"
+              },
+              {
+                "name": "Action",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. "
+        },
+        {
+          "info": {
+            "name": "Amazon Redshift - P O S T_ Create Snapshot Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://redshift-data.{region}.amazonaws.com/#Action=CreateSnapshotSchedule",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "Action",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Version",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
