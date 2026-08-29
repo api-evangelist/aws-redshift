@@ -1,0 +1,198 @@
+slug: aws-redshift
+provider: AWS Redshift
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 20
+edges:
+- tag: '#Action=DeleteCluster'
+  spec_file: aws-redshift-action-deletecluster-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: POST /#Action=DeleteCluster ... DeleteClusterMessage, Cluster, PendingModifiedValues, VpcSecurityGroupMembership
+  reason: Deletes a managed data-warehouse compute cluster — direct cloud compute/storage infrastructure
+    lifecycle management.
+- tag: '#Action=CreateCluster'
+  spec_file: aws-redshift-action-createcluster-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: 'POST /#Action=CreateCluster ... schemas: ClusterNode, VpcEndpoint, ClusterQuotaExceededFault,
+    ClusterSecurityGroupNameList'
+  reason: Provisioning a Redshift compute cluster (nodes, VPC endpoints, IAM roles) is cloud compute/storage
+    provisioning, which maps to IT Infrastructure Management.
+- tag: '#Action=ModifyClusterSubnetGroup'
+  spec_file: aws-redshift-action-modifyclustersubnetgroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: POST_ModifyClusterSubnetGroup; schemas Subnet, SubnetIdentifierList, InvalidSubnet, AvailabilityZone
+  reason: Network subnet group configuration for cloud clusters is unambiguously compute/network/cloud
+    infrastructure management.
+- tag: '#Action=PauseCluster'
+  spec_file: aws-redshift-action-pausecluster-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: POST_PauseCluster — "Pause Cluster"; schemas Cluster, PendingActionsList, ResizeInfo, VpcEndpoint
+  reason: Pausing a managed cloud cluster is direct lifecycle operation of compute infrastructure.
+- tag: '#Action=DeleteClusterSubnetGroup'
+  spec_file: aws-redshift-action-deleteclustersubnetgroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: POST /#Action=DeleteClusterSubnetGroup ... ClusterSubnetGroupNotFoundFault, InvalidClusterSubnetStateFault
+  reason: Manages VPC subnet groups used to place clusters — network infrastructure management.
+- tag: '#Action=DescribeClusters'
+  spec_file: aws-redshift-action-describeclusters-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: 'GET_DescribeClusters ... schemas: Cluster, ClusterList, ClustersMessage, PendingModifiedValues'
+  reason: Inventory and state of provisioned Redshift clusters — cloud compute/storage infrastructure
+    management.
+- tag: '#Action=ModifyCluster'
+  spec_file: aws-redshift-action-modifycluster-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: POST_ModifyCluster, schemas 'Cluster', 'NumberOfNodesQuotaExceededFault', 'VpcSecurityGroupMembership',
+    'ResizeInfo'
+  reason: Modifies node count, security groups and settings of a managed data-warehouse cluster — provisioning/configuration
+    of cloud compute and storage infrastructure.
+- tag: '#Action=ModifyClusterParameterGroup'
+  spec_file: aws-redshift-action-modifyclusterparametergroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.75
+  evidence: POST_ModifyClusterParameterGroup — "Modify Cluster Parameter Group"; schemas ClusterParameterGroupNotFoundFault,
+    ModifyClusterParameterGroupMessage
+  reason: Operation configures parameter groups of a managed data-warehouse cluster — cloud compute/database
+    infrastructure configuration, i.e. IT Infrastructure Management. No business-domain capability is
+    realised by a cluster parameter tweak.
+- tag: '#Action=AcceptReservedNodeExchange'
+  spec_file: aws-redshift-action-acceptreservednodeexchange-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: AcceptReservedNodeExchangeInputMessage, ReservedNode, ReservedNodeOfferingType, RecurringChargeList
+  reason: Exchanging reserved data-warehouse nodes is cloud compute/reservation administration — IT infrastructure
+    management. Commercial reservation angle exists but the surface is infrastructure node management.
+- tag: '#Action=CreateClusterSubnetGroup'
+  spec_file: aws-redshift-action-createclustersubnetgroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'POST /#Action=CreateClusterSubnetGroup ... schemas: Subnet, SubnetIdentifierList, AvailabilityZone,
+    ClusterSubnetGroup'
+  reason: Defining subnet groups and availability zones for cluster placement is network/cloud infrastructure
+    management.
+- tag: '#Action=DeleteClusterParameterGroup'
+  spec_file: aws-redshift-action-deleteclusterparametergroup-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST /#Action=DeleteClusterParameterGroup ... ClusterParameterGroupNotFoundFault, InvalidClusterParameterGroupStateFault
+  reason: Manages configuration parameter groups applied to database clusters — infrastructure configuration
+    administration.
+- tag: '#Action=DeleteEndpointAccess'
+  spec_file: aws-redshift-action-deleteendpointaccess-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST /#Action=DeleteEndpointAccess ... EndpointAccess, VpcEndpoint, NetworkInterfaceList
+  reason: Deletes VPC endpoint access objects (network interfaces, VPC endpoints) for clusters — cloud
+    network infrastructure administration.
+- tag: '#Action=DescribeClusterParameters'
+  spec_file: aws-redshift-action-describeclusterparameters-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'GET_DescribeClusterParameters ... schemas: ClusterParameterGroupDetails, ParameterApplyType'
+  reason: Describes configuration parameters of Redshift data-warehouse clusters — cloud infrastructure/database
+    configuration management, an IT infrastructure capability, not a business-domain capability.
+- tag: '#Action=DescribeClusterSubnetGroups'
+  spec_file: aws-redshift-action-describeclustersubnetgroups-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'schemas: Subnet, ClusterSubnetGroup, AvailabilityZone, SubnetList'
+  reason: Network subnet group configuration for clusters — cloud network infrastructure management.
+- tag: '#Action=DescribeReservedNodes'
+  spec_file: aws-redshift-action-describereservednodes-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'GET_DescribeReservedNodes ... schemas: ReservedNodeList, RecurringCharge, ReservedNodeOfferingType'
+  reason: Reserved node (compute capacity reservation) inventory for a managed data warehouse service
+    — cloud infrastructure management. Reserved-node pricing/recurring charges is adjacent to IT financial
+    management but the surface is infrastructure resource description.
+- tag: '#Action=DescribeResize'
+  spec_file: aws-redshift-action-describeresize-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'GET_DescribeResize ... schemas: ResizeProgressMessage, ClusterNotFoundFault'
+  reason: Reports progress of resizing a Redshift cluster — cloud compute/storage infrastructure operations,
+    not a business-domain capability.
+- tag: '#Action=DescribeStorage'
+  spec_file: aws-redshift-action-describestorage-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: 'GET_DescribeStorage ... schemas: CustomerStorageMessage'
+  reason: Reports storage consumption for the account's clusters — cloud storage infrastructure management.
+- tag: '#Action=GetClusterCredentials'
+  spec_file: aws-redshift-action-getclustercredentials-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: GET_GetClusterCredentials, schemas 'ClusterCredentials', 'DbGroupList', 'SensitiveString'
+  reason: Issues temporary database credentials scoped to DB user/groups for a cluster — credential issuance
+    and access control, i.e. Identity & Access Management within IT, not a domain business capability.
+- tag: '#Action=GetClusterCredentialsWithIAM'
+  spec_file: aws-redshift-action-getclustercredentialswithiam-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST_GetClusterCredentialsWithIAM, schema 'ClusterExtendedCredentials'
+  reason: Returns temporary IAM-federated database credentials for cluster access — federation and credential
+    issuance, mapping to Identity & Access Management.
+- tag: '#Action=ModifyEndpointAccess'
+  spec_file: aws-redshift-action-modifyendpointaccess-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST_ModifyEndpointAccess; schemas VpcEndpoint, VpcSecurityGroupMembership, NetworkInterfaceList
+  reason: Modifies VPC endpoint / security-group configuration for cluster network access — cloud network
+    infrastructure administration. It is resource-level network config rather than enterprise identity
+    & access management.
