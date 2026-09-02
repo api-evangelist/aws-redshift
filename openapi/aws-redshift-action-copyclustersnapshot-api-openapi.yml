@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CopyClusterSnapshot API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CopyClusterSnapshot #Action=Copy Cluster Snapshot API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -280,51 +280,24 @@ paths:
       tags:
       - '#Action=CopyClusterSnapshot'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ClusterSnapshotNotFoundFault: {}
+    ClusterSnapshotAlreadyExistsFault: {}
+    RestorableNodeTypeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: NodeType
+    Integer:
+      type: integer
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
     Tag:
       type: object
       properties:
@@ -337,60 +310,24 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The value for the resource tag.
       description: A tag consisting of a name/value pair for a resource.
-    TStamp:
-      type: string
-      format: date-time
-    Double:
-      type: number
-      format: double
     CopyClusterSnapshotResult:
       type: object
       properties:
         Snapshot:
           $ref: '#/components/schemas/Snapshot'
-    Integer:
-      type: integer
-    String:
+    AccountsWithRestoreAccessList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/AccountWithRestoreAccess'
+        - xml:
+            name: AccountWithRestoreAccess
+    ClusterSnapshotNotFoundFault: {}
+    TStamp:
       type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    CopyClusterSnapshotMessage:
-      type: object
-      required:
-      - SourceSnapshotIdentifier
-      - TargetSnapshotIdentifier
-      title: CopyClusterSnapshotMessage
-      properties:
-        SourceSnapshotIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>
-        SourceSnapshotClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>
-        TargetSnapshotIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>
-        ManualSnapshotRetentionPeriod:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
-      description: <p/>
-    RestorableNodeTypeList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: NodeType
+      format: date-time
+    ClusterSnapshotQuotaExceededFault: {}
+    InvalidClusterSnapshotStateFault: {}
     Snapshot:
       type: object
       properties:
@@ -531,7 +468,13 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: A timestamp representing the start of the retention period for the snapshot.
       description: Describes a snapshot.
-    InvalidClusterSnapshotStateFault: {}
+    Long:
+      type: integer
+    Boolean:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
     AccountWithRestoreAccess:
       type: object
       properties:
@@ -544,22 +487,79 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. '
       description: Describes an Amazon Web Services account authorized to restore a snapshot.
-    ClusterSnapshotAlreadyExistsFault: {}
-    AccountsWithRestoreAccessList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/AccountWithRestoreAccess'
-        - xml:
-            name: AccountWithRestoreAccess
-    Boolean:
-      type: boolean
     IntegerOptional:
       type: integer
-    ClusterSnapshotQuotaExceededFault: {}
-    Long:
-      type: integer
+    CopyClusterSnapshotMessage:
+      type: object
+      required:
+      - SourceSnapshotIdentifier
+      - TargetSnapshotIdentifier
+      title: CopyClusterSnapshotMessage
+      properties:
+        SourceSnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The identifier for the source snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> </ul>
+        SourceSnapshotClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> <p>Constraints:</p> <ul> <li> <p>Must be the identifier for a valid cluster.</p> </li> </ul>
+        TargetSnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The identifier given to the new manual snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be null, empty, or blank.</p> </li> <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> </ul>
+        ManualSnapshotRetentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+      description: <p/>
+    Double:
+      type: number
+      format: double
     InvalidRetentionPeriodFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

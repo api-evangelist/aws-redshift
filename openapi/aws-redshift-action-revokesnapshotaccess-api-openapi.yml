@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RevokeSnapshotAccess API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RevokeSnapshotAccess #Action=Revoke Snapshot Access API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -269,51 +269,23 @@ paths:
       tags:
       - '#Action=RevokeSnapshotAccess'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ClusterSnapshotNotFoundFault: {}
+    RestorableNodeTypeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: NodeType
+    Integer:
+      type: integer
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
     Tag:
       type: object
       properties:
@@ -326,37 +298,45 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The value for the resource tag.
       description: A tag consisting of a name/value pair for a resource.
-    TStamp:
-      type: string
-      format: date-time
-    Double:
-      type: number
-      format: double
-    Integer:
-      type: integer
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
+    RevokeSnapshotAccessMessage:
+      type: object
+      required:
+      - AccountWithRestoreAccess
+      title: RevokeSnapshotAccessMessage
+      properties:
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot that the account can no longer access.
+        SnapshotArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
+        SnapshotClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
+        AccountWithRestoreAccess:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.
+      description: <p/>
+    AccountsWithRestoreAccessList:
       type: array
       items:
         allOf:
-        - $ref: '#/components/schemas/Tag'
+        - $ref: '#/components/schemas/AccountWithRestoreAccess'
         - xml:
-            name: Tag
+            name: AccountWithRestoreAccess
     RevokeSnapshotAccessResult:
       type: object
       properties:
         Snapshot:
           $ref: '#/components/schemas/Snapshot'
-    RestorableNodeTypeList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: NodeType
-    AuthorizationNotFoundFault: {}
+    ClusterSnapshotNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
     Snapshot:
       type: object
       properties:
@@ -497,6 +477,14 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: A timestamp representing the start of the retention period for the snapshot.
       description: Describes a snapshot.
+    Long:
+      type: integer
+    UnsupportedOperationFault: {}
+    Boolean:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
     AccountWithRestoreAccess:
       type: object
       properties:
@@ -509,44 +497,56 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. '
       description: Describes an Amazon Web Services account authorized to restore a snapshot.
-    AccountsWithRestoreAccessList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/AccountWithRestoreAccess'
-        - xml:
-            name: AccountWithRestoreAccess
-    Boolean:
-      type: boolean
-    AccessToSnapshotDeniedFault: {}
     IntegerOptional:
       type: integer
-    UnsupportedOperationFault: {}
-    Long:
-      type: integer
-    RevokeSnapshotAccessMessage:
-      type: object
-      required:
-      - AccountWithRestoreAccess
-      title: RevokeSnapshotAccessMessage
-      properties:
-        SnapshotIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the snapshot that the account can no longer access.
-        SnapshotArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.
-        SnapshotClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
-        AccountWithRestoreAccess:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.
-      description: <p/>
+    Double:
+      type: number
+      format: double
+    AccessToSnapshotDeniedFault: {}
+    AuthorizationNotFoundFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

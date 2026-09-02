@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=UpdatePartnerStatus API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=UpdatePartnerStatus #Action=Update Partner Status API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -282,8 +282,8 @@ paths:
       - '#Action=UpdatePartnerStatus'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -300,14 +300,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -318,43 +318,13 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
-    PartnerIntegrationStatusMessage:
-      type: string
-      pattern: ^[\x20-\x7E]+$
-      maxLength: 262144
-    PartnerIntegrationOutputMessage:
-      type: object
-      properties:
-        DatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/PartnerIntegrationDatabaseName'
-          - description: The name of the database that receives data from the partner.
-        PartnerName:
-          allOf:
-          - $ref: '#/components/schemas/PartnerIntegrationPartnerName'
-          - description: The name of the partner that is authorized to send data.
-    PartnerIntegrationClusterIdentifier:
-      type: string
-      pattern: ^[a-zA-Z0-9\-]+$
-      maxLength: 63
-    PartnerIntegrationDatabaseName:
-      type: string
-      pattern: ^[\p{L}_][\p{L}\p{N}@$#_]+$
-      maxLength: 127
-    PartnerNotFoundFault: {}
-    PartnerIntegrationAccountId:
-      type: string
-      pattern: ^[0-9]+$
-      minLength: 12
-      maxLength: 12
-    UnauthorizedPartnerIntegrationFault: {}
     UpdatePartnerStatusInputMessage:
       type: object
       required:
@@ -389,6 +359,21 @@ components:
           allOf:
           - $ref: '#/components/schemas/PartnerIntegrationStatusMessage'
           - description: The status message provided by the partner.
+    PartnerIntegrationOutputMessage:
+      type: object
+      properties:
+        DatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationDatabaseName'
+          - description: The name of the database that receives data from the partner.
+        PartnerName:
+          allOf:
+          - $ref: '#/components/schemas/PartnerIntegrationPartnerName'
+          - description: The name of the partner that is authorized to send data.
+    PartnerIntegrationDatabaseName:
+      type: string
+      pattern: ^[\p{L}_][\p{L}\p{N}@$#_]+$
+      maxLength: 127
     PartnerIntegrationStatus:
       type: string
       enum:
@@ -396,10 +381,25 @@ components:
       - Inactive
       - RuntimeFailure
       - ConnectionFailure
+    PartnerNotFoundFault: {}
     PartnerIntegrationPartnerName:
       type: string
       pattern: ^[a-zA-Z0-9\-_]+$
       maxLength: 255
+    PartnerIntegrationClusterIdentifier:
+      type: string
+      pattern: ^[a-zA-Z0-9\-]+$
+      maxLength: 63
+    PartnerIntegrationStatusMessage:
+      type: string
+      pattern: ^[\x20-\x7E]+$
+      maxLength: 262144
+    PartnerIntegrationAccountId:
+      type: string
+      pattern: ^[0-9]+$
+      minLength: 12
+      maxLength: 12
+    UnauthorizedPartnerIntegrationFault: {}
     ClusterNotFoundFault: {}
   securitySchemes:
     hmac:

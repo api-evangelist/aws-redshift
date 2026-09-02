@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyAuthenticationProfile API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyAuthenticationProfile #Action=Modify Authentication Profile API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -245,8 +245,8 @@ paths:
       - '#Action=ModifyAuthenticationProfile'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -263,14 +263,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -281,8 +281,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -291,6 +291,7 @@ components:
     String:
       type: string
       maxLength: 2147483647
+    AuthenticationProfileQuotaExceededFault: {}
     ModifyAuthenticationProfileResult:
       type: object
       properties:
@@ -302,6 +303,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The updated content of the authentication profile in JSON format.
+    AuthenticationProfileNameString:
+      type: string
+      pattern: ^[a-zA-Z0-9\-]+$
+      maxLength: 63
     ModifyAuthenticationProfileMessage:
       type: object
       required:
@@ -317,13 +322,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.
-    AuthenticationProfileNotFoundFault: {}
     InvalidAuthenticationProfileRequestFault: {}
-    AuthenticationProfileQuotaExceededFault: {}
-    AuthenticationProfileNameString:
-      type: string
-      pattern: ^[a-zA-Z0-9\-]+$
-      maxLength: 63
+    AuthenticationProfileNotFoundFault: {}
   securitySchemes:
     hmac:
       type: apiKey

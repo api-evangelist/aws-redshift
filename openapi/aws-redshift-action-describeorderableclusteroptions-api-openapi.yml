@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeOrderableClusterOptions API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeOrderableClusterOptions #Action=Describe Orderable Cluster Options API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -233,8 +233,8 @@ paths:
       - '#Action=DescribeOrderableClusterOptions'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -269,20 +269,25 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
-    SupportedPlatformsList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/SupportedPlatform'
-        - xml:
-            name: SupportedPlatform
+    OrderableClusterOptionsMessage:
+      type: object
+      properties:
+        OrderableClusterOptions:
+          allOf:
+          - $ref: '#/components/schemas/OrderableClusterOptionsList'
+          - description: An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
+      description: 'Contains the output from the <a>DescribeOrderableClusterOptions</a> action. '
     AvailabilityZoneList:
       type: array
       items:
@@ -290,8 +295,9 @@ components:
         - $ref: '#/components/schemas/AvailabilityZone'
         - xml:
             name: AvailabilityZone
-    IntegerOptional:
-      type: integer
+    String:
+      type: string
+      maxLength: 2147483647
     SupportedPlatform:
       type: object
       properties:
@@ -312,13 +318,8 @@ components:
           - $ref: '#/components/schemas/SupportedPlatformsList'
           - description: <p/>
       description: Describes an availability zone.
-    OrderableClusterOptionsList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/OrderableClusterOption'
-        - xml:
-            name: OrderableClusterOption
+    IntegerOptional:
+      type: integer
     DescribeOrderableClusterOptionsMessage:
       type: object
       title: DescribeOrderableClusterOptionsMessage
@@ -340,21 +341,20 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeOrderableClusterOptions</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
       description: <p/>
-    OrderableClusterOptionsMessage:
-      type: object
-      properties:
-        OrderableClusterOptions:
-          allOf:
-          - $ref: '#/components/schemas/OrderableClusterOptionsList'
-          - description: An <code>OrderableClusterOption</code> structure containing information about orderable options for the cluster.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
-      description: 'Contains the output from the <a>DescribeOrderableClusterOptions</a> action. '
-    String:
-      type: string
-      maxLength: 2147483647
+    SupportedPlatformsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SupportedPlatform'
+        - xml:
+            name: SupportedPlatform
+    OrderableClusterOptionsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/OrderableClusterOption'
+        - xml:
+            name: OrderableClusterOption
     OrderableClusterOption:
       type: object
       properties:

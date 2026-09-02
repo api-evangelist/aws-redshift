@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeHsmClientCertificates API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeHsmClientCertificates #Action=Describe Hsm Client Certificates API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -271,50 +271,19 @@ paths:
       tags:
       - '#Action=DescribeHsmClientCertificates'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    HsmClientCertificateMessage:
+      type: object
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
+        HsmClientCertificates:
+          allOf:
+          - $ref: '#/components/schemas/HsmClientCertificateList'
+          - description: A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.
+      description: <p/>
     HsmClientCertificateList:
       type: array
       items:
@@ -323,6 +292,29 @@ components:
         - xml:
             name: HsmClientCertificate
     HsmClientCertificateNotFoundFault: {}
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    HsmClientCertificate:
+      type: object
+      properties:
+        HsmClientCertificateIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the HSM client certificate.
+        HsmClientCertificatePublicKey:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags for the HSM client certificate.
+      description: Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
     Tag:
       type: object
       properties:
@@ -343,46 +335,6 @@ components:
         - xml:
             name: TagValue
     InvalidTagFault: {}
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    HsmClientCertificateMessage:
-      type: object
-      properties:
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
-        HsmClientCertificates:
-          allOf:
-          - $ref: '#/components/schemas/HsmClientCertificateList'
-          - description: A list of the identifiers for one or more HSM client certificates used by Amazon Redshift clusters to store and retrieve database encryption keys in an HSM.
-      description: <p/>
-    HsmClientCertificate:
-      type: object
-      properties:
-        HsmClientCertificateIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the HSM client certificate.
-        HsmClientCertificatePublicKey:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: The list of tags for the HSM client certificate.
-      description: Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
-    IntegerOptional:
-      type: integer
     TagKeyList:
       type: array
       items:
@@ -390,6 +342,11 @@ components:
         - $ref: '#/components/schemas/String'
         - xml:
             name: TagKey
+    String:
+      type: string
+      maxLength: 2147483647
+    IntegerOptional:
+      type: integer
     DescribeHsmClientCertificatesMessage:
       type: object
       title: DescribeHsmClientCertificatesMessage
@@ -415,6 +372,49 @@ components:
           - $ref: '#/components/schemas/TagValueList'
           - description: A tag value or values for which you want to return all matching HSM client certificates that are associated with the specified tag value or values. For example, suppose that you have HSM client certificates that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the HSM client certificates that have either or both of these tag values associated with them.
       description: <p/>
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

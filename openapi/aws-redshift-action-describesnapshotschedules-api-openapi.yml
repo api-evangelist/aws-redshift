@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeSnapshotSchedules API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeSnapshotSchedules #Action=Describe Snapshot Schedules API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -255,12 +255,13 @@ paths:
       - '#Action=DescribeSnapshotSchedules'
 components:
   schemas:
-    ScheduleState:
-      type: string
-      enum:
-      - MODIFYING
-      - ACTIVE
-      - FAILED
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
     SnapshotSchedule:
       type: object
       properties:
@@ -312,9 +313,33 @@ components:
         - $ref: '#/components/schemas/String'
         - xml:
             name: TagValue
+    DescribeSnapshotSchedulesOutputMessage:
+      type: object
+      properties:
+        SnapshotSchedules:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotScheduleList'
+          - description: A list of SnapshotSchedules.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
     TStamp:
       type: string
       format: date-time
+    ScheduleState:
+      type: string
+      enum:
+      - MODIFYING
+      - ACTIVE
+      - FAILED
+    SnapshotScheduleList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SnapshotSchedule'
+        - xml:
+            name: SnapshotSchedule
     ScheduleDefinitionList:
       type: array
       items:
@@ -322,6 +347,37 @@ components:
         - $ref: '#/components/schemas/String'
         - xml:
             name: ScheduleDefinition
+    AssociatedClusterList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ClusterAssociatedToSchedule'
+        - xml:
+            name: ClusterAssociatedToSchedule
+    ClusterAssociatedToSchedule:
+      type: object
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p/>
+        ScheduleAssociationState:
+          allOf:
+          - $ref: '#/components/schemas/ScheduleState'
+          - description: <p/>
+      description: <p/>
+    TagKeyList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: TagKey
+    String:
+      type: string
+      maxLength: 2147483647
+    IntegerOptional:
+      type: integer
     DescribeSnapshotSchedulesMessage:
       type: object
       title: DescribeSnapshotSchedulesMessage
@@ -350,55 +406,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/IntegerOptional'
           - description: The maximum number or response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned <code>marker</code> value.
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    ClusterAssociatedToSchedule:
-      type: object
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p/>
-        ScheduleAssociationState:
-          allOf:
-          - $ref: '#/components/schemas/ScheduleState'
-          - description: <p/>
-      description: <p/>
-    AssociatedClusterList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/ClusterAssociatedToSchedule'
-        - xml:
-            name: ClusterAssociatedToSchedule
-    SnapshotScheduleList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/SnapshotSchedule'
-        - xml:
-            name: SnapshotSchedule
-    DescribeSnapshotSchedulesOutputMessage:
-      type: object
-      properties:
-        SnapshotSchedules:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotScheduleList'
-          - description: A list of SnapshotSchedules.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code> field is empty, all response records have been retrieved for the request.
-    IntegerOptional:
-      type: integer
     ScheduledSnapshotTimeList:
       type: array
       items:
@@ -406,28 +413,27 @@ components:
         - $ref: '#/components/schemas/TStamp'
         - xml:
             name: SnapshotTime
-    TagKeyList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: TagKey
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -444,14 +450,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

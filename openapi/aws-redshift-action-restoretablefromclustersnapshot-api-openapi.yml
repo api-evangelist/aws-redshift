@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RestoreTableFromClusterSnapshot API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=RestoreTableFromClusterSnapshot #Action=Restore Table From Cluster Snapshot API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -339,119 +339,15 @@ paths:
       tags:
       - '#Action=RestoreTableFromClusterSnapshot'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    InvalidTableRestoreArgumentFault: {}
     ClusterSnapshotNotFoundFault: {}
-    RestoreTableFromClusterSnapshotMessage:
-      type: object
-      required:
-      - ClusterIdentifier
-      - SnapshotIdentifier
-      - SourceDatabaseName
-      - SourceTableName
-      - NewTableName
-      title: RestoreTableFromClusterSnapshotMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the Amazon Redshift cluster to restore the table to.
-        SnapshotIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.
-        SourceDatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the source database that contains the table to restore from.
-        SourceSchemaName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
-        SourceTableName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the source table to restore from.
-        TargetDatabaseName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the database to restore the table to.
-        TargetSchemaName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the schema to restore the table to.
-        NewTableName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the table to create as a result of the current request.
-        EnableCaseSensitiveIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
-      description: <p/>
-    TableRestoreStatusType:
-      type: string
-      enum:
-      - PENDING
-      - IN_PROGRESS
-      - SUCCEEDED
-      - FAILED
-      - CANCELED
     TStamp:
       type: string
       format: date-time
     BooleanOptional:
       type: boolean
-    String:
-      type: string
-      maxLength: 2147483647
-    RestoreTableFromClusterSnapshotResult:
-      type: object
-      properties:
-        TableRestoreStatus:
-          $ref: '#/components/schemas/TableRestoreStatus'
+    InvalidClusterSnapshotStateFault: {}
     TableRestoreStatus:
       type: object
       properties:
@@ -512,14 +408,118 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The name of the table to create as a result of the table restore request.
       description: Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation.
-    InvalidClusterSnapshotStateFault: {}
-    InvalidClusterStateFault: {}
-    InvalidTableRestoreArgumentFault: {}
-    InProgressTableRestoreQuotaExceededFault: {}
+    TableRestoreStatusType:
+      type: string
+      enum:
+      - PENDING
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      - CANCELED
+    RestoreTableFromClusterSnapshotResult:
+      type: object
+      properties:
+        TableRestoreStatus:
+          $ref: '#/components/schemas/TableRestoreStatus'
+    RestoreTableFromClusterSnapshotMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      - SnapshotIdentifier
+      - SourceDatabaseName
+      - SourceTableName
+      - NewTableName
+      title: RestoreTableFromClusterSnapshotMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the Amazon Redshift cluster to restore the table to.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the snapshot to restore the table from. This snapshot must have been created from the Amazon Redshift cluster specified by the <code>ClusterIdentifier</code> parameter.
+        SourceDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source database that contains the table to restore from.
+        SourceSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source schema that contains the table to restore from. If you do not specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
+        SourceTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the source table to restore from.
+        TargetDatabaseName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the database to restore the table to.
+        TargetSchemaName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the schema to restore the table to.
+        NewTableName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the table to create as a result of the current request.
+        EnableCaseSensitiveIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+      description: <p/>
     UnsupportedOperationFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
     LongOptional:
       type: integer
+    InvalidClusterStateFault: {}
+    InProgressTableRestoreQuotaExceededFault: {}
     ClusterNotFoundFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

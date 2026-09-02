@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateUsageLimit API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateUsageLimit #Action=Create Usage Limit API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -340,132 +340,13 @@ paths:
       tags:
       - '#Action=CreateUsageLimit'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UsageLimitFeatureType:
-      type: string
-      enum:
-      - spectrum
-      - concurrency-scaling
-      - cross-region-datasharing
     UsageLimitBreachAction:
       type: string
       enum:
       - log
       - emit-metric
       - disable
-    Tag:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The key, or name, for the resource tag.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The value for the resource tag.
-      description: A tag consisting of a name/value pair for a resource.
-    UsageLimitPeriod:
-      type: string
-      enum:
-      - daily
-      - weekly
-      - monthly
-    UsageLimitLimitType:
-      type: string
-      enum:
-      - time
-      - data-scanned
-    UsageLimitAlreadyExistsFault: {}
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    UsageLimit:
-      type: object
-      properties:
-        UsageLimitId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the usage limit.
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster with a usage limit.
-        FeatureType:
-          allOf:
-          - $ref: '#/components/schemas/UsageLimitFeatureType'
-          - description: The Amazon Redshift feature to which the limit applies.
-        LimitType:
-          allOf:
-          - $ref: '#/components/schemas/UsageLimitLimitType'
-          - description: The type of limit. Depending on the feature type, this can be based on a time duration or data size.
-        Amount:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).
-        Period:
-          allOf:
-          - $ref: '#/components/schemas/UsageLimitPeriod'
-          - description: 'The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. '
-        BreachAction:
-          allOf:
-          - $ref: '#/components/schemas/UsageLimitBreachAction'
-          - description: '<p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> <ul> <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> </ul>'
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: A list of tag instances.
-      description: 'Describes a usage limit object for a cluster. '
     CreateUsageLimitMessage:
       type: object
       required:
@@ -503,14 +384,133 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagList'
           - description: A list of tag instances.
-    InvalidUsageLimitFault: {}
-    InvalidClusterStateFault: {}
+    UsageLimit:
+      type: object
+      properties:
+        UsageLimitId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the usage limit.
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster with a usage limit.
+        FeatureType:
+          allOf:
+          - $ref: '#/components/schemas/UsageLimitFeatureType'
+          - description: The Amazon Redshift feature to which the limit applies.
+        LimitType:
+          allOf:
+          - $ref: '#/components/schemas/UsageLimitLimitType'
+          - description: The type of limit. Depending on the feature type, this can be based on a time duration or data size.
+        Amount:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).
+        Period:
+          allOf:
+          - $ref: '#/components/schemas/UsageLimitPeriod'
+          - description: 'The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>. '
+        BreachAction:
+          allOf:
+          - $ref: '#/components/schemas/UsageLimitBreachAction'
+          - description: '<p>The action that Amazon Redshift takes when the limit is reached. Possible values are: </p> <ul> <li> <p> <b>log</b> - To log an event in a system table. The default is log.</p> </li> <li> <p> <b>emit-metric</b> - To emit CloudWatch metrics.</p> </li> <li> <p> <b>disable</b> - To disable the feature until the next usage period begins.</p> </li> </ul>'
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: A list of tag instances.
+      description: 'Describes a usage limit object for a cluster. '
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
     TagLimitExceededFault: {}
-    UnsupportedOperationFault: {}
+    LimitExceededFault: {}
+    UsageLimitFeatureType:
+      type: string
+      enum:
+      - spectrum
+      - concurrency-scaling
+      - cross-region-datasharing
+    UsageLimitLimitType:
+      type: string
+      enum:
+      - time
+      - data-scanned
+    UsageLimitAlreadyExistsFault: {}
+    UsageLimitPeriod:
+      type: string
+      enum:
+      - daily
+      - weekly
+      - monthly
     Long:
       type: integer
-    LimitExceededFault: {}
+    UnsupportedOperationFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    InvalidUsageLimitFault: {}
+    InvalidClusterStateFault: {}
     ClusterNotFoundFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

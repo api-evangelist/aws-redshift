@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyAquaConfiguration API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyAquaConfiguration #Action=Modify Aqua Configuration API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -246,9 +246,61 @@ paths:
       tags:
       - '#Action=ModifyAquaConfiguration'
 components:
+  schemas:
+    UnsupportedOperationFault: {}
+    ModifyAquaInputMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: ModifyAquaInputMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to be modified.
+        AquaConfigurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/AquaConfigurationStatus'
+          - description: This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+    String:
+      type: string
+      maxLength: 2147483647
+    ModifyAquaOutputMessage:
+      type: object
+      properties:
+        AquaConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AquaConfiguration'
+          - description: 'This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). '
+    AquaConfigurationStatus:
+      type: string
+      enum:
+      - enabled
+      - disabled
+      - auto
+    AquaConfiguration:
+      type: object
+      properties:
+        AquaStatus:
+          allOf:
+          - $ref: '#/components/schemas/AquaStatus'
+          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+        AquaConfigurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/AquaConfigurationStatus'
+          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+      description: The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+    AquaStatus:
+      type: string
+      enum:
+      - enabled
+      - disabled
+      - applying
+    InvalidClusterStateFault: {}
+    ClusterNotFoundFault: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -265,14 +317,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -283,64 +335,12 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    AquaConfigurationStatus:
-      type: string
-      enum:
-      - enabled
-      - disabled
-      - auto
-    ModifyAquaOutputMessage:
-      type: object
-      properties:
-        AquaConfiguration:
-          allOf:
-          - $ref: '#/components/schemas/AquaConfiguration'
-          - description: 'This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). '
-    ModifyAquaInputMessage:
-      type: object
-      required:
-      - ClusterIdentifier
-      title: ModifyAquaInputMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster to be modified.
-        AquaConfigurationStatus:
-          allOf:
-          - $ref: '#/components/schemas/AquaConfigurationStatus'
-          - description: This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-    UnsupportedOperationFault: {}
-    InvalidClusterStateFault: {}
-    AquaStatus:
-      type: string
-      enum:
-      - enabled
-      - disabled
-      - applying
-    ClusterNotFoundFault: {}
-    AquaConfiguration:
-      type: object
-      properties:
-        AquaStatus:
-          allOf:
-          - $ref: '#/components/schemas/AquaStatus'
-          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-        AquaConfigurationStatus:
-          allOf:
-          - $ref: '#/components/schemas/AquaConfigurationStatus'
-          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-      description: The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-    String:
-      type: string
-      maxLength: 2147483647
   securitySchemes:
     hmac:
       type: apiKey

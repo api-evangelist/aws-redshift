@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeEndpointAuthorization API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeEndpointAuthorization #Action=Describe Endpoint Authorization API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -263,72 +263,8 @@ paths:
       - '#Action=DescribeEndpointAuthorization'
 components:
   schemas:
-    EndpointAuthorizations:
-      type: array
-      items:
-        $ref: '#/components/schemas/EndpointAuthorization'
-    TStamp:
-      type: string
-      format: date-time
-    BooleanOptional:
-      type: boolean
     Integer:
       type: integer
-    String:
-      type: string
-      maxLength: 2147483647
-    DescribeEndpointAuthorizationMessage:
-      type: object
-      title: DescribeEndpointAuthorizationMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The cluster identifier of the cluster to access.
-        Account:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.
-        Grantee:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
-    EndpointAuthorizationList:
-      type: object
-      properties:
-        EndpointAuthorizationList:
-          allOf:
-          - $ref: '#/components/schemas/EndpointAuthorizations'
-          - description: The authorizations to an endpoint.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
-    AuthorizationStatus:
-      type: string
-      enum:
-      - Authorized
-      - Revoking
-    Boolean:
-      type: boolean
-    IntegerOptional:
-      type: integer
-    UnsupportedOperationFault: {}
-    VpcIdentifierList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: VpcIdentifier
     EndpointAuthorization:
       type: object
       properties:
@@ -369,22 +305,92 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The number of Redshift-managed VPC endpoints created for the authorization.
       description: Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.
+    EndpointAuthorizationList:
+      type: object
+      properties:
+        EndpointAuthorizationList:
+          allOf:
+          - $ref: '#/components/schemas/EndpointAuthorizations'
+          - description: The authorizations to an endpoint.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+    DescribeEndpointAuthorizationMessage:
+      type: object
+      title: DescribeEndpointAuthorizationMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The cluster identifier of the cluster to access.
+        Account:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.
+        Grantee:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+    EndpointAuthorizations:
+      type: array
+      items:
+        $ref: '#/components/schemas/EndpointAuthorization'
+    TStamp:
+      type: string
+      format: date-time
+    BooleanOptional:
+      type: boolean
+    AuthorizationStatus:
+      type: string
+      enum:
+      - Authorized
+      - Revoking
+    UnsupportedOperationFault: {}
+    VpcIdentifierList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: VpcIdentifier
+    Boolean:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
+    IntegerOptional:
+      type: integer
     ClusterNotFoundFault: {}
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -401,14 +407,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

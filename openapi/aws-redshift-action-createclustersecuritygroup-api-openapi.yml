@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateClusterSecurityGroup API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateClusterSecurityGroup #Action=Create Cluster Security Group API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -266,50 +266,50 @@ paths:
       tags:
       - '#Action=CreateClusterSecurityGroup'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    ClusterSecurityGroupAlreadyExistsFault: {}
+    CreateClusterSecurityGroupResult:
+      type: object
+      properties:
+        ClusterSecurityGroup:
+          $ref: '#/components/schemas/ClusterSecurityGroup'
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    EC2SecurityGroupList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/EC2SecurityGroup'
+        - xml:
+            name: EC2SecurityGroup
+    IPRange:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the IP range, for example, "authorized".
+        CIDRIP:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The IP range in Classless Inter-Domain Routing (CIDR) notation.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags for the IP range.
+      description: Describes an IP range used in a security group.
+    IPRangeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/IPRange'
+        - xml:
+            name: IPRange
     Tag:
       type: object
       properties:
@@ -322,45 +322,6 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The value for the resource tag.
       description: A tag consisting of a name/value pair for a resource.
-    InvalidTagFault: {}
-    IPRangeList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/IPRange'
-        - xml:
-            name: IPRange
-    ClusterSecurityGroupQuotaExceededFault: {}
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    CreateClusterSecurityGroupMessage:
-      type: object
-      required:
-      - ClusterSecurityGroupName
-      - Description
-      title: CreateClusterSecurityGroupMessage
-      properties:
-        ClusterSecurityGroupName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>'
-        Description:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A description for the security group.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: A list of tag instances.
-      description: <p/>
     EC2SecurityGroup:
       type: object
       properties:
@@ -381,30 +342,7 @@ components:
           - $ref: '#/components/schemas/TagList'
           - description: The list of tags for the EC2 security group.
       description: Describes an Amazon EC2 security group.
-    EC2SecurityGroupList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/EC2SecurityGroup'
-        - xml:
-            name: EC2SecurityGroup
-    ClusterSecurityGroupAlreadyExistsFault: {}
-    IPRange:
-      type: object
-      properties:
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The status of the IP range, for example, "authorized".
-        CIDRIP:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The IP range in Classless Inter-Domain Routing (CIDR) notation.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: The list of tags for the IP range.
-      description: Describes an IP range used in a security group.
+    TagLimitExceededFault: {}
     ClusterSecurityGroup:
       type: object
       properties:
@@ -429,12 +367,74 @@ components:
           - $ref: '#/components/schemas/TagList'
           - description: The list of tags for the cluster security group.
       description: Describes a security group.
-    CreateClusterSecurityGroupResult:
+    InvalidTagFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    CreateClusterSecurityGroupMessage:
       type: object
+      required:
+      - ClusterSecurityGroupName
+      - Description
+      title: CreateClusterSecurityGroupMessage
       properties:
-        ClusterSecurityGroup:
-          $ref: '#/components/schemas/ClusterSecurityGroup'
-    TagLimitExceededFault: {}
+        ClusterSecurityGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The name for the security group. Amazon Redshift stores the value as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> <li> <p>Must not be "Default".</p> </li> <li> <p>Must be unique for all security groups that are created by your Amazon Web Services account.</p> </li> </ul> <p>Example: <code>examplesecuritygroup</code> </p>'
+        Description:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A description for the security group.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: A list of tag instances.
+      description: <p/>
+    ClusterSecurityGroupQuotaExceededFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

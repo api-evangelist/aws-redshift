@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeResize API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeResize #Action=Describe Resize API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -224,50 +224,10 @@ paths:
       tags:
       - '#Action=DescribeResize'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    DoubleOptional:
+      type: number
+      format: double
     String:
       type: string
       maxLength: 2147483647
@@ -282,6 +242,22 @@ components:
           - $ref: '#/components/schemas/String'
           - description: <p>The unique identifier of a cluster whose resize progress you are requesting. This parameter is case-sensitive.</p> <p>By default, resize operations for all clusters defined for an Amazon Web Services account are returned.</p>
       description: <p/>
+    IntegerOptional:
+      type: integer
+    ImportTablesNotStarted:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    ImportTablesCompleted:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    LongOptional:
+      type: integer
+    ImportTablesInProgress:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
     ResizeProgressMessage:
       type: object
       properties:
@@ -350,27 +326,51 @@ components:
           - $ref: '#/components/schemas/DoubleOptional'
           - description: The percent of data transferred from source cluster to target cluster.
       description: Describes the result of a cluster resize operation.
-    DoubleOptional:
-      type: number
-      format: double
-    IntegerOptional:
-      type: integer
-    ImportTablesCompleted:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ImportTablesNotStarted:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    LongOptional:
-      type: integer
-    ImportTablesInProgress:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
     ClusterNotFoundFault: {}
     ResizeNotFoundFault: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

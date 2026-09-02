@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #X Amz Target=RedshiftData.ListStatements API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #X Amz Target=RedshiftData.ListStatements #X Amz Target=RedshiftData.ListStatements API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -178,50 +178,57 @@ paths:
       tags:
       - '#X Amz Target=RedshiftData.ListStatements'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    ValidationException: {}
+    ParameterValue:
+      type: string
+      minLength: 1
+    StatementNameString:
+      type: string
+      minLength: 0
+      maxLength: 500
+    ListStatementsRequest:
+      type: object
+      title: ListStatementsRequest
+      properties:
+        MaxResults:
+          allOf:
+          - $ref: '#/components/schemas/ListStatementsLimit'
+          - description: 'The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. '
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. '
+        RoleLevel:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: 'A value that filters which statements to return in the response. If true, all statements run by the caller''s IAM role are returned. If false, only statements run by the caller''s IAM role in the current IAM session are returned. The default is true. '
+        StatementName:
+          allOf:
+          - $ref: '#/components/schemas/StatementNameString'
+          - description: 'The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. '
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/StatusString'
+          - description: '<p>The status of the SQL statement to list. Status values are defined as follows: </p> <ul> <li> <p>ABORTED - The query run was stopped by the user. </p> </li> <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> <li> <p>FAILED - The query run failed. </p> </li> <li> <p>FINISHED - The query has finished running. </p> </li> <li> <p>PICKED - The query has been chosen to be run. </p> </li> <li> <p>STARTED - The query run has started. </p> </li> <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> </ul>'
+    SqlParameter:
+      type: object
+      required:
+      - name
+      - value
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/ParameterName'
+          - description: The name of the parameter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/ParameterValue'
+          - description: 'The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. '
+      description: A parameter used in a SQL statement.
+    Timestamp:
+      type: string
+      format: date-time
     StatusString:
       type: string
       enum:
@@ -232,6 +239,33 @@ components:
       - ABORTED
       - FAILED
       - ALL
+    ListStatementsLimit:
+      type: integer
+      minimum: 0
+      maximum: 100
+    InternalServerException: {}
+    StatementStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StatementString'
+    StatementList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StatementData'
+    StatementString:
+      type: string
+    Boolean:
+      type: boolean
+    StatementId:
+      type: string
+      pattern: ^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$
+    String:
+      type: string
+    SqlParametersList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SqlParameter'
+      minItems: 1
     ParameterName:
       type: string
       pattern: ^[0-9a-zA-Z_]+$
@@ -281,47 +315,6 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: The date and time (UTC) that the statement metadata was last updated.
       description: The SQL statement to run.
-    ListStatementsLimit:
-      type: integer
-      minimum: 0
-      maximum: 100
-    ListStatementsRequest:
-      type: object
-      title: ListStatementsRequest
-      properties:
-        MaxResults:
-          allOf:
-          - $ref: '#/components/schemas/ListStatementsLimit'
-          - description: 'The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then <code>NextToken</code> is returned to page through the results. '
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. '
-        RoleLevel:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: 'A value that filters which statements to return in the response. If true, all statements run by the caller''s IAM role are returned. If false, only statements run by the caller''s IAM role in the current IAM session are returned. The default is true. '
-        StatementName:
-          allOf:
-          - $ref: '#/components/schemas/StatementNameString'
-          - description: 'The name of the SQL statement specified as input to <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement names to the prefix value you provide. '
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/StatusString'
-          - description: '<p>The status of the SQL statement to list. Status values are defined as follows: </p> <ul> <li> <p>ABORTED - The query run was stopped by the user. </p> </li> <li> <p>ALL - A status value that includes all query statuses. This value can be used to filter results. </p> </li> <li> <p>FAILED - The query run failed. </p> </li> <li> <p>FINISHED - The query has finished running. </p> </li> <li> <p>PICKED - The query has been chosen to be run. </p> </li> <li> <p>STARTED - The query run has started. </p> </li> <li> <p>SUBMITTED - The query was submitted, but not yet processed. </p> </li> </ul>'
-    ParameterValue:
-      type: string
-      minLength: 1
-    String:
-      type: string
-    StatementNameString:
-      type: string
-      minLength: 0
-      maxLength: 500
-    StatementStringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StatementString'
     ListStatementsResponse:
       type: object
       required:
@@ -335,44 +328,51 @@ components:
           allOf:
           - $ref: '#/components/schemas/StatementList'
           - description: 'The SQL statements. '
-    StatementString:
-      type: string
-    StatementId:
-      type: string
-      pattern: ^[a-z0-9]{8}(-[a-z0-9]{4}){3}-[a-z0-9]{12}(:\d+)?$
-    SqlParameter:
-      type: object
-      required:
-      - name
-      - value
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/ParameterName'
-          - description: The name of the parameter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/ParameterValue'
-          - description: 'The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. '
-      description: A parameter used in a SQL statement.
     SecretArn:
       type: string
-    SqlParametersList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SqlParameter'
-      minItems: 1
-    Boolean:
-      type: boolean
-    StatementList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StatementData'
-    ValidationException: {}
-    Timestamp:
-      type: string
-      format: date-time
-    InternalServerException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

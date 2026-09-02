@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateEndpointAccess API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateEndpointAccess #Action=Create Endpoint Access API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -352,81 +352,58 @@ paths:
       tags:
       - '#Action=CreateEndpointAccess'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    NetworkInterface:
-      type: object
-      properties:
-        NetworkInterfaceId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The network interface identifier. '
-        SubnetId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The subnet identifier. '
-        PrivateIpAddress:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The IPv4 address of the network interface within the subnet. '
-        AvailabilityZone:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The Availability Zone. '
-      description: 'Describes a network interface. '
-    TStamp:
-      type: string
-      format: date-time
+    ClusterSubnetGroupNotFoundFault: {}
     Integer:
       type: integer
-    AccessToClusterDeniedFault: {}
+    VpcSecurityGroupMembership:
+      type: object
+      properties:
+        VpcSecurityGroupId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the VPC security group.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the VPC security group.
+      description: Describes the members of a VPC security group.
     EndpointsPerAuthorizationLimitExceededFault: {}
-    String:
-      type: string
-      maxLength: 2147483647
-    UnauthorizedOperation: {}
+    EndpointAlreadyExistsFault: {}
+    CreateEndpointAccessMessage:
+      type: object
+      required:
+      - EndpointName
+      - SubnetGroupName
+      title: CreateEndpointAccessMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The cluster identifier of the cluster to access.
+        ResourceOwner:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
+        EndpointName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
+        SubnetGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.
+        VpcSecurityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/VpcSecurityGroupIdList'
+          - description: The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
+    NetworkInterfaceList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/NetworkInterface'
+        - xml:
+            name: NetworkInterface
     EndpointAccess:
       type: object
       properties:
@@ -469,23 +446,6 @@ components:
         VpcEndpoint:
           $ref: '#/components/schemas/VpcEndpoint'
       description: Describes a Redshift-managed VPC endpoint.
-    EndpointsPerClusterLimitExceededFault: {}
-    VpcSecurityGroupIdList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: VpcSecurityGroupId
-    ClusterSubnetGroupNotFoundFault: {}
-    NetworkInterfaceList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/NetworkInterface'
-        - xml:
-            name: NetworkInterface
-    InvalidClusterStateFault: {}
     VpcEndpoint:
       type: object
       properties:
@@ -502,47 +462,43 @@ components:
           - $ref: '#/components/schemas/NetworkInterfaceList'
           - description: 'One or more network interfaces of the endpoint. Also known as an interface endpoint. '
       description: The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
-    CreateEndpointAccessMessage:
-      type: object
-      required:
-      - EndpointName
-      - SubnetGroupName
-      title: CreateEndpointAccessMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The cluster identifier of the cluster to access.
-        ResourceOwner:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.
-        EndpointName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: <p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-        SubnetGroupName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.
-        VpcSecurityGroupIds:
-          allOf:
-          - $ref: '#/components/schemas/VpcSecurityGroupIdList'
-          - description: The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
-    VpcSecurityGroupMembership:
+    TStamp:
+      type: string
+      format: date-time
+    NetworkInterface:
       type: object
       properties:
-        VpcSecurityGroupId:
+        NetworkInterfaceId:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The identifier of the VPC security group.
-        Status:
+          - description: 'The network interface identifier. '
+        SubnetId:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The status of the VPC security group.
-      description: Describes the members of a VPC security group.
-    InvalidClusterSecurityGroupStateFault: {}
-    EndpointAlreadyExistsFault: {}
+          - description: 'The subnet identifier. '
+        PrivateIpAddress:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The IPv4 address of the network interface within the subnet. '
+        AvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The Availability Zone. '
+      description: 'Describes a network interface. '
+    UnauthorizedOperation: {}
+    UnsupportedOperationFault: {}
+    AccessToClusterDeniedFault: {}
+    VpcSecurityGroupIdList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: VpcSecurityGroupId
+    String:
+      type: string
+      maxLength: 2147483647
+    EndpointsPerClusterLimitExceededFault: {}
     VpcSecurityGroupMembershipList:
       type: array
       items:
@@ -550,8 +506,52 @@ components:
         - $ref: '#/components/schemas/VpcSecurityGroupMembership'
         - xml:
             name: VpcSecurityGroup
-    UnsupportedOperationFault: {}
+    InvalidClusterStateFault: {}
+    InvalidClusterSecurityGroupStateFault: {}
     ClusterNotFoundFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

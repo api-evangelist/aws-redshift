@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DisableSnapshotCopy API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DisableSnapshotCopy #Action=Disable Snapshot Copy API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -249,244 +249,6 @@ paths:
       - '#Action=DisableSnapshotCopy'
 components:
   schemas:
-    ScheduleState:
-      type: string
-      enum:
-      - MODIFYING
-      - ACTIVE
-      - FAILED
-    NetworkInterface:
-      type: object
-      properties:
-        NetworkInterfaceId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The network interface identifier. '
-        SubnetId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The subnet identifier. '
-        PrivateIpAddress:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The IPv4 address of the network interface within the subnet. '
-        AvailabilityZone:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The Availability Zone. '
-      description: 'Describes a network interface. '
-    PendingActionsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ClusterParameterStatus:
-      type: object
-      properties:
-        ParameterName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the parameter.
-        ParameterApplyStatus:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> <p>The following are possible statuses and descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> </ul>'
-        ParameterApplyErrorDescription:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The error that prevented the parameter from being applied to the database.
-      description: Describes the status of a parameter group.
-    Tag:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The key, or name, for the resource tag.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The value for the resource tag.
-      description: A tag consisting of a name/value pair for a resource.
-    BooleanOptional:
-      type: boolean
-    DisableSnapshotCopyResult:
-      type: object
-      properties:
-        Cluster:
-          $ref: '#/components/schemas/Cluster'
-    Double:
-      type: number
-      format: double
-    SnapshotCopyAlreadyDisabledFault: {}
-    VpcEndpointsList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/VpcEndpoint'
-        - xml:
-            name: VpcEndpoint
-    ReservedNodeExchangeStatusType:
-      type: string
-      enum:
-      - REQUESTED
-      - PENDING
-      - IN_PROGRESS
-      - RETRYING
-      - SUCCEEDED
-      - FAILED
-    TStamp:
-      type: string
-      format: date-time
-    Integer:
-      type: integer
-    ClusterSecurityGroupMembershipList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/ClusterSecurityGroupMembership'
-        - xml:
-            name: ClusterSecurityGroup
-    AquaConfiguration:
-      type: object
-      properties:
-        AquaStatus:
-          allOf:
-          - $ref: '#/components/schemas/AquaStatus'
-          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-        AquaConfigurationStatus:
-          allOf:
-          - $ref: '#/components/schemas/AquaConfigurationStatus'
-          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-      description: The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    UnauthorizedOperation: {}
-    DeferredMaintenanceWindowsList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/DeferredMaintenanceWindow'
-        - xml:
-            name: DeferredMaintenanceWindow
-    HsmStatus:
-      type: object
-      properties:
-        HsmClientCertificateIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
-        HsmConfigurationIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>'
-      description: Describes the status of changes to HSM settings.
-    AquaConfigurationStatus:
-      type: string
-      enum:
-      - enabled
-      - disabled
-      - auto
-    ReservedNodeExchangeStatus:
-      type: object
-      properties:
-        ReservedNodeExchangeRequestId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the reserved-node exchange request.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/ReservedNodeExchangeStatusType'
-          - description: The status of the reserved-node exchange request. Statuses include in-progress and requested.
-        RequestTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: A date and time that indicate when the reserved-node exchange was requested.
-        SourceReservedNodeId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the source reserved node.
-        SourceReservedNodeType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The source reserved-node type, for example ds2.xlarge.
-        SourceReservedNodeCount:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The source reserved-node count in the cluster.
-        TargetReservedNodeOfferingId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the target reserved node offering.
-        TargetReservedNodeType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The node type of the target reserved node, for example ra3.4xlarge.
-        TargetReservedNodeCount:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The count of target reserved nodes in the cluster.
-      description: Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
-    ClusterParameterGroupStatus:
-      type: object
-      properties:
-        ParameterGroupName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the cluster parameter group.
-        ParameterApplyStatus:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The status of parameter updates.
-        ClusterParameterStatusList:
-          allOf:
-          - $ref: '#/components/schemas/ClusterParameterStatusList'
-          - description: <p>The list of parameter statuses.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-      description: Describes the status of a parameter group.
-    DoubleOptional:
-      type: number
-      format: double
-    ClusterSecurityGroupMembership:
-      type: object
-      properties:
-        ClusterSecurityGroupName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the cluster security group.
-        Status:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The status of the cluster security group.
-      description: Describes a cluster security group.
-    ResizeInfo:
-      type: object
-      properties:
-        ResizeType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Returns the value <code>ClassicResize</code>.
-        AllowCancelResize:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: A boolean value indicating if the resize operation can be cancelled.
-      description: Describes a resize operation.
-    AquaStatus:
-      type: string
-      enum:
-      - enabled
-      - disabled
-      - applying
     Endpoint:
       type: object
       properties:
@@ -503,34 +265,40 @@ components:
           - $ref: '#/components/schemas/VpcEndpointsList'
           - description: Describes a connection endpoint.
       description: Describes a connection endpoint.
-    RestoreStatus:
+    ClusterIamRoleList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ClusterIamRole'
+        - xml:
+            name: ClusterIamRole
+    Integer:
+      type: integer
+    VpcSecurityGroupMembership:
       type: object
       properties:
+        VpcSecurityGroupId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the VPC security group.
         Status:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The status of the restore action. Returns starting, restoring, completed, or failed.
-        CurrentRestoreRateInMegaBytesPerSecond:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: 'The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. '
-        SnapshotSizeInMegaBytes:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: 'The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. '
-        ProgressInMegaBytes:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: 'The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. '
-        ElapsedTimeInSeconds:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: 'The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. '
-        EstimatedTimeToCompletionInSeconds:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: 'The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. '
-      description: Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
+          - description: The status of the VPC security group.
+      description: Describes the members of a VPC security group.
+    AquaStatus:
+      type: string
+      enum:
+      - enabled
+      - disabled
+      - applying
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
     ClusterParameterGroupStatusList:
       type: array
       items:
@@ -538,6 +306,18 @@ components:
         - $ref: '#/components/schemas/ClusterParameterGroupStatus'
         - xml:
             name: ClusterParameterGroup
+    ResizeInfo:
+      type: object
+      properties:
+        ResizeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Returns the value <code>ClassicResize</code>.
+        AllowCancelResize:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: A boolean value indicating if the resize operation can be cancelled.
+      description: Describes a resize operation.
     Cluster:
       type: object
       properties:
@@ -750,6 +530,22 @@ components:
           - $ref: '#/components/schemas/ReservedNodeExchangeStatus'
           - description: The status of the reserved-node exchange request. Statuses include in-progress and requested.
       description: Describes a cluster.
+    ClusterParameterGroupStatus:
+      type: object
+      properties:
+        ParameterGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the cluster parameter group.
+        ParameterApplyStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of parameter updates.
+        ClusterParameterStatusList:
+          allOf:
+          - $ref: '#/components/schemas/ClusterParameterStatusList'
+          - description: <p>The list of parameter statuses.</p> <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
+      description: Describes the status of a parameter group.
     NetworkInterfaceList:
       type: array
       items:
@@ -757,96 +553,78 @@ components:
         - $ref: '#/components/schemas/NetworkInterface'
         - xml:
             name: NetworkInterface
-    ClusterIamRoleList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/ClusterIamRole'
-        - xml:
-            name: ClusterIamRole
-    InvalidClusterStateFault: {}
-    ClusterIamRole:
+    HsmStatus:
       type: object
       properties:
-        IamRoleArn:
+        HsmClientCertificateIdentifier:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: 'The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. '
-        ApplyStatus:
+          - description: Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        HsmConfigurationIdentifier:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: '<p>A value that describes the status of the IAM role''s association with an Amazon Redshift cluster.</p> <p>The following are possible statuses and descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> </ul>'
-      description: An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.
-    VpcEndpoint:
-      type: object
-      properties:
-        VpcEndpointId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.
-        VpcId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The VPC identifier that the endpoint is associated. '
-        NetworkInterfaces:
-          allOf:
-          - $ref: '#/components/schemas/NetworkInterfaceList'
-          - description: 'One or more network interfaces of the endpoint. Also known as an interface endpoint. '
-      description: The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
-    ClusterSnapshotCopyStatus:
-      type: object
-      properties:
-        DestinationRegion:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.
-        RetentionPeriod:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The number of days that automated snapshots are retained in the destination region after they are copied from a source region.
-        ManualSnapshotRetentionPeriod:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        SnapshotCopyGrantName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the snapshot copy grant.
-      description: Returns the destination region and retention period that are configured for cross-region snapshot copy.
-    ClusterNodesList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ClusterNode'
-    ClusterNode:
-      type: object
-      properties:
-        NodeRole:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: Whether the node is a leader node or a compute node.
-        PrivateIPAddress:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The private IP address of a node within a cluster.
-        PublicIPAddress:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The public IP address of a node within a cluster.
-      description: The identifier of a node in a cluster.
-    Boolean:
-      type: boolean
-    VpcSecurityGroupMembership:
-      type: object
-      properties:
-        VpcSecurityGroupId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the VPC security group.
+          - description: Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in an HSM.
         Status:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The status of the VPC security group.
-      description: Describes the members of a VPC security group.
+          - description: '<p>Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command.</p> <p>Values: active, applying</p>'
+      description: Describes the status of changes to HSM settings.
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
+    ClusterParameterStatusList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ClusterParameterStatus'
+    ReservedNodeExchangeStatus:
+      type: object
+      properties:
+        ReservedNodeExchangeRequestId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the reserved-node exchange request.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/ReservedNodeExchangeStatusType'
+          - description: The status of the reserved-node exchange request. Statuses include in-progress and requested.
+        RequestTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: A date and time that indicate when the reserved-node exchange was requested.
+        SourceReservedNodeId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the source reserved node.
+        SourceReservedNodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The source reserved-node type, for example ds2.xlarge.
+        SourceReservedNodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The source reserved-node count in the cluster.
+        TargetReservedNodeOfferingId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the target reserved node offering.
+        TargetReservedNodeType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The node type of the target reserved node, for example ra3.4xlarge.
+        TargetReservedNodeCount:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The count of target reserved nodes in the cluster.
+      description: Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
     PendingModifiedValues:
       type: object
       properties:
@@ -895,6 +673,231 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'The encryption type for a cluster. Possible values are: KMS and None. '
       description: Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
+    AquaConfiguration:
+      type: object
+      properties:
+        AquaStatus:
+          allOf:
+          - $ref: '#/components/schemas/AquaStatus'
+          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+        AquaConfigurationStatus:
+          allOf:
+          - $ref: '#/components/schemas/AquaConfigurationStatus'
+          - description: This field is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+      description: The operation that uses this structure is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).
+    PendingActionsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/String'
+    DisableSnapshotCopyMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: DisableSnapshotCopyMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p> <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>'
+      description: <p/>
+    VpcEndpoint:
+      type: object
+      properties:
+        VpcEndpointId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.
+        VpcId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The VPC identifier that the endpoint is associated. '
+        NetworkInterfaces:
+          allOf:
+          - $ref: '#/components/schemas/NetworkInterfaceList'
+          - description: 'One or more network interfaces of the endpoint. Also known as an interface endpoint. '
+      description: The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
+    RestoreStatus:
+      type: object
+      properties:
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the restore action. Returns starting, restoring, completed, or failed.
+        CurrentRestoreRateInMegaBytesPerSecond:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: 'The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup. This field is only updated when you restore to DC2 and DS2 node types. '
+        SnapshotSizeInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The size of the set of snapshot data used to restore the cluster. This field is only updated when you restore to DC2 and DS2 node types. '
+        ProgressInMegaBytes:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The number of megabytes that have been transferred from snapshot storage. This field is only updated when you restore to DC2 and DS2 node types. '
+        ElapsedTimeInSeconds:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish. This field is only updated when you restore to DC2 and DS2 node types. '
+        EstimatedTimeToCompletionInSeconds:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: 'The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore. This field is only updated when you restore to DC2 and DS2 node types. '
+      description: Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
+    ClusterIamRole:
+      type: object
+      properties:
+        IamRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>. '
+        ApplyStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>A value that describes the status of the IAM role''s association with an Amazon Redshift cluster.</p> <p>The following are possible statuses and descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The role is available for use by the cluster.</p> </li> <li> <p> <code>adding</code>: The role is in the process of being associated with the cluster.</p> </li> <li> <p> <code>removing</code>: The role is in the process of being disassociated with the cluster.</p> </li> </ul>'
+      description: An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.
+    DeferredMaintenanceWindowsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/DeferredMaintenanceWindow'
+        - xml:
+            name: DeferredMaintenanceWindow
+    VpcEndpointsList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/VpcEndpoint'
+        - xml:
+            name: VpcEndpoint
+    TStamp:
+      type: string
+      format: date-time
+    BooleanOptional:
+      type: boolean
+    NetworkInterface:
+      type: object
+      properties:
+        NetworkInterfaceId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The network interface identifier. '
+        SubnetId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The subnet identifier. '
+        PrivateIpAddress:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The IPv4 address of the network interface within the subnet. '
+        AvailabilityZone:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The Availability Zone. '
+      description: 'Describes a network interface. '
+    DisableSnapshotCopyResult:
+      type: object
+      properties:
+        Cluster:
+          $ref: '#/components/schemas/Cluster'
+    ScheduleState:
+      type: string
+      enum:
+      - MODIFYING
+      - ACTIVE
+      - FAILED
+    UnauthorizedOperation: {}
+    ClusterNode:
+      type: object
+      properties:
+        NodeRole:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: Whether the node is a leader node or a compute node.
+        PrivateIPAddress:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The private IP address of a node within a cluster.
+        PublicIPAddress:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The public IP address of a node within a cluster.
+      description: The identifier of a node in a cluster.
+    ClusterSnapshotCopyStatus:
+      type: object
+      properties:
+        DestinationRegion:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The destination region that snapshots are automatically copied to when cross-region snapshot copy is enabled.
+        RetentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The number of days that automated snapshots are retained in the destination region after they are copied from a source region.
+        ManualSnapshotRetentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: <p>The number of days that automated snapshots are retained in the destination region after they are copied from a source region. If the value is -1, the manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or an integer between 1 and 3,653.</p>
+        SnapshotCopyGrantName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the snapshot copy grant.
+      description: Returns the destination region and retention period that are configured for cross-region snapshot copy.
+    ClusterParameterStatus:
+      type: object
+      properties:
+        ParameterName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the parameter.
+        ParameterApplyStatus:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p> <p>The following are possible statuses and descriptions.</p> <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value will be applied after the cluster reboots.</p> </li> <li> <p> <code>applying</code>: The parameter value is being applied to the database.</p> </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value because it has an invalid value or syntax.</p> </li> <li> <p> <code>apply-deferred</code>: The parameter contains static property changes. The changes are deferred until the cluster reboots.</p> </li> <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li> <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li> </ul>'
+        ParameterApplyErrorDescription:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The error that prevented the parameter from being applied to the database.
+      description: Describes the status of a parameter group.
+    DoubleOptional:
+      type: number
+      format: double
+    AquaConfigurationStatus:
+      type: string
+      enum:
+      - enabled
+      - disabled
+      - auto
+    Long:
+      type: integer
+    ClusterSecurityGroupMembershipList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ClusterSecurityGroupMembership'
+        - xml:
+            name: ClusterSecurityGroup
+    ClusterSecurityGroupMembership:
+      type: object
+      properties:
+        ClusterSecurityGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the cluster security group.
+        Status:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The status of the cluster security group.
+      description: Describes a cluster security group.
+    Boolean:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
+    ClusterNodesList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ClusterNode'
     VpcSecurityGroupMembershipList:
       type: array
       items:
@@ -902,6 +905,24 @@ components:
         - $ref: '#/components/schemas/VpcSecurityGroupMembership'
         - xml:
             name: VpcSecurityGroup
+    IntegerOptional:
+      type: integer
+    Double:
+      type: number
+      format: double
+    LongOptional:
+      type: integer
+    ReservedNodeExchangeStatusType:
+      type: string
+      enum:
+      - REQUESTED
+      - PENDING
+      - IN_PROGRESS
+      - RETRYING
+      - SUCCEEDED
+      - FAILED
+    SnapshotCopyAlreadyDisabledFault: {}
+    InvalidClusterStateFault: {}
     ElasticIpStatus:
       type: object
       properties:
@@ -914,44 +935,6 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The status of the elastic IP (EIP) address.
       description: Describes the status of the elastic IP (EIP) address.
-    IntegerOptional:
-      type: integer
-    ClusterParameterStatusList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ClusterParameterStatus'
-    Long:
-      type: integer
-    LongOptional:
-      type: integer
-    DisableSnapshotCopyMessage:
-      type: object
-      required:
-      - ClusterIdentifier
-      title: DisableSnapshotCopyMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The unique identifier of the source cluster that you want to disable copying of snapshots to a destination region.</p> <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>'
-      description: <p/>
-    DeferredMaintenanceWindow:
-      type: object
-      properties:
-        DeferMaintenanceIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A unique identifier for the maintenance window.
-        DeferMaintenanceStartTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: ' A timestamp for the beginning of the time period when we defer maintenance.'
-        DeferMaintenanceEndTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: ' A timestamp for the end of the time period when we defer maintenance.'
-      description: Describes a deferred maintenance window
-    ClusterNotFoundFault: {}
     DataTransferProgress:
       type: object
       properties:
@@ -980,21 +963,44 @@ components:
           - $ref: '#/components/schemas/LongOptional'
           - description: Describes the number of seconds that have elapsed during the data transfer.
       description: Describes the status of a cluster while it is in the process of resizing with an incremental resize.
+    ClusterNotFoundFault: {}
+    DeferredMaintenanceWindow:
+      type: object
+      properties:
+        DeferMaintenanceIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A unique identifier for the maintenance window.
+        DeferMaintenanceStartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: ' A timestamp for the beginning of the time period when we defer maintenance.'
+        DeferMaintenanceEndTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: ' A timestamp for the end of the time period when we defer maintenance.'
+      description: Describes a deferred maintenance window
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -1011,14 +1017,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyScheduledAction API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=ModifyScheduledAction #Action=Modify Scheduled Action API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -321,109 +321,14 @@ paths:
       tags:
       - '#Action=ModifyScheduledAction'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ScheduledActionNotFoundFault: {}
-    ModifyScheduledActionMessage:
-      type: object
-      required:
-      - ScheduledActionName
-      title: ModifyScheduledActionMessage
-      properties:
-        ScheduledActionName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'The name of the scheduled action to modify. '
-        TargetAction:
-          allOf:
-          - $ref: '#/components/schemas/ScheduledActionType'
-          - description: 'A modified JSON format of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
-        Schedule:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
-        IamRole:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: A different IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>.
-        ScheduledActionDescription:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A modified description of the scheduled action. '
-        StartTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: 'A modified start time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
-        EndTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: 'A modified end time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
-        Enable:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: 'A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. '
-    BooleanOptional:
-      type: boolean
-    TStamp:
-      type: string
-      format: date-time
-    String:
-      type: string
-      maxLength: 2147483647
-    UnauthorizedOperation: {}
-    ResumeClusterMessage:
-      type: object
-      required:
-      - ClusterIdentifier
-      title: ResumeClusterMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster to be resumed.
-      description: 'Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. '
+    ScheduledActionTimeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/TStamp'
+        - xml:
+            name: ScheduledActionTime
     ScheduledAction:
       type: object
       properties:
@@ -464,22 +369,7 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: 'The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger. '
       description: 'Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>. '
-    ScheduledActionState:
-      type: string
-      enum:
-      - ACTIVE
-      - DISABLED
-    PauseClusterMessage:
-      type: object
-      required:
-      - ClusterIdentifier
-      title: PauseClusterMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster to be paused.
-      description: 'Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. '
+    ScheduledActionTypeUnsupportedFault: {}
     ResizeClusterMessage:
       type: object
       required:
@@ -515,6 +405,35 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The identifier of the target reserved node offering.
       description: 'Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. '
+    ResumeClusterMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: ResumeClusterMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to be resumed.
+      description: 'Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. '
+    TStamp:
+      type: string
+      format: date-time
+    BooleanOptional:
+      type: boolean
+    UnauthorizedOperation: {}
+    PauseClusterMessage:
+      type: object
+      required:
+      - ClusterIdentifier
+      title: PauseClusterMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster to be paused.
+      description: 'Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. '
+    ScheduledActionNotFoundFault: {}
     ScheduledActionType:
       type: object
       properties:
@@ -531,18 +450,99 @@ components:
           - $ref: '#/components/schemas/ResumeClusterMessage'
           - description: 'An action that runs a <code>ResumeCluster</code> API operation. '
       description: 'The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. '
-    InvalidScheduledActionFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
     InvalidScheduleFault: {}
-    ScheduledActionTypeUnsupportedFault: {}
     IntegerOptional:
       type: integer
-    ScheduledActionTimeList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/TStamp'
-        - xml:
-            name: ScheduledActionTime
+    ModifyScheduledActionMessage:
+      type: object
+      required:
+      - ScheduledActionName
+      title: ModifyScheduledActionMessage
+      properties:
+        ScheduledActionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'The name of the scheduled action to modify. '
+        TargetAction:
+          allOf:
+          - $ref: '#/components/schemas/ScheduledActionType'
+          - description: 'A modified JSON format of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
+        Schedule:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For more information about this parameter, see <a>ScheduledAction</a>.
+        IamRole:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: A different IAM role to assume to run the target action. For more information about this parameter, see <a>ScheduledAction</a>.
+        ScheduledActionDescription:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A modified description of the scheduled action. '
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: 'A modified start time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: 'A modified end time of the scheduled action. For more information about this parameter, see <a>ScheduledAction</a>. '
+        Enable:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: 'A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. '
+    ScheduledActionState:
+      type: string
+      enum:
+      - ACTIVE
+      - DISABLED
+    InvalidScheduledActionFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

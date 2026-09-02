@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=BatchModifyClusterSnapshots API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=BatchModifyClusterSnapshots #Action=Batch Modify Cluster Snapshots API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -241,14 +241,8 @@ paths:
       - '#Action=BatchModifyClusterSnapshots'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -259,8 +253,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -271,14 +265,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -286,42 +286,9 @@ components:
   schemas:
     Boolean:
       type: boolean
-    BatchModifyClusterSnapshotsOutputMessage:
-      type: object
-      properties:
-        Resources:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotIdentifierList'
-          - description: A list of the snapshots that were modified.
-        Errors:
-          allOf:
-          - $ref: '#/components/schemas/BatchSnapshotOperationErrors'
-          - description: A list of any errors returned.
-    BatchModifyClusterSnapshotsMessage:
-      type: object
-      required:
-      - SnapshotIdentifierList
-      title: BatchModifyClusterSnapshotsMessage
-      properties:
-        SnapshotIdentifierList:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotIdentifierList'
-          - description: A list of snapshot identifiers you want to modify.
-        ManualSnapshotRetentionPeriod:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> <p>The number must be either -1 or an integer between 1 and 3,653.</p> <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
-        Force:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: 'A boolean value indicating whether to override an exception if the retention period has passed. '
-    BatchSnapshotOperationErrors:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/SnapshotErrorMessage'
-        - xml:
-            name: SnapshotErrorMessage
+    String:
+      type: string
+      maxLength: 2147483647
     SnapshotIdentifierList:
       type: array
       items:
@@ -331,7 +298,13 @@ components:
             name: String
     IntegerOptional:
       type: integer
-    InvalidRetentionPeriodFault: {}
+    BatchSnapshotOperationErrors:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/SnapshotErrorMessage'
+        - xml:
+            name: SnapshotErrorMessage
     BatchModifyClusterSnapshotsLimitExceededFault: {}
     SnapshotErrorMessage:
       type: object
@@ -353,9 +326,36 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The text message describing the error.
       description: Describes the errors returned by a snapshot.
-    String:
-      type: string
-      maxLength: 2147483647
+    BatchModifyClusterSnapshotsMessage:
+      type: object
+      required:
+      - SnapshotIdentifierList
+      title: BatchModifyClusterSnapshotsMessage
+      properties:
+        SnapshotIdentifierList:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotIdentifierList'
+          - description: A list of snapshot identifiers you want to modify.
+        ManualSnapshotRetentionPeriod:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: <p>The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.</p> <p>The number must be either -1 or an integer between 1 and 3,653.</p> <p>If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option. </p>
+        Force:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: 'A boolean value indicating whether to override an exception if the retention period has passed. '
+    BatchModifyClusterSnapshotsOutputMessage:
+      type: object
+      properties:
+        Resources:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotIdentifierList'
+          - description: A list of the snapshots that were modified.
+        Errors:
+          allOf:
+          - $ref: '#/components/schemas/BatchSnapshotOperationErrors'
+          - description: A list of any errors returned.
+    InvalidRetentionPeriodFault: {}
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeDataSharesForProducer API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeDataSharesForProducer #Action=Describe Data Shares For Producer API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -249,74 +249,11 @@ paths:
       tags:
       - '#Action=DescribeDataSharesForProducer'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    DataShareStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - PENDING_AUTHORIZATION
-      - AUTHORIZED
-      - DEAUTHORIZED
-      - REJECTED
-      - AVAILABLE
-    TStamp:
-      type: string
-      format: date-time
-    DataShareAssociationList:
+    DataShareList:
       type: array
       items:
-        $ref: '#/components/schemas/DataShareAssociation'
-    DataShareStatusForProducer:
-      type: string
-      enum:
-      - ACTIVE
-      - AUTHORIZED
-      - PENDING_AUTHORIZATION
-      - DEAUTHORIZED
-      - REJECTED
+        $ref: '#/components/schemas/DataShare'
     DataShare:
       type: object
       properties:
@@ -340,29 +277,18 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The identifier of a datashare to show its managing entity.
-    String:
+    DataShareStatusForProducer:
       type: string
-      maxLength: 2147483647
-    DescribeDataSharesForProducerResult:
-      type: object
-      properties:
-        DataShares:
-          allOf:
-          - $ref: '#/components/schemas/DataShareList'
-          - description: Shows the results of datashares available for producers.
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForProducer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
-    DataShareList:
+      enum:
+      - ACTIVE
+      - AUTHORIZED
+      - PENDING_AUTHORIZATION
+      - DEAUTHORIZED
+      - REJECTED
+    DataShareAssociationList:
       type: array
       items:
-        $ref: '#/components/schemas/DataShare'
-    InvalidNamespaceFault: {}
-    Boolean:
-      type: boolean
-    IntegerOptional:
-      type: integer
+        $ref: '#/components/schemas/DataShareAssociation'
     DataShareAssociation:
       type: object
       properties:
@@ -387,6 +313,24 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: The status change data of the datashare that is associated.
       description: 'The association of a datashare from a producer account with a data consumer. '
+    TStamp:
+      type: string
+      format: date-time
+    DataShareStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - PENDING_AUTHORIZATION
+      - AUTHORIZED
+      - DEAUTHORIZED
+      - REJECTED
+      - AVAILABLE
+    InvalidNamespaceFault: {}
+    Boolean:
+      type: boolean
+    String:
+      type: string
+      maxLength: 2147483647
     DescribeDataSharesForProducerMessage:
       type: object
       title: DescribeDataSharesForProducerMessage
@@ -407,6 +351,62 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForProducer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+    DescribeDataSharesForProducerResult:
+      type: object
+      properties:
+        DataShares:
+          allOf:
+          - $ref: '#/components/schemas/DataShareList'
+          - description: Shows the results of datashares available for producers.
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataSharesForProducer</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+    IntegerOptional:
+      type: integer
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

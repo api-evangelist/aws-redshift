@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeEvents API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeEvents #Action=Describe Events API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -258,8 +258,14 @@ paths:
       - '#Action=DescribeEvents'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -282,25 +288,57 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
+    Event:
+      type: object
+      properties:
+        SourceIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier for the source of the event.
+        SourceType:
+          allOf:
+          - $ref: '#/components/schemas/SourceType'
+          - description: The source type for this event.
+        Message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The text of this event.
+        EventCategories:
+          allOf:
+          - $ref: '#/components/schemas/EventCategoriesList'
+          - description: '<p>A list of the event categories.</p> <p>Values: Configuration, Management, Monitoring, Security, Pending</p>'
+        Severity:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The severity of the event.</p> <p>Values: ERROR, INFO</p>'
+        Date:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The date and time of the event.
+        EventId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the event.
+      description: Describes an event.
+    String:
+      type: string
+      maxLength: 2147483647
+    TStamp:
+      type: string
+      format: date-time
     DescribeEventsMessage:
       type: object
       title: DescribeEventsMessage
@@ -334,6 +372,23 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeEvents</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
       description: <p/>
+    IntegerOptional:
+      type: integer
+    SourceType:
+      type: string
+      enum:
+      - cluster
+      - cluster-parameter-group
+      - cluster-security-group
+      - cluster-snapshot
+      - scheduled-action
+    EventList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Event'
+        - xml:
+            name: Event
     EventCategoriesList:
       type: array
       items:
@@ -341,11 +396,6 @@ components:
         - $ref: '#/components/schemas/String'
         - xml:
             name: EventCategory
-    IntegerOptional:
-      type: integer
-    TStamp:
-      type: string
-      format: date-time
     EventsMessage:
       type: object
       properties:
@@ -358,56 +408,6 @@ components:
           - $ref: '#/components/schemas/EventList'
           - description: 'A list of <code>Event</code> instances. '
       description: <p/>
-    EventList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Event'
-        - xml:
-            name: Event
-    Event:
-      type: object
-      properties:
-        SourceIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier for the source of the event.
-        SourceType:
-          allOf:
-          - $ref: '#/components/schemas/SourceType'
-          - description: The source type for this event.
-        Message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The text of this event.
-        EventCategories:
-          allOf:
-          - $ref: '#/components/schemas/EventCategoriesList'
-          - description: '<p>A list of the event categories.</p> <p>Values: Configuration, Management, Monitoring, Security, Pending</p>'
-        Severity:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The severity of the event.</p> <p>Values: ERROR, INFO</p>'
-        Date:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The date and time of the event.
-        EventId:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the event.
-      description: Describes an event.
-    SourceType:
-      type: string
-      enum:
-      - cluster
-      - cluster-parameter-group
-      - cluster-security-group
-      - cluster-snapshot
-      - scheduled-action
-    String:
-      type: string
-      maxLength: 2147483647
   securitySchemes:
     hmac:
       type: apiKey

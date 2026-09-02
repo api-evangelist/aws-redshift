@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterSnapshots API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterSnapshots #Action=Describe Cluster Snapshots API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -354,51 +354,87 @@ paths:
       tags:
       - '#Action=DescribeClusterSnapshots'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ClusterSnapshotNotFoundFault: {}
+    RestorableNodeTypeList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: NodeType
+    SnapshotList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Snapshot'
+        - xml:
+            name: Snapshot
+    Integer:
+      type: integer
+    TagList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Tag'
+        - xml:
+            name: Tag
+    DescribeClusterSnapshotsMessage:
+      type: object
+      title: DescribeClusterSnapshotsMessage
+      properties:
+        ClusterIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The identifier of the cluster which generated the requested snapshots.
+        SnapshotIdentifier:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The snapshot identifier of the snapshot about which to return information.
+        SnapshotArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
+        SnapshotType:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>'
+        StartTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: '<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>'
+        EndTime:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: '<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>'
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+        OwnerAccount:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.
+        TagKeys:
+          allOf:
+          - $ref: '#/components/schemas/TagKeyList'
+          - description: A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.
+        TagValues:
+          allOf:
+          - $ref: '#/components/schemas/TagValueList'
+          - description: A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.
+        ClusterExists:
+          allOf:
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: '<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn''t specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>'
+        SortingEntities:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotSortingEntityList'
+          - description: <p/>
+      description: <p/>
     Tag:
       type: object
       properties:
@@ -411,9 +447,6 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The value for the resource tag.
       description: A tag consisting of a name/value pair for a resource.
-    TStamp:
-      type: string
-      format: date-time
     TagValueList:
       type: array
       items:
@@ -421,63 +454,6 @@ components:
         - $ref: '#/components/schemas/String'
         - xml:
             name: TagValue
-    BooleanOptional:
-      type: boolean
-    Double:
-      type: number
-      format: double
-    InvalidTagFault: {}
-    Integer:
-      type: integer
-    String:
-      type: string
-      maxLength: 2147483647
-    TagList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Tag'
-        - xml:
-            name: Tag
-    SnapshotAttributeToSortBy:
-      type: string
-      enum:
-      - SOURCE_TYPE
-      - TOTAL_SIZE
-      - CREATE_TIME
-    SnapshotSortingEntity:
-      type: object
-      required:
-      - Attribute
-      properties:
-        Attribute:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotAttributeToSortBy'
-          - description: The category for sorting the snapshots.
-        SortOrder:
-          allOf:
-          - $ref: '#/components/schemas/SortByOrder'
-          - description: The order for listing the attributes.
-      description: Describes a sorting entity
-    RestorableNodeTypeList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: NodeType
-    SnapshotMessage:
-      type: object
-      properties:
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
-        Snapshots:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotList'
-          - description: 'A list of <a>Snapshot</a> instances. '
-      description: 'Contains the output from the <a>DescribeClusterSnapshots</a> action. '
     SnapshotSortingEntityList:
       type: array
       items:
@@ -485,6 +461,31 @@ components:
         - $ref: '#/components/schemas/SnapshotSortingEntity'
         - xml:
             name: SnapshotSortingEntity
+    AccountsWithRestoreAccessList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/AccountWithRestoreAccess'
+        - xml:
+            name: AccountWithRestoreAccess
+    SnapshotAttributeToSortBy:
+      type: string
+      enum:
+      - SOURCE_TYPE
+      - TOTAL_SIZE
+      - CREATE_TIME
+    SortByOrder:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    ClusterSnapshotNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
+    BooleanOptional:
+      type: boolean
+    InvalidTagFault: {}
     Snapshot:
       type: object
       properties:
@@ -625,11 +626,47 @@ components:
           - $ref: '#/components/schemas/TStamp'
           - description: A timestamp representing the start of the retention period for the snapshot.
       description: Describes a snapshot.
-    SortByOrder:
+    SnapshotMessage:
+      type: object
+      properties:
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
+        Snapshots:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotList'
+          - description: 'A list of <a>Snapshot</a> instances. '
+      description: 'Contains the output from the <a>DescribeClusterSnapshots</a> action. '
+    TagKeyList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/String'
+        - xml:
+            name: TagKey
+    Long:
+      type: integer
+    SnapshotSortingEntity:
+      type: object
+      required:
+      - Attribute
+      properties:
+        Attribute:
+          allOf:
+          - $ref: '#/components/schemas/SnapshotAttributeToSortBy'
+          - description: The category for sorting the snapshots.
+        SortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortByOrder'
+          - description: The order for listing the attributes.
+      description: Describes a sorting entity
+    UnsupportedOperationFault: {}
+    Boolean:
+      type: boolean
+    String:
       type: string
-      enum:
-      - ASC
-      - DESC
+      maxLength: 2147483647
     AccountWithRestoreAccess:
       type: object
       properties:
@@ -642,92 +679,55 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'The identifier of an Amazon Web Services support account authorized to restore a snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. '
       description: Describes an Amazon Web Services account authorized to restore a snapshot.
-    AccountsWithRestoreAccessList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/AccountWithRestoreAccess'
-        - xml:
-            name: AccountWithRestoreAccess
-    Boolean:
-      type: boolean
-    DescribeClusterSnapshotsMessage:
-      type: object
-      title: DescribeClusterSnapshotsMessage
-      properties:
-        ClusterIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The identifier of the cluster which generated the requested snapshots.
-        SnapshotIdentifier:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The snapshot identifier of the snapshot about which to return information.
-        SnapshotArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.
-        SnapshotType:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.</p> <p>Valid Values: <code>automated</code> | <code>manual</code> </p>'
-        StartTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: '<p>A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>'
-        EndTime:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: '<p>A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <p>Example: <code>2012-07-16T18:00:00Z</code> </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 500.</p>'
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
-        OwnerAccount:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.
-        TagKeys:
-          allOf:
-          - $ref: '#/components/schemas/TagKeyList'
-          - description: A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.
-        TagValues:
-          allOf:
-          - $ref: '#/components/schemas/TagValueList'
-          - description: A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.
-        ClusterExists:
-          allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: '<p>A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows: </p> <ul> <li> <p>If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> isn''t specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots associated with that cluster are returned.</p> </li> <li> <p>If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an existing cluster, no snapshots are returned. </p> </li> </ul>'
-        SortingEntities:
-          allOf:
-          - $ref: '#/components/schemas/SnapshotSortingEntityList'
-          - description: <p/>
-      description: <p/>
     IntegerOptional:
       type: integer
-    SnapshotList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Snapshot'
-        - xml:
-            name: Snapshot
-    UnsupportedOperationFault: {}
-    Long:
-      type: integer
-    TagKeyList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/String'
-        - xml:
-            name: TagKey
+    Double:
+      type: number
+      format: double
     ClusterNotFoundFault: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateHsmClientCertificate API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=CreateHsmClientCertificate #Action=Create Hsm Client Certificate API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -260,8 +260,8 @@ paths:
       - '#Action=CreateHsmClientCertificate'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -278,14 +278,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -296,14 +296,35 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
     HsmClientCertificateQuotaExceededFault: {}
+    CreateHsmClientCertificateResult:
+      type: object
+      properties:
+        HsmClientCertificate:
+          $ref: '#/components/schemas/HsmClientCertificate'
+    HsmClientCertificateAlreadyExistsFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    Tag:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The key, or name, for the resource tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The value for the resource tag.
+      description: A tag consisting of a name/value pair for a resource.
     CreateHsmClientCertificateMessage:
       type: object
       required:
@@ -320,23 +341,6 @@ components:
           - description: A list of tag instances.
       description: <p/>
     TagLimitExceededFault: {}
-    Tag:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The key, or name, for the resource tag.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The value for the resource tag.
-      description: A tag consisting of a name/value pair for a resource.
-    CreateHsmClientCertificateResult:
-      type: object
-      properties:
-        HsmClientCertificate:
-          $ref: '#/components/schemas/HsmClientCertificate'
     InvalidTagFault: {}
     HsmClientCertificate:
       type: object
@@ -354,9 +358,6 @@ components:
           - $ref: '#/components/schemas/TagList'
           - description: The list of tags for the HSM client certificate.
       description: Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files.
-    String:
-      type: string
-      maxLength: 2147483647
     TagList:
       type: array
       items:
@@ -364,7 +365,6 @@ components:
         - $ref: '#/components/schemas/Tag'
         - xml:
             name: Tag
-    HsmClientCertificateAlreadyExistsFault: {}
   securitySchemes:
     hmac:
       type: apiKey

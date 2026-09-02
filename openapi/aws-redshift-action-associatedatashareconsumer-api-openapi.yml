@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=AssociateDataShareConsumer API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=AssociateDataShareConsumer #Action=Associate Data Share Consumer API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -245,8 +245,8 @@ paths:
       - '#Action=AssociateDataShareConsumer'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -263,14 +263,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -281,56 +281,45 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
-    String:
-      type: string
-      maxLength: 2147483647
     Boolean:
       type: boolean
-    DataShareStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - PENDING_AUTHORIZATION
-      - AUTHORIZED
-      - DEAUTHORIZED
-      - REJECTED
-      - AVAILABLE
-    AssociateDataShareConsumerMessage:
+    DataShareAssociation:
       type: object
-      required:
-      - DataShareArn
-      title: AssociateDataShareConsumerMessage
       properties:
-        DataShareArn:
+        ConsumerIdentifier:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.
-        AssociateEntireAccount:
+          - description: The name of the consumer accounts that have an association with a producer datashare.
+        Status:
           allOf:
-          - $ref: '#/components/schemas/BooleanOptional'
-          - description: A value that specifies whether the datashare is associated with the entire account.
-        ConsumerArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.
+          - $ref: '#/components/schemas/DataShareStatus'
+          - description: The status of the datashare that is associated.
         ConsumerRegion:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.
+          - description: The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.
+        CreatedDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The creation date of the datashare that is associated.
+        StatusChangeDate:
+          allOf:
+          - $ref: '#/components/schemas/TStamp'
+          - description: The status change data of the datashare that is associated.
+      description: 'The association of a datashare from a producer account with a data consumer. '
+    String:
+      type: string
+      maxLength: 2147483647
     TStamp:
       type: string
       format: date-time
-    DataShareAssociationList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DataShareAssociation'
     BooleanOptional:
       type: boolean
     DataShare:
@@ -356,32 +345,43 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: The identifier of a datashare to show its managing entity.
-    DataShareAssociation:
+    DataShareStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - PENDING_AUTHORIZATION
+      - AUTHORIZED
+      - DEAUTHORIZED
+      - REJECTED
+      - AVAILABLE
+    InvalidNamespaceFault: {}
+    AssociateDataShareConsumerMessage:
       type: object
+      required:
+      - DataShareArn
+      title: AssociateDataShareConsumerMessage
       properties:
-        ConsumerIdentifier:
+        DataShareArn:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The name of the consumer accounts that have an association with a producer datashare.
-        Status:
+          - description: The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.
+        AssociateEntireAccount:
           allOf:
-          - $ref: '#/components/schemas/DataShareStatus'
-          - description: The status of the datashare that is associated.
+          - $ref: '#/components/schemas/BooleanOptional'
+          - description: A value that specifies whether the datashare is associated with the entire account.
+        ConsumerArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.
         ConsumerRegion:
           allOf:
           - $ref: '#/components/schemas/String'
-          - description: The Amazon Web Services Region of the consumer accounts that have an association with a producer datashare.
-        CreatedDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The creation date of the datashare that is associated.
-        StatusChangeDate:
-          allOf:
-          - $ref: '#/components/schemas/TStamp'
-          - description: The status change data of the datashare that is associated.
-      description: 'The association of a datashare from a producer account with a data consumer. '
+          - description: From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.
     InvalidDataShareFault: {}
-    InvalidNamespaceFault: {}
+    DataShareAssociationList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DataShareAssociation'
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeReservedNodeExchangeStatus API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeReservedNodeExchangeStatus #Action=Describe Reserved Node Exchange Status API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -268,74 +268,9 @@ paths:
       tags:
       - '#Action=DescribeReservedNodeExchangeStatus'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    TStamp:
-      type: string
-      format: date-time
-    ReservedNodeExchangeStatusType:
-      type: string
-      enum:
-      - REQUESTED
-      - PENDING
-      - IN_PROGRESS
-      - RETRYING
-      - SUCCEEDED
-      - FAILED
     Integer:
       type: integer
-    ReservedNodeExchangeStatusList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/ReservedNodeExchangeStatus'
-        - xml:
-            name: ReservedNodeExchangeStatus
-    String:
-      type: string
-      maxLength: 2147483647
     ReservedNodeExchangeStatus:
       type: object
       properties:
@@ -376,7 +311,6 @@ components:
           - $ref: '#/components/schemas/Integer'
           - description: The count of target reserved nodes in the cluster.
       description: Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
-    ReservedNodeExchangeNotFoundFault: {}
     DescribeReservedNodeExchangeStatusOutputMessage:
       type: object
       properties:
@@ -388,6 +322,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/String'
           - description: A pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request.
+    ReservedNodeExchangeNotFoundFault: {}
+    TStamp:
+      type: string
+      format: date-time
+    ReservedNodeExchangeStatusList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/ReservedNodeExchangeStatus'
+        - xml:
+            name: ReservedNodeExchangeStatus
     DescribeReservedNodeExchangeStatusInputMessage:
       type: object
       title: DescribeReservedNodeExchangeStatusInputMessage
@@ -409,9 +354,64 @@ components:
           - $ref: '#/components/schemas/String'
           - description: An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request.
     ReservedNodeNotFoundFault: {}
+    UnsupportedOperationFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
     IntegerOptional:
       type: integer
-    UnsupportedOperationFault: {}
+    ReservedNodeExchangeStatusType:
+      type: string
+      enum:
+      - REQUESTED
+      - PENDING
+      - IN_PROGRESS
+      - RETRYING
+      - SUCCEEDED
+      - FAILED
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

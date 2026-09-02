@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterParameters API'
+  title: 'Redshift Data API Service #Action=AcceptReservedNodeExchange #Action=AcceptReservedNodeExchange #Action=DescribeClusterParameters #Action=Describe Cluster Parameters API'
   description: <p>You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds. </p> <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -245,14 +245,8 @@ paths:
       - '#Action=DescribeClusterParameters'
 components:
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -263,14 +257,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -281,48 +275,19 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
   schemas:
-    Boolean:
-      type: boolean
-    DescribeClusterParametersMessage:
-      type: object
-      required:
-      - ParameterGroupName
-      title: DescribeClusterParametersMessage
-      properties:
-        ParameterGroupName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of a cluster parameter group for which to return details.
-        Source:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: '<p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>'
-        MaxRecords:
-          allOf:
-          - $ref: '#/components/schemas/IntegerOptional'
-          - description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>'
-        Marker:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
-      description: <p/>
-    IntegerOptional:
-      type: integer
-    ClusterParameterGroupNotFoundFault: {}
-    ParametersList:
-      type: array
-      items:
-        allOf:
-        - $ref: '#/components/schemas/Parameter'
-        - xml:
-            name: Parameter
     Parameter:
       type: object
       properties:
@@ -363,6 +328,42 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The earliest engine version to which the parameter can apply.
       description: Describes a parameter in a cluster parameter group.
+    Boolean:
+      type: boolean
+    ClusterParameterGroupNotFoundFault: {}
+    String:
+      type: string
+      maxLength: 2147483647
+    DescribeClusterParametersMessage:
+      type: object
+      required:
+      - ParameterGroupName
+      title: DescribeClusterParametersMessage
+      properties:
+        ParameterGroupName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of a cluster parameter group for which to return details.
+        Source:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: '<p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>'
+        MaxRecords:
+          allOf:
+          - $ref: '#/components/schemas/IntegerOptional'
+          - description: '<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>'
+        Marker:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: 'An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterParameters</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. '
+      description: <p/>
+    ParametersList:
+      type: array
+      items:
+        allOf:
+        - $ref: '#/components/schemas/Parameter'
+        - xml:
+            name: Parameter
     ClusterParameterGroupDetails:
       type: object
       properties:
@@ -375,14 +376,13 @@ components:
           - $ref: '#/components/schemas/String'
           - description: 'A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. '
       description: 'Contains the output from the <a>DescribeClusterParameters</a> action. '
-    String:
-      type: string
-      maxLength: 2147483647
     ParameterApplyType:
       type: string
       enum:
       - static
       - dynamic
+    IntegerOptional:
+      type: integer
   securitySchemes:
     hmac:
       type: apiKey
